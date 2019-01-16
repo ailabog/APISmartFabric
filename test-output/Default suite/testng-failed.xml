@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.APISmartFabric.Tests.adminController.POSTAdminGroupsTest">
+      <class name="com.APISmartFabric.Tests.adminController.GETAdminGroupsUsersByUserGroupIdTest">
         <methods>
-          <include name="postAdminGroup"/>
+          <include name="getUserByNullId"/>
+          <include name="getUserByInvalidId"/>
         </methods>
-      </class> <!-- com.APISmartFabric.Tests.adminController.POSTAdminGroupsTest -->
+      </class> <!-- com.APISmartFabric.Tests.adminController.GETAdminGroupsUsersByUserGroupIdTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
