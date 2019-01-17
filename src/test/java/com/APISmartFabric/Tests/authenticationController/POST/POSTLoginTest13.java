@@ -1,4 +1,4 @@
-package com.APISmartFabric.Tests;
+package com.APISmartFabric.Tests.authenticationController.POST;
 
 import org.testng.annotations.Test;
 
@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
  */
 
 import com.APISmartFabric.Utils.CredentialsUtils;
-import com.APISmartFabric.controller.LoginRequest;
+import com.APISmartFabric.controller.AdminController.LoginRequest;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class POSTLoginTest {
+public class POSTLoginTest13 {
 
 	@Test
 	public void postLogin() {

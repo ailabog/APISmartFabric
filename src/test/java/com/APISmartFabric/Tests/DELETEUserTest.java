@@ -3,7 +3,7 @@ package com.APISmartFabric.Tests;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Utils.CredentialsUtils;
-import com.APISmartFabric.controller.LoginRequest;
+import com.APISmartFabric.controller.AdminController.LoginRequest;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;

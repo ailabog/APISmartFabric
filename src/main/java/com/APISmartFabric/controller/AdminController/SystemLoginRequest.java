@@ -1,17 +1,16 @@
-package com.APISmartFabric.controller;
+package com.APISmartFabric.controller.AdminController;
 
 /**
  * 
  * @author aila.bogasieru@agys.ch
  *
- */
-/*/identity/auth/tenant-user-login
-        tenantUserLogin*/
-
-public class LoginRequest {
+ **/
+ 
+  
+public class SystemLoginRequest {
 	
 	
-	public LoginRequest(String tenantDomain, String userEmail, String userPassword){
+	public SystemLoginRequest(String tenantDomain, String userEmail, String userPassword){
 		this.tenantDomain = tenantDomain;
 		this.userEmail = userEmail;
 		this.userPassword = userPassword;
