@@ -24,7 +24,7 @@ public class POSTLoginTest {
 				.body("{\"tenantId\" :\"" + login.getTenantDomain() + "\", \n" + "\"userEmail\":\""
 						+ login.getUserEmail() + "\", \n" + "\"userPassword\":\"" + login.getUserPassword() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLLogin"))
-				.then().statusCode(404);
+				.then().statusCode(200);
 	}
 
 	@Test
