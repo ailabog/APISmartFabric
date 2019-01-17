@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Aila.Bogasieru\AppData\Local\Temp\testng-eclipse--149076353\testng-customsuite.xml</span>
+                    <span>C:\Users\Aila.Bogasieru\AppData\Local\Temp\testng-eclipse--633498012\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,15 +102,34 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11" hash-for-method="postSystemLogin">postSystemLogin</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12" hash-for-method="getTenantByTenantDomain">getTenantByTenantDomain</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11" hash-for-method="postWrongSystemLogin">postWrongSystemLogin</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12" hash-for-method="getTenantByTenantDomainNoAuthentication">getTenantByTenantDomainNoAuthentication</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12" hash-for-method="getTenantByInvalidTenantDomain">getTenantByInvalidTenantDomain</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12" hash-for-method="getTenantByNULLTenantDomain">getTenantByNULLTenantDomain</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -125,14 +144,14 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11</span>
+              <span class="class-name">com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="postSystemLogin">
-                  </a> <!-- postSystemLogin -->
-                  <span class="method-name">postSystemLogin</span>
+                  <a name="getTenantByTenantDomain">
+                  </a> <!-- getTenantByTenantDomain -->
+                  <span class="method-name">getTenantByTenantDomain</span>
                   <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;200&gt; doesn&apos;t match actual status code &lt;422&gt;.
 
@@ -148,9 +167,6 @@ Expected status code &lt;200&gt; doesn&apos;t match actual status code &lt;422&g
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -158,17 +174,12 @@ Expected status code &lt;200&gt; doesn&apos;t match actual status code &lt;422&g
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
 	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-	at com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11.postSystemLogin(POSTSystemUserLoginTest11.java:28)
+	at com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12.getTenantByTenantDomain(GETTenantByTenantDomainTest12.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -200,11 +211,11 @@ Expected status code &lt;200&gt; doesn&apos;t match actual status code &lt;422&g
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="postWrongSystemLogin">
-                  </a> <!-- postWrongSystemLogin -->
-                  <span class="method-name">postWrongSystemLogin</span>
+                  <a name="getTenantByTenantDomainNoAuthentication">
+                  </a> <!-- getTenantByTenantDomainNoAuthentication -->
+                  <span class="method-name">getTenantByTenantDomainNoAuthentication</span>
                   <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;422&gt;.
+Expected status code &lt;403&gt; doesn&apos;t match actual status code &lt;422&gt;.
 
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -228,7 +239,7 @@ Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;422&g
 	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-	at com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11.postWrongSystemLogin(POSTSystemUserLoginTest11.java:41)
+	at com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12.getTenantByTenantDomainNoAuthentication(GETTenantByTenantDomainTest12.java:55)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -260,10 +271,32 @@ Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;422&g
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getTenantByInvalidTenantDomain">
+                  </a> <!-- getTenantByInvalidTenantDomain -->
+                  <span class="method-name">getTenantByInvalidTenantDomain</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getTenantByNULLTenantDomain">
+                  </a> <!-- getTenantByNULLTenantDomain -->
+                  <span class="method-name">getTenantByNULLTenantDomain</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Aila.Bogasieru\AppData\Local\Temp\testng-eclipse--149076353\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Aila.Bogasieru\AppData\Local\Temp\testng-eclipse--633498012\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -272,7 +305,7 @@ Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;422&g
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11&quot;/&gt;
+      &lt;class name=&quot;com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -312,15 +345,23 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'postSystemLogin')
-data.setCell(0, 2, 'com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11')
-data.setCell(0, 3, 1174);
+data.setCell(0, 1, 'getTenantByInvalidTenantDomain')
+data.setCell(0, 2, 'com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12')
+data.setCell(0, 3, 1144);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'postWrongSystemLogin')
-data.setCell(1, 2, 'com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11')
-data.setCell(1, 3, 34);
+data.setCell(1, 1, 'getTenantByTenantDomain')
+data.setCell(1, 2, 'com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12')
+data.setCell(1, 3, 52);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'getTenantByTenantDomainNoAuthentication')
+data.setCell(2, 2, 'com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12')
+data.setCell(2, 3, 30);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'getTenantByNULLTenantDomain')
+data.setCell(3, 2, 'com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12')
+data.setCell(3, 3, 29);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -351,18 +392,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.APISmartFabric.Tests.authenticationController.POST.POSTSystemUserLoginTest11</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.APISmartFabric.Tests.authenticationController.GET.GETTenantByTenantDomainTest12</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">postSystemLogin</span>
+                <span class="method-name">getTenantByInvalidTenantDomain</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getTenantByNULLTenantDomain</span>
+                <span class="method-start">1145 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">postWrongSystemLogin</span>
-                <span class="method-start">1179 ms</span>
+                <span class="method-name">getTenantByTenantDomain</span>
+                <span class="method-start">1175 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">getTenantByTenantDomainNoAuthentication</span>
+                <span class="method-start">1230 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
