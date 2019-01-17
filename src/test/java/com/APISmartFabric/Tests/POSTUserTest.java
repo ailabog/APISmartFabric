@@ -3,7 +3,7 @@ package com.APISmartFabric.Tests;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Utils.CredentialsUtils;
-import com.APISmartFabric.controller.CreateUserRequest;
+import com.APISmartFabric.controller.AdminController.CreateUserRequest;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 import com.jayway.restassured.specification.RequestSpecification;
