@@ -31,7 +31,7 @@ public class POSTUserTest {
 	RequestSpecification httpRequest = RestAssured.given();
 	Response response = httpRequest.post(baseURL + "/identity/admin/users");
 	String location = response.header("location");
-	CreateUserRequest create = new CreateUserRequest(language, lastName, password, phone, title, token, tokenExpiry,
+	CreateUserRequest createUser = new CreateUserRequest(language, lastName, password, phone, title, token, tokenExpiry,
 			code, firstName, gender, email, status);
 
 	@Test
@@ -39,13 +39,13 @@ public class POSTUserTest {
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.contentType("application/json")
-				.body("{\"code\":\"" + create.getCode() + "\",\n" + "\"email\":\"" + create.getEmail() + "\", \n"
-						+ "\"firstName\":\"" + create.getFirstName() + "\", \n" + "\"gender\":\"" + create.getGender()
-						+ "\", \n" + "\"id\":\"" + id + "\", \n" + "\"language\":\"" + create.getLanguage() + "\", \n"
-						+ "\"password\":\"" + create.getPassword() + "\", \n" + "\"phone\":\"" + create.getPhone()
-						+ "\", \n" + "\"status\":\"" + create.getStatus() + "\", \n" + "\"title\":\""
-						+ create.getTitle() + "\", \n" + "\"token\":\"" + create.getToken() + "\", \n"
-						+ "\"tokenExpiry\":\"" + create.getTokenExpiry() + "\" }")
+				.body("{\"code\":\"" + createUser.getCode() + "\",\n" + "\"email\":\"" + createUser.getEmail() + "\", \n"
+						+ "\"firstName\":\"" + createUser.getFirstName() + "\", \n" + "\"gender\":\"" + createUser.getGender()
+						+ "\", \n" + "\"id\":\"" + id + "\", \n" + "\"language\":\"" + createUser.getLanguage() + "\", \n"
+						+ "\"password\":\"" + createUser.getPassword() + "\", \n" + "\"phone\":\"" + createUser.getPhone()
+						+ "\", \n" + "\"status\":\"" + createUser.getStatus() + "\", \n" + "\"title\":\""
+						+ createUser.getTitle() + "\", \n" + "\"token\":\"" + createUser.getToken() + "\", \n"
+						+ "\"tokenExpiry\":\"" + createUser.getTokenExpiry() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLUser"))
 				.then().statusCode(201);
 		// assertFalse(location.isEmpty());
@@ -56,13 +56,13 @@ public class POSTUserTest {
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.contentType("application/json")
-				.body("{\"code\":\"" + create.getCode() + "\",\n" + "\", \n" + "\"firstName\":\""
-						+ create.getFirstName() + "\", \n" + "\"gender\":\"" + create.getGender() + "\", \n"
-						+ "\"id\":\"" + id + "\", \n" + "\"language\":\"" + create.getLanguage() + "\", \n"
-						+ "\"password\":\"" + create.getPassword() + "\", \n" + "\"phone\":\"" + create.getPhone()
-						+ "\", \n" + "\"status\":\"" + create.getStatus() + "\", \n" + "\"title\":\""
-						+ create.getTitle() + "\", \n" + "\"token\":\"" + create.getToken() + "\", \n"
-						+ "\"tokenExpiry\":\"" + create.getTokenExpiry() + "\" }")
+				.body("{\"code\":\"" + createUser.getCode() + "\",\n" + "\", \n" + "\"firstName\":\""
+						+ createUser.getFirstName() + "\", \n" + "\"gender\":\"" + createUser.getGender() + "\", \n"
+						+ "\"id\":\"" + id + "\", \n" + "\"language\":\"" + createUser.getLanguage() + "\", \n"
+						+ "\"password\":\"" + createUser.getPassword() + "\", \n" + "\"phone\":\"" + createUser.getPhone()
+						+ "\", \n" + "\"status\":\"" + createUser.getStatus() + "\", \n" + "\"title\":\""
+						+ createUser.getTitle() + "\", \n" + "\"token\":\"" + createUser.getToken() + "\", \n"
+						+ "\"tokenExpiry\":\"" + createUser.getTokenExpiry() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLUser"))
 				.then().statusCode(404);
 	}
