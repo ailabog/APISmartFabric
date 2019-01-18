@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.APISmartFabric.Tests.tenantController.GET.Identity_Tenants_Users_By_UserIdTest24">
+      <class name="com.APISmartFabric.Tests.tenantController.GET.Identity_Tenants_Users_Email_By_EmailTest26">
         <methods>
-          <include name="getTenantsUserGroupsByIdNoAuthentication"/>
-          <include name="getTenantsUserGroupsByNULLId"/>
-          <include name="getTenantsUserGroupsByInvalidId"/>
+          <include name="getgetTenantsUsersEmailByEmailNoAuthentication"/>
         </methods>
-      </class> <!-- com.APISmartFabric.Tests.tenantController.GET.Identity_Tenants_Users_By_UserIdTest24 -->
+      </class> <!-- com.APISmartFabric.Tests.tenantController.GET.Identity_Tenants_Users_Email_By_EmailTest26 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
