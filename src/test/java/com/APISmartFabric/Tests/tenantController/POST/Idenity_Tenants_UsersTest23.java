@@ -1,4 +1,4 @@
-package com.APISmartFabric.Tests;
+package com.APISmartFabric.Tests.tenantController.POST;
 
 import org.testng.annotations.Test;
 
@@ -11,7 +11,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 import java.util.UUID;
 
-public class POSTUserTest {
+public class Idenity_Tenants_UsersTest23 {
 
 	final String code = "35";
 	final String id = "45654";

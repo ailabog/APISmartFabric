@@ -38,9 +38,8 @@ public class Identity_Tenants_Groups_UsersTest19 {
 
 	@Test
 	public void postWrongTenantsGroupsUsersNoAuthentication() {
-		given().header("principal",
-				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType("application/json").body("[ \"usersIds\":\"" + userList + "\" ]").when()
+		given().
+				contentType("application/json").body("[ \"usersIds\":\"" + userList + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
 				.then().statusCode(403);
