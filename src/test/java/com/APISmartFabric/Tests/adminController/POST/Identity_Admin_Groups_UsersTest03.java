@@ -11,7 +11,7 @@ import static com.jayway.restassured.RestAssured.given;
  *
  */
 
-public class POSTAdminGroupsUsersTest03 {
+public class Identity_Admin_Groups_UsersTest03 {
 
 	final String groupId = "437754646";
 	final String id = "46546546";

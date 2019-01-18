@@ -6,7 +6,7 @@ import com.APISmartFabric.controller.AdminController.CreateAdminUsersRequest;
 import static com.jayway.restassured.RestAssured.given;
 
 
-public class POSTAdminUsersTest09 {
+public class Identity_Admin_UsersTest09 {
 
 	private String code;
     private String department;

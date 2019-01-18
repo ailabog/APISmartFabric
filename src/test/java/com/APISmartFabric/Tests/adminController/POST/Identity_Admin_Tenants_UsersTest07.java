@@ -5,7 +5,7 @@ import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.controller.AdminController.CreateAdminTenantsUsersRequest;
 import static com.jayway.restassured.RestAssured.given;
 
-public class POSTAdminTenantsUsersTest07 {
+public class Identity_Admin_Tenants_UsersTest07 {
 
 	final String id = "3566";
 	final String status = "ACTIVE";

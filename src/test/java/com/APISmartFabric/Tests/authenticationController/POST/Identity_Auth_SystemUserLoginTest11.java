@@ -12,7 +12,7 @@ import com.APISmartFabric.controller.AdminController.SystemLoginRequest;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class POSTSystemUserLoginTest11 {
+public class Identity_Auth_SystemUserLoginTest11 {
 
 	@Test
 	public void postSystemLogin() {

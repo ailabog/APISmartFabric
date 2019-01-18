@@ -8,12 +8,13 @@ import java.io.FileNotFoundException;
 
 /**
  * 
+/identity/admin/groups
 @author aila.bogasieru@agys.ch
  *
  */
 
 
-public class GETAdminGroupByGroupIdTest02 {
+public class Identity_Admin_Groups_ByGroupIdTest02 {
 	
 
 	private GroupIdsEnum GROUP;

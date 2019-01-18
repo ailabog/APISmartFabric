@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.controller.AdminController.CreateAdminTenantsRequest;
 
-public class POSTAdminTenantsTest05 {
+public class Identity_Admin_TenantsTest05 {
 	@Test
 	public void postAdminTenants() {
 		final String defaultUserEmail = "smart@yahoo.com";

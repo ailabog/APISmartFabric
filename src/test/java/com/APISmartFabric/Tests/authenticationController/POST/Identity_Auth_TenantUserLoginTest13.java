@@ -8,10 +8,30 @@ import org.testng.annotations.Test;
 
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.controller.AdminController.LoginRequest;
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.response.ResponseBody;
+import com.jayway.restassured.response.ResponseBodyExtractionOptions;
+import com.jayway.restassured.response.ResponseOptions;
+import com.jayway.restassured.specification.RequestSpecification;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class POSTLoginTest13 {
+import javax.naming.spi.DirStateFactory.Result;
+import javax.xml.ws.Response;
+
+public class Identity_Auth_TenantUserLoginTest13 {
+	
+	/*
+	
+	/*RequestSpecification httpRequest = RestAssured.given();
+	 Response response = (Response) httpRequest.get("/parameter");
+	 
+	 // Retrieve the body of the Response
+	 ResponseBody body = ((ResponseOptions<com.jayway.restassured.response.Response>) response).getBody();
+	 
+	 // By using the ResponseBody.asString() method, we can convert the  body
+	 // into the string representation.
+	 System.out.println("Response Body is: " + body.asString());*/
 
 	@Test
 	public void postLogin() {
