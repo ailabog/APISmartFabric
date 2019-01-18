@@ -3,7 +3,6 @@ package com.APISmartFabric.Tests.authenticationController.GET;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Enums.TenantDomainEnum;
-import com.APISmartFabric.Enums.UserIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
 import java.io.FileNotFoundException;

@@ -8,7 +8,6 @@ import java.io.FileNotFoundException;
 
 /**
  * 
-/identity/admin/groups
 @author aila.bogasieru@agys.ch
  *
  */

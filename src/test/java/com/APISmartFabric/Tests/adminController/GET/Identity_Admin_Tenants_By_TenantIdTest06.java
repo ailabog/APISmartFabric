@@ -1,7 +1,6 @@
 package com.APISmartFabric.Tests.adminController.GET;
 
 import org.testng.annotations.Test;
-import com.APISmartFabric.Enums.GroupIdsEnum;
 import com.APISmartFabric.Enums.TenantIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;

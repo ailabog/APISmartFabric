@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="3" ignored="0" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1416" started-at="2019-01-18T11:59:11Z" finished-at="2019-01-18T11:59:12Z">
+  <suite name="Default suite" duration-ms="1289" started-at="2019-01-18T12:31:18Z" finished-at="2019-01-18T12:31:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1416" started-at="2019-01-18T11:59:11Z" finished-at="2019-01-18T11:59:12Z">
+    <test name="Default test" duration-ms="1289" started-at="2019-01-18T12:31:18Z" finished-at="2019-01-18T12:31:19Z">
       <class name="com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19">
-        <test-method status="FAIL" signature="postTenantsGroupsUsers()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19@5c3bd550]" name="postTenantsGroupsUsers" duration-ms="1242" started-at="2019-01-18T11:59:11Z" finished-at="2019-01-18T11:59:12Z">
+        <test-method status="FAIL" signature="postTenantsGroupsUsers()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19@5c3bd550]" name="postTenantsGroupsUsers" duration-ms="1150" started-at="2019-01-18T12:31:18Z" finished-at="2019-01-18T12:31:19Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -50,7 +50,7 @@ at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCal
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19.postTenantsGroupsUsers(Identity_Tenants_Groups_UsersTest19.java:22)
+at com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19.postTenantsGroupsUsers(Identity_Tenants_Groups_UsersTest19.java:23)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -82,7 +82,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postTenantsGroupsUsers -->
-        <test-method status="FAIL" signature="postWrongTenantsGroupsUsers()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19@5c3bd550]" name="postWrongTenantsGroupsUsers" duration-ms="104" started-at="2019-01-18T11:59:12Z" finished-at="2019-01-18T11:59:12Z">
+        <test-method status="FAIL" signature="postWrongTenantsGroupsUsers()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19@5c3bd550]" name="postWrongTenantsGroupsUsers" duration-ms="44" started-at="2019-01-18T12:31:19Z" finished-at="2019-01-18T12:31:19Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -115,7 +115,7 @@ at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(Response
 at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19.postWrongTenantsGroupsUsers(Identity_Tenants_Groups_UsersTest19.java:33)
+at com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19.postWrongTenantsGroupsUsers(Identity_Tenants_Groups_UsersTest19.java:36)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -147,7 +147,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postWrongTenantsGroupsUsers -->
-        <test-method status="FAIL" signature="postWrongTenantsGroupsUsersNoAuthentication()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19@5c3bd550]" name="postWrongTenantsGroupsUsersNoAuthentication" duration-ms="32" started-at="2019-01-18T11:59:12Z" finished-at="2019-01-18T11:59:12Z">
+        <test-method status="FAIL" signature="postWrongTenantsGroupsUsersNoAuthentication()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19@5c3bd550]" name="postWrongTenantsGroupsUsersNoAuthentication" duration-ms="51" started-at="2019-01-18T12:31:19Z" finished-at="2019-01-18T12:31:19Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -180,7 +180,7 @@ at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(Response
 at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19.postWrongTenantsGroupsUsersNoAuthentication(Identity_Tenants_Groups_UsersTest19.java:43)
+at com.APISmartFabric.Tests.tenantController.POST.Identity_Tenants_Groups_UsersTest19.postWrongTenantsGroupsUsersNoAuthentication(Identity_Tenants_Groups_UsersTest19.java:46)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

@@ -98,6 +98,4 @@ public class Identity_Admin_UsersTest09 {
 				.then().statusCode(403);
 		// assertFalse(location.isEmpty());
 	}
-
-
 }

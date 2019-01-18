@@ -23,7 +23,6 @@ public class Identity_Admin_GroupsTest01 {
 	CreateAdminRequest createAdminGroups = new CreateAdminRequest(code, id, name, tenantId, type);
 	
 
-
 	@Test
 	public void postAdminGroup() {
 		given().header("principal",
