@@ -14,8 +14,8 @@ import java.io.FileNotFoundException;
 
 public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest45 {
 	
-	private String versionId  ="1111";
-	private String processDefinitionId  ="222";
+	private String versionId  ="e0216c9a-6f81-4d12-93f2-8b5f9bd2c2a6";
+	private String processDefinitionId  ="19d9b35f-7541-4861-85dd-3388331f1d5e";
 	private String invalidversionId  ="0";
 	private String invalidProcessDefinition="0";
 	private String nullVersionId="null";

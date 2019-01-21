@@ -12,7 +12,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class GUI_By_IdTest41 {
 	
-	private String id="4656546";
+	private String id="8b157cb6-4fc8-9026-2527-aca1c48feae0";
 	private String invalidId="4364";
 	private String nullId="null";
 
