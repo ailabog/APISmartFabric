@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 
 public class GUI_Used_Process_By_ProcessDefinitionIdTest44 {
 	
-	private String processDefinitionId  ="5f8e91e3-cf30-4b21-ad97-dd110816b109";
+	private String processDefinitionId  ="e53b8c55-76f5-4e55-81f6-306a2dae2017";
 	private String nullprocessDefinitionId  ="null";
 	private String invalidprocessDefinitionId  ="123456";
 
@@ -50,7 +50,7 @@ public class GUI_Used_Process_By_ProcessDefinitionIdTest44 {
 
 	
 	@Test
-	public void getGUIUsedProcessByNULLProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
+	public void getGUIUsedProcessByProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
 		given()	
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIUsedProcess") + processDefinitionId)

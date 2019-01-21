@@ -15,7 +15,6 @@ import java.io.FileNotFoundException;
 public class GUI_Portal_Detailed_ListTest35 {
 
 
-
 	@Test
 	public void getGUIPortalDEtailedList() throws FileNotFoundException {
 		given().header("principal",
