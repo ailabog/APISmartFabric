@@ -7,30 +7,28 @@ import java.io.FileNotFoundException;
 
 /**
  * 
-@author aila.bogasieru@agys.ch
+ * @author aila.bogasieru@agys.ch
  *
  */
 
-
-public class Identity_Tenants_UsersTest22 {
-
-
+public class Identity_Tenants_Users_Email_By_EmailTest27 {
 
 	@Test
-	public void getTenantsUsers() throws FileNotFoundException {
+	public void getTenantsUsersEmailByEmail() throws FileNotFoundException {
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsers"))
+				.when().contentType("application/json")
+				.get(CredentialsUtils.getProperty("baseURL")
+						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
+
 				.then().assertThat().statusCode(200);
 	}
 
-	
 	@Test
-	public void getTenantsUsersNoAuthentication() throws FileNotFoundException {
-		given()
-				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsers"))
+	public void getTenantsUsersEmailByEmailNoAuthentication() throws FileNotFoundException {
+		given().when().contentType("application/json")
+				.get(CredentialsUtils.getProperty("baseURL")
+						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
 				.then().assertThat().statusCode(403);
 	}
 }

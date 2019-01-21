@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
  */
 
 
-public class Identity_Tenants_Users_AvatarTest25 {
+public class Identity_Tenants_Users_AvatarTest26 {
 
 
 

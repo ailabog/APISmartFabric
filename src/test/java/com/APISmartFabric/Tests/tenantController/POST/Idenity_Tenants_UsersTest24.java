@@ -11,7 +11,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 import java.util.UUID;
 
-public class Idenity_Tenants_UsersTest23 {
+public class Idenity_Tenants_UsersTest24 {
 
 	final String code = "35";
 	final String id = "45654";
