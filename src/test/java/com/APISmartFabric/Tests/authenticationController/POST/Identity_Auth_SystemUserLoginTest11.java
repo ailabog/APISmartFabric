@@ -1,24 +1,24 @@
 package com.APISmartFabric.Tests.authenticationController.POST;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.testng.annotations.Test;
+import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
+import com.APISmartFabric.controller.AdminController.LoginRequest;
+import com.APISmartFabric.controller.AdminController.SystemLoginRequest;
+import com.jayway.restassured.http.ContentType;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author aila.bogasieru@agys.ch
  */
 
-import com.APISmartFabric.Utils.CredentialsUtils;
-import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.LoginRequest;
-import com.APISmartFabric.controller.AdminController.SystemLoginRequest;
-
 import static com.jayway.restassured.RestAssured.given;
+@Slf4j
 
 public class Identity_Auth_SystemUserLoginTest11 {
-	
-	private static final Logger logger = LoggerFactory.getLogger(Identity_Auth_SystemUserLoginTest11.class);
 
 
 	@Test
@@ -28,13 +28,13 @@ public class Identity_Auth_SystemUserLoginTest11 {
 		final String userPassword = "dfkhfgh94";
 	
 		SystemLoginRequest systemLogin = new SystemLoginRequest(tenantId, userEmail, userPassword);
-		given().contentType("application/json")
+		given().contentType(ContentType.JSON)
 				.body("{\"tenantId\" :\"" + systemLogin.getTenantDomain() + "\", \n" + "\"userEmail\":\""
 						+ systemLogin.getUserEmail() + "\", \n" + "\"userPassword\":\"" + systemLogin.getUserPassword() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem"))
 				.then().statusCode(200);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		logger.info("Response body" + responseR.response());
+		log.info("Response body" + responseR.response());
 		
 	}
 
@@ -44,12 +44,12 @@ public class Identity_Auth_SystemUserLoginTest11 {
 		final String userEmail = "test.user@gmail.com";
 		final String userPassword = null;
 		LoginRequest systemLogin = new LoginRequest(tenantId, userEmail, userPassword);
-		given().contentType("application/json")
+		given().contentType(ContentType.JSON)
 		.body("{\"tenantId\" :\"" + systemLogin.getTenantDomain() + "\", \n" + "\"userEmail\":\""
 				+ systemLogin.getUserEmail() + "\", \n" + "\"userPassword\":\"" + systemLogin.getUserPassword() + "\" }")
 		.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem"))
 				.then().statusCode(404);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		logger.info("Response body" + responseR.response());
+		log.info("Response body" + responseR.response());
 	}
 }

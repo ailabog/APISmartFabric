@@ -9,12 +9,12 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">1,275</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">2</td><td class="num">1,834</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24</td><td><a href="#m0">postUserData</a></td><td rowspan="1">1548155876982</td><td rowspan="1">1212</td></tr><tr class="failedeven"><td><a href="#m1">postWrongUserData</a></td><td rowspan="1">1548155878201</td><td rowspan="1">36</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21</td><td><a href="#m0">deleteGroupIdInvalid</a></td><td rowspan="1">1548163864091</td><td rowspan="1">1533</td></tr><tr class="failedeven"><td><a href="#m1">deleteGroupIdValidNoAuthentication</a></td><td rowspan="1">1548163865838</td><td rowspan="1">66</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21</td><td><a href="#m2">deleteGroupIdValid</a></td><td rowspan="1">1548163865628</td><td rowspan="1">209</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24#postUserData</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;201&gt; doesn&apos;t match actual status code &lt;500&gt;.
+<h2>Default test</h2><h3 id="m0">com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21#deleteGroupIdInvalid</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;500&gt;.
 
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -48,7 +48,7 @@ Expected status code &lt;201&gt; doesn&apos;t match actual status code &lt;500&g
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-	at com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24.postUserData(Idenity_Tenants_UsersTest24.java:50)
+	at com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.deleteGroupIdInvalid(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -75,8 +75,8 @@ Expected status code &lt;201&gt; doesn&apos;t match actual status code &lt;500&g
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24#postWrongUserData</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;500&gt;.
+<h3 id="m1">com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21#deleteGroupIdValidNoAuthentication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;403&gt; doesn&apos;t match actual status code &lt;500&gt;.
 
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -100,7 +100,7 @@ Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;500&g
 	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-	at com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24.postWrongUserData(Idenity_Tenants_UsersTest24.java:71)
+	at com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.deleteGroupIdValidNoAuthentication(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -127,5 +127,6 @@ Expected status code &lt;404&gt; doesn&apos;t match actual status code &lt;500&g
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21#deleteGroupIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

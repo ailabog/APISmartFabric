@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24">
+      <class name="com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21">
         <methods>
-          <include name="postWrongUserData"/>
-          <include name="postUserData"/>
+          <include name="deleteGroupIdValidNoAuthentication"/>
+          <include name="deleteGroupIdInvalid"/>
         </methods>
-      </class> <!-- com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24 -->
+      </class> <!-- com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

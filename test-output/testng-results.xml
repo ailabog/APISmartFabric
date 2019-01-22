@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="2" ignored="0" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1275" started-at="2019-01-22T11:17:56Z" finished-at="2019-01-22T11:17:58Z">
+  <suite name="Default suite" duration-ms="1834" started-at="2019-01-22T13:31:04Z" finished-at="2019-01-22T13:31:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1275" started-at="2019-01-22T11:17:56Z" finished-at="2019-01-22T11:17:58Z">
-      <class name="com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24">
-        <test-method status="FAIL" signature="postUserData()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24@204f30ec]" name="postUserData" duration-ms="1212" started-at="2019-01-22T11:17:56Z" finished-at="2019-01-22T11:17:58Z">
+    <test name="Default test" duration-ms="1834" started-at="2019-01-22T13:31:04Z" finished-at="2019-01-22T13:31:05Z">
+      <class name="com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21">
+        <test-method status="FAIL" signature="deleteGroupIdInvalid()[pri:0, instance:com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21@5e3a8624]" name="deleteGroupIdInvalid" duration-ms="1533" started-at="2019-01-22T13:31:04Z" finished-at="2019-01-22T13:31:05Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
-Expected status code <201> doesn't match actual status code <500>.
+Expected status code <404> doesn't match actual status code <500>.
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <201> doesn't match actual status code <500>.
+Expected status code <404> doesn't match actual status code <500>.
 
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -50,7 +50,7 @@ at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCal
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24.postUserData(Idenity_Tenants_UsersTest24.java:50)
+at com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.deleteGroupIdInvalid(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:29)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -81,17 +81,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postUserData -->
-        <test-method status="FAIL" signature="postWrongUserData()[pri:0, instance:com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24@204f30ec]" name="postWrongUserData" duration-ms="36" started-at="2019-01-22T11:17:58Z" finished-at="2019-01-22T11:17:58Z">
+        </test-method> <!-- deleteGroupIdInvalid -->
+        <test-method status="PASS" signature="deleteGroupIdValid()[pri:0, instance:com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21@5e3a8624]" name="deleteGroupIdValid" duration-ms="209" started-at="2019-01-22T13:31:05Z" finished-at="2019-01-22T13:31:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteGroupIdValid -->
+        <test-method status="FAIL" signature="deleteGroupIdValidNoAuthentication()[pri:0, instance:com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21@5e3a8624]" name="deleteGroupIdValidNoAuthentication" duration-ms="66" started-at="2019-01-22T13:31:05Z" finished-at="2019-01-22T13:31:05Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
-Expected status code <404> doesn't match actual status code <500>.
+Expected status code <403> doesn't match actual status code <500>.
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <404> doesn't match actual status code <500>.
+Expected status code <403> doesn't match actual status code <500>.
 
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -115,7 +119,7 @@ at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(Response
 at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24.postWrongUserData(Idenity_Tenants_UsersTest24.java:71)
+at com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.deleteGroupIdValidNoAuthentication(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:50)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -146,8 +150,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postWrongUserData -->
-      </class> <!-- com.APISmartFabric.Tests.tenantController.POST.Idenity_Tenants_UsersTest24 -->
+        </test-method> <!-- deleteGroupIdValidNoAuthentication -->
+      </class> <!-- com.APISmartFabric.Tests.tenantController.DELETE.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

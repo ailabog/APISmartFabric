@@ -1,11 +1,19 @@
 package com.APISmartFabric.controller.AdminController;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author aila.bogasieru@agys.ch 
  * 
  POST /identity/admin/tenants
  * 
  */
+@Getter 
+@Setter 
+@AllArgsConstructor
+
 public class CreateAdminTenantsRequest {
 
 	private String defaultUserEmail;
@@ -13,53 +21,5 @@ public class CreateAdminTenantsRequest {
 	private String domain;
 	private String name;
 	private String status;
-
-	public CreateAdminTenantsRequest(String defaultUserEmail, String defaultUserPassword, String domain, String name, String status) {
-
-		this.defaultUserEmail = defaultUserEmail;
-		this.defaultUserPassword = defaultUserPassword;
-		this.domain = domain;
-		this.name = name;
-		this.status = status;
-	}
 	
-	public void setDefaultUserEmail(String defaultUserEmail) {
-		this.defaultUserEmail = defaultUserEmail;
-	}
-
-	public String getDefaultUserPassword() {
-		return defaultUserPassword;
-	}
-
-	public void setDefaultUserPassword(String defaultUserPassword) {
-		this.defaultUserPassword = defaultUserPassword;
-	}
-
-	public String getDomain() {
-		return domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	
-	public String getDefaultUserEmail() {
-		return defaultUserEmail;
-	}
 }
