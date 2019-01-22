@@ -26,7 +26,7 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK1.getId())
 				.then().assertThat().statusCode(200);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Users_ByUserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK1.getId());
 	}
 
@@ -37,7 +37,7 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Users_ByUserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_INVALID.getId());
 	}
 
@@ -48,7 +48,7 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_NULL.getId())
 				.then().assertThat().statusCode(404);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Users_ByUserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_NULL.getId());
 	}
 
@@ -57,7 +57,7 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 		given().when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId()).then().assertThat()
 				.statusCode(403);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Users_ByUserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId());
 	}
 

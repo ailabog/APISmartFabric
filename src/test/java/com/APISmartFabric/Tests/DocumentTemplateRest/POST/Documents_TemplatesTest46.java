@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.DocumentTemplateRest.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 /**
@@ -11,10 +13,13 @@ import org.testng.annotations.Test;
  */
 
 import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
 import com.APISmartFabric.controller.AdminController.CreateDocumentsTemplatesRequest;
 import static com.jayway.restassured.RestAssured.given;
 
 public class Documents_TemplatesTest46 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Documents_TemplatesTest46.class);
 
 	private String description = "Description";
 	private String h = "0";
@@ -49,6 +54,8 @@ public class Documents_TemplatesTest46 {
 						+ "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURLDocuments") + CredentialsUtils.getProperty("middleURLDocumentsTemplates"))
 				.then().statusCode(200);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 	
 	@Test
@@ -68,6 +75,8 @@ public class Documents_TemplatesTest46 {
 						+ "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURLDocuments") + CredentialsUtils.getProperty("middleURLDocumentsTemplates"))
 				.then().statusCode(403);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -89,5 +98,7 @@ public class Documents_TemplatesTest46 {
 						+ "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURLDocuments") + CredentialsUtils.getProperty("middleURLDocumentsTemplates"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 }

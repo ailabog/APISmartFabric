@@ -25,7 +25,7 @@ public class GUI_Control_ListTest38 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlList"))
 					.then().assertThat().statusCode(200);
-		logger.info("Identity_Admin_Groups_By GroupId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLGUIControlList"));
 	}
 	

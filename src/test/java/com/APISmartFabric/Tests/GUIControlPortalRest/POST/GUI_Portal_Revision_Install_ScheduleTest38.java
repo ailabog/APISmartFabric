@@ -1,11 +1,17 @@
 package com.APISmartFabric.Tests.GUIControlPortalRest.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
+
 import static com.jayway.restassured.RestAssured.given;
 
 
 public class GUI_Portal_Revision_Install_ScheduleTest38 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(GUI_Portal_Revision_Install_ScheduleTest38.class);
 	
 	private String active = "true";
 	private String guiControlId ="2453645734-76345735-2576348534";
@@ -24,6 +30,8 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 						+ "\"toBeInstalledGUIControlRevisionId\":\"" + toBeInstalledGUIControlRevisionId  + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUIPortalRevisionInstallList"))
 				.then().statusCode(200);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 		
 	}
 
@@ -36,5 +44,7 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 						+ "\"toBeInstalledGUIControlRevisionId\":\"" + toBeInstalledGUIControlRevisionId  + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUIPortalRevisionInstallList"))
 				.then().statusCode(403);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 }

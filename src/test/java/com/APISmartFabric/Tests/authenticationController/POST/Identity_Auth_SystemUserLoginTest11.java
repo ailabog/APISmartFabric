@@ -1,20 +1,25 @@
 package com.APISmartFabric.Tests.authenticationController.POST;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-
 
 /**
  * @author aila.bogasieru@agys.ch
  */
 
 import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
 import com.APISmartFabric.controller.AdminController.LoginRequest;
 import com.APISmartFabric.controller.AdminController.SystemLoginRequest;
 
 import static com.jayway.restassured.RestAssured.given;
 
 public class Identity_Auth_SystemUserLoginTest11 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Auth_SystemUserLoginTest11.class);
+
 
 	@Test
 	public void postSystemLogin() {
@@ -28,6 +33,8 @@ public class Identity_Auth_SystemUserLoginTest11 {
 						+ systemLogin.getUserEmail() + "\", \n" + "\"userPassword\":\"" + systemLogin.getUserPassword() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem"))
 				.then().statusCode(200);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 		
 	}
 
@@ -42,5 +49,7 @@ public class Identity_Auth_SystemUserLoginTest11 {
 				+ systemLogin.getUserEmail() + "\", \n" + "\"userPassword\":\"" + systemLogin.getUserPassword() + "\" }")
 		.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 }

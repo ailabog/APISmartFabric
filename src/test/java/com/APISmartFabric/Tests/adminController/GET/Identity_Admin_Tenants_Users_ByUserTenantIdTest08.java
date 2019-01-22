@@ -28,7 +28,7 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK1.getId())
 				.then().assertThat().statusCode(200);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK1.getId());
 	}
 
@@ -39,7 +39,7 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_INVALID.getId());
 	}
 	
@@ -50,7 +50,7 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_NULL.getId())
 				.then().assertThat().statusCode(404);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_NULL.getId());
 	}
 	
@@ -60,7 +60,7 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK2.getId())
 				.then().assertThat().statusCode(403);
-		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK2.getId());
 	}
 }

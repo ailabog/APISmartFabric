@@ -1,7 +1,10 @@
 package com.APISmartFabric.Tests.adminController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
 import com.APISmartFabric.controller.AdminController.CreateAdminTenantsUsersRequest;
 import static com.jayway.restassured.RestAssured.given;
 
@@ -11,6 +14,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 	final String status = "ACTIVE";
 	final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
 	final String userId = "cddef63d-5065-4b85-b685-0811c67b3b8a";
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Admin_Tenants_UsersTest07.class);
 
 	CreateAdminTenantsUsersRequest createAdmninTenantUsers = new CreateAdminTenantsUsersRequest(id, status, tenantId,
 			userId);
@@ -27,7 +31,8 @@ public class Identity_Admin_Tenants_UsersTest07 {
 				.when().post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers"))
 				.then().statusCode(201);
-		// assertFalse(location.isEmpty());
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -41,6 +46,8 @@ public class Identity_Admin_Tenants_UsersTest07 {
 				.when().post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -53,7 +60,8 @@ public class Identity_Admin_Tenants_UsersTest07 {
 				.when().post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers"))
 				.then().statusCode(201);
-		// assertFalse(location.isEmpty());
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 }

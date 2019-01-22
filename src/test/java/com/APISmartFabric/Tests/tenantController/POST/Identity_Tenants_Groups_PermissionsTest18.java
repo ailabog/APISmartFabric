@@ -1,13 +1,19 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
 import com.APISmartFabric.controller.AdminController.CreateTenantsGroupsPermissionsRequest;
 import static com.jayway.restassured.RestAssured.given;
 
 
 public class Identity_Tenants_Groups_PermissionsTest18 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_Groups_PermissionsTest18.class);
+
 
 	final String groupId = "da26c865-4ef0-4e33-87fe-54fdec501ec5";
 	final String id = "45656786784";
@@ -27,7 +33,8 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 				+ "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middlerURLTenantsGroupsPermissions"))
 				.then().statusCode(201);
-		// assertFalse(location.isEmpty());
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -40,6 +47,8 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 				+ "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middlerURLTenantsGroupsPermissions"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 	
 	@Test
@@ -51,6 +60,8 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 				+ "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middlerURLTenantsGroupsPermissions"))
 				.then().statusCode(403);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
    }
 
 }

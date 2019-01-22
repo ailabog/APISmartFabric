@@ -14,7 +14,6 @@ public class RensposeBodyDisplay {
 	RequestSpecification httpRequest = RestAssured.given();
 	Response response = (Response) httpRequest.get("/users");
 	ResponseBody body = ((ResponseOptions<com.jayway.restassured.response.Response>) response).getBody();
-//	System.out.println("Response Body is: " + body.asString());
 	return body.asString();
 	}
 }

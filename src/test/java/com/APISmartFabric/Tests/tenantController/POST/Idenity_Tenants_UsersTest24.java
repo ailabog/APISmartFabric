@@ -1,8 +1,10 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-
 import com.APISmartFabric.Utils.CredentialsUtils;
+import com.APISmartFabric.Utils.RensposeBodyDisplay;
 import com.APISmartFabric.controller.AdminController.CreateUserRequest;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
@@ -12,6 +14,8 @@ import static com.jayway.restassured.RestAssured.given;
 import java.util.UUID;
 
 public class Idenity_Tenants_UsersTest24 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Idenity_Tenants_UsersTest24.class);
 
 	final String code = "35";
 	final String id = "45654";
@@ -48,7 +52,8 @@ public class Idenity_Tenants_UsersTest24 {
 						+ "\"tokenExpiry\":\"" + createUser.getTokenExpiry() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLUser"))
 				.then().statusCode(201);
-		// assertFalse(location.isEmpty());
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -65,6 +70,8 @@ public class Idenity_Tenants_UsersTest24 {
 						+ "\"tokenExpiry\":\"" + createUser.getTokenExpiry() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLUser"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 }

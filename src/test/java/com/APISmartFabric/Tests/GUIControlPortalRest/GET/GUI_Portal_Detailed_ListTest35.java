@@ -26,6 +26,8 @@ public class GUI_Portal_Detailed_ListTest35 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"))
 				.then().assertThat().statusCode(200);
+		logger.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"));
 	}
 
 	
@@ -35,5 +37,8 @@ public class GUI_Portal_Detailed_ListTest35 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"))
 				.then().assertThat().statusCode(403);
+		.then().assertThat().statusCode(200);
+		logger.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"));
 	}
 }

@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Enums.UserIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
@@ -9,6 +11,9 @@ import java.util.*;
 
 
 public class Identity_Tenants_Groups_UsersTest19 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_Groups_UsersTest19.class);
+		
 
 	private List<UserIdsEnum> userList = Arrays.asList(UserIdsEnum.USER_OK1, UserIdsEnum.USER_OK2, UserIdsEnum.USER_OK3,
 			UserIdsEnum.USER_OK4, UserIdsEnum.USER_OK5);
@@ -23,7 +28,6 @@ public class Identity_Tenants_Groups_UsersTest19 {
 			.then().statusCode(201);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		responseR.response();
-		// assertFalse(location.isEmpty());
 	}
 
 	@Test
@@ -34,6 +38,8 @@ public class Identity_Tenants_Groups_UsersTest19 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -43,5 +49,7 @@ public class Identity_Tenants_Groups_UsersTest19 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
 				.then().statusCode(403);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 }

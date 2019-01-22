@@ -1,18 +1,19 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Enums.UserIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
 import static com.jayway.restassured.RestAssured.given;
-import java.util.*;
-
 
 public class Identity_Tenants_UsersTenantsTest33 {
-	
+
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_UsersTenantsTest33.class);
+
 	private UserIdsEnum USER;
 
-	
 	@Test
 	public void postTenantsGroupsUsers() {
 		given().header("principal",
@@ -20,10 +21,9 @@ public class Identity_Tenants_UsersTenantsTest33 {
 				.contentType("application/json").body("{\"code\":\"" + USER.USER_OK4.getId() + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants"))
-			.then().statusCode(201);
+				.then().statusCode(201);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		responseR.response();
-		// assertFalse(location.isEmpty());
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -34,14 +34,16 @@ public class Identity_Tenants_UsersTenantsTest33 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants"))
 				.then().statusCode(404);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 
 	@Test
 	public void postWrongTenantsGroupsUsersNoAuthentication() {
-		given().
-				contentType("application/json").body("{\"code\":\"" + USER.USER_OK3.getId() + "\" ]").when()
-				.post(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
+		given().contentType("application/json").body("{\"code\":\"" + USER.USER_OK3.getId() + "\" ]").when().post(
+				CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
 				.then().statusCode(403);
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		logger.info("Response body" + responseR.response());
 	}
 }

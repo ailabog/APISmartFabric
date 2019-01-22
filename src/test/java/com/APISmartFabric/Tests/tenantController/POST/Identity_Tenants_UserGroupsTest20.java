@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Enums.GroupIdsEnum;
@@ -9,6 +11,8 @@ import static com.jayway.restassured.RestAssured.given;
 
 
 public class Identity_Tenants_UserGroupsTest20 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_UserGroupsTest20.class);
 
 	private GroupIdsEnum GROUPS;
 	

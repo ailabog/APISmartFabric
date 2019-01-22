@@ -27,7 +27,7 @@ public class Identity_Tenants_UsersTenants_By_UserIdTest34 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_OK2.getId())
 				.then().assertThat().statusCode(200);
-		logger.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Tenants_UsersTenants_By_UserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_OK2.getId());
 	}
 
@@ -39,7 +39,7 @@ public class Identity_Tenants_UsersTenants_By_UserIdTest34 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		logger.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Tenants_UsersTenants_By_UserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_INVALID.getId());
 	}
 
@@ -51,7 +51,7 @@ public class Identity_Tenants_UsersTenants_By_UserIdTest34 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_NULL.getId())
 				.then().assertThat().statusCode(404);
-		logger.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Tenants_UsersTenants_By_UserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_NULL.getId());
 	}
 
@@ -61,7 +61,7 @@ public class Identity_Tenants_UsersTenants_By_UserIdTest34 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_OK1.getId())
 				.then().assertThat().statusCode(403);
-		logger.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		logger.info("Identity_Tenants_UsersTenants_By_UserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_OK1.getId());
 	}
 }
