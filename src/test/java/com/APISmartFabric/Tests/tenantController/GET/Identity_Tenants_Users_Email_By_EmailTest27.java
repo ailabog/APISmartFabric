@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.tenantController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -12,6 +14,7 @@ import java.io.FileNotFoundException;
  */
 
 public class Identity_Tenants_Users_Email_By_EmailTest27 {
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_Users_Email_By_EmailTest27.class);
 
 	@Test
 	public void getTenantsUsersEmailByEmail() throws FileNotFoundException {
@@ -22,6 +25,8 @@ public class Identity_Tenants_Users_Email_By_EmailTest27 {
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
 
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch");
 	}
 
 	@Test
@@ -30,5 +35,7 @@ public class Identity_Tenants_Users_Email_By_EmailTest27 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch");
 	}
 }

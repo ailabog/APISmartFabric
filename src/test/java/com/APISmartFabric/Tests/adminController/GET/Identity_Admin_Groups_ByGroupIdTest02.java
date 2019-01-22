@@ -1,30 +1,33 @@
 package com.APISmartFabric.Tests.adminController.GET;
 
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Enums.GroupIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
 import java.io.FileNotFoundException;
+import org.slf4j.Logger;
 
 /**
  * 
-@author aila.bogasieru@agys.ch
+ * @author aila.bogasieru@agys.ch
  *
  */
 
-
 public class Identity_Admin_Groups_ByGroupIdTest02 {
-	
 
 	private GroupIdsEnum GROUP;
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Admin_Groups_ByGroupIdTest02.class);
 
 	@Test
 	public void getUserById() throws FileNotFoundException {
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdmin") + GROUP.GROUP_OK1.getId())
+						+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK1.getId())
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK1.getId()));
 	}
 
 	@Test
@@ -32,24 +35,30 @@ public class Identity_Admin_Groups_ByGroupIdTest02 {
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdmin") + GROUP.GROUP_INVALID.getId())
+						+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_INVALID.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_INVALID.getId()));
 	}
-	
+
 	@Test
 	public void getUserByNullId() throws FileNotFoundException {
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdmin") + GROUP.GROUP_NULL.getId())
+						+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_NULL.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_NULL.getId()));
+
 	}
-	
+
 	@Test
 	public void getUserByIdNoAuthentication() throws FileNotFoundException {
-		given()
-				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdmin") + GROUP.GROUP_OK2.getId())
-				.then().assertThat().statusCode(403);
+		given().when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK2.getId()).then().assertThat()
+				.statusCode(403);
+		logger.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK2.getId()));
 	}
 }

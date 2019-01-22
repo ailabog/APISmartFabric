@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.tenantController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -13,6 +15,9 @@ import java.io.FileNotFoundException;
 
 
 public class Identity_Tenants_Users_ProfileTest31 {
+	
+	private static final Logger logger = LoggerFactory
+			.getLogger(Identity_Tenants_Users_ProfileTest31.class);
 
 
 
@@ -23,6 +28,8 @@ public class Identity_Tenants_Users_ProfileTest31 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersProfile"))
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLTenantsUsersProfile"));
 	}
 
 	
@@ -32,5 +39,7 @@ public class Identity_Tenants_Users_ProfileTest31 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersProfile"))
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLTenantsUsersProfile"));
 	}
 }

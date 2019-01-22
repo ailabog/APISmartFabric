@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.GUIControlPortalRest.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -13,6 +15,8 @@ import java.io.FileNotFoundException;
 
 
 public class GUI_Portal_Detailed_ListTest35 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(GUI_Portal_Detailed_ListTest35.class);
 
 
 	@Test

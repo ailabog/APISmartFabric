@@ -1,5 +1,7 @@
-package com.APISmartFabric.Tests.GUIControlRest;
+package com.APISmartFabric.Tests.GUIControlRest.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -13,6 +15,7 @@ import java.io.FileNotFoundException;
 
 
 public class GUI_Control_Revision_SaveTest39 {
+	private static final Logger logger = LoggerFactory.getLogger(GUI_Control_Revision_SaveTest39.class);
 
 	@Test
 	public void getGUIControlRevisionSave() throws FileNotFoundException {
@@ -21,6 +24,8 @@ public class GUI_Control_Revision_SaveTest39 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"))
 					.then().assertThat().statusCode(200);
+		logger.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"));
 	}
 	
 	
@@ -30,5 +35,7 @@ public class GUI_Control_Revision_SaveTest39 {
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"))
 		.then().assertThat().statusCode(403);
+		logger.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"));
 	}
 }

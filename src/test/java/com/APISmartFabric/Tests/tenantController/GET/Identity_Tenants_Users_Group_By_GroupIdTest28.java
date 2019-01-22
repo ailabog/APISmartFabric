@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.tenantController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Enums.GroupIdsEnum;
@@ -16,6 +18,7 @@ import java.io.FileNotFoundException;
 public class Identity_Tenants_Users_Group_By_GroupIdTest28 {
 
 	private GroupIdsEnum GROUP;
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_Users_Group_By_GroupIdTest28.class);
 
 	@Test
 	public void getTenantsUsersGroupByGroupId() throws FileNotFoundException {
@@ -25,6 +28,8 @@ public class Identity_Tenants_Users_Group_By_GroupIdTest28 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersGroups") + GROUP.GROUP_OK4.getId())
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + GROUP.GROUP_OK4.getId());
 	}
 
 	@Test
@@ -33,5 +38,7 @@ public class Identity_Tenants_Users_Group_By_GroupIdTest28 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersGroups") + GROUP.GROUP_OK5.getId())
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + GROUP.GROUP_OK5.getId());
 	}
 }

@@ -3,15 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.APISmartFabric.Tests.GUIRest.GET.GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest45">
+      <class name="com.APISmartFabric.Tests.adminController.GET.Identity_Admin_Groups_ByGroupIdTest02">
         <methods>
-          <include name="getGUIVersionByInvalidVersionIdProcessDefinitionByInvalidProcessDefinitionId"/>
-          <include name="getGUIVersionByNULLVersionIdProcessDefinitionByNULLProcessDefinitionId"/>
-          <include name="getGUIVersionByInvalidVersionIdProcessDefinitionByProcessDefinitionId"/>
-          <include name="getGUIVersionByVersionIdProcessDefinitionByInvalidProcessDefinitionId"/>
-          <include name="getGUIUsedProcessByNULLProcessDefinitionIdNoAuthentication"/>
+          <include name="getUserByNullId"/>
+          <include name="getUserByInvalidId"/>
+          <include name="getUserByIdNoAuthentication"/>
         </methods>
-      </class> <!-- com.APISmartFabric.Tests.GUIRest.GET.GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest45 -->
+      </class> <!-- com.APISmartFabric.Tests.adminController.GET.Identity_Admin_Groups_ByGroupIdTest02 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.adminController.POST;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.controller.AdminController.CreateAdminGroupsUsersRequest;
@@ -17,6 +19,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 	final String id = "46546546";
 	final String isManager = "true";
 	final String userId = "a6t670eec-762c-4f5c77-a599-17777kk477b0";
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Admin_Groups_UsersTest03.class);
 	
 	CreateAdminGroupsUsersRequest createAdminGroupUsers = new CreateAdminGroupsUsersRequest(groupId, id, isManager, userId);
 
@@ -30,6 +33,8 @@ public class Identity_Admin_Groups_UsersTest03 {
 					   + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers"))
 				.then().statusCode(201);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers"));
 	}
 
 	@Test
@@ -42,6 +47,8 @@ public class Identity_Admin_Groups_UsersTest03 {
 					   + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers"))
 				.then().statusCode(404);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers"));
 	}
 
 }

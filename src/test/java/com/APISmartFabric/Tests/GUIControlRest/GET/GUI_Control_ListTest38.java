@@ -1,5 +1,7 @@
-package com.APISmartFabric.Tests.GUIControlRest;
+package com.APISmartFabric.Tests.GUIControlRest.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -13,6 +15,8 @@ import java.io.FileNotFoundException;
 
 
 public class GUI_Control_ListTest38 {
+	
+	private static final Logger logger = LoggerFactory.getLogger(GUI_Control_ListTest38.class);
 
 	@Test
 	public void getGUIControlList() throws FileNotFoundException {
@@ -21,6 +25,8 @@ public class GUI_Control_ListTest38 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlList"))
 					.then().assertThat().statusCode(200);
+		logger.info("Identity_Admin_Groups_By GroupId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlList"));
 	}
 	
 	
@@ -30,5 +36,7 @@ public class GUI_Control_ListTest38 {
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlList"))
 		.then().assertThat().statusCode(403);
+		logger.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlList"));
 	}
 }

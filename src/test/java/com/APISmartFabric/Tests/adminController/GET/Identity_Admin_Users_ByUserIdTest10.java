@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.adminController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Enums.UserIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
@@ -8,15 +10,14 @@ import java.io.FileNotFoundException;
 
 /**
  * 
-@author aila.bogasieru@agys.ch
+ * @author aila.bogasieru@agys.ch
  *
  */
 
-
 public class Identity_Admin_Users_ByUserIdTest10 {
-	
 
 	private UserIdsEnum USER;
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Admin_Users_ByUserIdTest10.class);
 
 	@Test
 	public void getAdminUserByUserId() throws FileNotFoundException {
@@ -25,6 +26,8 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK1.getId())
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK1.getId());
 	}
 
 	@Test
@@ -34,8 +37,10 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_INVALID.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_INVALID.getId());
 	}
-	
+
 	@Test
 	public void getAdminUserByNULLUserId() throws FileNotFoundException {
 		given().header("principal",
@@ -43,13 +48,17 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_NULL.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_NULL.getId());
 	}
-	
+
 	@Test
 	public void getAdminUserByUserIdNoAuthentication() throws FileNotFoundException {
-		given()
-				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId())
-				.then().assertThat().statusCode(403);
+		given().when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId()).then().assertThat()
+				.statusCode(403);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId());
 	}
+
 }

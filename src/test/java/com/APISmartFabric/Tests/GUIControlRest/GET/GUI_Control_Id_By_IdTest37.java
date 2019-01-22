@@ -1,5 +1,7 @@
-package com.APISmartFabric.Tests.GUIControlRest;
+package com.APISmartFabric.Tests.GUIControlRest.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -17,6 +19,7 @@ public class GUI_Control_Id_By_IdTest37 {
 	private String id  ="d8ebe677-3b25-68d3-d61c-c62e06eb0d0b";
 	private String invalidId ="35346546";
 	private String nullId ="null";
+	private static final Logger logger = LoggerFactory.getLogger(GUI_Control_Id_By_IdTest37.class);
 
 
 
@@ -27,6 +30,8 @@ public class GUI_Control_Id_By_IdTest37 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlId") + id)
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Admin_Groups_By GroupId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLGUIControlId") + id);
 	}
 	
 	@Test
@@ -36,6 +41,8 @@ public class GUI_Control_Id_By_IdTest37 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlId") + invalidId)
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Groups_By GroupId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlId") + invalidId);
 	}
 	
 	@Test
@@ -45,6 +52,8 @@ public class GUI_Control_Id_By_IdTest37 {
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlId") + nullId)
 		.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Groups_By GroupId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlId") + nullId);
 	}
 
 
@@ -55,5 +64,7 @@ public class GUI_Control_Id_By_IdTest37 {
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlId") + id)
 		.then().assertThat().statusCode(403);
+		logger.info("Identity_Admin_Groups_By GroupId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIControlId") + id);
 	}
 }

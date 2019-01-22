@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.SystemController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.APISmartFabric.Enums.GroupIdsEnum;
@@ -9,16 +11,14 @@ import java.io.FileNotFoundException;
 
 /**
  * 
-@author aila.bogasieru@agys.ch
+ * @author aila.bogasieru@agys.ch
  *
  */
 
-
 public class Identity_Tenants_Groups_By_GrouspIdTest17 {
-	
+
 	private GroupIdsEnum GROUP;
-
-
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Tenants_Groups_By_GrouspIdTest17.class);
 
 	@Test
 	public void getTenantsGroupsByGroupId() throws FileNotFoundException {
@@ -27,9 +27,10 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_OK1.getId())
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_OK1.getId());
 	}
 
-	
 	@Test
 	public void getTenantsGroupsByInvalidGroupId() throws FileNotFoundException {
 		given().header("principal",
@@ -37,8 +38,10 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_INVALID.getId())
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_INVALID.getId());
 	}
-	
+
 	@Test
 	public void getTenantsGroupsByNullGroupId() throws FileNotFoundException {
 		given().header("principal",
@@ -46,13 +49,17 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_NULL.getId())
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_NULL.getId());
 	}
-	
+
 	@Test
 	public void getTenantsGroupsByGroupIdNoAuthentication() throws FileNotFoundException {
-		given().
-				when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem") + GROUP.GROUP_NULL.getId())
+		given().when().contentType("application/json")
+				.get(CredentialsUtils.getProperty("baseURL")
+						+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem") + GROUP.GROUP_OK2.getId())
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_OK2.getId());
 	}
 }

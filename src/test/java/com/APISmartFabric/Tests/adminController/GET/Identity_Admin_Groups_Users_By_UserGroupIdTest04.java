@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.adminController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Enums.UsersGroupsIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
@@ -17,6 +19,7 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 	
 
 	private UsersGroupsIdsEnum USERGROUP;
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Admin_Groups_Users_By_UserGroupIdTest04.class);
 	
 	final String groupId = "4354646";
 	final String id = "46546546";
@@ -30,6 +33,8 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_OK1.getId())
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+						+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_OK1.getId());
 	}
 
 	@Test
@@ -39,6 +44,8 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_OK2.getId())
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_OK2.getId());
 	}
 	
 	@Test
@@ -48,6 +55,8 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_NULL.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_NULL.getId());
 	}
 	
 
@@ -58,5 +67,7 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_INVALID.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminGroupsUsers") + USERGROUP.USERSGROUPS_INVALID.getId());
 	}
 }

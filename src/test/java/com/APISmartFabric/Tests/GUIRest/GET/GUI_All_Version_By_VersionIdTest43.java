@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.GUIRest.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import static com.jayway.restassured.RestAssured.given;
@@ -17,6 +19,7 @@ public class GUI_All_Version_By_VersionIdTest43 {
 	private String versionId  ="e0216c9a-6f81-4d12-93f2-8b5f9bd2c2a6";
 	private String invalidVersionId = "0";
 	private  String nullVersionId ="null";
+	private static final Logger logger = LoggerFactory.getLogger(GUI_All_Version_By_VersionIdTest43.class);
 	
 
 	@Test
@@ -26,6 +29,8 @@ public class GUI_All_Version_By_VersionIdTest43 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId)
 				.then().assertThat().statusCode(200);
+		logger.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId);
 	}
 	
 	@Test
@@ -35,6 +40,8 @@ public class GUI_All_Version_By_VersionIdTest43 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + invalidVersionId)
 				.then().assertThat().statusCode(404);
+		logger.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + invalidVersionId);
 	}
 	
 	@Test
@@ -44,8 +51,9 @@ public class GUI_All_Version_By_VersionIdTest43 {
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + nullVersionId)
 		.then().assertThat().statusCode(404);
+		logger.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + nullVersionId);
 	}
-
 
 	
 	@Test
@@ -54,5 +62,7 @@ public class GUI_All_Version_By_VersionIdTest43 {
 		.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId)
 		.then().assertThat().statusCode(403);
+		logger.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId);
 	}
 }

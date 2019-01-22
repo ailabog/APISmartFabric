@@ -1,6 +1,8 @@
 package com.APISmartFabric.Tests.authenticationController.POST;
 
+
 import org.testng.annotations.Test;
+
 
 /**
  * @author aila.bogasieru@agys.ch
@@ -19,13 +21,14 @@ public class Identity_Auth_SystemUserLoginTest11 {
 		final String tenantId = "dacb0d16-6f03-4dff-a485-8d123376cac0";
 		final String userEmail = "fabric_user@agys.ch";
 		final String userPassword = "dfkhfgh94";
-
+	
 		SystemLoginRequest systemLogin = new SystemLoginRequest(tenantId, userEmail, userPassword);
 		given().contentType("application/json")
 				.body("{\"tenantId\" :\"" + systemLogin.getTenantDomain() + "\", \n" + "\"userEmail\":\""
 						+ systemLogin.getUserEmail() + "\", \n" + "\"userPassword\":\"" + systemLogin.getUserPassword() + "\" }")
 				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem"))
 				.then().statusCode(200);
+		
 	}
 
 	@Test

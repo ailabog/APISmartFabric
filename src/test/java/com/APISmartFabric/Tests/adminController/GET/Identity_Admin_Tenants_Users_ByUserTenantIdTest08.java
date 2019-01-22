@@ -1,5 +1,7 @@
 package com.APISmartFabric.Tests.adminController.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Enums.UsersTenantsIdsEnum;
 import com.APISmartFabric.Utils.CredentialsUtils;
@@ -17,6 +19,7 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 	
 
 	private UsersTenantsIdsEnum USER_TENANT;
+	private static final Logger logger = LoggerFactory.getLogger(Identity_Admin_Tenants_Users_ByUserTenantIdTest08.class);
 
 	@Test
 	public void getUserTenantById() throws FileNotFoundException {
@@ -25,6 +28,8 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK1.getId())
 				.then().assertThat().statusCode(200);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK1.getId());
 	}
 
 	@Test
@@ -34,6 +39,8 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_INVALID.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_INVALID.getId());
 	}
 	
 	@Test
@@ -43,6 +50,8 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_NULL.getId())
 				.then().assertThat().statusCode(404);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_NULL.getId());
 	}
 	
 	@Test
@@ -51,5 +60,7 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK2.getId())
 				.then().assertThat().statusCode(403);
+		logger.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK2.getId());
 	}
 }
