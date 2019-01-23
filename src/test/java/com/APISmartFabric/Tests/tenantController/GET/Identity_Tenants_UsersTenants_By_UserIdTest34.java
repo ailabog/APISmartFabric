@@ -59,7 +59,7 @@ public class Identity_Tenants_UsersTenants_By_UserIdTest34 {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_OK1.getId())
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_UsersTenants_By_UserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersTenants") + USERS.USER_OK1.getId());
 	}

@@ -36,7 +36,7 @@ public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + managerId)
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + managerId);
 	}

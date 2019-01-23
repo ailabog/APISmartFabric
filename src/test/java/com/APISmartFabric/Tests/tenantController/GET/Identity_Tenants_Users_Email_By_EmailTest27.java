@@ -34,7 +34,7 @@ public class Identity_Tenants_Users_Email_By_EmailTest27 {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch");
 	}

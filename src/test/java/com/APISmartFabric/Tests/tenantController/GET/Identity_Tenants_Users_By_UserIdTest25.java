@@ -56,7 +56,7 @@ public class Identity_Tenants_Users_By_UserIdTest25 {
 	public void getTenantsUsersByUserIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsers") + USERS.USER_OK1.getId()).then().assertThat()
-				.statusCode(403);
+				.statusCode(401);
 		log.info("Identity_Tenants_Users_By_UserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUsers") + USERS.USER_OK1.getId());
 	}

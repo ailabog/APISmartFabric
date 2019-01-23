@@ -64,7 +64,7 @@ public class Identity_Tenants_UserGroups_By_IdsTest22 {
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
 						+ USERGROUPS.USERSGROUPS_OK1.getId())
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_UserGroups_By_Ids" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") + USERGROUPS.USERSGROUPS_OK1.getId());
 	}
