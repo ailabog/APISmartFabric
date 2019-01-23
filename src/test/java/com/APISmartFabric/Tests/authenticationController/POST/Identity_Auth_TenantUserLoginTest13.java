@@ -36,7 +36,7 @@ public class Identity_Auth_TenantUserLoginTest13 {
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLLogin")).then()
-				.statusCode(200);
+				.statusCode(201);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());

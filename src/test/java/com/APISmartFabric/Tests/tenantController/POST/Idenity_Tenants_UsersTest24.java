@@ -1,5 +1,9 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
+import com.APISmartFabric.JsonBuilder.PortalRevisionInstall;
+import com.APISmartFabric.JsonBuilder.TenantsUsers;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
@@ -15,6 +19,7 @@ import java.util.UUID;
 @Slf4j
 public class Idenity_Tenants_UsersTest24 {
 
+	private ObjectMapper mapper = new ObjectMapper();
 
 	final String code = "35";
 	final String email = UUID.randomUUID() + "@testfabric.ch";
@@ -34,43 +39,55 @@ public class Idenity_Tenants_UsersTest24 {
 			code, firstName, gender, email, status);
 
 	@Test
-	public void postUserData() {
+	public void postUserData() throws JsonProcessingException {
+
+		TenantsUsers tenantUsersJson = TenantsUsers.builder().code(createUser.getCode())
+				.email(createUser.getEmail()).firstName(createUser.getFirstName()).
+						lastName(createUser.getLastName()).gender(createUser.getGender()).language(createUser.getLanguage()).
+						password(createUser.getPassword()).phone(createUser.getPhone()).status(createUser.getStatus()).
+						title(createUser.getTitle()).token(createUser.getToken()).tokenExpiry(createUser.getTokenExpiry()).
+                 build();
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType(ContentType.JSON)
-				.body("{\"code\":\"" + createUser.getCode() + "\",\n" + "\"email\":\"" + createUser.getEmail()
-						+ "\", \n" + "\"firstName\":\"" + createUser.getFirstName() + "\", \n" + "\"lastName\":\""
-						+ createUser.getLastName() + "\", \n" + "\"gender\":\"" + createUser.getGender() + "\", \n"
-						+ "\"language\":\"" + createUser.getLanguage() + "\", \n" + "\"lastName\":\""
-						+ createUser.getLastName() + "\", \n" + "\"password\":\"" + createUser.getPassword() + "\", \n"
-						+ "\"phone\":\"" + createUser.getPhone() + "\", \n" + "\"phone\":\"" + createUser.getPhone()
-						+ "\", \n" + "\"status\":\"" + createUser.getStatus() + "\", \n" + "\"title\":\""
-						+ createUser.getTitle() + "\", \n" + "\"token\":\"" + createUser.getToken() + "\", \n"
-						+ "\"title\":\"" + createUser.getTitle() + "\", \n" + "\"token\":\"" + createUser.getToken()
-						+ "\", \n" + "\"tokenExpiry\":\"" + createUser.getTokenExpiry() + "\" }")
-				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsUsers"))
-				.then().statusCode(201);
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsUsers")).then()
+				.statusCode(201);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}
 
 	@Test
-	public void postWrongUserData() {
+	public void postWrongUserData() throws JsonProcessingException {
+		TenantsUsers tenantUsersJson = TenantsUsers.builder().code(createUser.getCode())
+				.email(createUser.getEmail()).firstName(createUser.getFirstName()).
+						lastName(createUser.getLastName()).gender(createUser.getGender()).language(createUser.getLanguage()).
+						password(createUser.getPassword()).phone(createUser.getPhone()).status(createUser.getStatus()).
+						title(createUser.getTitle()).token(createUser.getToken()).
+						build();
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType(ContentType.JSON)
-				.body("{\"code\":\"" + createUser.getCode() + "\",\n" + "\"email\":\"" + createUser.getEmail()
-						+ "\", \n" + "\"firstName\":\"" + createUser.getFirstName() + "\", \n" + "\"lastName\":\""
-						+ createUser.getLastName() + "\", \n" + "\"gender\":\"" + createUser.getGender() + "\", \n"
-						+ "\"language\":\"" + createUser.getLanguage() + "\", \n" + "\"lastName\":\""
-						+ createUser.getLastName() + "\", \n" + "\"password\":\"" + createUser.getPassword() + "\", \n"
-						+ "\"phone\":\"" + createUser.getPhone() + "\", \n" + "\"phone\":\"" + createUser.getPhone()
-						+ "\", \n" + "\"status\":\"" + createUser.getStatus() + "\", \n" + "\"title\":\""
-						+ createUser.getTitle() + "\", \n" + "\"token\":\"" + createUser.getToken() + "\", \n"
-						+ "\"title\":\"" + createUser.getTitle() + "\", \n" + "\"token\":\"" + createUser.getToken()
-						+ "\", \n" + "\"tokenExpiry\":\"" + createUser.getTokenExpiry() + "\" }")
-				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsUsers"))
-				.then().statusCode(404);
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsUsers")).then()
+				.statusCode(201);
+
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		log.info("Response body" + responseR.response());
+	}
+
+	@Test
+	public void postUserDataNoAuthentication() throws JsonProcessingException {
+		TenantsUsers tenantUsersJson = TenantsUsers.builder().code(createUser.getCode())
+				.email(createUser.getEmail()).firstName(createUser.getFirstName()).
+						lastName(createUser.getLastName()).gender(createUser.getGender()).language(createUser.getLanguage()).
+						password(createUser.getPassword()).phone(createUser.getPhone()).status(createUser.getStatus()).
+						title(createUser.getTitle()).token(createUser.getToken()).tokenExpiry(createUser.getTokenExpiry()).
+						build();
+		given()
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsUsers")).then()
+				.statusCode(201);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}

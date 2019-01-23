@@ -46,7 +46,7 @@ public class Identity_Tenants_Users_ListTest29 {
 				contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersList"))
-				.then().statusCode(403);
+				.then().statusCode(401);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}

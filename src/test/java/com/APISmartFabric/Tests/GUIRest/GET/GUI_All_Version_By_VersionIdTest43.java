@@ -28,7 +28,7 @@ public class GUI_All_Version_By_VersionIdTest43 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId);
 	}
 	
@@ -39,7 +39,7 @@ public class GUI_All_Version_By_VersionIdTest43 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + invalidVersionId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + invalidVersionId);
 	}
 	
@@ -50,7 +50,7 @@ public class GUI_All_Version_By_VersionIdTest43 {
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + nullVersionId)
 		.then().assertThat().statusCode(404);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + nullVersionId);
 	}
 
@@ -60,8 +60,8 @@ public class GUI_All_Version_By_VersionIdTest43 {
 		given()	
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId)
-		.then().assertThat().statusCode(403);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURL")
+		.then().assertThat().statusCode(401);
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + versionId);
 	}
 }

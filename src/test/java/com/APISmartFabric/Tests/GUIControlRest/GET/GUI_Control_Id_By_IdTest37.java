@@ -30,7 +30,7 @@ public class GUI_Control_Id_By_IdTest37 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlId") + id)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlId") + id);
 	}
 	
@@ -41,7 +41,7 @@ public class GUI_Control_Id_By_IdTest37 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlId") + invalidId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlId") + invalidId);
 	}
 	
@@ -52,7 +52,7 @@ public class GUI_Control_Id_By_IdTest37 {
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlId") + nullId)
 		.then().assertThat().statusCode(404);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlId") + nullId);
 	}
 
@@ -64,7 +64,7 @@ public class GUI_Control_Id_By_IdTest37 {
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlId") + id)
 		.then().assertThat().statusCode(401);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlId") + id);
 	}
 }

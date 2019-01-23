@@ -78,7 +78,7 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 				.get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition") + versionId
 						+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition1") + processDefinitionId)
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
 				+ CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition") + versionId

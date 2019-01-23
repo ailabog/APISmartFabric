@@ -25,7 +25,7 @@ public class GUI_Portal_Detailed_ListTest35 {
 				.get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"))
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"));
 	}
 
@@ -35,7 +35,7 @@ public class GUI_Portal_Detailed_ListTest35 {
 				.get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"))
 				.then().assertThat().statusCode(401);
-		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIPortalDetailedList"));
 	}
 }

@@ -28,7 +28,7 @@ public class GUI_Activity_By_ActivityIdTest42 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIActivity") + activityId)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIActivity") + activityId);
 	}
 
@@ -39,7 +39,7 @@ public class GUI_Activity_By_ActivityIdTest42 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIActivity") + invalidActivityId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIActivity") + invalidActivityId);
 	}
 
@@ -50,7 +50,7 @@ public class GUI_Activity_By_ActivityIdTest42 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIActivity") + nullActivityId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIActivity") + nullActivityId);
 	}
 
@@ -58,8 +58,8 @@ public class GUI_Activity_By_ActivityIdTest42 {
 	public void getGUIActivityByActivityIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIActivity") + activityId).then().assertThat()
-				.statusCode(403);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURL")
+				.statusCode(401);
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIActivity") + activityId);
 	}
 }

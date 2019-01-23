@@ -27,7 +27,7 @@ public class Identity_Admin_GroupsTest01 {
 	final String code = "43587784646";
 	final String id = "4654677546";
 	final String name = "Popescu1";
-	final String tenantId = "33534577777436ff-3534543-345435";
+	final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
 	final String type = "SYSTEM";
 	CreateAdminRequest createAdminGroups = new CreateAdminRequest(code, id, name, tenantId, type);
 

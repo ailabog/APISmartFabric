@@ -27,7 +27,7 @@ public class GUI_By_IdTest40 {
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI") + id)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLGUI")
+		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI")
 				+ id);
 	}
 
@@ -38,7 +38,7 @@ public class GUI_By_IdTest40 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUI") + invalidId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLGUI")
+		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI")
 				+ invalidId);
 	}
 
@@ -49,7 +49,7 @@ public class GUI_By_IdTest40 {
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI") + nullId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLGUI")
+		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI")
 				+ nullId);
 	}
 
@@ -57,8 +57,8 @@ public class GUI_By_IdTest40 {
 	public void getGUIByInvalidIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI") + id)
-				.then().assertThat().statusCode(403);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLGUI")
+				.then().assertThat().statusCode(401);
+		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUI")
 				+ id);
 	}
 }

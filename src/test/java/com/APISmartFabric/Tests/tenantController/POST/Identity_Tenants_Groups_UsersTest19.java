@@ -12,8 +12,7 @@ import java.util.*;
 
 @Slf4j
 public class Identity_Tenants_Groups_UsersTest19 {
-	
-		
+
 
 	private List<UserIdsEnum> userList = Arrays.asList(UserIdsEnum.USER_OK1, UserIdsEnum.USER_OK2, UserIdsEnum.USER_OK3,
 			UserIdsEnum.USER_OK4, UserIdsEnum.USER_OK5);
@@ -48,7 +47,7 @@ public class Identity_Tenants_Groups_UsersTest19 {
 				contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
-				.then().statusCode(403);
+				.then().statusCode(401);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}

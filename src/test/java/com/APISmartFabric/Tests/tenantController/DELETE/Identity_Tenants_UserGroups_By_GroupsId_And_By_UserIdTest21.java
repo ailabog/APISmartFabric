@@ -47,6 +47,6 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 		.delete(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
 				+GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
-				.then().statusCode(403);
+				.then().statusCode(401);
 	}
 }

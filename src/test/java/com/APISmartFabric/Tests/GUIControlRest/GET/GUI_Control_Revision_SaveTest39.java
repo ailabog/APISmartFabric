@@ -24,7 +24,7 @@ public class GUI_Control_Revision_SaveTest39 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"))
 					.then().assertThat().statusCode(200);
-		log.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"));
 	}
 	
@@ -35,7 +35,7 @@ public class GUI_Control_Revision_SaveTest39 {
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"))
 		.then().assertThat().statusCode(401);
-		log.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"));
 	}
 }

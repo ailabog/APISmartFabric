@@ -25,7 +25,7 @@ public class GUI_Control_ListTest38 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIControlList"))
 					.then().assertThat().statusCode(200);
-		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlList"));
 	}
 	
@@ -36,7 +36,7 @@ public class GUI_Control_ListTest38 {
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlList"))
 		.then().assertThat().statusCode(401);
-		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURL")
+		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURLGUI")
 		+ CredentialsUtils.getProperty("middleURLGUIControlList"));
 	}
 }

@@ -42,7 +42,7 @@ public class Identity_Tenants_UsersTenantsTest33 {
 	public void postWrongTenantsGroupsUsersNoAuthentication() {
 		given().contentType(ContentType.JSON).body("{\"code\":\"" + USER.USER_OK3.getId() + "\" ]").when().post(
 				CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
-				.then().statusCode(403);
+				.then().statusCode(401);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}
