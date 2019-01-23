@@ -47,7 +47,7 @@ public class Identity_Auth_SystemUserLoginTest11 {
 	}
 
 	@Test
-	public void postWrongSystemLogin() {
+	public void postWrongSystemLogin() throws JsonProcessingException {
 		final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
 		final String userEmail = "test.user@gmail.com";
 		final String userPassword = null;
@@ -56,9 +56,9 @@ public class Identity_Auth_SystemUserLoginTest11 {
 
 		SystemLogin systemJson = SystemLogin.builder().tenantId(systemLogin.getTenantDomain())
 				.userEmail(systemLogin.getUserEmail()).build();
-		given()
-				.when().post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem"))
-				.then().statusCode(404);
+		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSytem")).then()
+				.statusCode(404);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}
