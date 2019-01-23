@@ -56,6 +56,6 @@ public class GUI_By_IdTest41 {
 		.delete(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLGUI")
 				+id)
-				.then().statusCode(403);
+				.then().statusCode(401);
 	}
 }

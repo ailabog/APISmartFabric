@@ -35,7 +35,7 @@ public class GUI_Control_ListTest38 {
 		given()	
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlList"))
-		.then().assertThat().statusCode(403);
+		.then().assertThat().statusCode(401);
 		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLGUIControlList"));
 	}

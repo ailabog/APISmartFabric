@@ -58,7 +58,7 @@ public class Identity_Admin_Users_ByUserIdTest10 {
 	public void getAdminUserByUserIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId()).then().assertThat()
-				.statusCode(403);
+				.statusCode(401);
 		log.info("Identity_Admin_Users_ByUserId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USER.USER_OK2.getId());
 	}

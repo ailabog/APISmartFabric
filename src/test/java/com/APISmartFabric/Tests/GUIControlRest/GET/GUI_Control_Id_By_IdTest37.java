@@ -63,7 +63,7 @@ public class GUI_Control_Id_By_IdTest37 {
 		given()	
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlId") + id)
-		.then().assertThat().statusCode(403);
+		.then().assertThat().statusCode(401);
 		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLGUIControlId") + id);
 	}

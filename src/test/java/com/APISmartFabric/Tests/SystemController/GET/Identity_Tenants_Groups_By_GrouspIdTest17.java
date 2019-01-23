@@ -35,7 +35,7 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_INVALID.getId())
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(404);
 		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_INVALID.getId());
 	}
@@ -46,7 +46,7 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_NULL.getId())
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(404);
 		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_NULL.getId());
 	}
@@ -56,7 +56,7 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem") + GROUP.GROUP_OK2.getId())
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenantsGroups") + GROUP.GROUP_OK2.getId());
 	}

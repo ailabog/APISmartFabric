@@ -34,7 +34,7 @@ public class GUI_Control_Revision_SaveTest39 {
 		given()	
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"))
-		.then().assertThat().statusCode(403);
+		.then().assertThat().statusCode(401);
 		log.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURL")
 		+ CredentialsUtils.getProperty("middleURLGUIControlRevisionSave"));
 	}

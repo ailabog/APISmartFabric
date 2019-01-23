@@ -1,6 +1,10 @@
 package com.APISmartFabric.Tests.GUIControlPortalRest.POST;
 
 
+import com.APISmartFabric.JsonBuilder.Login;
+import com.APISmartFabric.JsonBuilder.PortalRevisionInstall;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
@@ -10,7 +14,8 @@ import static com.jayway.restassured.RestAssured.given;
 
 @Slf4j
 public class GUI_Portal_Revision_Install_ScheduleTest38 {
-	
+
+	private ObjectMapper mapper = new ObjectMapper();
 	
 	private String active = "true";
 	private String guiControlId ="2453645734-76345735-2576348534";
@@ -20,29 +25,33 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 
 	
 	@Test
-	public void postGUIPortalRevisionInstallSchedule() {
+	public void postGUIPortalRevisionInstallSchedule() throws JsonProcessingException {
+		PortalRevisionInstall portalRevisionInstallJson = PortalRevisionInstall.builder().active(active)
+				.guiControlId(guiControlId).installedGUIControlRevisionId(installedGUIControlRevisionId).
+				instanceId(instanceId).toBeInstalledGUIControlRevisionId(toBeInstalledGUIControlRevisionId)	.
+				build();
+
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType(ContentType.JSON)
-				.body("{\"active\":\"" + active + "\",\n" + "\"guiControlId\":\"" + guiControlId + "\", \n"
-						+ "\"installedGUIControlRevisionId\":\"" + installedGUIControlRevisionId + "\", \n" + "\"instanceId\":\"" + instanceId 	+ "\", \n"
-						+ "\"toBeInstalledGUIControlRevisionId\":\"" + toBeInstalledGUIControlRevisionId  + "\" }")
-				.when().post(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUIPortalRevisionInstallList"))
-				.then().statusCode(200);
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
+				.post(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUIPortalRevisionInstallList")).then()
+				.statusCode(201);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
-		
 	}
 
 	@Test
-	public void postGUIPortalRevisionInstallScheduleNoAuthentication() {
-		given()
-		.contentType(ContentType.JSON)
-				.body("{\"active\":\"" + active + "\",\n" + "\"guiControlId\":\"" + guiControlId + "\", \n"
-						+ "\"installedGUIControlRevisionId\":\"" + installedGUIControlRevisionId + "\", \n" + "\"instanceId\":\"" + instanceId 	+ "\", \n"
-						+ "\"toBeInstalledGUIControlRevisionId\":\"" + toBeInstalledGUIControlRevisionId  + "\" }")
-				.when().post(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUIPortalRevisionInstallList"))
-				.then().statusCode(403);
+	public void postGUIPortalRevisionInstallScheduleNoAuthentication() throws JsonProcessingException {
+		PortalRevisionInstall portalRevisionInstallJson = PortalRevisionInstall.builder().active(active)
+				.guiControlId(guiControlId).installedGUIControlRevisionId(installedGUIControlRevisionId).
+						instanceId(instanceId).toBeInstalledGUIControlRevisionId(toBeInstalledGUIControlRevisionId)	.
+						build();
+
+		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
+				.post(CredentialsUtils.getProperty("baseURLGUI") + CredentialsUtils.getProperty("middleURLGUIPortalRevisionInstallList")).then()
+				.statusCode(401);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}

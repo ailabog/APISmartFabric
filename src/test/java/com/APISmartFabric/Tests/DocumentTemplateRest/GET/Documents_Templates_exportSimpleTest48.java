@@ -236,6 +236,6 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(403);
+				.then().statusCode(401);
 	}
 }

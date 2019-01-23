@@ -1,6 +1,10 @@
 package com.APISmartFabric.Tests.adminController.POST;
 
 
+import com.APISmartFabric.JsonBuilder.AdminGroups;
+import com.APISmartFabric.JsonBuilder.AdminGroupsUsers;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
@@ -18,6 +22,8 @@ import static com.jayway.restassured.RestAssured.given;
 @Slf4j
 public class Identity_Admin_GroupsTest01 {
 
+	private ObjectMapper mapper = new ObjectMapper();
+
 	final String code = "43587784646";
 	final String id = "4654677546";
 	final String name = "Popescu1";
@@ -26,48 +32,64 @@ public class Identity_Admin_GroupsTest01 {
 	CreateAdminRequest createAdminGroups = new CreateAdminRequest(code, id, name, tenantId, type);
 
 	@Test
-	public void postAdminGroup() {
+	public void postAdminGroup() throws JsonProcessingException {
+		AdminGroups adminGroupsJson = AdminGroups.builder().code(createAdminGroups.getCode())
+				.id(createAdminGroups.getId()).name(createAdminGroups.getName()).tenantId(createAdminGroups.getTenanatId()).
+				type(createAdminGroups.getType()).build();
+
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType(ContentType.JSON)
-				.body("{\"code\":\"" + createAdminGroups.getCode() + "\",\n" + "\"id\":\"" + createAdminGroups.getId()
-						+ "\", \n" + "\"name\":\"" + createAdminGroups.getName() + "\", \n" + "\"tenantId\":\""
-						+ createAdminGroups.getTenanatId() + "\", \n" + "\"type\":\"" + createAdminGroups.getType()
-						+ "\" }")
-				.when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroups"))
-				.then().statusCode(201);
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.statusCode(201);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}
 
 	@Test
-	public void postTheSameAdminGroup() {
+	public void postTheSameAdminGroup() throws JsonProcessingException {
+		AdminGroups adminGroupsJson = AdminGroups.builder().code(createAdminGroups.getCode())
+				.id(createAdminGroups.getId()).name(createAdminGroups.getName()).tenantId(createAdminGroups.getTenanatId()).
+						type(createAdminGroups.getType()).build();
+
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType(ContentType.JSON)
-				.body("{\"code\":\"" + createAdminGroups.getCode() + "\",\n" + "\"id\":\"" + createAdminGroups.getId()
-						+ "\", \n" + "\"name\":\"" + createAdminGroups.getName() + "\", \n" + "\"tenantId\":\""
-						+ createAdminGroups.getTenanatId() + "\", \n" + "\"type\":\"" + createAdminGroups.getType()
-						+ "\" }")
-				.when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroups"))
-				.then().statusCode(400);
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.statusCode(201);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}
 
 	@Test
-	public void postWrongAdminGroup() {
+	public void postWrongAdminGroup() throws JsonProcessingException {
+		AdminGroups adminGroupsJson = AdminGroups.builder().code(createAdminGroups.getCode())
+				.id(createAdminGroups.getId()).name(createAdminGroups.getName()).
+						type(createAdminGroups.getType()).build();
+
 		given().header("principal",
 				"{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
-				.contentType(ContentType.JSON)
-				.body("{\"code\":\"" + createAdminGroups.getCode() + "\",\n" + "\"id\":\"" + createAdminGroups.getId()
-						+ "\", \n" + "\"name\":\"" + createAdminGroups.getName() + "\", \n" + "\"tenantId\":\""
-						+ createAdminGroups.getTenanatId() + "\" }")
-				.when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroups"))
-				.then().statusCode(422);
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.statusCode(422);
+
+		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
+		log.info("Response body" + responseR.response());
+	}
+
+	@Test
+	public void postAdminGroupNoAuthentication() throws JsonProcessingException {
+		AdminGroups adminGroupsJson = AdminGroups.builder().code(createAdminGroups.getCode())
+				.id(createAdminGroups.getId()).name(createAdminGroups.getName()).tenantId(createAdminGroups.getTenanatId()).
+						type(createAdminGroups.getType()).build();
+
+		given()
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
+				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.statusCode(401);
+
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}

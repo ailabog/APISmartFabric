@@ -60,7 +60,7 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 		given()
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 						+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_OK2.getId())
-				.then().assertThat().statusCode(403);
+				.then().assertThat().statusCode(401);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_OK2.getId()));
 	}

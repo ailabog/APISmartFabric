@@ -59,7 +59,7 @@ public class Identity_Admin_Groups_ByGroupIdTest02 {
 	public void getUserByIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK2.getId()).then().assertThat()
-				.statusCode(403);
+				.statusCode(401);
 		log.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK2.getId()));
 	}
