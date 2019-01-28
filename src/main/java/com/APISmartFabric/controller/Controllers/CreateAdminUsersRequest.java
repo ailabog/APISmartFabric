@@ -1,4 +1,4 @@
-package com.APISmartFabric.controller.AdminController;
+package com.APISmartFabric.controller.Controllers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,25 +6,31 @@ import lombok.Setter;
 
 /**
  * @author aila.bogasieru@agys.ch
-/identity/admin/users
-createUser
  */
 
 @Getter 
 @Setter 
 @AllArgsConstructor
-public class CreateUserRequest {
+public class CreateAdminUsersRequest {
+
+
+	private String code;
+    private String department;
     private String email;
     private String firstName;
     private String gender;
+    private String id;
     private String language;
     private String lastName;
     private String password;
+    private String passwordLastUpdate;
     private String phone;
-    private String token;
-    private String title;
-    private String tokenExpiry;
-    private String code;
+    private String position;
+    private String reportsTo;
     private String status;
+    private String title;
+    private String token;
+    private String tokenExpiry;
+	private String username;
  
 }

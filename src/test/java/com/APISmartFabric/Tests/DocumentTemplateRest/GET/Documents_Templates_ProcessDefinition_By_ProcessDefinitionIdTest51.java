@@ -55,7 +55,7 @@ public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplates") + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId())
-				.then().assertThat().statusCode(404);
+				.then().assertThat().statusCode(400);
 		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
 				+ CredentialsUtils.getProperty("middleURLDocumentsTemplates") + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId()));
 	}

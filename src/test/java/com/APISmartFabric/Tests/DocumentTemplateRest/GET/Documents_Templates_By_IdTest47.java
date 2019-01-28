@@ -52,7 +52,7 @@ public class Documents_Templates_By_IdTest47 {
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplates") + DOCUMENTS.DOCUMENT_NULL.getId())
-				.then().assertThat().statusCode(404);
+				.then().assertThat().statusCode(400);
 		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
 				+ CredentialsUtils.getProperty("middleURLDocumentsTemplates") + DOCUMENTS.DOCUMENT_NULL.getId()));
 	}

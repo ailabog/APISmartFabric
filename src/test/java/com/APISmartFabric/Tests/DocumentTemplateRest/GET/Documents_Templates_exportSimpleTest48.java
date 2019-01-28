@@ -143,7 +143,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(404);
+				.then().statusCode(400);
 
 	}
 
@@ -157,7 +157,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(404);
+				.then().statusCode(400);
 
 	}
 
@@ -171,7 +171,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(404);
+				.then().statusCode(400);
 
 	}
 
@@ -185,7 +185,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(404);
+				.then().statusCode(400);
 	}
 
 	@Test
@@ -198,7 +198,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(404);
+				.then().statusCode(400);
 	}
 
 	@Test
@@ -225,7 +225,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.when()
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ CredentialsUtils.getProperty("middleURLDocumentsTemplatesExportSimple"))
-				.then().statusCode(404);
+				.then().statusCode(400);
 	}
 
 	@Test

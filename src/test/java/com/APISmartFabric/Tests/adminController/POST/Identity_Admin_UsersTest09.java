@@ -1,17 +1,14 @@
 package com.APISmartFabric.Tests.adminController.POST;
 
-import com.APISmartFabric.JsonBuilder.AdminTenants;
 import com.APISmartFabric.JsonBuilder.AdminUsers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
 
 
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.CreateAdminUsersRequest;
+import com.APISmartFabric.controller.Controllers.CreateAdminUsersRequest;
 import com.jayway.restassured.http.ContentType;
 
 import lombok.extern.slf4j.Slf4j;

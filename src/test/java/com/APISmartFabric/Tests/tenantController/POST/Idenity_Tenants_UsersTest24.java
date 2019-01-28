@@ -1,13 +1,12 @@
 package com.APISmartFabric.Tests.tenantController.POST;
 
-import com.APISmartFabric.JsonBuilder.PortalRevisionInstall;
 import com.APISmartFabric.JsonBuilder.TenantsUsers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.CreateUserRequest;
+import com.APISmartFabric.controller.Controllers.CreateUserRequest;
 import com.jayway.restassured.http.ContentType;
 
 import lombok.extern.slf4j.Slf4j;

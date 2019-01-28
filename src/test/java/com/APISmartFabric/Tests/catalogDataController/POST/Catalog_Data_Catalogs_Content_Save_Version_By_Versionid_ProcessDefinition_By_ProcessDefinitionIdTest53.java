@@ -2,11 +2,9 @@ package com.APISmartFabric.Tests.catalogDataController.POST;
 
 
 import com.APISmartFabric.JsonBuilder.DataCatalogsContentSaveVersion;
-import com.APISmartFabric.JsonBuilder.DataCatalogsContentVersion;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.DataCatalogsContentSaveVersionRequest;
-import com.APISmartFabric.controller.AdminController.DataCatalogsContentVersionRequest;
+import com.APISmartFabric.controller.Controllers.DataCatalogsContentSaveVersionRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;

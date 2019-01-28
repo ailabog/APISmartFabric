@@ -1,4 +1,4 @@
-package com.APISmartFabric.controller.AdminController;
+package com.APISmartFabric.controller.Controllers;
 
 /**
  * 

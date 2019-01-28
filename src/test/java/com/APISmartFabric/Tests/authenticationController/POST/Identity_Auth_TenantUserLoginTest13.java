@@ -10,7 +10,7 @@ import com.APISmartFabric.JsonBuilder.Login;
 
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.LoginRequest;
+import com.APISmartFabric.controller.Controllers.LoginRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.CreateAdminGroupsUsersRequest;
+import com.APISmartFabric.controller.Controllers.CreateAdminGroupsUsersRequest;
 import com.jayway.restassured.http.ContentType;
 
 import lombok.extern.slf4j.Slf4j;

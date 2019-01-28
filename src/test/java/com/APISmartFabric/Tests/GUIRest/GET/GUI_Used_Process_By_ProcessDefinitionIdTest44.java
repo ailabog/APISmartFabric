@@ -51,7 +51,7 @@ public class GUI_Used_Process_By_ProcessDefinitionIdTest44 {
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIUsedProcess") + nullprocessDefinitionId)
-				.then().assertThat().statusCode(404);
+				.then().assertThat().statusCode(400);
 		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIUsedProcess") + nullprocessDefinitionId);
 	}

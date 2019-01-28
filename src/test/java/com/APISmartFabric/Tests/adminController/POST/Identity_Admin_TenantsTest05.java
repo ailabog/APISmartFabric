@@ -3,13 +3,12 @@ package com.APISmartFabric.Tests.adminController.POST;
 import static com.jayway.restassured.RestAssured.given;
 
 import com.APISmartFabric.JsonBuilder.AdminTenants;
-import com.APISmartFabric.JsonBuilder.AdminTenantsUsers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.CreateAdminTenantsRequest;
+import com.APISmartFabric.controller.Controllers.CreateAdminTenantsRequest;
 import com.jayway.restassured.http.ContentType;
 
 import lombok.extern.slf4j.Slf4j;

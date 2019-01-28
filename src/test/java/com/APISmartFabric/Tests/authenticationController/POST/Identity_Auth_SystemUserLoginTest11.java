@@ -8,7 +8,7 @@ import com.jayway.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.SystemLoginRequest;
+import com.APISmartFabric.controller.Controllers.SystemLoginRequest;
 
 import lombok.extern.slf4j.Slf4j;
 

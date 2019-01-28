@@ -1,7 +1,6 @@
-package com.APISmartFabric.controller.AdminController;
+package com.APISmartFabric.controller.Controllers;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

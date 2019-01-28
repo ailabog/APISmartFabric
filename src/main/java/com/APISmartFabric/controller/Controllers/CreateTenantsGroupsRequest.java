@@ -1,4 +1,4 @@
-package com.APISmartFabric.controller.AdminController;
+package com.APISmartFabric.controller.Controllers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,12 +13,13 @@ createUser
 @Getter 
 @Setter 
 @AllArgsConstructor
-public class CreateAdminGroupsUsersRequest {
-	
+public class CreateTenantsGroupsRequest {
 
-	private String groupId;
+    private String code;
     private String id;
-    private String isManager;
-    private String userId;
-
-}
+    private String name;
+    private String tenantId;
+    private String type;
+  
+   
+}	

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.CreateDocumentsTemplatesGenerateRequest;
+import com.APISmartFabric.controller.Controllers.CreateDocumentsTemplatesGenerateRequest;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
 import static com.jayway.restassured.RestAssured.given;

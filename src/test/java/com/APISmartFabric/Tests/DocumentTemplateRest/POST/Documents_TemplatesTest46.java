@@ -1,13 +1,12 @@
 package com.APISmartFabric.Tests.DocumentTemplateRest.POST;
 
 import com.APISmartFabric.JsonBuilder.DocumentsTemplates;
-import com.APISmartFabric.JsonBuilder.Login;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.testng.annotations.Test;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.AdminController.CreateDocumentsTemplatesRequest;
+import com.APISmartFabric.controller.Controllers.CreateDocumentsTemplatesRequest;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
 import static com.jayway.restassured.RestAssured.given;

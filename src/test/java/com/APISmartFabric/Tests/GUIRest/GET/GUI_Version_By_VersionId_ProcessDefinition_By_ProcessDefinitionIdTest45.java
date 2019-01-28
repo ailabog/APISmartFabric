@@ -48,7 +48,7 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 						+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition") + nullVersionId
 						+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition1")
 						+ nullprocessDefinitionId)
-				.then().assertThat().statusCode(404);
+				.then().assertThat().statusCode(400);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
 				+ CredentialsUtils.getProperty("baseURLGUI")
 				+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition") + nullVersionId
@@ -73,7 +73,7 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	}
 
 	@Test
-	public void getGUIUsedProcessByNULLProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
+	public void getGUIUsedProcessByProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURLGUI")
 						+ CredentialsUtils.getProperty("middleURLGUIVersionProcessDefinition") + versionId
