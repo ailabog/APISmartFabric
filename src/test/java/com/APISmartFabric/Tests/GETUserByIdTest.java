@@ -30,7 +30,7 @@ public class GETUserByIdTest {
 	public void getUserByIdWithoutAuthentication() throws FileNotFoundException {
 		given().when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLUser") + USERS.USER_OK1.getId()).then().assertThat()
-				.statusCode(403);
+				.statusCode(401);
 	}
 
 	@Test
