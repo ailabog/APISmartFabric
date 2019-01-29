@@ -1,4 +1,4 @@
-package com.APISmartFabric.Tests.catalogDataController.POST;
+package com.APISmartFabric.Tests.catalogs.POST;
 
 
 import com.APISmartFabric.JsonBuilder.DataCatalogsContentSaveVersion;

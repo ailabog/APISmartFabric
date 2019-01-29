@@ -1,11 +1,9 @@
-package com.APISmartFabric.Tests.catalogDefinitionController.POST;
+package com.APISmartFabric.Tests.catalogs.POST;
 
 
-import com.APISmartFabric.JsonBuilder.DataCatalogsContentVersion;
 import com.APISmartFabric.JsonBuilder.DataCatalogsDefinitionVersion;
 import com.APISmartFabric.Utils.CredentialsUtils;
 import com.APISmartFabric.Utils.RensposeBodyDisplay;
-import com.APISmartFabric.controller.Controllers.DataCatalogsContentVersionRequest;
 import com.APISmartFabric.controller.Controllers.DataCatalogsDerfinitionVersionRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

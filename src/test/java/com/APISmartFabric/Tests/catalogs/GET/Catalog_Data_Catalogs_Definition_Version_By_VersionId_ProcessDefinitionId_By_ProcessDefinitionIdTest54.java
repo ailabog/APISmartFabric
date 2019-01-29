@@ -1,4 +1,4 @@
-package com.APISmartFabric.Tests.catalogDefinitionController.GET;
+package com.APISmartFabric.Tests.catalogs.GET;
 
 
 import com.APISmartFabric.Enums.ProcessDefinitionEnum;
