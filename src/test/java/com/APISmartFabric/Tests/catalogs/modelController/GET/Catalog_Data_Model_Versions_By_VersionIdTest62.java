@@ -1,4 +1,4 @@
-package com.APISmartFabric.Tests.catalogs.modelController;
+package com.APISmartFabric.Tests.catalogs.modelController.GET;
 
 
 import com.APISmartFabric.Utils.CredentialsUtils;
