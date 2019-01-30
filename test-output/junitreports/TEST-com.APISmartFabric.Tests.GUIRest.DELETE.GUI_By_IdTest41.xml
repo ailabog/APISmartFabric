@@ -129,4 +129,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- deleteGUIById -->
-</testsuite> <!-- com.APISmartFabric.Tests.GUIRest.DELETE.GUI_By_IdTest41 -->
+</testsuite> <!-- com.APISmartFabric.Tests.guiRest.delete.GUI_By_IdTest41 -->

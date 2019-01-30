@@ -185,4 +185,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postDocumentsTemplatesExportSimpleNoAuthentication -->
-</testsuite> <!-- com.APISmartFabric.Tests.DocumentTemplateRest.POST.Documents_Templates_ExportSimpleTest49 -->
+</testsuite> <!-- com.APISmartFabric.Tests.documentTemplateRest.post.Documents_Templates_ExportSimpleTest49 -->

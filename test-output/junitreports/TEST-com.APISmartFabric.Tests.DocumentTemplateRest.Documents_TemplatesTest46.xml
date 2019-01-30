@@ -185,4 +185,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postDocumentsTemplates -->
-</testsuite> <!-- com.APISmartFabric.Tests.DocumentTemplateRest.Documents_TemplatesTest46 -->
+</testsuite> <!-- com.APISmartFabric.Tests.documentTemplateRest.Documents_TemplatesTest46 -->

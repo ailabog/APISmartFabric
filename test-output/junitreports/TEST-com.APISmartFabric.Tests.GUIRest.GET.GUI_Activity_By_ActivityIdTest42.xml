@@ -243,4 +243,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getGUIActivityByActivityId -->
-</testsuite> <!-- com.APISmartFabric.Tests.GUIRest.GET.GUI_Activity_By_ActivityIdTest42 -->
+</testsuite> <!-- com.APISmartFabric.Tests.guiRest.get.GUI_Activity_By_ActivityIdTest42 -->

@@ -178,4 +178,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
     </failure>
   </testcase> <!-- getGUIByNULLId -->
   <testcase name="getGUIById" time="1.164" classname="com.APISmartFabric.Tests.GUIRest.GET.GUI_By_IdTest40"/>
-</testsuite> <!-- com.APISmartFabric.Tests.GUIRest.GET.GUI_By_IdTest40 -->
+</testsuite> <!-- com.APISmartFabric.Tests.guiRest.get.GUI_By_IdTest40 -->

@@ -302,4 +302,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getGUIUsedProcessByNULLProcessDefinitionIdNoAuthentication -->
-</testsuite> <!-- com.APISmartFabric.Tests.GUIRest.GET.GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest45 -->
+</testsuite> <!-- com.APISmartFabric.Tests.guiRest.get.GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest45 -->

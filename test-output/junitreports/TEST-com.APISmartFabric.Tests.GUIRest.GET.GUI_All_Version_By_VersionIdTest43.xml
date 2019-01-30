@@ -186,4 +186,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
     </failure>
   </testcase> <!-- getGUIAllVersionByVersionIdNoAuthentication -->
   <testcase name="getGUIAllVersionByVersionId" time="0.448" classname="com.APISmartFabric.Tests.GUIRest.GET.GUI_All_Version_By_VersionIdTest43"/>
-</testsuite> <!-- com.APISmartFabric.Tests.GUIRest.GET.GUI_All_Version_By_VersionIdTest43 -->
+</testsuite> <!-- com.APISmartFabric.Tests.guiRest.get.GUI_All_Version_By_VersionIdTest43 -->

@@ -121,4 +121,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getTenantByTenantDomain -->
-</testsuite> <!-- com.APISmartFabric.Tests.DocumentTemplateRest.GET.Documents_Templates_By_Id47 -->
+</testsuite> <!-- com.APISmartFabric.Tests.documentTemplateRest.get.Documents_Templates_By_Id47 -->
