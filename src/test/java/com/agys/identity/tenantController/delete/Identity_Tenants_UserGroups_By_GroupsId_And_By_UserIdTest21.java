@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.delete;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 
 import com.agys.enums.GroupIdsEnum;
@@ -26,7 +27,7 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.delete(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") +GROUP.GROUP_INVALID.getId() + "/" + USER.USER_INVALID.getId())
+						+ Endpoints.middleURLTenantsUserGroups +GROUP.GROUP_INVALID.getId() + "/" + USER.USER_INVALID.getId())
 				.then().statusCode(404);
 	}
 
@@ -35,7 +36,7 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.delete(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") +GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
+						+ Endpoints.middleURLTenantsUserGroups +GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
 				.then().statusCode(200);
 			
 	}
@@ -45,7 +46,7 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 		given().
 		when().contentType(ContentType.JSON)
 		.delete(CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
+				+ Endpoints.middleURLTenantsUserGroups
 				+GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
 				.then().statusCode(401);
 	}

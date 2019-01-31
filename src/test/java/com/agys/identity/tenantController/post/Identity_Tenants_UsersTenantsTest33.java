@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -19,14 +20,12 @@ public class Identity_Tenants_UsersTenantsTest33 {
 
     @Test
     public void postTenantsGroupsUsers() {
-        String path = CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsUsersTenants");
+        String path = CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsersTenants;
         System.out.println("URL: " + path);
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(USER.USER_OK6.getId()).when()
                 .post(path)
                 .then().statusCode(201);
-       // RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-//        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -34,7 +33,7 @@ public class Identity_Tenants_UsersTenantsTest33 {
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body("{\"code\":\"" + USER.USER_OK2.getId() + "\" ]").when()
                 .post(CredentialsUtils.getProperty("baseURL")
-                        + CredentialsUtils.getProperty("middleURLTenantsUsersTenants"))
+                        + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(404);
         RensposeBodyDisplay responseR = new RensposeBodyDisplay();
         log.info("Response body" + responseR.response());
@@ -43,7 +42,7 @@ public class Identity_Tenants_UsersTenantsTest33 {
     @Test
     public void postWrongTenantsGroupsUsersNoAuthentication() {
         given().contentType(ContentType.JSON).body("{\"code\":\"" + USER.USER_OK3.getId() + "\" ]").when().post(
-                CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTennatsGroupsUsers"))
+                CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(401);
         RensposeBodyDisplay responseR = new RensposeBodyDisplay();
         log.info("Response body" + responseR.response());

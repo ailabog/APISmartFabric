@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.get;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 
 import com.agys.enums.UsersGroupsIdsEnum;
@@ -27,11 +28,11 @@ public class Identity_Tenants_UserGroups_By_IdsTest22 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
+						+ Endpoints.middleURLTenantsUserGroups
 						+ USERGROUPS.USERSGROUPS_OK1.getId())
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Tenants_UserGroups_By_Ids" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") + USERGROUPS.USERSGROUPS_OK1.getId());
+				+ Endpoints.middleURLTenantsUserGroups + USERGROUPS.USERSGROUPS_OK1.getId());
 	}
 
 	@Test
@@ -39,11 +40,11 @@ public class Identity_Tenants_UserGroups_By_IdsTest22 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
+						+ Endpoints.middleURLTenantsUserGroups
 						+ USERGROUPS.USERSGROUPS_INVALID.getId())
 				.then().assertThat().statusCode(404);
 		log.info("Identity_Tenants_UserGroups_By_Ids" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") + USERGROUPS.USERSGROUPS_INVALID.getId());
+				+ Endpoints.middleURLTenantsUserGroups + USERGROUPS.USERSGROUPS_INVALID.getId());
 	}
 
 	@Test
@@ -51,21 +52,21 @@ public class Identity_Tenants_UserGroups_By_IdsTest22 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
+						+ Endpoints.middleURLTenantsUserGroups
 						+ USERGROUPS.USERSGROUPS_NULL.getId())
 				.then().assertThat().statusCode(400);
 		log.info("Identity_Tenants_UserGroups_By_Ids" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") + USERGROUPS.USERSGROUPS_NULL.getId());
+				+ Endpoints.middleURLTenantsUserGroups + USERGROUPS.USERSGROUPS_NULL.getId());
 	}
 
 	@Test
 	public void getTenantsUserGroupsByIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups")
+						+ Endpoints.middleURLTenantsUserGroups
 						+ USERGROUPS.USERSGROUPS_OK1.getId())
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_UserGroups_By_Ids" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUserGroups") + USERGROUPS.USERSGROUPS_OK1.getId());
+				+ Endpoints.middleURLTenantsUserGroups + USERGROUPS.USERSGROUPS_OK1.getId());
 	}
 }

@@ -5,6 +5,7 @@ import static com.jayway.restassured.RestAssured.given;
 import java.io.FileNotFoundException;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.TenantDomainEnum;
 import com.agys.utils.CredentialsUtils;
@@ -29,17 +30,17 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 	public void getTenantByTenantDomain() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_OK1.getId())
+						+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_OK1.getId())
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_OK1.getId()));
+				+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_OK1.getId()));
 	}
 
 	@Test
 	public void getTenantByInvalidTenantDomain() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_INVALID.getId())
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL") +
+				Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_INVALID.getId())
 				.then().assertThat().statusCode(404);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_INVALID.getId()));
@@ -49,7 +50,7 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 	public void getTenantByNULLTenantDomain() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_NULL.getId())
+						+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_NULL.getId())
 				.then().assertThat().statusCode(400);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
 				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_NULL.getId()));
@@ -59,9 +60,9 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 	public void getTenantByTenantDomainNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_OK2.getId())
+						+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_OK2.getId())
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_OK2.getId()));
+				+  Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_OK2.getId()));
 	}
 }

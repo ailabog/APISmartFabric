@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.get;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
@@ -24,20 +25,20 @@ public class Identity_Tenants_Users_Email_By_EmailTest27 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
+						+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch")
 
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch");
+				+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch");
 	}
 
 	@Test
 	public void getTenantsUsersEmailByEmailNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch")
+						+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch")
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + "test_user%40agys.ch");
+				+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch");
 	}
 }

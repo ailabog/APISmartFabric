@@ -2,6 +2,7 @@ package com.agys.identity.tenantController.get;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
@@ -26,19 +27,19 @@ public class Identity_Auth_Tenant_System_LoginTest14 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem"))
+						+ Endpoints.middleURLTenantsUsersSystem)
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Auth_Tenant_System_Login" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem"));
+				+ Endpoints.middleURLTenantsUsersSystem);
 	}
 
 	@Test
 	public void getUserByIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem"))
+						+ Endpoints.middleURLTenantsUsersSystem)
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Auth_Tenant_System_Login" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersSystem"));
+				+ Endpoints.middleURLTenantsUsersSystem);
 	}
 }

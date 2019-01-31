@@ -2,6 +2,7 @@ package com.agys.identity.tenantController.get;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.GroupIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -28,19 +29,19 @@ public class Identity_Tenants_Users_Group_By_GroupIdTest28 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersGroups") + GROUP.GROUP_OK4.getId())
+						+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK4.getId())
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + GROUP.GROUP_OK4.getId());
+				+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK4.getId());
 	}
 
 	@Test
 	public void getTenantsUsersGroupByGroupIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersGroups") + GROUP.GROUP_OK5.getId())
+						+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK5.getId())
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersEmailByEmail") + GROUP.GROUP_OK5.getId());
+				+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK5.getId());
 	}
 }

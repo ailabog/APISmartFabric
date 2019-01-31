@@ -2,6 +2,7 @@ package com.agys.identity.tenantController.get;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
@@ -27,10 +28,10 @@ public class Identity_Tenants_Users_AvatarTest26 {
 	public void getTenantsUsersAvatars() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersAvatars"))
+						+ Endpoints.middleURLTenantsUsersAvatars)
 				.then().assertThat().statusCode(404);
 		log.info("Identity_Tenants_Users_Avatar" + CredentialsUtils.getProperty("baseURL")
-		+ CredentialsUtils.getProperty("middleURLTenantsUsersAvatars"));
+		+ Endpoints.middleURLTenantsUsersAvatars);
 	}
 
 	
@@ -38,9 +39,9 @@ public class Identity_Tenants_Users_AvatarTest26 {
 	public void getTenantsUsersAvatarsNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersAvatars"))
+						+ Endpoints.middleURLTenantsUsersAvatars)
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Users_Avatar" + CredentialsUtils.getProperty("baseURL")
-		+ CredentialsUtils.getProperty("middleURLTenantsUsersAvatars"));
+		+ Endpoints.middleURLTenantsUsersAvatars);
 	}
 }

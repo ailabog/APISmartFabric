@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.GroupIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -22,7 +23,7 @@ public class Identity_Tenants_UserGroupsTest20 {
 				.contentType(ContentType.JSON).
 				body("[ +, \n" + "{ \"groupId\":\"" + GROUPS.GROUP_OK1.getId() + "}" + "\", \n" + "\"]" ).when()
 				.post(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups"))
+						+ Endpoints.middleURLTenantsUserGroups)
 			.then().statusCode(201);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		responseR.response();
@@ -34,7 +35,7 @@ public class Identity_Tenants_UserGroupsTest20 {
 				contentType(ContentType.JSON).
 				body("[ +, \n" + "{ \"groupId\":\"" + GROUPS.GROUP_OK2.getId() + "}" + "\", \n" + "\"]" ).when()
 				.post(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUserGroups"))
+						+ Endpoints.middleURLTenantsUserGroups)
 			.then().statusCode(401);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		responseR.response();

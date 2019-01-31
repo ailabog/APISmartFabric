@@ -2,6 +2,7 @@ package com.agys.identity.tenantController.get;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
@@ -27,20 +28,20 @@ public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + managerId)
+						+ Endpoints.middleURLTenantsUsersManager + managerId)
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + managerId);
+				+ Endpoints.middleURLTenantsUsersManager + managerId);
 	}
 
 	@Test
 	public void getTenantsUsersManagerByManagerIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + managerId)
+						+ Endpoints.middleURLTenantsUsersManager + managerId)
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + managerId);
+				+ Endpoints.middleURLTenantsUsersManager + managerId);
 	}
 
 	@Test
@@ -48,9 +49,9 @@ public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + notManagerId)
+						+ Endpoints.middleURLTenantsUsersManager + notManagerId)
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenantsUsersManager") + notManagerId);
+				+ Endpoints.middleURLTenantsUsersManager + notManagerId);
 	}
 }

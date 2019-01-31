@@ -2,6 +2,7 @@ package com.agys.identity.tenantController.post;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import com.agys.jsonBuilder.TenantsGroupsPermission;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +38,7 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middlerURLTenantsGroupsPermissions")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middlerURLTenantsGroupsPermissions).then()
 				.statusCode(201);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -49,7 +50,7 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middlerURLTenantsGroupsPermissions") +5).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middlerURLTenantsGroupsPermissions +5).then()
 				.statusCode(404);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -60,7 +61,7 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 	public void postTenantsGroupsPermissionsNoAuthentication() throws JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middlerURLTenantsGroupsPermissions")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middlerURLTenantsGroupsPermissions).then()
 				.statusCode(401);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();

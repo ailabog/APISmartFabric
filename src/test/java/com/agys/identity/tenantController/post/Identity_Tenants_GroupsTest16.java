@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import com.agys.jsonBuilder.TenantsGroups;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,7 +36,7 @@ public class Identity_Tenants_GroupsTest16 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsGroups")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups).then()
 				.statusCode(201);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -46,7 +47,7 @@ public class Identity_Tenants_GroupsTest16 {
 	public void postWrongTenantsGroups() throws JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLTenantsGroups")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups).then()
 				.statusCode(401);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();

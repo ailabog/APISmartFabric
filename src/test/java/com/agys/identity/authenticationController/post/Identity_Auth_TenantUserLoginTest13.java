@@ -1,5 +1,6 @@
 package com.agys.identity.authenticationController.post;
 
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 
 import com.agys.jsonBuilder.Login;
@@ -33,7 +34,7 @@ public class Identity_Auth_TenantUserLoginTest13 {
 				.userEmail(userEmail).userPassword(userPassword).build();
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLLogin")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLLogin).then()
 				.statusCode(201);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -51,12 +52,11 @@ public class Identity_Auth_TenantUserLoginTest13 {
 				.userEmail(userEmail).build();
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLLogin")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLLogin).then()
 				.statusCode(404);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 
 	}
-
 }

@@ -23,14 +23,14 @@ public class GETUserByIdTest {
 	public void getUserById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLUser") + USERS.USER_OK1.getId())
+						+ Endpoints.middleURLUser + USERS.USER_OK1.getId())
 				.then().assertThat().statusCode(200);
 	}
 
 	@Test
 	public void getUserByIdWithoutAuthentication() throws FileNotFoundException {
 		given().when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLUser") + USERS.USER_OK1.getId()).then().assertThat()
+				+ Endpoints.middleURLUser + USERS.USER_OK1.getId()).then().assertThat()
 				.statusCode(401);
 	}
 
@@ -38,7 +38,7 @@ public class GETUserByIdTest {
 	public void getUserByInvalidId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLUser") + USERS.USER_INVALID.getId())
+						+ Endpoints.middleURLUser + USERS.USER_INVALID.getId())
 				.then().assertThat().statusCode(404);
 	}
 
@@ -46,7 +46,7 @@ public class GETUserByIdTest {
 	public void getUserByNullId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType("application/json").get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLUser") + USERS.USER_NULL.getId())
+						+ Endpoints.middleURLUser + USERS.USER_NULL.getId())
 				.then().assertThat().statusCode(400);
 	}
 }

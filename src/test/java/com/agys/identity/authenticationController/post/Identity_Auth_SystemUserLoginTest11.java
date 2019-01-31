@@ -2,6 +2,7 @@ package com.agys.identity.authenticationController.post;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import com.agys.jsonBuilder.SystemLogin;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +38,7 @@ public class Identity_Auth_SystemUserLoginTest11 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 	            .contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSystem")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLSystem).then()
 				.statusCode(200);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
@@ -53,7 +54,7 @@ public class Identity_Auth_SystemUserLoginTest11 {
 				.userEmail(userEmail).userPassword(userPassword).build();
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLSytem")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLSystem).then()
 				.statusCode(404);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());

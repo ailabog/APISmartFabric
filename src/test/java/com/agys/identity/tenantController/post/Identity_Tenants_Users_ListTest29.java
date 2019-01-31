@@ -1,6 +1,7 @@
 package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -24,7 +25,7 @@ public class Identity_Tenants_Users_ListTest29 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersList"))
+						+ Endpoints.middleURLTenantsUsersList)
 			.then().statusCode(201);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
@@ -35,7 +36,7 @@ public class Identity_Tenants_Users_ListTest29 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersList"))
+						+  Endpoints.middleURLTenantsUsersList)
 				.then().statusCode(404);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
@@ -46,7 +47,7 @@ public class Identity_Tenants_Users_ListTest29 {
 		given().
 				contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
 				.post(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLTenantsUsersList"))
+						+  Endpoints.middleURLTenantsUsersList)
 				.then().statusCode(401);
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
