@@ -1,4 +1,4 @@
-package com.agys.catalogs.get;
+package com.agys.catalogs.catalogDefinitionController.get;
 
 
 import com.agys.Constants;
@@ -7,7 +7,6 @@ import com.agys.enums.ProcessDefinitionEnum;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;

@@ -52,4 +52,15 @@ public class Endpoints {
     public static final String middleURLDataModelVersions = "/data/model/versions/";
     public static final String middleURLDataModelVersionByVersionId = "/data/model/versions/";
     public static final String middleURLDataModelJsonPath = "/data/model/jsonpath";
+    public static final String middleURLDataModelMapping = "/data/model/mapping";
+    public static final String middleURLDataModelDefinitionVersion = "/data/model/definition/version/";
+    public static final String middleURLDataModelDefinitionVersionProcessDefinition = "/data/model/definition/version/";
+    public static final String middleURLDataModelDefinitionVersionProcessDefinition1 = "processDefinition/";
+    public static final String middleURLDataModelDefinitionVersionProcessDefinitionType1 = "/data/model/definition/version/";
+    public static final String middleURLDataModelDefinitionVersionProcessDefinitionType2 = "processDefinition/";
+    public static final String middleURLDataModelDefinitionVersionProcessDefinitionType3 = "type/";
+    public static final String middleURLDataModelDefinitionVersionType = "/data/model/definition/version//";
+    public static final String middleURLDataModelDefinitionVersion1 = "/data/model/definition/version/";
+
+
 }

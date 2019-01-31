@@ -1,4 +1,4 @@
-package com.agys.catalogs.catalogImportExportController;
+package com.agys.catalogs.catalogImportExportController.post;
 
 
 import com.agys.Constants;
