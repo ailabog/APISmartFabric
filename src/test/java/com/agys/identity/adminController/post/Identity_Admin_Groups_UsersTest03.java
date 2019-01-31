@@ -1,6 +1,7 @@
 package com.agys.identity.adminController.post;
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import com.agys.jsonBuilder.AdminGroupsUsers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,7 +39,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 
 	       given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
 				.statusCode(201);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -51,7 +52,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
 				.statusCode(404);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -63,7 +64,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminGroupsUsers")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
 				.statusCode(401);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();

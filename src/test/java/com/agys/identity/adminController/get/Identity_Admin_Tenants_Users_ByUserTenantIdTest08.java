@@ -2,6 +2,7 @@ package com.agys.identity.adminController.get;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.UsersTenantsIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -28,37 +29,37 @@ public class Identity_Admin_Tenants_Users_ByUserTenantIdTest08 {
 	@Test
 	public void getUserTenantById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK1.getId())
+						+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_OK1.getId())
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
-		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK1.getId());
+		+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_OK1.getId());
 	}
 
 	@Test
 	public void getUserTenantByInvalidId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_INVALID.getId())
+						+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_INVALID.getId())
 				.then().assertThat().statusCode(404);
 		log.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
-		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_INVALID.getId());
+		+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_INVALID.getId());
 	}
 	
 	@Test
 	public void getUserTenantByNullId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_NULL.getId())
+						+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_NULL.getId())
 				.then().assertThat().statusCode(400);
 		log.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
-		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_NULL.getId());
+		+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_NULL.getId());
 	}
 	
 	@Test
 	public void getUserTenantByIdNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK2.getId())
+						+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_OK2.getId())
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Admin_Tenants_Users_ByUserTenantId" + CredentialsUtils.getProperty("baseURL")
-		+ CredentialsUtils.getProperty("middleURLAdminTenantsUsers") + USER_TENANT.USER_TENANT_OK2.getId());
+		+ Endpoints.middleURLAdminTenantsUsers + USER_TENANT.USER_TENANT_OK2.getId());
 	}
 }

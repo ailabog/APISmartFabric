@@ -2,6 +2,7 @@ package com.agys.identity.adminController.post;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import com.agys.jsonBuilder.AdminTenantsUsers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,7 +32,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminTenantsUsers")).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenantsUsers).then()
 				.statusCode(201);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -42,7 +43,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 	public void postAdminTenantUserWrong() throws JsonProcessingException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminTenantsUsers") +1).then()
+				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenantsUsers +1).then()
 				.statusCode(404);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
@@ -53,7 +54,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 	public void postAdminTenantUserWithoutAuthentication() throws JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + CredentialsUtils.getProperty("middleURLAdminTenantsUsers")).then()
+				.post(CredentialsUtils.getProperty("baseURL") +Endpoints.middleURLAdminTenantsUsers).then()
 				.statusCode(401);
 
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();

@@ -43,7 +43,7 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 				Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_INVALID.getId())
 				.then().assertThat().statusCode(404);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_INVALID.getId()));
+				+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_INVALID.getId()));
 	}
 	
 	@Test
@@ -53,7 +53,7 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 						+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_NULL.getId())
 				.then().assertThat().statusCode(400);
 		log.info("Identity_Auth_TenantAnonLogin_By_TenantDomain" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLTenant") + TENANT_DOMAIN.TENANT_DOMAIN_NULL.getId()));
+				+ Endpoints.middleURLTenant + TENANT_DOMAIN.TENANT_DOMAIN_NULL.getId()));
 	}
 	
 	@Test

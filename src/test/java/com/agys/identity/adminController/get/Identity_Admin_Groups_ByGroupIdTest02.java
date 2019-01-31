@@ -2,6 +2,7 @@ package com.agys.identity.adminController.get;
 
 
 import com.agys.Constants;
+import com.agys.Endpoints;
 import org.testng.annotations.Test;
 import com.agys.enums.GroupIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -26,37 +27,37 @@ public class Identity_Admin_Groups_ByGroupIdTest02 {
 	@Test
 	public void getUserById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK1.getId())
+						+ Endpoints.middleURLAdminGroups + GROUP.GROUP_OK1.getId())
 				.then().assertThat().statusCode(200);
 		log.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK1.getId()));
+				+ Endpoints.middleURLAdminGroups + GROUP.GROUP_OK1.getId()));
 	}
 
 	@Test
 	public void getUserByInvalidId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_INVALID.getId())
+						+ Endpoints.middleURLAdminGroups + GROUP.GROUP_INVALID.getId())
 				.then().assertThat().statusCode(404);
 		log.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_INVALID.getId()));
+				+ Endpoints.middleURLAdminGroups + GROUP.GROUP_INVALID.getId()));
 	}
 
 	@Test
 	public void getUserByNullId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-						+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_NULL.getId())
+						+ Endpoints.middleURLAdminGroups + GROUP.GROUP_NULL.getId())
 				.then().assertThat().statusCode(400);
 		log.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_NULL.getId()));
+				+ Endpoints.middleURLAdminGroups + GROUP.GROUP_NULL.getId()));
 
 	}
 
 	@Test
 	public void getUserByIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK2.getId()).then().assertThat()
+				+ Endpoints.middleURLAdminGroups + GROUP.GROUP_OK2.getId()).then().assertThat()
 				.statusCode(401);
 		log.info("Identity_Admin_Groups_By GroupId" + (CredentialsUtils.getProperty("baseURL")
-				+ CredentialsUtils.getProperty("middleURLAdminGroups") + GROUP.GROUP_OK2.getId()));
+				+ Endpoints.middleURLAdminGroups + GROUP.GROUP_OK2.getId()));
 	}
 }
