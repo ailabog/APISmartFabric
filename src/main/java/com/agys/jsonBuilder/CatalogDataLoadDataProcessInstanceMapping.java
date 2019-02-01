@@ -13,8 +13,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @Builder
-public class CatalogDataLoadDataProcessInstanceGUI {
+public class CatalogDataLoadDataProcessInstanceMapping {
 
     private String correctTypes;
-    private String fromPLV;
+    private String mapping;
 }

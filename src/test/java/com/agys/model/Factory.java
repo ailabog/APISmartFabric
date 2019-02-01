@@ -1,6 +1,5 @@
-package com.agys.identity.model;
+package com.agys.model;
 
-import com.agys.jsonBuilder.AdminGroupsUsers;
 import com.agys.jsonBuilder.AdminTenants;
 
 import java.util.UUID;

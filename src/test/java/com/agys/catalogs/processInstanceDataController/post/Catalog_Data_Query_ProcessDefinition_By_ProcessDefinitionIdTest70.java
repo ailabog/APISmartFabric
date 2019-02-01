@@ -1,4 +1,4 @@
-package com.agys.catalogs.processInstanceDataController;
+package com.agys.catalogs.processInstanceDataController.post;
 
 
 import com.agys.Constants;
@@ -22,7 +22,6 @@ public class Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70 {
 	private ObjectMapper mapper = new ObjectMapper();
 
 	private String string = "true";
-
 	private String processInstanceId ="4525f6a0-f5a3-4120-9c20-933260bf37a1";
 
 

@@ -13,8 +13,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @Builder
-public class CatalogDataLoadDataProcessInstance {
+public class CatalogDataLoadDataProcessInstanceGUI {
 
-    private String catalogData;
-    private String embeddedData;
+    private String correctTypes;
+    private String fromPLV;
 }

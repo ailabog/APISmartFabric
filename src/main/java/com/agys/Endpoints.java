@@ -61,6 +61,13 @@ public class Endpoints {
     public static final String middleURLDataModelDefinitionVersionProcessDefinitionType3 = "type/";
     public static final String middleURLDataModelDefinitionVersionType = "/data/model/definition/version//";
     public static final String middleURLDataModelDefinitionVersion1 = "/data/model/definition/version/";
-
+    public static final String middleURLDataLoaddataInternal="/data/loadData/internal";
+    public static final String middleURLDataLoadDataProcessDefinition="/data/loadData/processInstance/";
+    public static final String middleURLDataLoadDataProcessInstanceGUI="/data/loadData/processInstance/";
+    public static final String middleURLDataLoadDataProcessInstanceGUI1="gui";
+    public static final String middleURLDataLoadDataProcessInstanceMapping="/data/loadData/processInstance/";
+    public static final String middleURLDataLoadDataProcessInstanceMapping1="mapping";
+    public static final String middleURLDataQueryProcessDefinition="/data/query/processDefinition/";
+    public static final String middleURLDataRemoveDataProcessInstance="/data/removeData/processInstance/";
 
 }

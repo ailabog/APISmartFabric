@@ -13,11 +13,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @Builder
-public class CatalogDataLoadDataInternal {
+public class CatalogDataLoadDataProcessInstance {
 
-    private String includeAttachmentData;
-    private String includeCatalogData;
-    private String processInstanceId;
-    private String versionId;
-    private String processDefinitionId;
+    private String catalogData;
+    private String embeddedData;
 }

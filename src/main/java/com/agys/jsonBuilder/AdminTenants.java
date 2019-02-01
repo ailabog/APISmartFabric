@@ -1,17 +1,15 @@
 package com.agys.jsonBuilder;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
-@Setter
+@Setter @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class AdminTenants {
 
+    private String id;
     private String defaultUserEmail;
     private String defaultUserPassword;
     private String domain;

@@ -13,39 +13,40 @@ import static com.jayway.restassured.RestAssured.given;
 
 /**
  * 
- * @author aila.bogasieru@agys.ch Removes User Group Links
+ * @author aila.bogasieru@agys.ch Removes data process instance
  */
 
-public class Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest72 {
+public class Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72 {
 
-	private String processInstanceId ="4525f6a0-f5a3-4120-9c20-933260bf37a1";
+	private String processInstanceId ="1b8f76c3-cd0a-7698-93cd-1ce69b9006e6";
+	private String invalidProcessInstanceId ="dfds3454-f5a3-3456-9c20-dfgfd";
 
 	@Test
-	public void deleteCatalogDataQueryProcessDefinitionByProcessDefinitionId() {
+	public void deleteCatalogDataRemoveDataProcessInstanceByProcessInstanceId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.delete(CredentialsUtils.getProperty("baseURL")
-						+ Endpoints.middleURLTenantsUserGroups +GROUP.GROUP_INVALID.getId() + "/" + USER.USER_INVALID.getId())
-				.then().statusCode(404);
+						+ Endpoints.middleURLDataRemoveDataProcessInstance + processInstanceId)
+				.then().statusCode(200);
 	}
 
 	@Test
-	public void deleteCatalogDataQueryProcessDefinitionByInvalidProcessDefinitionId() {
+	public void deleteCatalogDataRemoveDataProcessInstanceByInvalidProcessInstanceId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.delete(CredentialsUtils.getProperty("baseURL")
-						+ Endpoints.middleURLTenantsUserGroups +GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
-				.then().statusCode(200);
+						+ Endpoints.middleURLDataRemoveDataProcessInstance + invalidProcessInstanceId)
+				.then().statusCode(404);
 			
 	}
 	
 	@Test
-	public void deleteCatalogDataQueryProcessDefinitionByProcessDefinitionIdNoAuthentication() {
+	public void deleteCatalogDataremoveDataProcessInstanceByProcessInstanceIdNoAuthentication() {
 		given().
 		when().contentType(ContentType.JSON)
 		.delete(CredentialsUtils.getProperty("baseURL")
-				+ Endpoints.middleURLTenantsUserGroups
-				+GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
+				+ Endpoints.middleURLDataRemoveDataProcessInstance
+				+ processInstanceId)
 				.then().statusCode(401);
 	}
 }

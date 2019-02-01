@@ -1,4 +1,4 @@
-package com.agys.catalogs.processInstanceDataController;
+package com.agys.catalogs.processInstanceDataController.post;
 
 
 import com.agys.Constants;

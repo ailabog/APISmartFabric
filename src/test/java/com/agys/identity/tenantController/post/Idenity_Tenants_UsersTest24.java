@@ -43,7 +43,7 @@ public class Idenity_Tenants_UsersTest24 {
 					build();
 
 	@Test
-	public void postUserData() throws JsonProcessingException {
+	public void postIdenityTenantsUsers() throws JsonProcessingException {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
@@ -55,7 +55,7 @@ public class Idenity_Tenants_UsersTest24 {
 	}
 
 	@Test
-	public void postWrongUserData() throws JsonProcessingException {
+	public void postWrongIdenityTenantsUsers() throws JsonProcessingException {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
@@ -67,7 +67,7 @@ public class Idenity_Tenants_UsersTest24 {
 	}
 
 	@Test
-	public void postUserDataNoAuthentication() throws JsonProcessingException {
+	public void postIdenityTenantsUsersNoAuthentication() throws JsonProcessingException {
 			given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLTenantsUsers).then()
@@ -76,5 +76,4 @@ public class Idenity_Tenants_UsersTest24 {
 		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
 		log.info("Response body" + responseR.response());
 	}
-
 }
