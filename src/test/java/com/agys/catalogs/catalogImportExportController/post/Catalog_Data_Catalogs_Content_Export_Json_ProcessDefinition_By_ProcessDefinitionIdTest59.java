@@ -28,7 +28,7 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 			.processDefinitionId(processDefinitionId).build();
 
 	
-	@Test(description = "ceva")
+	@Test
 	public void postCatalogDataCatalogsContentExportJsonProcessDefinitionByProcessDefinitionId() throws JsonProcessingException {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

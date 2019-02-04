@@ -12,9 +12,4 @@ public class Factory {
             .name(UUID.randomUUID().toString())
             .status("ACTIVE").build();
 
-//    public static final AdminGroupsUsers adminGroupsUsers = AdminGroupsUsers.builder()
-//            .groupId(UUID.randomUUID().toString())
-//            //.id(id)will be filled by POST
-//            .isManager(Boolean.TRUE)
-//            .userId(userId).build();
 }

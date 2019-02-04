@@ -29,18 +29,20 @@ import java.io.IOException;
 public class Identity_Admin_TenantsTest05 {
 
     private ObjectMapper mapper = new ObjectMapper();
-    final String defaultUserEmail = "smart@yahoo.com";
-    final String defaultUserPassword = "pswe777rewr";
-    final String domain = "354354354-degf777dgd-34544";
-    final String name = "Pop";
-    final String status = "ACTIVE";
 
-    AdminTenants adminTenantsJson = AdminTenants.builder().defaultUserEmail(defaultUserEmail)
-            .defaultUserPassword(defaultUserPassword).domain(domain).name(name).status(status).
-                    build();
 
     @Test
     public void postAdminTenants() throws IOException {
+
+        final String defaultUserEmail = "smart@yahoo.com";
+        final String defaultUserPassword = "pswe777rewr";
+        final String domain = "354354354-degf777dgd-34544";
+        final String name = "Pop";
+        final String status = "ACTIVE";
+
+        AdminTenants adminTenantsJson = AdminTenants.builder().defaultUserEmail(defaultUserEmail)
+                .defaultUserPassword(defaultUserPassword).domain(domain).name(name).status(status).
+                        build();
 
         ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(JsonHelper.OBJECT_MAPPER.writeValueAsString(Factory.adminTenantsJson)).when()
@@ -71,6 +73,10 @@ public class Identity_Admin_TenantsTest05 {
         final String name = "AKLJK";
         final String status = "ACTIVE";
 
+        AdminTenants adminTenantsJson = AdminTenants.builder().defaultUserEmail(defaultUserEmail)
+                .defaultUserPassword(defaultUserPassword).domain(domain).name(name).status(status).
+                        build();
+
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
@@ -85,6 +91,10 @@ public class Identity_Admin_TenantsTest05 {
         final String name = "AKLJK";
         final String status = "ACTIVE";
 
+        AdminTenants adminTenantsJson = AdminTenants.builder().defaultUserEmail(defaultUserEmail)
+                .defaultUserPassword(defaultUserPassword).domain(domain).name(name).status(status).
+                        build();
+
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
@@ -98,6 +108,10 @@ public class Identity_Admin_TenantsTest05 {
         final String domain = "345646456456-dfgfdgfd-45t43655-34655654";
         final String name = "AKLJK";
         final String status = "ACTIVE";
+
+        AdminTenants adminTenantsJson = AdminTenants.builder().defaultUserEmail(defaultUserEmail)
+                .defaultUserPassword(defaultUserPassword).domain(domain).name(name).status(status).
+                        build();
         given()
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
