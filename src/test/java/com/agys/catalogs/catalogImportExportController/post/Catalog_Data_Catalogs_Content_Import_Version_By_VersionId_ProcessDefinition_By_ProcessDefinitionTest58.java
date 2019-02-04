@@ -75,7 +75,6 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 		assertEquals(Factory.catalogContentImportVersion.getInactiveOther(), createCatalogsContentImportVersion.getInactiveOther(), "The inactive others are equals");
 		Factory.catalogContentImportVersion.setProcessDefinitionId(createCatalogsContentImportVersion.getProcessDefinitionId());
 		Factory.catalogContentImportVersion.setVersionId(createCatalogsContentImportVersion.getVersionId());
-
 	}
 
 	@Test

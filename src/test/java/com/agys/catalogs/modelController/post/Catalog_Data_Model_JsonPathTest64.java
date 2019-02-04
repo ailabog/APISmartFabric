@@ -55,7 +55,6 @@ DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(js
 				.get(location)
 				.then()
 				.contentType(ContentType.JSON).extract().response().asString();
-
 		DataModelJsonPath dataModelJsonPath = JsonHelper.readValue(response, DataModelJsonPath.class);
 		assertEquals(Factory.dataModelJsonPath.getJson(), dataModelJsonPath.getJson(), "The jsons are equals");
 		assertEquals(Factory.dataModelJsonPath.getPath(), dataModelJsonPath.getPath(), "The paths are equals");
@@ -64,7 +63,6 @@ DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(js
 		Factory.dataModelJsonPath.setJson(dataModelJsonPath.getJson());
 		Factory.dataModelJsonPath.setPath(dataModelJsonPath.getPath());
 		Factory.dataModelJsonPath.setType(dataModelJsonPath.getType());
-
 	}
 
 	@Test

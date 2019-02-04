@@ -57,8 +57,6 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 		DataCatalogsContentExportJson createCatalogsVersion = JsonHelper.readValue(response, DataCatalogsContentExportJson.class);
 		assertEquals(Factory.catalogContentExportJson.getCatalogs(), createCatalogsVersion.getCatalogs(), "The catalogs are equals");
 		assertEquals(Factory.catalogContentExportJson.getProcessDefinitionId(), createCatalogsVersion.getProcessDefinitionId(), "The process definition ids are equals");
-
-
 		Factory.catalogContentExportVersion.setProcessDefinitionId(createCatalogsVersion.getProcessDefinitionId());
 
 	}
