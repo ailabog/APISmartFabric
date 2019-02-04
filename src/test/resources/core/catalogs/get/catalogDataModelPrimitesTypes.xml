@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="catalogDataModelPrimitesTypes" verbose="1" >
+    <parameter name="environment" value="${environment}" />
+    <test name="catalogDataModelPrimitesTypes" >
+        <classes>
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_PrimitiveTypesTest61" />
+        </classes>
+    </test>
+</suite>
