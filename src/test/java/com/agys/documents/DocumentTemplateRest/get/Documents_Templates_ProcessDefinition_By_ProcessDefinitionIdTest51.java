@@ -32,7 +32,7 @@ public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK1.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
 				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK1.getId()));
 	}
 
@@ -44,7 +44,7 @@ public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition
 						+ PROCESS_DEFINITION.PROCESS_DEFINITION_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
 				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_INVALID.getId()));
 	}
 
@@ -55,7 +55,7 @@ public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId())
 				.then().assertThat().statusCode(400);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
 				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId()));
 	}
 
@@ -65,7 +65,7 @@ public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 
 				.get(CredentialsUtils.getProperty("baseURLDocuments")
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK4.getId())
 				.then().assertThat().statusCode(401);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
 				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK4.getId()));
 	}
 }

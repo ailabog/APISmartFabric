@@ -38,7 +38,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 						+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + versionId
 				        + Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + versionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId);
 	}
@@ -51,7 +51,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + versionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 		 + Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + versionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId);
 	}
@@ -62,7 +62,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + invalidVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + invalidProcessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + invalidVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + invalidProcessDefinitionId);
 	}
@@ -75,7 +75,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + invalidVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + invalidVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId);
 	}
@@ -87,7 +87,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + invalidVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + invalidProcessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + invalidVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + invalidProcessDefinitionId);
 	}
@@ -100,7 +100,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + nullVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + nullProcessDefinitionId)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + nullVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + nullProcessDefinitionId);
 	}
@@ -112,7 +112,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + versionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + nullProcessDefinitionId)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + versionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + nullProcessDefinitionId);
 	}
@@ -124,7 +124,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + nullVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition + nullVersionId
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinition1 + processDefinitionId);
 	}

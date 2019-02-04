@@ -35,7 +35,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 						+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
 		+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}
@@ -47,7 +47,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 				+ Endpoints.middleURLDataModelDefinitionVersionType + invalidVersionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}
@@ -59,7 +59,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 				+ Endpoints.middleURLDataModelDefinitionVersionType + nullVersionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionType + nullVersionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}
@@ -72,7 +72,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 				+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}

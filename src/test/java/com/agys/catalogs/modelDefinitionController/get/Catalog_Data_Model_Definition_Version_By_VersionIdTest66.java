@@ -31,7 +31,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionIdTest66 {
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
 						+ Endpoints.middleURLDataModelCoreEntities + versionId)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 		+ Endpoints.middleURLDataModelDefinitionVersion);
 	}
 	
@@ -42,7 +42,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionIdTest66 {
 		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
 				+ Endpoints.middleURLDataModelCoreEntities)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
 		+ Endpoints.middleURLDataModelDefinitionVersion+ versionId);
 	}
 }
