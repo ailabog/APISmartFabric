@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="guiAllVersionByVersionId." verbose="1" >
+    <parameter name="environment" value="${environment}" />
+    <test name="guiAllVersionByVersionId." >
+        <classes>
+            <class name="com.agys.gui.guiRest.get.GUI_All_Version_By_VersionIdTest43" />
+        </classes>
+    </test>
+</suite>

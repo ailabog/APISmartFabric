@@ -1,4 +1,4 @@
-package com.agys.gui.guiControlPortalRest.POST;
+package com.agys.gui.guiControlPortalRest.post;
 
 
 import com.agys.Constants;
