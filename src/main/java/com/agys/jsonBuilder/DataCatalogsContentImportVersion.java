@@ -15,7 +15,7 @@ import lombok.Setter;
 @Builder
 public class DataCatalogsContentImportVersion {
 
-    private String overwtiteExisting;
+    private String overwriteExisting;
     private String inactiveOther;
     private String attachment;
     private String catalogs;

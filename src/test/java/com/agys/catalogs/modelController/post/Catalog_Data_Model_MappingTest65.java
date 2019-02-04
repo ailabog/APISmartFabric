@@ -2,18 +2,24 @@ package com.agys.catalogs.modelController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.DataModelJsonPath;
 import com.agys.jsonBuilder.DataModelMapping;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
 
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 
@@ -35,7 +41,7 @@ public class Catalog_Data_Model_MappingTest65 {
     final String isList ="true";
     final String nameModelClass ="true";
     final String typeModelClass ="true";
-    final String id1 ="truesrtetree";
+    final String id1 ="345354";
     final String isBCReady1 ="true";
     final String name1 ="trusdfgdgdge";
     final String idModelCoreEntitioes= "34564";
@@ -80,10 +86,26 @@ public class Catalog_Data_Model_MappingTest65 {
     @Test
     public void postCatalog_Data_Model_JsonPath() throws JsonProcessingException {
 
-        given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+        ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelMapping)).when()
                 .post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelMapping).then()
                 .statusCode(201);
+
+        String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+        String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+                .contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.catalogContentExportJson)).when()
+                .get(location)
+                .then()
+                .contentType(ContentType.JSON).extract().response().asString();
+
+        DataModelMapping dataModelJsonPath = JsonHelper.readValue(response, DataModelMapping.class);
+        assertEquals(Factory.dataModelMapping.getId(), dataModelJsonPath.getId(), "Ids are equals");
+        assertEquals(Factory.dataModelMapping.getDescription(), dataModelJsonPath.getDescription(), "Descriptions are equals");
+        assertEquals(Factory.dataModelMapping.getName(), dataModelJsonPath.getName(), "Names are equals");
+
+        Factory.dataModelMapping.setId(dataModelJsonPath.getId());
+        Factory.dataModelMapping.setName(dataModelJsonPath.getName());
     }
 
     @Test

@@ -13,8 +13,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @Builder
+
 public class DataCatalogsContentExportJson {
 
     private String catalogs;
     private String processDefinitionId;
+    private String versionId;
 }

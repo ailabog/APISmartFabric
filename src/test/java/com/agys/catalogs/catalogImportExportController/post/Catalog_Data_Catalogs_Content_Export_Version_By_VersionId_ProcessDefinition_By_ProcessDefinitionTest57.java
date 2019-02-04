@@ -3,18 +3,24 @@ package com.agys.catalogs.catalogImportExportController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.DataCatalogsContentExportJson;
 import com.agys.jsonBuilder.DataCatalogsContentExportVersion;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Catalog_Data_Catalogs_Content_Export_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionTest57 {
@@ -33,14 +39,32 @@ public class Catalog_Data_Catalogs_Content_Export_Version_By_VersionId_ProcessDe
 	@Test
 	public void postCatalogDataCatalogsContentExportVersionByVersionIdProcessDefinitionByProcessDefinitionId() throws JsonProcessingException {
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+		DataCatalogsContentExportVersion catalogContentExportVersion = DataCatalogsContentExportVersion.builder().catalogs(catalogs)
+				.processDefinitionId(processDefinitionId).versionId(versionId).build();
+
+		ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentExportVersion)).when()
 				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
-				Endpoints.middleURLCatalogsContentExportVersion + versionId +
-								Endpoints.middleURLDataCatalogsContentSaveVersion2 +
-				processDefinitionId)
+						Endpoints.middleURLCatalogsContentExportVersion + versionId +
+						Endpoints.middleURLDataCatalogsContentSaveVersion2 +
+						processDefinitionId)
 				.then()
 				.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.catalogContentExportVersion)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		DataCatalogsContentExportJson createCatalogsExportVersion = JsonHelper.readValue(response, DataCatalogsContentExportJson.class);
+		assertEquals(Factory.catalogContentExportVersion.getCatalogs(), createCatalogsExportVersion.getCatalogs(), "The catalogs are equals");
+		assertEquals(Factory.catalogContentExportVersion.getProcessDefinitionId(), createCatalogsExportVersion.getProcessDefinitionId(), "The process definition ids are equals");
+		assertEquals(Factory.catalogContentExportVersion.getVersionId(), createCatalogsExportVersion.getVersionId(), "The version ids are equals");
+		Factory.catalogContentExportVersion.setProcessDefinitionId(createCatalogsExportVersion.getProcessDefinitionId());
+		Factory.catalogContentExportVersion.setVersionId(createCatalogsExportVersion.getVersionId());
 	}
 
 	@Test
