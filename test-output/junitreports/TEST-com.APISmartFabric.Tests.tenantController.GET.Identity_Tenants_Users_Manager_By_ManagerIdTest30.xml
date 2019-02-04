@@ -63,4 +63,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getTenantsUsersManagerByManagerIdNoAuthentication -->
-</testsuite> <!-- com.agys.identity.tenantController.get.Identity_Tenants_Users_Manager_By_ManagerIdTest30 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.get.Identity_Tenants_Users_Manager_By_ManagerIdTest30 -->

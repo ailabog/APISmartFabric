@@ -127,4 +127,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postWrongSystemLogin -->
-</testsuite> <!-- com.agys.identity.authenticationController.post.POSTSystemUserLoginTest11 -->
+</testsuite> <!-- com.agys.catalogs.authenticationController.post.POSTSystemUserLoginTest11 -->

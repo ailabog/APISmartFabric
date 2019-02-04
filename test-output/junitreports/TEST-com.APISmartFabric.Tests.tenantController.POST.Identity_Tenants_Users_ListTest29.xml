@@ -128,4 +128,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postTenantsGroupsUsers -->
-</testsuite> <!-- com.agys.identity.tenantController.post.Identity_Tenants_Users_ListTest29 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.post.Identity_Tenants_Users_ListTest29 -->

@@ -62,4 +62,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getTenantsUsersProfileNoAuthentication -->
-</testsuite> <!-- com.agys.identity.tenantController.get.Identity_Tenants_Users_ProfileTest31 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.get.Identity_Tenants_Users_ProfileTest31 -->

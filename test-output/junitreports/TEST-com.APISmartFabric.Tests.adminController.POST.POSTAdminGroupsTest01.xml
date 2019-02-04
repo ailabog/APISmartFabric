@@ -128,4 +128,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postAdminGroup -->
-</testsuite> <!-- com.agys.identity.adminController.post.POSTAdminGroupsTest01 -->
+</testsuite> <!-- com.agys.catalogs.adminController.post.POSTAdminGroupsTest01 -->

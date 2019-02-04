@@ -25,7 +25,7 @@ public class BaseTest {
 
         String basePath = System.getProperty("server.base");
         if(basePath==null){
-            basePath = "/identity-service/identity/";
+            basePath = "/catalogs-service/catalogs/";
         }
         RestAssured.basePath = basePath;
 

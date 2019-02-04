@@ -178,4 +178,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getTenantsUserGroupsByInvalidId -->
-</testsuite> <!-- com.agys.identity.tenantController.get.Identity_Tenants_UserGroups_By_IdsTest21 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.get.Identity_Tenants_UserGroups_By_IdsTest21 -->

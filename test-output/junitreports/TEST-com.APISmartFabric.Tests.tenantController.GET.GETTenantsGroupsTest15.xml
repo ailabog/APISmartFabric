@@ -62,4 +62,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
     </failure>
   </testcase> <!-- getTenantsGroupsNoAuthentication -->
   <testcase name="getTenantsGroups" time="1.248" classname="com.agys.identity.tenantController.get.GETTenantsGroupsTest15"/>
-</testsuite> <!-- com.agys.identity.tenantController.get.GETTenantsGroupsTest15 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.get.GETTenantsGroupsTest15 -->

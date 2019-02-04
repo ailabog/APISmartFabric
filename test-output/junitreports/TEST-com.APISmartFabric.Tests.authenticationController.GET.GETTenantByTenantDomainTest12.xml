@@ -121,4 +121,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getTenantByTenantDomainNoAuthentication -->
-</testsuite> <!-- com.agys.identity.authenticationController.get.GETTenantByTenantDomainTest12 -->
+</testsuite> <!-- com.agys.catalogs.authenticationController.get.GETTenantByTenantDomainTest12 -->

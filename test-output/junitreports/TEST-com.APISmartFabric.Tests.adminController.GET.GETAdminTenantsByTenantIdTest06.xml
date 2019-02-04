@@ -178,4 +178,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getUserByIdNoAuthentication -->
-</testsuite> <!-- com.agys.identity.adminController.get.GETAdminTenantsByTenantIdTest06 -->
+</testsuite> <!-- com.agys.catalogs.adminController.get.GETAdminTenantsByTenantIdTest06 -->

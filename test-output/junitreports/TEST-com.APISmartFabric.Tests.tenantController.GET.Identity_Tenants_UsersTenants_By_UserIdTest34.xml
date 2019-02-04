@@ -121,4 +121,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getTenantsUsersByUserId -->
-</testsuite> <!-- com.agys.identity.tenantController.get.Identity_Tenants_UsersTenants_By_UserIdTest34 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.get.Identity_Tenants_UsersTenants_By_UserIdTest34 -->

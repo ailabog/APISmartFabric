@@ -127,4 +127,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postWrongUserData -->
-</testsuite> <!-- com.agys.identity.tenantController.post.Idenity_Tenants_UsersTest24 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.post.Idenity_Tenants_UsersTest24 -->

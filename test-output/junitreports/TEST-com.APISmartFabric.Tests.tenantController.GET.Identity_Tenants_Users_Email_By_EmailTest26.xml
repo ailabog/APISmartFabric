@@ -62,4 +62,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
     </failure>
   </testcase> <!-- getgetTenantsUsersEmailByEmailNoAuthentication -->
   <testcase name="getTenantsUsersEmailByEmail" time="1.168" classname="com.agys.identity.tenantController.get.Identity_Tenants_Users_Email_By_EmailTest26"/>
-</testsuite> <!-- com.agys.identity.tenantController.get.Identity_Tenants_Users_Email_By_EmailTest26 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.get.Identity_Tenants_Users_Email_By_EmailTest26 -->

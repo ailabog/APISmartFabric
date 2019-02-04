@@ -128,4 +128,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- deleteGroupIdInvalid -->
-</testsuite> <!-- com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 -->

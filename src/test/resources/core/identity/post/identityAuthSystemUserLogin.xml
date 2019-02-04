@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="identityAuthTenantUserLogin" verbose="1" >
+    <parameter name="environment" value="${environment}" />
+    <test name="identityAuthTenantUserLogin" >
+        <classes>
+            <class name="com.agys.identity.authenticationController.post.Identity_Auth_TenantUserLoginTest13" />
+        </classes>
+    </test>
+</suite>

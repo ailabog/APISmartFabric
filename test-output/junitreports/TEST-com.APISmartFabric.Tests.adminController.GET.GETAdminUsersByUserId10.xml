@@ -186,4 +186,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- getAdminUserByNULLUserId -->
-</testsuite> <!-- com.agys.identity.adminController.get.GETAdminUsersByUserId10 -->
+</testsuite> <!-- com.agys.catalogs.adminController.get.GETAdminUsersByUserId10 -->

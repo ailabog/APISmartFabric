@@ -127,4 +127,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
     </failure>
   </testcase> <!-- postTenantsGroupsPermissions -->
-</testsuite> <!-- com.agys.identity.tenantController.post.POSTTenantsGroupsPermissionsTest18 -->
+</testsuite> <!-- com.agys.catalogs.tenantController.post.POSTTenantsGroupsPermissionsTest18 -->

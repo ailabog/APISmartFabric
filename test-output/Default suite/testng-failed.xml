@@ -8,7 +8,7 @@
           <include name="deleteGroupIdValidNoAuthentication"/>
           <include name="deleteGroupIdInvalid"/>
         </methods>
-      </class> <!-- com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 -->
+      </class> <!-- com.agys.catalogs.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
