@@ -53,9 +53,6 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest
 				+type)
 				.then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -68,8 +65,5 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest
 						+type)
 				.then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

@@ -38,9 +38,6 @@ public class Documents_Templates_ExportSimpleTest49 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(200);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 
@@ -53,9 +50,6 @@ public class Documents_Templates_ExportSimpleTest49 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -68,7 +62,5 @@ public class Documents_Templates_ExportSimpleTest49 {
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(404);
 
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

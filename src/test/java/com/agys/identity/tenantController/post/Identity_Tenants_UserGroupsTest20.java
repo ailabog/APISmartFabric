@@ -25,8 +25,6 @@ public class Identity_Tenants_UserGroupsTest20 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLTenantsUserGroups)
 			.then().statusCode(201);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		responseR.response();
 		}
 
 	@Test
@@ -37,7 +35,5 @@ public class Identity_Tenants_UserGroupsTest20 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLTenantsUserGroups)
 			.then().statusCode(401);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		responseR.response();
 	}
 }

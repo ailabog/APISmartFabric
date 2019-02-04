@@ -44,9 +44,6 @@ public class Catalog_Data_Catalogs_Content_Load_Version_By_Versionid_ProcessDefi
 						Endpoints.middleURLDataCatalogsContentLoadVersion2 + processDefinitionId)
 				.then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -58,8 +55,5 @@ public class Catalog_Data_Catalogs_Content_Load_Version_By_Versionid_ProcessDefi
 						Endpoints.middleURLDataCatalogsContentLoadVersion2 + processDefinitionId)
 				.then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

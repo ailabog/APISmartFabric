@@ -54,10 +54,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 				+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 +type)
 				.then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-	}
+}
 
 	@Test
 	public void postCatalogDataModelDefinitionVersionByVersionIdProcessDefinitionByProcessDefinitionTypeByTypeNoAuthentication() throws JsonProcessingException {
@@ -69,8 +66,5 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 						+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 +type)
 				.then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

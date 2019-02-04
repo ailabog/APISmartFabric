@@ -61,10 +61,7 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 						processDefinitionId)
 				.then()
 				.statusCode(404);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-	}
+		}
 
 	@Test
 	public void postCatalogDataCatalogsContentImportVersionByVersionIdProcessDefinitionByInvalidProcessDefinitionId() throws JsonProcessingException {
@@ -93,9 +90,6 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 						invalidPocessDefinitionId)
 				.then()
 			.statusCode(404);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -109,8 +103,5 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 						processDefinitionId)
 				.then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

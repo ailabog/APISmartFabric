@@ -38,9 +38,6 @@ public class Identity_Tenants_GroupsTest16 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -49,8 +46,5 @@ public class Identity_Tenants_GroupsTest16 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

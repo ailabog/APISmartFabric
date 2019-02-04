@@ -28,8 +28,6 @@ public class Identity_Tenants_Groups_UsersTest19 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLTennatsGroupsUsers)
 			.then().statusCode(201);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		responseR.response();
 	}
 
 	@Test
@@ -39,8 +37,6 @@ public class Identity_Tenants_Groups_UsersTest19 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLTennatsGroupsUsers)
 				.then().statusCode(404);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -50,7 +46,5 @@ public class Identity_Tenants_Groups_UsersTest19 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLTennatsGroupsUsers)
 				.then().statusCode(401);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

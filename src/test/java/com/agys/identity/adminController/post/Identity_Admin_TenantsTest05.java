@@ -75,9 +75,6 @@ public class Identity_Admin_TenantsTest05 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
                 .statusCode(404);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -92,9 +89,6 @@ public class Identity_Admin_TenantsTest05 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
                 .statusCode(404);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -108,8 +102,5 @@ public class Identity_Admin_TenantsTest05 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
                 .statusCode(401);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
-    }
+     }
 }

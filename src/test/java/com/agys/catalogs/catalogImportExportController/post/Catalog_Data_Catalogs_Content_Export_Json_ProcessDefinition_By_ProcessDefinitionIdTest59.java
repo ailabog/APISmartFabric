@@ -37,23 +37,17 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 				Endpoints.middleURLCatalogsExportJson + processDefinitionId)
 				.then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
 	public void postCatalogDataCatalogsContentExportJsonProcessDefinitionByInvalidProcessDefinitionId() throws JsonProcessingException {
 
-			given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentExportJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
 						Endpoints.middleURLCatalogsExportJson + invalidProcessDefinitionId)
 				.then()
 				.statusCode(404);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -65,8 +59,5 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 						Endpoints.middleURLCatalogsExportJson + processDefinitionId)
 				.then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

@@ -40,9 +40,6 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middlerURLTenantsGroupsPermissions).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -52,9 +49,6 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middlerURLTenantsGroupsPermissions +5).then()
 				.statusCode(404);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 	
 	@Test
@@ -63,9 +57,5 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middlerURLTenantsGroupsPermissions).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
    }
-
 }

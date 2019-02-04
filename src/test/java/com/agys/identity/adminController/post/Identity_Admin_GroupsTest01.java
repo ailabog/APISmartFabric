@@ -38,9 +38,6 @@ public class Identity_Admin_GroupsTest01 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(201);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -51,9 +48,6 @@ public class Identity_Admin_GroupsTest01 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(409);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -64,9 +58,6 @@ public class Identity_Admin_GroupsTest01 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(400);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -77,8 +68,5 @@ public class Identity_Admin_GroupsTest01 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
                 .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(401);
-
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 }

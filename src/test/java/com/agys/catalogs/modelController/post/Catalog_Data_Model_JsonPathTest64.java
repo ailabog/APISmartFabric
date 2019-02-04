@@ -38,8 +38,6 @@ DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(js
 	            .contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelJsonPathBuilder)).when()
 				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelJsonPath).then()
 				.statusCode(201);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -52,7 +50,5 @@ DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(js
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelJsonPathBuilder)).when()
 				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelJsonPath).then()
 				.statusCode(401);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

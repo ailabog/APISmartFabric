@@ -51,11 +51,7 @@ public class Documents_TemplatesTest46 {
 				contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-
-	}
+}
 
 	@Test
 	public void postDocumentsTemplatesNoAuthentication() throws JsonProcessingException {
@@ -64,11 +60,7 @@ public class Documents_TemplatesTest46 {
 				contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-
-	}
+}
 
 	@Test
 	public void postWrongDocumentsTemplates() throws JsonProcessingException {
@@ -77,8 +69,5 @@ public class Documents_TemplatesTest46 {
 				contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
 				.statusCode(403);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

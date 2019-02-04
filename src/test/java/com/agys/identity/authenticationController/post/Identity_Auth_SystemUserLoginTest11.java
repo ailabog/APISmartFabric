@@ -40,9 +40,6 @@ public class Identity_Auth_SystemUserLoginTest11 {
 	            .contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLSystem).then()
 				.statusCode(200);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-		
 	}
 
 	@Test
@@ -56,7 +53,5 @@ public class Identity_Auth_SystemUserLoginTest11 {
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLSystem).then()
 				.statusCode(404);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

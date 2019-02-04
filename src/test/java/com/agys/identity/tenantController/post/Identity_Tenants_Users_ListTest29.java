@@ -27,9 +27,7 @@ public class Identity_Tenants_Users_ListTest29 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLTenantsUsersList)
 			.then().statusCode(201);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-	}
+		}
 
 	@Test
 	public void postWrongTenantsGroupsUsers() {
@@ -38,8 +36,6 @@ public class Identity_Tenants_Users_ListTest29 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+  Endpoints.middleURLTenantsUsersList)
 				.then().statusCode(404);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -49,7 +45,5 @@ public class Identity_Tenants_Users_ListTest29 {
 				.post(CredentialsUtils.getProperty("baseURL")
 						+  Endpoints.middleURLTenantsUsersList)
 				.then().statusCode(401);
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

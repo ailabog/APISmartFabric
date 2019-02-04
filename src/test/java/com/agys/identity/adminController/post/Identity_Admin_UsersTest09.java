@@ -56,9 +56,6 @@ public class Identity_Admin_UsersTest09 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminUsersJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLUser).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -68,9 +65,6 @@ public class Identity_Admin_UsersTest09 {
 					.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminUsersJson)).when()
 					.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLUser).then()
 					.statusCode(404);
-
-			RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-			log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -79,8 +73,5 @@ public class Identity_Admin_UsersTest09 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminUsersJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLUser).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

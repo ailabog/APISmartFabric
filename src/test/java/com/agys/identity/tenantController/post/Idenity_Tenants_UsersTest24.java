@@ -49,9 +49,6 @@ public class Idenity_Tenants_UsersTest24 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsers).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -61,9 +58,6 @@ public class Idenity_Tenants_UsersTest24 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLTenantsUsers +3).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 
 	@Test
@@ -72,8 +66,5 @@ public class Idenity_Tenants_UsersTest24 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
 				.post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLTenantsUsers).then()
 				.statusCode(201);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

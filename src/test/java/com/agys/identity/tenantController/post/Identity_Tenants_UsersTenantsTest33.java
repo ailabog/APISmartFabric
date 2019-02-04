@@ -35,16 +35,12 @@ public class Identity_Tenants_UsersTenantsTest33 {
                 .post(CredentialsUtils.getProperty("baseURL")
                         + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(404);
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
-    }
+  }
 
     @Test
     public void postWrongTenantsGroupsUsersNoAuthentication() {
         given().contentType(ContentType.JSON).body("{\"code\":\"" + USER.USER_OK3.getId() + "\" ]").when().post(
                 CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(401);
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 }

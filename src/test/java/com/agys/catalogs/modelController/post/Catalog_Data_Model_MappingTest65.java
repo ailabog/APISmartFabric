@@ -84,8 +84,6 @@ public class Catalog_Data_Model_MappingTest65 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelMapping)).when()
                 .post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelMapping).then()
                 .statusCode(201);
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
     }
 
     @Test
@@ -94,8 +92,6 @@ public class Catalog_Data_Model_MappingTest65 {
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelMapping)).when()
                 .post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelMapping).then()
                 .statusCode(401);
-        RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-        log.info("Response body" + responseR.response());
-    }
+   }
 }
 
