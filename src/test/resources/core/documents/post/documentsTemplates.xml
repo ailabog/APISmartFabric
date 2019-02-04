@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="documentsTemplates" verbose="1" >
+    <parameter name="environment" value="${environment}" />
+    <test name="documentsTemplates" >
+        <classes>
+            <class name="com.agys.documents.documentTemplateRest.post.Documents_TemplatesTest46" />
+        </classes>
+    </test>
+</suite>
