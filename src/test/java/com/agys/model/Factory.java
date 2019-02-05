@@ -177,4 +177,31 @@ public class Factory {
             .usedAttributes("24")
             .versionId("d7eaf674-d4dd-42bd-bbb4-a9eb2951926f")
             .build();
-  }
+
+    public static final PortalRevisionInstall portalRevisionInstallation  = PortalRevisionInstall.builder()
+            .active("true")
+            .guiControlId("2453645734-76345735-2576348534")
+            .installedGUIControlRevisionId("275634583456-683458536-8338753")
+            .instanceId("7234wefjwes-82364382y45wefl-2634832")
+            .toBeInstalledGUIControlRevisionId("swjfsdjfweruew-8347nfkdsn-sakfjsd-84375")
+            .build();
+
+    public static final GuiControlRevisionSave guiControlRevisionSave  = GuiControlRevisionSave.builder()
+            .code("34535")
+            .config("34543")
+            .fileName("MyNameAila")
+            .fileType("txt")
+            .fileUUID("3456464565-346546456-456456")
+            .guiControlId("481d57e6-27a2-423e-b309-709126b94263")
+            .guiControlRevisionId("481d57e6-2ha2-423e-b309-709126b94265")
+            .revision("10")
+            .build();
+
+    public static final PortalRevisionInstall portalRevisionInstall  = PortalRevisionInstall.builder()
+            .active("true")
+            .guiControlId("2453645734-76345735-2576348534")
+            .installedGUIControlRevisionId("275634583456-683458536-8338753")
+            .instanceId("7234wefjwes-82364382y45wefl-2634832")
+            .toBeInstalledGUIControlRevisionId("swjfsdjfweruew-8347nfkdsn-sakfjsd-8437")
+            .build();
+ }

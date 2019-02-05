@@ -3,17 +3,23 @@ package com.agys.gui.guiControlPortalRest.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.DocumentsTemplates;
 import com.agys.jsonBuilder.PortalRevisionInstall;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class GUI_Portal_Revision_Install_ScheduleTest38 {
@@ -34,14 +40,30 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 				instanceId(instanceId).toBeInstalledGUIControlRevisionId(toBeInstalledGUIControlRevisionId)	.
 				build();
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIPortalRevisionInstallList).then()
-				.statusCode(201);
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
+						.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIPortalRevisionInstallList).then()
+						.statusCode(201);
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
 
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
-	}
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.catalogContentExportJson)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		PortalRevisionInstall portalRevisionInstall= JsonHelper.readValue(response, PortalRevisionInstall.class);
+		assertEquals(Factory.portalRevisionInstallation.getGuiControlId(), portalRevisionInstall.getGuiControlId(), "GUI Control Ids are equals");
+			assertEquals(Factory.portalRevisionInstallation.getInstalledGUIControlRevisionId(), portalRevisionInstall.getInstalledGUIControlRevisionId(), "Installed GUI Control Revision Ids are equals");
+		assertEquals(Factory.portalRevisionInstallation.getInstanceId(), portalRevisionInstall.getInstanceId(), "Instance Ids are equals");
+		assertEquals(Factory.portalRevisionInstallation.getToBeInstalledGUIControlRevisionId(), portalRevisionInstall.getToBeInstalledGUIControlRevisionId(), "To be installed GUI Control Revision Ids are equals");
+
+		Factory.portalRevisionInstallation.setGuiControlId(portalRevisionInstall.getGuiControlId());
+		Factory.portalRevisionInstallation.setInstalledGUIControlRevisionId(portalRevisionInstall.getInstalledGUIControlRevisionId());
+		Factory.portalRevisionInstallation.setInstanceId(portalRevisionInstall.getInstanceId());
+		Factory.portalRevisionInstallation.setToBeInstalledGUIControlRevisionId(portalRevisionInstall.getToBeInstalledGUIControlRevisionId());
+    }
 
 	@Test
 	public void postGUIPortalRevisionInstallScheduleNoAuthentication() throws JsonProcessingException {
