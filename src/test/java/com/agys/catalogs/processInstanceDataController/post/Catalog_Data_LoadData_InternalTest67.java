@@ -5,16 +5,21 @@ import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.jsonBuilder.CatalogDataLoadDataInternal;
 import com.agys.jsonBuilder.DataCatalogsContentVersion;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Catalog_Data_LoadData_InternalTest67 {
@@ -34,11 +39,29 @@ public class Catalog_Data_LoadData_InternalTest67 {
 	@Test
 	public void postCatalogDataLoadDataInternal() throws JsonProcessingException {
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataInternal)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoaddataInternal)
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataInternal)).when()
+						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoaddataInternal)
+						.then()
+						.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.dataModelDefVersion)).when()
+				.get(location)
 				.then()
-				.statusCode(201);
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		CatalogDataLoadDataInternal catalogDataLoadDataInternal= JsonHelper.readValue(response, CatalogDataLoadDataInternal.class);
+		assertEquals(Factory.catalogDataLoadDataIntern.getProcessInstanceId(), catalogDataLoadDataInternal.getProcessInstanceId(), "Process Instances are equals");
+		assertEquals(Factory.catalogDataLoadDataIntern.getVersionId(), catalogDataLoadDataInternal.getVersionId(), "Versions ids are equals");
+		assertEquals(Factory.catalogDataLoadDataIntern.getProcessDefinitionId(), catalogDataLoadDataInternal.getProcessDefinitionId(), "Process definition Ids are equals");
+
+		Factory.catalogDataLoadDataIntern.setProcessInstanceId(catalogDataLoadDataInternal.getProcessInstanceId());
+		Factory.catalogDataLoadDataIntern.setVersionId(catalogDataLoadDataInternal.getVersionId());
+		Factory.catalogDataLoadDataIntern.setProcessDefinitionId(catalogDataLoadDataInternal.getProcessDefinitionId());
 	}
 
 	@Test

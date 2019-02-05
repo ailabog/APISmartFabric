@@ -85,4 +85,70 @@ public class Factory {
                    pathlist("//users/downloads/something").
                     build();
 
-}
+    public static final DataModelDefinitionVersion dataModelDefVersion  = DataModelDefinitionVersion.builder()
+            .diagram("swewrfwe")
+            .fieldsId("wesr")
+            .fieldsBCReady("swerw")
+            .fieldsEmbeded("true")
+            .fieldsIndexable("true")
+            .fieldsList("true")
+            .fieldName("name")
+            .fieldType("type")
+            .id("508b2cf1-as2b-4d4e-8d1a-h7f85c4e8177")
+            .isBCReady("true")
+            .name("name34w54")
+            .type("type1")
+             .build();
+
+    public static final DataCatalogsContentVersion dataCatalogContentVersion  = DataCatalogsContentVersion.builder()
+            .filters("swewrfwe")
+            .options("wesr")
+            .all_languages("en, fr, it")
+            .ascending("true")
+            .sort_by("type")
+            .type("type545")
+            .build();
+
+    public static final DataCatalogsContentSaveVersion dataCatalogsContentSaveVersion  = DataCatalogsContentSaveVersion.builder()
+            .active("true")
+            .code("34566546546")
+            .columns("1")
+            .name("name222")
+            .additionalProp1("prop1")
+            .additionalProp2("prop2")
+            .additionalProp3("prop3")
+            .build();
+
+
+    public static final DataCatalogsDefinitionVersion dataCatalogDefVersion  = DataCatalogsDefinitionVersion.builder()
+            .description("this is a field description")
+            .idFields("5666")
+            .nameFields("nameFileds")
+            .type("dfghf")
+            .idDescription("508b2cf1-bc2b-4d4e-8d1a-d5f85c4e8177")
+            .nameDescription("this is a description")
+            .removed("yes")
+            .build();
+
+    public static final CatalogDataLoadDataInternal catalogDataLoadDataIntern  = CatalogDataLoadDataInternal.builder()
+            .includeAttachmentData("true")
+            .includeCatalogData("true")
+            .processInstanceId("a36d58ac-be8f-4256-8b3c-90e1bc920c3d")
+            .versionId("a36d58ac-be8f-4256-8b3c-90e1bc920c3d")
+            .processDefinitionId("a36d58ac-be8f-4256-8b3c-90e1bc920c3d")
+            .build();
+
+    public static final CatalogDataLoadDataProcessInstanceMapping catalogDataLoadDataProcessInstanceMapp  = CatalogDataLoadDataProcessInstanceMapping.builder()
+            .correctTypes("true")
+            .mapping("true")
+            .build();
+
+    public static final CatalogDataLoadDataProcessInstance catalogLoadDataProcessInstance  = CatalogDataLoadDataProcessInstance.builder()
+            .catalogData("true")
+            .embeddedData("true")
+            .build();
+
+    public static final CatalogDataQueryProcessDefinition catalogDataQueryProcessDefinition  = CatalogDataQueryProcessDefinition.builder()
+            .string("dehgierhglerjogrey")
+            .build();
+   }

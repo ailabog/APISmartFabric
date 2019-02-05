@@ -4,16 +4,22 @@ package com.agys.catalogs.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.jsonBuilder.DataCatalogsContentSaveVersion;
+import com.agys.jsonBuilder.DataCatalogsContentVersion;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Catalog_Data_Catalogs_Content_Save_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest53 {
@@ -41,19 +47,31 @@ public class Catalog_Data_Catalogs_Content_Save_Version_By_Versionid_ProcessDefi
 					type(type).
 					build();
 
-	
 	@Test
 	public void postCatalogDataCatalogsContentSaveVersion() throws JsonProcessingException {
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentSaveVersion)).when()
+						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataCatalogsContentSaveVersion1 + versionId +
+								Endpoints.middleURLDataCatalogsContentSaveVersion2 + processDefinitionId)
+						.then()
+						.statusCode(201);
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentSaveVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataCatalogsContentSaveVersion1 + versionId +
-						Endpoints.middleURLDataCatalogsContentSaveVersion2 + processDefinitionId)
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.dataModelDefVersion)).when()
+				.get(location)
 				.then()
-				.statusCode(201);
+				.contentType(ContentType.JSON).extract().response().asString();
 
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
+		DataCatalogsContentSaveVersion dataModelContentSaveVersion= JsonHelper.readValue(response, DataCatalogsContentSaveVersion.class);
+		assertEquals(Factory.dataCatalogsContentSaveVersion.getCode(), dataModelContentSaveVersion.getCode(), "Codes are equals");
+		assertEquals(Factory.dataCatalogsContentSaveVersion.getColumns(), dataModelContentSaveVersion.getColumns(), "Columns are equals");
+		assertEquals(Factory.dataCatalogsContentSaveVersion.getName(), dataModelContentSaveVersion.getName(), "Names are equals");
+		assertEquals(Factory.dataCatalogsContentSaveVersion.getType(), dataModelContentSaveVersion.getType(), "Types are equals");
+		Factory.dataCatalogsContentSaveVersion.setCode(dataModelContentSaveVersion.getCode());
+		Factory.dataCatalogsContentSaveVersion.setName(dataModelContentSaveVersion.getName());
 	}
 
 	@Test

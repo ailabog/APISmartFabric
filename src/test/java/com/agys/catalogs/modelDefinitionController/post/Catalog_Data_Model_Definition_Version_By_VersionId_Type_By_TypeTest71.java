@@ -4,16 +4,21 @@ package com.agys.catalogs.modelDefinitionController.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.jsonBuilder.DataModelDefinitionVersion;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest71 {
@@ -37,22 +42,37 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest
 
 
 	DataModelDefinitionVersion catalogModelDefinitionVersion = DataModelDefinitionVersion.builder().diagram(diagram)
-			.fieldsId(fieldsId).fieldisBCReady(fieldsBCReady).
-					fieldisEmbeded(fieldsEmbeded).fieldisIndexable(fieldsIndexable).fieldisList(fieldsList).
+			.fieldsId(fieldsId).fieldsBCReady(fieldsBCReady).
+					fieldsEmbeded(fieldsEmbeded).fieldsIndexable(fieldsIndexable).fieldsList(fieldsList).
 			fieldName(fieldName).fieldType(fieldType).id(id).isBCReady(isBCReady).name(name).
 					type(type).build();
 
 	@Test
 	public void posCatalogDataModelDefinitionVersionByVersionIdTypeByType() throws JsonProcessingException {
 
-
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+		ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogModelDefinitionVersion)).when()
 				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelDefinitionVersion + versionId +
 						Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3
-				+type)
+						+type)
 				.then()
 				.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.dataModelDefVersion)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		DataModelDefinitionVersion dataModelDefinitionVersion= JsonHelper.readValue(response, DataModelDefinitionVersion.class);
+		assertEquals(Factory.dataModelDefVersion.getDiagram(), dataModelDefinitionVersion.getDiagram(), "The diagrams are equals");
+		assertEquals(Factory.dataModelDefVersion.getFieldName(), dataModelDefinitionVersion.getFieldName(), "The filed names are equals");
+		assertEquals(Factory.dataModelDefVersion.getId(), dataModelDefinitionVersion.getId(), "The ids are equals");
+		assertEquals(Factory.dataModelDefVersion.getName(), dataModelDefinitionVersion.getName(), "The names are equals");
+		Factory.dataModelDefVersion.setId(dataModelDefinitionVersion.getId());
+		Factory.dataModelDefVersion.setName(dataModelDefinitionVersion.getName());
 	}
 
 	@Test

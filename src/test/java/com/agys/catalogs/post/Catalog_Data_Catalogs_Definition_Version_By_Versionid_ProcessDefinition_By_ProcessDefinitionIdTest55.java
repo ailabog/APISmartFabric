@@ -3,17 +3,23 @@ package com.agys.catalogs.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.DataCatalogsContentSaveVersion;
 import com.agys.jsonBuilder.DataCatalogsDefinitionVersion;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest55 {
@@ -39,15 +45,33 @@ public class Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefini
 	@Test
 	public void postCatalogDataCatalogsContentLoadVersion() throws JsonProcessingException {
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogDefinitionVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataCatalogsDefinitionVersion1 + versionId +
-						Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId)
-				.then()
-				.statusCode(201);
 
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogDefinitionVersion)).when()
+						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataCatalogsDefinitionVersion1 + versionId +
+								Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId)
+						.then()
+						.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.dataCatalogDefVersion)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		DataCatalogsDefinitionVersion dataModelContentSaveVersion= JsonHelper.readValue(response, DataCatalogsDefinitionVersion.class);
+		assertEquals(Factory.dataCatalogDefVersion.getDescription(), dataModelContentSaveVersion.getDescription(), "Descriptions are equals");
+		assertEquals(Factory.dataCatalogDefVersion.getIdFields(), dataModelContentSaveVersion.getIdFields(), "IdFields are equals");
+		assertEquals(Factory.dataCatalogDefVersion.getNameFields(), dataModelContentSaveVersion.getNameFields(), "Name fields are equals");
+		assertEquals(Factory.dataCatalogDefVersion.getType(), dataModelContentSaveVersion.getType(), "Types are equals");
+		assertEquals(Factory.dataCatalogDefVersion.getIdDescription(), dataModelContentSaveVersion.getIdDescription(), "Ids description are equals");
+		assertEquals(Factory.dataCatalogDefVersion.getNameDescription(), dataModelContentSaveVersion.getNameDescription(), "Names description are equals");
+		Factory.dataCatalogDefVersion.setDescription(dataModelContentSaveVersion.getDescription());
+		Factory.dataCatalogDefVersion.setIdFields(dataModelContentSaveVersion.getIdFields());
+		Factory.dataCatalogDefVersion.setNameFields(dataModelContentSaveVersion.getNameFields());
 	}
 
 	@Test

@@ -6,15 +6,20 @@ import com.agys.Endpoints;
 import com.agys.jsonBuilder.CatalogDataLoadDataProcessInstance;
 import com.agys.jsonBuilder.CatalogDataLoadDataProcessInstanceGUI;
 import com.agys.jsonBuilder.CatalogDataLoadDataProcessInstanceMapping;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingIdTest69 {
@@ -31,6 +36,25 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingI
 
 	@Test
 	public void postCatalogDataLoadDataProcessInstanceByProcessInstanceIdMappingId() throws JsonProcessingException {
+
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping)+  processInstanceId).when()
+						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
+								Endpoints.middleURLDataLoadDataProcessInstanceMapping1)
+						.then()
+						.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.dataModelDefVersion)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		CatalogDataLoadDataProcessInstanceMapping catalogDataLoadDataProcessInstanceMapping= JsonHelper.readValue(response, CatalogDataLoadDataProcessInstanceMapping.class);
+		assertEquals(Factory.catalogDataLoadDataProcessInstanceMapp.getMapping(), catalogDataLoadDataProcessInstanceMapping.getMapping(), "Mappings are equals");
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping) + processInstanceId).when()
