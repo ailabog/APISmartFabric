@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @Builder
-public class SystemLogin {
 
+public class SystemLogin {
     private String tenantId;
     private String userEmail;
     private String userPassword;

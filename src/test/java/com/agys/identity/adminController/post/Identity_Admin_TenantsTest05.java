@@ -63,8 +63,6 @@ public class Identity_Admin_TenantsTest05 {
         Factory.adminTenantsJson.setId(createdTenant.getId());
     }
 
-
-
     @Test
     public void postWrongAdminTenant() throws JsonProcessingException {
         final String defaultUserEmail = "test@gmail.com";

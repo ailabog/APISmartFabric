@@ -11,10 +11,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class TenantsGroups {
-    final String code;
-    final String id;
-    final String name;
-    final String tenantId;
-    final String type;
+    private String code;
+    private String id;
+    private String name;
+    private String tenantId;
+    private String type;
 
-}
+  }

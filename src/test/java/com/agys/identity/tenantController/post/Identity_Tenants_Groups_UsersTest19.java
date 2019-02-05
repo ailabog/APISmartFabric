@@ -3,6 +3,12 @@ package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.TenantsGroupsPermission;
+import com.agys.model.Factory;
+import com.agys.utils.JsonHelper;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import org.testng.annotations.Test;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -12,6 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
+
 import java.util.*;
 
 @Slf4j
@@ -23,11 +31,12 @@ public class Identity_Tenants_Groups_UsersTest19 {
 
 	@Test
 	public void postTenantsGroupsUsers() {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
-				.post(CredentialsUtils.getProperty("baseURL")
-						+ Endpoints.middleURLTennatsGroupsUsers)
-			.then().statusCode(201);
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
+						.post(CredentialsUtils.getProperty("baseURL")
+								+ Endpoints.middleURLTennatsGroupsUsers)
+						.then().statusCode(201);
+
 	}
 
 	@Test

@@ -2,9 +2,14 @@ package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.Login;
 import com.agys.jsonBuilder.TenantsUsers;
+import com.agys.model.Factory;
+import com.agys.utils.JsonHelper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -14,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 import java.util.UUID;
 
@@ -45,10 +51,31 @@ public class Idenity_Tenants_UsersTest24 {
 	@Test
 	public void postIdenityTenantsUsers() throws JsonProcessingException {
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsers).then()
-				.statusCode(201);
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+						.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
+						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsers).then()
+						.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.tenantsUsers)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		TenantsUsers tenantsUsersClass = JsonHelper.readValue(response, TenantsUsers.class);
+		assertEquals(Factory.tenantsUsers.getCode(), tenantsUsersClass.getCode(), "Codes are equals");
+		assertEquals(Factory.tenantsUsers.getEmail(), tenantsUsersClass.getEmail(), "Emails are equals");
+		assertEquals(Factory.tenantsUsers.getPhone(), tenantsUsersClass.getPhone(), "Phones are equals");
+		assertEquals(Factory.tenantsUsers.getStatus(), tenantsUsersClass.getStatus(), "Statuses are equals");
+		assertEquals(Factory.tenantsUsers.getTitle(), tenantsUsersClass.getTitle(), "Titles are equals");
+
+		Factory.tenantsUsers.setCode(tenantsUsersClass.getCode());
+		Factory.tenantsUsers.setEmail(tenantsUsersClass.getEmail());
+		Factory.tenantsUsers.setPhone(tenantsUsersClass.getPhone());
+		Factory.tenantsUsers.setStatus(tenantsUsersClass.getStatus());
 	}
 
 	@Test

@@ -102,6 +102,6 @@ public class Documents_TemplatesTest46 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).
 				contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
-				.statusCode(403);
+				.statusCode(404);
 	}
 }

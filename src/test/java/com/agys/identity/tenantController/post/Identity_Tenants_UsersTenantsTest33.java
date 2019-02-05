@@ -15,7 +15,6 @@ import static com.jayway.restassured.RestAssured.given;
 @Slf4j
 public class Identity_Tenants_UsersTenantsTest33 {
 
-
     private UserIdsEnum USER;
 
     @Test

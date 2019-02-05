@@ -204,4 +204,93 @@ public class Factory {
             .instanceId("7234wefjwes-82364382y45wefl-2634832")
             .toBeInstalledGUIControlRevisionId("swjfsdjfweruew-8347nfkdsn-sakfjsd-8437")
             .build();
- }
+
+    public static final AdminGroupsUsers adminGroupsUsers  = AdminGroupsUsers.builder()
+            .groupId("e3f72af2-cc56-4353-abaf-54af2ba47936")
+            .id("ee8e633a-f482-411f-96a5-e3ea154ed504")
+            .isManager("true")
+            .userId("d6259540-7004-40ac-b926-d972c4389dec")
+            .build();
+
+
+
+    public static final AdminGroups adminGroups  = AdminGroups.builder()
+            .code("e3f72af2-cc56-4353-abaf-54af2ba47936")
+            .id("ee8e633a-f482-411f-96a5-e3ea154ed504")
+            .name("true")
+            .tenantId("d6259540-7004-40ac-b926-d972c4389dec")
+            .type("typer")
+            .build();
+
+    public static final AdminTenantsUsers adminTenantsUsers  = AdminTenantsUsers.builder()
+            .id("3566")
+            .status("ACTIVE")
+            .tenantId("d634b20d-128e-4a57-97cf-7b7b01aeb901")
+            .userId("cddef63d-5065-4b85-b685-0811c67b3b8a")
+            .build();
+
+    public static final AdminUsers adminUsers  = AdminUsers.builder()
+            .code("3566")
+            .department("IT")
+            .email("d634b2@agys.ch")
+            .firstName("jOHN")
+            .gender("FEMALE")
+            .id("00000000-0000-0000-0000-000000000001")
+            .language("EN")
+            .lastName("Pop")
+            .password("aqwerwe5345")
+            .passwordLastUpdate("")
+            .phone("34543646")
+            .position("ADMIN")
+            .reportsTo("###@@@^^^")
+            .status("ACTIVE")
+            .title("")
+            .token("e5d69d66-4720-4963-928e-4b0df52b30ad")
+            .tokenExpiry("2019-01-31 10:32:02")
+            .username("###@@@^^^")
+            .build();
+
+    public static final SystemLogin systemJson  = SystemLogin.builder()
+            .tenantId("dacb0d16-6f03-4dff-a485-8d123376cac0")
+            .userEmail("fabric_user@agys.ch")
+            .userPassword("")
+            .build();
+
+
+    public static final Login login  = Login.builder()
+            .tenantId("d634b20d-128e-4a57-97cf-7b7b01aeb901")
+            .userEmail("fabric_user@agys.ch")
+            .userPassword("passw0rd")
+            .build();
+
+      public static final TenantsUsers tenantsUsers  = TenantsUsers.builder()
+            .code("34535")
+            .email("UUID.randomUUID() + @testfabric.ch")
+            .firstName("Aila")
+            .lastName("Bogasieru")
+            .gender("FEMALE")
+            .language("English")
+            .password("Pawdfg")
+            .phone("325345436")
+            .status("ACTIVE")
+            .title("")
+            .token("365456")
+            .tokenExpiry("2019-01-11T13:31:19.825Z")
+            .build();
+
+    public static final TenantsGroupsPermission tenantsGroupsPermission  = TenantsGroupsPermission.builder()
+            .groupId("da26c865-4ef0-4e33-87fe-54fdec501ec5")
+            .id("45656786784")
+            .permission("")
+            .permissionType("DOCUMENT_TEMPLATE")
+            .targetId("TYPE")
+            .build();
+
+    public static final TenantsGroups tenantsGroups  = TenantsGroups.builder()
+            .code("67567")
+            .id("45656786784")
+            .name("John")
+            .tenantId("27b8de05-a57c-4983-b07b-d0ef011a9f7c")
+            .type("TYPE")
+            .build();
+}
