@@ -151,4 +151,30 @@ public class Factory {
     public static final CatalogDataQueryProcessDefinition catalogDataQueryProcessDefinition  = CatalogDataQueryProcessDefinition.builder()
             .string("dehgierhglerjogrey")
             .build();
-   }
+
+    public static final DocumentsExport documentsExport  = DocumentsExport.builder()
+            .html("<!DOCTYPE html> <html> <head> <style id=\"page-size\">@page { size: A4 }</style></head> <body class=\"A4\" size=\"A4\" > <p>some text&nbsp;${CurrentTime}</p> </body> </html>")
+            .build();
+
+    public static final DocumentsGenerate documentsGenerate  = DocumentsGenerate.builder()
+            .processInstanceId("5d62145f-8c4e-4b93-a037-8ae05ecae071")
+             .documentTemplateId("9d8adcb5-050e-34d2-c54f-0de2ecc52ef4")
+            .fileName("FileName")
+            .savePath("//downloads")
+            .build();
+
+
+    public static final DocumentsTemplates documentsTemplates  = DocumentsTemplates.builder()
+            .description("MyDescription")
+            .h("o")
+            .id("d7eaf674-d4dd-42bd-bbb4-a9eb2951926f")
+            .isActive("true")
+            .iteration("yes")
+            .name("AutomatedDocumentsApi")
+            .ownerId("d7eaf674-d4dd-42bd-bbb4-a9eb2951926f")
+            .processDefinitionId("d7eaf674-d4dd-42bd-bbb4-a9eb2951926f")
+            .template("346546$")
+            .usedAttributes("24")
+            .versionId("d7eaf674-d4dd-42bd-bbb4-a9eb2951926f")
+            .build();
+  }

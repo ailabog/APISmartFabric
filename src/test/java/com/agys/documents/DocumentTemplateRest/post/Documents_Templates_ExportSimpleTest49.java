@@ -2,17 +2,23 @@ package com.agys.documents.documentTemplateRest.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.jsonBuilder.DataCatalogsContentExportJson;
 import com.agys.jsonBuilder.DocumentsExport;
+import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
+import com.agys.utils.JsonHelper;
 import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.internal.ValidatableResponseImpl;
+import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author aila.bogasieru@agys.ch
@@ -34,10 +40,23 @@ public class Documents_Templates_ExportSimpleTest49 {
 		DocumentsExport docExportJson = DocumentsExport.builder().html(html)
 				.build();
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+		ValidatableResponse vr =
+				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
-				.statusCode(200);
+				.statusCode(201);
+
+		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+
+		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.catalogContentExportJson)).when()
+				.get(location)
+				.then()
+				.contentType(ContentType.JSON).extract().response().asString();
+
+		DocumentsExport createDocumentsExport = JsonHelper.readValue(response, DocumentsExport.class);
+		assertEquals(Factory.documentsExport.getHtml(), createDocumentsExport.getHtml(), "Htmls are equals");
+	    Factory.documentsExport.setHtml(createDocumentsExport.getHtml());
 	}
 
 
