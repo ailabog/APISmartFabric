@@ -69,5 +69,20 @@ public class Endpoints {
     public static final String middleURLDataLoadDataProcessInstanceMapping1="mapping";
     public static final String middleURLDataQueryProcessDefinition="/data/query/processDefinition/";
     public static final String middleURLDataRemoveDataProcessInstance="/data/removeData/processInstance/";
+    public static final String middleURLEngineApiAppFiles="/engine/api/app/files/";
+    public static final String middleURLEngineDashboardAppStatistics="/engine/dashboard/app/statistics";
+    public static final String middleURLEngineDashboardMyApps="/engine/dashboard/my/apps";
+    public static final String middleURLEngineDashboardTaskStatistics="/engine/dashboard/task/statistics";
+
+
+
+
+
+
+
+
+
+
+
 
 }

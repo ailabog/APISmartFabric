@@ -45,7 +45,6 @@ public class Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefini
 	@Test
 	public void postCatalogDataCatalogsContentLoadVersion() throws JsonProcessingException {
 
-
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogDefinitionVersion)).when()
