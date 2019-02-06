@@ -293,4 +293,27 @@ public class Factory {
             .tenantId("27b8de05-a57c-4983-b07b-d0ef011a9f7c")
             .type("TYPE")
             .build();
+
+    public static final EngineApiFlowApprovalSubmit engineApiFlowApprovalSubmitClass  = EngineApiFlowApprovalSubmit.builder()
+            .actionCode("APPROVE")
+            .comment("This is a comment")
+            .taskId("08c2d3e5-5092-419a-bb37-f81d4df9ec95")
+            .build();
+
+    public static final EngineApiFlowGuiSubmit createEngineApiFlowGuiSubmit  = EngineApiFlowGuiSubmit.builder()
+            .actionId("APPROVE")
+            .comment("This is a comment")
+            .taskId("08c2d3e5-5092-419a-bb37-f81d4df9ec95")
+            .build();
+
+
+
+
+    private String actionId = "APPROVE";
+    private String comment="This is a comment";
+    private String taskId="08c2d3e5-5092-419a-bb37-f81d4df9ec95";
+
+
+
+
 }

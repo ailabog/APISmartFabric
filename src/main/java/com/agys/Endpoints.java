@@ -73,6 +73,16 @@ public class Endpoints {
     public static final String middleURLEngineDashboardAppStatistics="/engine/dashboard/app/statistics";
     public static final String middleURLEngineDashboardMyApps="/engine/dashboard/my/apps";
     public static final String middleURLEngineDashboardTaskStatistics="/engine/dashboard/task/statistics";
+    public static final String middleURLEngineApiFlowActivity="/engine/api/flow/activity/";
+    public static final String middleURLEngineApiFlowActivity1="/actions";
+    public static final String middleURLEngineApiFlowApprovalSubmit="/engine/api/flow/approvalSubmit";
+    public static final String middleURLEngineApiGuiSubmit="/engine/api/flow/guiSubmit";
+
+
+
+
+
+
 
 
 
