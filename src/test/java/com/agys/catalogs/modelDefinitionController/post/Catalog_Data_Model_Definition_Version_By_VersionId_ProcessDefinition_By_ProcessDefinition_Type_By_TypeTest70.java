@@ -3,6 +3,7 @@ package com.agys.catalogs.modelDefinitionController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataCatalogsContentImportVersion;
 import com.agys.jsonBuilder.DataCatalogsContentVersion;
 import com.agys.jsonBuilder.DataModelDefinitionVersion;
@@ -16,6 +17,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -41,6 +44,14 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 	private String type="type1";
 	public static final String versionId ="1f8a0de9-a639-428b-9921-641898475a9b";
 	public static final String processDefinitionId ="1f8a0de9-a639-428b-9921-641898475a9b";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 
 	DataModelDefinitionVersion catalogModelDefinitionVersion = DataModelDefinitionVersion.builder().diagram(diagram)

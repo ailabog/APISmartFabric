@@ -3,6 +3,9 @@ package com.APISmartFabric.Tests.guiControlPortalRest.GET;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
@@ -20,6 +23,13 @@ import java.io.FileNotFoundException;
 @Slf4j
 
 public class GUI_Portal_Detailed_ListTest35 {
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void getGUIPortalDetailedList() throws FileNotFoundException {

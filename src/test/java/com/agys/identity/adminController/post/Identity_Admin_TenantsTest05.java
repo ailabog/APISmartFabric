@@ -7,6 +7,7 @@ import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.model.Factory;
 import com.agys.jsonBuilder.AdminTenants;
 import com.agys.utils.JsonHelper;
@@ -15,6 +16,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -29,6 +32,13 @@ import java.io.IOException;
 public class Identity_Admin_TenantsTest05 {
 
     private ObjectMapper mapper = new ObjectMapper();
+    private Environments environment;
+
+    @Parameters({"environment"})
+    @BeforeTest
+    public void setuUp(String environment) {
+        this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+    }
 
 
     @Test

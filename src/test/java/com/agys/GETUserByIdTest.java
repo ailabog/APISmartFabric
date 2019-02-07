@@ -1,5 +1,8 @@
 package com.agys;
 
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.agys.enums.UserIdsEnum;
@@ -18,6 +21,13 @@ import java.io.FileNotFoundException;
 public class GETUserByIdTest {
 
 	private UserIdsEnum USERS;
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void getUserById() throws FileNotFoundException {

@@ -3,6 +3,7 @@ package com.agys.catalogs.modelDefinitionController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataModelDefinitionVersion;
 import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
@@ -14,6 +15,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -38,6 +41,14 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest
 	private String name="ThisIsAName";
 	private String type="type1";
 	public static final String versionId ="508b2cf1-bc2b-4d4e-8d1a-d5f85c4e8177";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 
 

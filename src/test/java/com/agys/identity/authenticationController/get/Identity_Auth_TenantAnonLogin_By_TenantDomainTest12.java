@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.enums.TenantDomainEnum;
 import com.agys.utils.CredentialsUtils;
@@ -24,6 +27,13 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 	
 
 	private TenantDomainEnum TENANT_DOMAIN;
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 
 	@Test

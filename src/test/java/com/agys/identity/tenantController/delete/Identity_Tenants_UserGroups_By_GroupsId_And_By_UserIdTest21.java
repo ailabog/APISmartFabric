@@ -2,6 +2,9 @@ package com.agys.identity.tenantController.delete;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.agys.enums.GroupIdsEnum;
@@ -21,6 +24,13 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 	
 	private GroupIdsEnum GROUP;
 	private UserIdsEnum USER;
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void deleteGroupIdInvalid() {

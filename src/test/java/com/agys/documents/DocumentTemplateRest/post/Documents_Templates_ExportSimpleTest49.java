@@ -2,6 +2,7 @@ package com.agys.documents.documentTemplateRest.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataCatalogsContentExportJson;
 import com.agys.jsonBuilder.DocumentsExport;
 import com.agys.model.Factory;
@@ -14,6 +15,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -33,6 +36,13 @@ public class Documents_Templates_ExportSimpleTest49 {
 
 	public String html = "<!DOCTYPE html> <html> <head> <style id=\"page-size\">@page { size: A4 }</style></head> <body class=\"A4\" size=\"A4\" > <p>some text&nbsp;${CurrentTime}</p> </body> </html>";
 	public String invalidHtml = "sedfsdfdsFSd75934534";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void postDocumentsTemplatesExportSimple() throws JsonProcessingException {

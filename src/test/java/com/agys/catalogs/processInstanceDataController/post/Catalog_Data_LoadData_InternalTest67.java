@@ -3,6 +3,7 @@ package com.agys.catalogs.processInstanceDataController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.CatalogDataLoadDataInternal;
 import com.agys.jsonBuilder.DataCatalogsContentVersion;
 import com.agys.model.Factory;
@@ -15,6 +16,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -31,6 +34,13 @@ public class Catalog_Data_LoadData_InternalTest67 {
 	private String processInstanceId ="a36d58ac-be8f-4256-8b3c-90e1bc920c3d";
     private String versionId="a36d58ac-be8f-4256-8b3c-90e1bc920c3d";
 	private String processDefinitionId="a36d58ac-be8f-4256-8b3c-90e1bc920c3d";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 	CatalogDataLoadDataInternal catalogloadDataInternal = CatalogDataLoadDataInternal.builder().includeAttachmentData(includeAttachmentData)
 			.includeCatalogData(includeCatalogData).processDefinitionId(processDefinitionId).

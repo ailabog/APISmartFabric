@@ -3,10 +3,13 @@ package com.agys.catalogs.catalogDefinitionController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.enums.ProcessDefinitionEnum;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -26,6 +29,13 @@ public class Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefini
 	private ProcessDefinitionEnum PROCESS_DEFINITION;
 	private String versionId="235443534566";
 	private String versionIdOK="508b2cf1-bc2b-4d4e-8d1a-d5f85c4e8177";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 	
 	@Test

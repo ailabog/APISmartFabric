@@ -3,6 +3,7 @@ package com.agys.gui.guiControlPortalRest.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DocumentsTemplates;
 import com.agys.jsonBuilder.PortalRevisionInstall;
 import com.agys.model.Factory;
@@ -15,6 +16,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -31,6 +34,14 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 	private String installedGUIControlRevisionId ="275634583456-683458536-8338753";
 	private String instanceId="7234wefjwes-82364382y45wefl-2634832";
 	private String toBeInstalledGUIControlRevisionId="swjfsdjfweruew-8347nfkdsn-sakfjsd-84375";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 
 	
 	@Test

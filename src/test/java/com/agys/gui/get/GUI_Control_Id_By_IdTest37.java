@@ -3,6 +3,9 @@ package com.agys.gui.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
@@ -24,6 +27,14 @@ public class GUI_Control_Id_By_IdTest37 {
 	private String id  ="d8ebe677-3b25-68d3-d61c-c62e06eb0d0b";
 	private String invalidId ="35346546";
 	private String nullId ="null";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 	
 
 

@@ -2,6 +2,7 @@ package com.agys.gui.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.GuiControlRevisionSave;
 import com.agys.jsonBuilder.PortalRevisionInstall;
 import com.agys.model.Factory;
@@ -10,6 +11,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
@@ -40,6 +43,14 @@ public class GUI_Control_Revision_SaveTest39 {
 	private String guiControlId="46456";
 	private String guiControlRevisionId="34645";
 	private String revision ="10";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 
 	GuiControlRevisionSave guiControlRevisionSave = GuiControlRevisionSave.builder().code(code)
 			.config(config).fileName(fileName).

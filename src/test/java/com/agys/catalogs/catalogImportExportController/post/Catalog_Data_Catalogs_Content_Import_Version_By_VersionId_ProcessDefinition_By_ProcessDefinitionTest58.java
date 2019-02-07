@@ -3,6 +3,7 @@ package com.agys.catalogs.catalogImportExportController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataCatalogsContentExportJson;
 import com.agys.jsonBuilder.DataCatalogsContentExportVersion;
 import com.agys.jsonBuilder.DataCatalogsContentImportVersion;
@@ -17,6 +18,8 @@ import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -40,6 +43,14 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 			.inactiveOther(inactiveOther).attachment(attachment).
 					catalogs(catalogs).processDefinitionId(processDefinitionId).
 					versionId(versionId).build();
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void postCatalogDataCatalogsContentImportVersionByVersionIdProcessDefinitionByProcessDefinitionId() throws JsonProcessingException {

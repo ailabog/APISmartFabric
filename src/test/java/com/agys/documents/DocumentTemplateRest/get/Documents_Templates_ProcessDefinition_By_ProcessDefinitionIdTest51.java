@@ -3,10 +3,13 @@ package com.agys.documents.documentTemplateRest.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.enums.ProcessDefinitionEnum;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -24,6 +27,13 @@ import static com.jayway.restassured.RestAssured.given;
 public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 {
 
 	private ProcessDefinitionEnum PROCESS_DEFINITION;
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
+	}
 	
 	@Test
 	public void getDocumentsProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {

@@ -3,9 +3,13 @@ package com.agys.catalogs.modelDefinitionController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import com.agys.jsonBuilder.DataModelMapping;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -29,8 +33,15 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 	public static final String nullVersionId ="null";
 	public static final String nullPocessDefinitionId ="null";
 	public static final String type="type";
+	private Environments environment;
 
-	
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
+
+
 
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionIdProcessDefinitionByProcessDefinitionTypeByTypeId() throws FileNotFoundException {

@@ -3,6 +3,7 @@ package com.agys.catalogs.catalogImportExportController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataCatalogsContentExportJson;
 import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
@@ -15,6 +16,8 @@ import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -31,6 +34,13 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
   	private String invalidProcessDefinitionId="50fcgh2cf1-bc2b-4d4e-8dfhgfh1a-567658ugjghj";
 	DataCatalogsContentExportJson catalogContentExportJson = DataCatalogsContentExportJson.builder().catalogs(catalogs)
 			.processDefinitionId(processDefinitionId).build();
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 	
 	@Test

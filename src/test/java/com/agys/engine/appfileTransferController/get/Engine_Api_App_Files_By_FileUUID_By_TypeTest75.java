@@ -3,10 +3,13 @@ package com.agys.engine.appfileTransferController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.enums.ProcessDefinitionEnum;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -30,6 +33,14 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	private String invalidType="none";
 	private String nullFileUUID="null";
 	private String nullType="null";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
+	}
 
 	
 	@Test

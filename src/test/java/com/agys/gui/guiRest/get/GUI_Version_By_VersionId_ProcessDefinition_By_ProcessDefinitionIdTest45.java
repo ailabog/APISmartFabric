@@ -3,9 +3,12 @@ package com.agys.gui.guiRest.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -27,6 +30,14 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	private String invalidProcessDefinition = "0";
 	private String nullVersionId = "null";
 	private String nullprocessDefinitionId = "null";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 	
 
 	@Test

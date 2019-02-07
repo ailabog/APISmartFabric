@@ -3,6 +3,7 @@ package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.TenantsGroupsPermission;
 import com.agys.jsonBuilder.TenantsUsers;
 import com.agys.model.Factory;
@@ -11,6 +12,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -33,6 +36,13 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 	final String permission = "";
 	final String permissionType = "DOCUMENT_TEMPLATE";
 	final String targetId = "TYPE";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 	TenantsGroupsPermission tenantGroupsPermissionJson = TenantsGroupsPermission.builder().groupId(groupId)
 			.id(id).permission(permission).
 					permissionType(permissionType).targetId(targetId).

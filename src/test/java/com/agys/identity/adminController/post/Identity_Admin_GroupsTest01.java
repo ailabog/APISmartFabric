@@ -3,6 +3,7 @@ package com.agys.identity.adminController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.AdminGroups;
 import com.agys.jsonBuilder.AdminGroupsUsers;
 import com.agys.model.Factory;
@@ -16,6 +17,8 @@ import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -35,6 +38,14 @@ public class Identity_Admin_GroupsTest01 {
     final String name = "Popescu1";
     final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
     final String type = "SYSTEM";
+
+    private Environments environment;
+
+    @Parameters({"environment"})
+    @BeforeTest
+    public void setuUp(String environment) {
+        this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+    }
 
     @Test
     public void postAdminGroup() throws JsonProcessingException {

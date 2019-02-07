@@ -2,6 +2,9 @@ package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.enums.GroupIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -16,6 +19,13 @@ import static com.jayway.restassured.RestAssured.given;
 public class Identity_Tenants_UserGroupsTest20 {
 
 	private GroupIdsEnum GROUPS;
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 	
 	@Test
 	public void postTenantsGroupsUsers() {

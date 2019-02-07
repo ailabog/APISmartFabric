@@ -2,6 +2,7 @@ package com.agys.documents.documentTemplateRest.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DocumentsGenerate;
 import com.agys.jsonBuilder.DocumentsTemplates;
 import com.agys.model.Factory;
@@ -14,6 +15,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -43,6 +46,14 @@ public class Documents_TemplatesTest46 {
 	private String usedAttributes = "24";
 	private String versionId = "d7eaf674-d4dd-42bd-bbb4-a9eb2951926f";
 	private String w = "0";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
+	}
 	DocumentsTemplates docsTemplates = DocumentsTemplates.builder().description(description)
 			.h(h).id(id).isActive(isActive).
 					isAdvanced(isAdvanced).iteration(iteration).name(name).

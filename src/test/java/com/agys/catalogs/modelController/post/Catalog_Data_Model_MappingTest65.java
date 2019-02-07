@@ -2,6 +2,7 @@ package com.agys.catalogs.modelController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataModelJsonPath;
 import com.agys.jsonBuilder.DataModelMapping;
 import com.agys.model.Factory;
@@ -13,6 +14,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
 
@@ -69,19 +72,28 @@ public class Catalog_Data_Model_MappingTest65 {
     final String name100="name 500";
     final String type100="type 5";
     final String pathlist="346";
+    private Environments environment;
 
     DataModelMapping dataModelMapping = DataModelMapping.builder().blockchainOnly(blockchainOnly)
             .genericModelTimestamp(genericModelTimestamp).description(description).
-            idField(idField).nameField(nameField).typeField(typeField).id(id).name(name).removed(removed).
-            idModelClass(idModelClass).isBCReady(isBCReady).isEmbeded(isEmbeded).isIndexable(isIndexable).
-            isList(isList).nameModelClass(nameModelClass).typeModelClass(typeModelClass).id1(id1).isBCReady1(isBCReady1).
-            name1(name1).idModelCoreEntitioes(idModelCoreEntitioes).isBCReadyModelCoreEntitioes(isBCReadyModelCoreEntitioes).
-            isEmbededModelCoreEntitioes(isEmbededModelCoreEntitioes).isIndexableModelCoreEntitioes(isIndexableModelCoreEntitioes).
-            isListModelCoreEntitioes(isListModelCoreEntitioes).nameModelCoreEntitioes(nameModelCoreEntitioes).
-            typeModelCoreEntitioes(typeModelCoreEntitioes).id2(id2).isBCReady2(isBCReady2).name3(name3).diagramFileId(diagramFileId).
-            id4(id4).type4(type4).id5(id5).isBCReady4(isBCReady4).isEmbeded4(isEmbeded4).isIndexable4(isIndexable4).isList4(isList4).
-            name5(name5).type5(type5).id100(id100).isBCReady5(isBCReady5).name100(name100).type100(type100).pathlist(pathlist).
-            build();
+                    idField(idField).nameField(nameField).typeField(typeField).id(id).name(name).removed(removed).
+                    idModelClass(idModelClass).isBCReady(isBCReady).isEmbeded(isEmbeded).isIndexable(isIndexable).
+                    isList(isList).nameModelClass(nameModelClass).typeModelClass(typeModelClass).id1(id1).isBCReady1(isBCReady1).
+                    name1(name1).idModelCoreEntitioes(idModelCoreEntitioes).isBCReadyModelCoreEntitioes(isBCReadyModelCoreEntitioes).
+                    isEmbededModelCoreEntitioes(isEmbededModelCoreEntitioes).isIndexableModelCoreEntitioes(isIndexableModelCoreEntitioes).
+                    isListModelCoreEntitioes(isListModelCoreEntitioes).nameModelCoreEntitioes(nameModelCoreEntitioes).
+                    typeModelCoreEntitioes(typeModelCoreEntitioes).id2(id2).isBCReady2(isBCReady2).name3(name3).diagramFileId(diagramFileId).
+                    id4(id4).type4(type4).id5(id5).isBCReady4(isBCReady4).isEmbeded4(isEmbeded4).isIndexable4(isIndexable4).isList4(isList4).
+                    name5(name5).type5(type5).id100(id100).isBCReady5(isBCReady5).name100(name100).type100(type100).pathlist(pathlist).
+                    build();
+
+    @Parameters({"environment"})
+    @BeforeTest
+    public void setuUp(String environment) {
+        this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+    }
+
+
 
     @Test
     public void postCatalog_Data_Model_JsonPath() throws JsonProcessingException {

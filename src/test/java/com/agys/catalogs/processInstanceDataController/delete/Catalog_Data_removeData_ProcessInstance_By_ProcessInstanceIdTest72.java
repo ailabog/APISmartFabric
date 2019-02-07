@@ -2,10 +2,13 @@ package com.agys.catalogs.processInstanceDataController.delete;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.enums.GroupIdsEnum;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -20,6 +23,13 @@ public class Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72 
 
 	private String processInstanceId ="1b8f76c3-cd0a-7698-93cd-1ce69b9006e6";
 	private String invalidProcessInstanceId ="dfds3454-f5a3-3456-9c20-dfgfd";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void deleteCatalogDataRemoveDataProcessInstanceByProcessInstanceId() {

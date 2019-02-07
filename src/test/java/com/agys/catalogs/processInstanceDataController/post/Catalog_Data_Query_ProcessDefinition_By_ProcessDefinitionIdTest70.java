@@ -3,6 +3,7 @@ package com.agys.catalogs.processInstanceDataController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.CatalogDataLoadDataProcessInstance;
 import com.agys.jsonBuilder.CatalogDataLoadDataProcessInstanceGUI;
 import com.agys.jsonBuilder.CatalogDataLoadDataProcessInstanceMapping;
@@ -16,6 +17,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -29,6 +32,13 @@ public class Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70 {
 
 	private String string = "true";
 	private String processInstanceId ="4525f6a0-f5a3-4120-9c20-933260bf37a1";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 
 
 	CatalogDataQueryProcessDefinition catalogDataQueryProcessDefinition = CatalogDataQueryProcessDefinition.builder().string(string)

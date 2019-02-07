@@ -3,9 +3,12 @@ package com.agys.catalogs.modelController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -25,6 +28,14 @@ public class Catalog_Data_Model_Versions_By_VersionIdTest62 {
 	private String versionId="1f8a0de9-a639-428b-9921-641898475a9b";
 	private String invalidVersionId="sfsd34654-sdf34654-w35t4356-sdgfdg";
 	private String nullVersionId="null";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 	
 
 	@Test

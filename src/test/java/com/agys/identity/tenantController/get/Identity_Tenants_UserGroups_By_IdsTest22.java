@@ -2,6 +2,9 @@ package com.agys.identity.tenantController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.agys.enums.UsersGroupsIdsEnum;
@@ -22,6 +25,13 @@ import java.io.FileNotFoundException;
 public class Identity_Tenants_UserGroups_By_IdsTest22 {
 
 	private UsersGroupsIdsEnum USERGROUPS;
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 	
 	@Test
 	public void getTenantsUserGroupsById() throws FileNotFoundException {

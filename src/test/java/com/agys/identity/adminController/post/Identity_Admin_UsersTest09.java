@@ -2,6 +2,7 @@ package com.agys.identity.adminController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.AdminTenantsUsers;
 import com.agys.jsonBuilder.AdminUsers;
 import com.agys.model.Factory;
@@ -12,6 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -45,6 +48,14 @@ public class Identity_Admin_UsersTest09 {
 	private String token="e5d69d66-4720-4963-928e-4b0df52b30ad";
 	private String tokenExpiry="2019-01-31 10:32:02";
 	private String username="###@@@^^^";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 	AdminUsers adminUsersJson = AdminUsers.builder().code(code)
 			.department(department).email(email).firstName(firstName).gender(gender).

@@ -2,8 +2,11 @@ package com.agys.gui.guiRest.delete;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -19,6 +22,13 @@ public class GUI_By_IdTest41 {
 	private String id="eb87f0c9-227e-9e90-3276-2d9980f1e03b";
 	private String invalidId="4364";
 	private String nullId="null";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 
 
 	@Test

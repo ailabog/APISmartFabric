@@ -3,9 +3,12 @@ package com.agys.gui.guiRest.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -24,6 +27,14 @@ public class GUI_By_IdTest40 {
 	private String id = "8f719613-979c-0f9d-c0bd-d28621d7d53c";
 	private String invalidId = "34564645";
 	private String nullId = "null";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void getGUIById() throws FileNotFoundException {

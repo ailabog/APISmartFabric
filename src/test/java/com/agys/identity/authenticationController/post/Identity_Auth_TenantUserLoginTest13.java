@@ -2,11 +2,14 @@ package com.agys.identity.authenticationController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.SystemLogin;
 import com.agys.model.Factory;
 import com.agys.utils.JsonHelper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.agys.jsonBuilder.Login;
@@ -30,6 +33,13 @@ import static org.testng.Assert.assertEquals;
 public class Identity_Auth_TenantUserLoginTest13 {
 
 	private ObjectMapper mapper = new ObjectMapper();
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void postLogin() throws JsonProcessingException {

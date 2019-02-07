@@ -3,9 +3,12 @@ package com.agys.engine.dashboardController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -24,6 +27,14 @@ public class Engine_Dashboard_Task_StatisticsTest78 {
 
 	private String isTeamYes="true";
 	private String isTeamNo="false";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void getEngineDashboardAppStatisticsYesTeam() throws FileNotFoundException {

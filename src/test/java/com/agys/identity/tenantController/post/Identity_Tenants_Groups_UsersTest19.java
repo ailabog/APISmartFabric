@@ -3,12 +3,15 @@ package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.TenantsGroupsPermission;
 import com.agys.model.Factory;
 import com.agys.utils.JsonHelper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -24,6 +27,13 @@ import java.util.*;
 
 @Slf4j
 public class Identity_Tenants_Groups_UsersTest19 {
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 
 	private List<UserIdsEnum> userList = Arrays.asList(UserIdsEnum.USER_OK1, UserIdsEnum.USER_OK2, UserIdsEnum.USER_OK3,

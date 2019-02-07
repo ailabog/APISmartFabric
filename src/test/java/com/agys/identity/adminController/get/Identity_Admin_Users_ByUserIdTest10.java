@@ -3,6 +3,9 @@ package com.agys.identity.adminController.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
@@ -23,6 +26,14 @@ import java.io.FileNotFoundException;
 public class Identity_Admin_Users_ByUserIdTest10 {
 
 	private UserIdsEnum USER;
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void getAdminUserByUserId() throws FileNotFoundException {

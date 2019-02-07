@@ -77,6 +77,10 @@ public class Endpoints {
     public static final String middleURLEngineApiFlowActivity1="/actions";
     public static final String middleURLEngineApiFlowApprovalSubmit="/engine/api/flow/approvalSubmit";
     public static final String middleURLEngineApiGuiSubmit="/engine/api/flow/guiSubmit";
+    public static final String middleURLEngineApiProcessDefinition="/engine/api/processDefinition/";
+
+
+
 
 
 

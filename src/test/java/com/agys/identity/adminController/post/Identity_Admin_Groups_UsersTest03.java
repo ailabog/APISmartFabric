@@ -2,6 +2,7 @@ package com.agys.identity.adminController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.AdminGroupsUsers;
 import com.agys.jsonBuilder.DocumentsExport;
 import com.agys.model.Factory;
@@ -11,6 +12,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -36,6 +39,14 @@ public class Identity_Admin_Groups_UsersTest03 {
 	final String id = "ee8e633a-f482-411f-96a5-e3ea154ed504";
 	final String isManager = "true";
 	final String userId = "d6259540-7004-40ac-b926-d972c4389dec";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
     AdminGroupsUsers adminGroupsUsersJson = AdminGroupsUsers.builder().groupId(groupId)
             .id(id).isManager(isManager).userId(userId).build();
 

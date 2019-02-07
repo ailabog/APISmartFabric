@@ -3,6 +3,7 @@ package com.agys.identity.adminController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.AdminGroups;
 import com.agys.jsonBuilder.AdminTenantsUsers;
 import com.agys.model.Factory;
@@ -11,6 +12,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -35,6 +38,14 @@ public class Identity_Admin_Tenants_UsersTest07 {
 	AdminTenantsUsers adminTenantsUsersJson = AdminTenantsUsers.builder().id(id)
 			.status(status).tenantId(tenantId).userId(userId).
 					build();
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 	@Test
 	public void postAdminTenantUser() throws JsonProcessingException {
 

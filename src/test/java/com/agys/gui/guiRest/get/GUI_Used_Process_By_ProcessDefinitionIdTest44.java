@@ -3,9 +3,12 @@ package com.agys.gui.guiRest.get;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -24,6 +27,14 @@ public class GUI_Used_Process_By_ProcessDefinitionIdTest44 {
 	private String processDefinitionId = "e53b8c55-76f5-4e55-81f6-306a2dae2017";
 	private String nullprocessDefinitionId = "null";
 	private String invalidprocessDefinitionId = "123456";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
+	}
 
 	@Test
 	public void getGUIUsedProcessByProcessDefinitionId() throws FileNotFoundException {

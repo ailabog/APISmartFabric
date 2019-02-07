@@ -2,6 +2,7 @@ package com.agys.identity.tenantController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.Login;
 import com.agys.jsonBuilder.TenantsUsers;
 import com.agys.model.Factory;
@@ -10,6 +11,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.RensposeBodyDisplay;
@@ -40,6 +43,13 @@ public class Idenity_Tenants_UsersTest24 {
 	final String title = "Admin";
 	final String token = "365456";
 	final String tokenExpiry = "2019-01-11T13:31:19.825Z";
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
+	}
 
 	TenantsUsers tenantUsersJson = TenantsUsers.builder().code(code)
 			.email(email).firstName(firstName).

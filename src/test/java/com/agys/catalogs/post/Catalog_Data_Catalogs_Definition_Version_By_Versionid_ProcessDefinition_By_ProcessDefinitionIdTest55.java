@@ -3,6 +3,7 @@ package com.agys.catalogs.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataCatalogsContentSaveVersion;
 import com.agys.jsonBuilder.DataCatalogsDefinitionVersion;
 import com.agys.model.Factory;
@@ -15,6 +16,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -41,6 +44,14 @@ public class Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefini
 					type(type).idDescription(idDescription).
 					nameDescription(nameDescription).removed(removed).
 					build();
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
+	}
 	
 	@Test
 	public void postCatalogDataCatalogsContentLoadVersion() throws JsonProcessingException {

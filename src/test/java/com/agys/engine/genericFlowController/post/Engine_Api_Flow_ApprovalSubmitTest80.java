@@ -3,6 +3,7 @@ package com.agys.engine.genericFlowController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
+import com.agys.enums.Environments;
 import com.agys.jsonBuilder.DataCatalogsContentVersion;
 import com.agys.jsonBuilder.EngineApiFlowApprovalSubmit;
 import com.agys.model.Factory;
@@ -14,6 +15,8 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
@@ -29,6 +32,14 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 	private String comment="This is a comment";
 	private String taskId="08c2d3e5-5092-419a-bb37-f81d4df9ec95";
 	private String wrongTaskId="08c2d3e5-sdfdfg-46gdr-bb37-d45ytry";
+
+	private Environments environment;
+
+	@Parameters({"environment"})
+	@BeforeTest
+	public void setuUp(String environment) {
+		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
+	}
 
 
 	EngineApiFlowApprovalSubmit engineApiFlowApprovalSubmit = EngineApiFlowApprovalSubmit.builder().actionCode(actionCode)
