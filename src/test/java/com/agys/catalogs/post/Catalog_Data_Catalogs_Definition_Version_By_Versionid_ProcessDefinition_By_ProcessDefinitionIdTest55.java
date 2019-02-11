@@ -4,12 +4,10 @@ package com.agys.catalogs.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.enums.Environments;
-import com.agys.jsonBuilder.DataCatalogsContentSaveVersion;
 import com.agys.jsonBuilder.DataCatalogsDefinitionVersion;
 import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.JsonHelper;
-import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
@@ -92,8 +90,5 @@ public class Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefini
 						Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId)
 				.then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

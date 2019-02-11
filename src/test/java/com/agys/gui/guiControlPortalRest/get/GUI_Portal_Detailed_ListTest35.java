@@ -1,4 +1,4 @@
-package com.APISmartFabric.Tests.guiControlPortalRest.GET;
+package com.agys.gui.guiControlPortalRest.get;
 
 
 import com.agys.Constants;

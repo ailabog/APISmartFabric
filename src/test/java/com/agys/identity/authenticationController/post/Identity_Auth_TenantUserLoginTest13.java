@@ -3,7 +3,6 @@ package com.agys.identity.authenticationController.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.enums.Environments;
-import com.agys.jsonBuilder.SystemLogin;
 import com.agys.model.Factory;
 import com.agys.utils.JsonHelper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
@@ -11,23 +10,21 @@ import com.jayway.restassured.response.ValidatableResponse;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.agys.jsonBuilder.Login;
+import com.agys.utils.CredentialsUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.restassured.http.ContentType;
+import lombok.extern.slf4j.Slf4j;
+import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
+import static com.jayway.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author aila.bogasieru@agys.ch
  */
 
-import com.agys.utils.CredentialsUtils;
-import com.agys.utils.RensposeBodyDisplay;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jayway.restassured.http.ContentType;
-import lombok.extern.slf4j.Slf4j;
 
-import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
-import static com.jayway.restassured.RestAssured.given;
-import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class Identity_Auth_TenantUserLoginTest13 {

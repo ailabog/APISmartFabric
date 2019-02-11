@@ -4,7 +4,6 @@ package com.agys.gui.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.enums.Environments;
-import com.agys.jsonBuilder.GuiControlRevisionSave;
 import com.agys.jsonBuilder.PortalRevisionInstall;
 import com.agys.model.Factory;
 import com.agys.utils.JsonHelper;
@@ -16,7 +15,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.utils.CredentialsUtils;
-import com.agys.utils.RensposeBodyDisplay;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
 
@@ -83,8 +81,5 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 			given().contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIPortalRevisionInstallList).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

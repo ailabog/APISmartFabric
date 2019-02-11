@@ -3,12 +3,10 @@ package com.agys.documents.documentTemplateRest.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.enums.Environments;
-import com.agys.jsonBuilder.DataCatalogsContentExportJson;
 import com.agys.jsonBuilder.DocumentsExport;
 import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.JsonHelper;
-import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
@@ -90,6 +88,5 @@ public class Documents_Templates_ExportSimpleTest49 {
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(404);
-
 	}
 }

@@ -8,7 +8,6 @@ import com.agys.jsonBuilder.DataModelDefinitionVersion;
 import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.JsonHelper;
-import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;

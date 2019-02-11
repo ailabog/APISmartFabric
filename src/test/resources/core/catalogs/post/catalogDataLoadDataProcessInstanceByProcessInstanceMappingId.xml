@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="catalogDataLoadDataProcessInstanceByProcessInstanceMappingId." verbose="1" >
-    <parameter name="environment" value="${environment}" />
+    <parameter name="environment" value="CATALOGS" />
     <test name="catalogDataLoadDataProcessInstanceByProcessInstanceMappingId." >
         <classes>
             <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingIdTest69" />

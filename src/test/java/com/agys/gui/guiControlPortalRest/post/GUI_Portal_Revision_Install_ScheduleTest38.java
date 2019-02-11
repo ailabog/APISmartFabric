@@ -4,12 +4,10 @@ package com.agys.gui.guiControlPortalRest.post;
 import com.agys.Constants;
 import com.agys.Endpoints;
 import com.agys.enums.Environments;
-import com.agys.jsonBuilder.DocumentsTemplates;
 import com.agys.jsonBuilder.PortalRevisionInstall;
 import com.agys.model.Factory;
 import com.agys.utils.CredentialsUtils;
 import com.agys.utils.JsonHelper;
-import com.agys.utils.RensposeBodyDisplay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.http.ContentType;
@@ -86,8 +84,5 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
 				.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIPortalRevisionInstallList).then()
 				.statusCode(401);
-
-		RensposeBodyDisplay responseR = new RensposeBodyDisplay();
-		log.info("Response body" + responseR.response());
 	}
 }

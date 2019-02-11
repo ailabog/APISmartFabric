@@ -8,10 +8,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
-import com.agys.utils.RensposeBodyDisplay;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
-
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
 import java.util.*;
