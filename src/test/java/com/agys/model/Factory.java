@@ -322,6 +322,10 @@ public class Factory {
 
     public static final EngineApiProcessDefinitionInsert engineApiProcessDefinitionInsertClass  = EngineApiProcessDefinitionInsert.builder()
             .image("3c3fb853-10be-0b99-5220-c7658ec06146")
-            .processDefinitionModel("")
+            .processDefinitionModel("{\"id\":null,\"versionId\":\"e0216c9a-6f81-4d12-93f2-8b5f9bd2c2a6\",\"type\":null,\"active\":true,\"name\":\"apiProcessDefModel\",\"blockchainEnabled\":false,\"code\":\"4d66caed-6d5a-14b5-5e10-12be50811f5f\",\"description\":null,\"iteration\":0,\"blockchainType\":\"STANDARD\"}")
+            .build();
+
+    public static final EngineApiProcessInstanceBlockchainResult engineApiProcessInstanceBlockchainResultClass  = EngineApiProcessInstanceBlockchainResult.builder()
+            .processInstanceId("730fff63-6ffe-42ba-b645-aa97b978be6f")
             .build();
 }

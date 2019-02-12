@@ -84,29 +84,20 @@ public class Endpoints {
     public static final String middleURLEngineApiProcessDefinition4="/start";
     public static final String middleURLEngineApiProcessDefinitionActivities="/engine/api/processDefinition/activities/";
     public static final String middleURLEngineAPIProcessDefinitionActivity="/engine/api/processDefinition/activity/";
-    public static final  String middleURLEngineApiProcessDefinitionAllprocesses="/engine/api/processDefinition/all/processes";
+    public static final String middleURLEngineApiProcessDefinitionAllprocesses="/engine/api/processDefinition/all/processes";
     public static final String middleURLEngineApiProcessDefinitionAppUrl="/engine/api/processDefinition/appUrl/";
     public static final String middleURLEngineApiProcessDefinitionDetails="/engine/api/processDefinition/details/";
     public static final String middleURLEngineApiLiveViewTaskDetails="/engine/api/liveView/task/details/by/activity/";
     public static final String middleEngineApiProcessDefinitionExternalStart="/engine/api/processDefinition/";
     public static final String middleEngineApiProcessDefinitionExternalStart1= "/external/start";
     public static final String middleEngineApiProcessDefinitionInsert= "/engine/api/processDefinition/insert";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public static final String middleEngineApiProcessInstance="/engine/api/processInstance/";
+    public static final String middleURLEngineApiProcessInstanceProcessDefinition="/engine/api/processInstance/";
+    public static final String middleURLEngineApiProcessInstanceProcessDefinition1="/processDefinitionId";
+    public static final String middleURLEngineApiProcessInstanceVersioning="/engine/api/processInstance/";
+    public static final String middleURLEngineApiProcessInstanceVersioning1="/versioning";
+    public static final String middleEngineApiProcessInstanceBlockchainResult="/engine/api/processInstance/";
+    public static final String middleEngineApiProcessInstanceBlockchainResult1= "/blockchain/result";
 
 
 
