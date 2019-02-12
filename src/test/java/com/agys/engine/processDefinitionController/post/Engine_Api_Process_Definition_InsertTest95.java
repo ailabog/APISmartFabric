@@ -26,8 +26,8 @@ public class Engine_Api_Process_Definition_InsertTest95 {
 
 	private ObjectMapper mapper = new ObjectMapper();
 
-	private String image = "c://img.gif";
-	private String processDefinitionModel="This is a comment";
+	private String image = "C://Downloads/img.gif";
+	private String processDefinitionModel="{\"id\":null,\"versionId\":\"e0216c9a-6f81-4d12-93f2-8b5f9bd2c2a6\",\"type\":null,\"active\":true,\"name\":\"apiProcessDefModel\",\"blockchainEnabled\":false,\"code\":\"4d66caed-6d5a-14b5-5e10-12be50811f5f\",\"description\":null,\"iteration\":0,\"blockchainType\":\"STANDARD\"}";
 	private String taskId="34534564-fddgdfg-345345";
 
 
