@@ -307,13 +307,21 @@ public class Factory {
             .build();
 
 
+    public static final EngineApiProcessDefinitionExternalStart engineApiProcessDefinitionExternalStartClass  = EngineApiProcessDefinitionExternalStart.builder()
+            .additionalProp1("additionalProp1")
+            .additionalProp2("additionalProp2")
+            .additionalProp3("additionalProp3")
+            .build();
 
+    public static final EngineApiProcessDefinitionProcessInstancesActive engineApiProcessDefinitionProcessInstancesActiveClass  = EngineApiProcessDefinitionProcessInstancesActive.builder()
+            .activityIds("3c3fb853-10be-0b99-5220-c7658ec06146")
+            .additionalProp1("additionalProp1")
+            .additionalProp2("additionalProp2")
+            .additionalProp3("additionalProp3")
+            .build();
 
-    private String actionId = "APPROVE";
-    private String comment="This is a comment";
-    private String taskId="08c2d3e5-5092-419a-bb37-f81d4df9ec95";
-
-
-
-
+    public static final EngineApiProcessDefinitionInsert engineApiProcessDefinitionInsertClass  = EngineApiProcessDefinitionInsert.builder()
+            .image("3c3fb853-10be-0b99-5220-c7658ec06146")
+            .processDefinitionModel("")
+            .build();
 }

@@ -78,6 +78,20 @@ public class Endpoints {
     public static final String middleURLEngineApiFlowApprovalSubmit="/engine/api/flow/approvalSubmit";
     public static final String middleURLEngineApiGuiSubmit="/engine/api/flow/guiSubmit";
     public static final String middleURLEngineApiProcessDefinition="/engine/api/processDefinition/";
+    public static final String middleURLEngineApiProcessDefinition1="/activate";
+    public static final String middleURLEngineApiProcessDefinition2="/diagram";
+    public static final String middleURLEngineApiProcessDefinition3="/processInstances/finished";
+    public static final String middleURLEngineApiProcessDefinition4="/start";
+    public static final String middleURLEngineApiProcessDefinitionActivities="/engine/api/processDefinition/activities/";
+    public static final String middleURLEngineAPIProcessDefinitionActivity="/engine/api/processDefinition/activity/";
+    public static final  String middleURLEngineApiProcessDefinitionAllprocesses="/engine/api/processDefinition/all/processes";
+    public static final String middleURLEngineApiProcessDefinitionAppUrl="/engine/api/processDefinition/appUrl/";
+    public static final String middleURLEngineApiProcessDefinitionDetails="/engine/api/processDefinition/details/";
+    public static final String middleURLEngineApiLiveViewTaskDetails="/engine/api/liveView/task/details/by/activity/";
+    public static final String middleEngineApiProcessDefinitionExternalStart="/engine/api/processDefinition/";
+    public static final String middleEngineApiProcessDefinitionExternalStart1= "/external/start";
+    public static final String middleEngineApiProcessDefinitionInsert= "/engine/api/processDefinition/insert";
+
 
 
 
