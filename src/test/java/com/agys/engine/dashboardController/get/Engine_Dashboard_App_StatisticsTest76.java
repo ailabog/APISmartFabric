@@ -43,7 +43,7 @@ public class Engine_Dashboard_App_StatisticsTest76 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineDashboardAppStatistics + isTeamYes)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Dashboard_App_Statistics" + CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineDashboardAppStatistics + isTeamYes);
 	}
 
@@ -54,7 +54,7 @@ public class Engine_Dashboard_App_StatisticsTest76 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineDashboardAppStatistics + isTeamNo)
 				.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Dashboard_App_Statistics" + CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineDashboardAppStatistics + isTeamNo);
 	}
 
@@ -65,7 +65,7 @@ public class Engine_Dashboard_App_StatisticsTest76 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineDashboardAppStatistics)
 				.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Dashboard_App_Statistics" + CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineDashboardAppStatistics);
 	}
 }

@@ -43,7 +43,7 @@ public class Engine_Api_ProcessDefinition_Activity_By_ActivityIdTest88 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + activityId)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_Activity_By_ActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + activityId));
 	}
 
@@ -55,7 +55,7 @@ public class Engine_Api_ProcessDefinition_Activity_By_ActivityIdTest88 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + invalidActivityId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_Activity_By_ActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + invalidActivityId));
 	}
 
@@ -67,7 +67,7 @@ public class Engine_Api_ProcessDefinition_Activity_By_ActivityIdTest88 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + nullActivityId)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_Activity_By_ActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + nullActivityId));
 	}
 
@@ -78,7 +78,7 @@ public class Engine_Api_ProcessDefinition_Activity_By_ActivityIdTest88 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + activityId)
 				.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_Activity_By_ActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineAPIProcessDefinitionActivity + activityId));
 	}
 }

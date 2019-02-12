@@ -43,7 +43,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
 	}
 
@@ -55,7 +55,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
 	}
 
@@ -67,7 +67,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
 	}
 
@@ -78,7 +78,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 				.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
 	}
 }

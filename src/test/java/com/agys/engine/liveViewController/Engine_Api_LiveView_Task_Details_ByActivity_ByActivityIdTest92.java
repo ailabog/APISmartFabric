@@ -43,7 +43,7 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId));
 	}
 
@@ -55,7 +55,7 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + invalidActivityId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + invalidActivityId));
 	}
 
@@ -67,7 +67,7 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + nullActivityId)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + nullActivityId));
 	}
 
@@ -78,7 +78,7 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId)
 				.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId));
 	}
 }

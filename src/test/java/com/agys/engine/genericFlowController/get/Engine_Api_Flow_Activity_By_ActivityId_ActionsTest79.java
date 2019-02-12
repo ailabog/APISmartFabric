@@ -45,7 +45,7 @@ public class Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiFlowActivity + activityId +  Endpoints.middleURLEngineApiFlowActivity1)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_Flow_Activity_By_ActivityId_Actions" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiFlowActivity + activityId +  Endpoints.middleURLEngineApiFlowActivity1));
 	}
 
@@ -57,7 +57,7 @@ public class Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiFlowActivity + invalidActivityId +  Endpoints.middleURLEngineApiFlowActivity1)
 				.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_Flow_Activity_By_ActivityId_Actions" + (CredentialsUtils.getProperty("baseURLEngine")
 				+Endpoints.middleURLEngineApiFlowActivity + invalidActivityId +  Endpoints.middleURLEngineApiFlowActivity1));
 	}
 
@@ -69,7 +69,7 @@ public class Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiFlowActivity + nullActivity +  Endpoints.middleURLEngineApiFlowActivity1)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_Flow_Activity_By_ActivityId_Actions" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiFlowActivity + nullActivity +  Endpoints.middleURLEngineApiFlowActivity1));
 	}
 
@@ -80,7 +80,7 @@ public class Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiFlowActivity + activityId +  Endpoints.middleURLEngineApiFlowActivity1)
 				.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_Flow_Activity_By_ActivityId_Actions" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiFlowActivity + activityId +  Endpoints.middleURLEngineApiFlowActivity1));
 	}
 }

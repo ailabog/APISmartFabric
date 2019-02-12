@@ -50,7 +50,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage));
 	}
 
@@ -62,7 +62,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeProcessdiag)
 				.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeProcessdiag));
 	}
 
@@ -74,7 +74,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + typeImage)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + typeImage));
 	}
 
@@ -85,7 +85,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + typeImage)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + typeImage));
 	}
 
@@ -96,7 +96,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + invalidType)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + invalidType));
 	}
 
@@ -107,7 +107,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + nullType)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + nullType));
 	}
 
@@ -118,7 +118,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + invalidType)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + invalidType));
 	}
 
@@ -129,7 +129,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + nullType)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + nullType));
 	}
 
@@ -140,7 +140,7 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage)
 				.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage));
 	}
 }
