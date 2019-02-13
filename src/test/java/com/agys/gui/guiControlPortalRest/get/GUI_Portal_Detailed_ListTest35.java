@@ -29,20 +29,21 @@ public class GUI_Portal_Detailed_ListTest35 {
 	public void getGUIPortalDetailedList() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).
 				when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIPortalDetailedList)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIPortalDetailedList);
 	}
 
 	@Test
 	public void getGUIPortalDetailedListNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI") +
+				.get(CredentialsUtils.GUI
+				+
 						Endpoints.middleURLGUIPortalDetailedList)
 				.then().assertThat().statusCode(401);
-		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Portal_Detailed_List" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIPortalDetailedList);
 	}
 }

@@ -54,7 +54,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 
 		ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogModelDefinitionVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelDefinitionVersion1 + versionId +
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataModelDefinitionVersion1 + versionId +
 						Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType2 + processDefinitionId
 						+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 +type)
 				.then()
@@ -82,7 +82,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogModelDefinitionVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelDefinitionVersion1 + versionId +
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataModelDefinitionVersion1 + versionId +
 						Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType2 + processDefinitionId
 						+ Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 +type)
 				.then()

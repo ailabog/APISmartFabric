@@ -26,21 +26,21 @@ public class Identity_Tenants_Users_Email_By_EmailTest27 {
 	public void getTenantsUsersEmailByEmail() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch")
 
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch");
 	}
 
 	@Test
 	public void getTenantsUsersEmailByEmailNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch")
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Email_By_Email" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersEmailByEmail + "test_user%40agys.ch");
 	}
 }

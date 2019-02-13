@@ -35,7 +35,7 @@ public class Engine_Task_Caim_By_TaskIdTest109 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskClaim +taskId)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskClaim +taskId)
 				.then()
 				.statusCode(201);
 	}
@@ -46,7 +46,7 @@ public class Engine_Task_Caim_By_TaskIdTest109 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine")+ Endpoints. middleEngineTaskClaim)
+				.post(CredentialsUtils.ENGINE+ Endpoints. middleEngineTaskClaim)
 				.then()
 				.statusCode(400);
 	}
@@ -57,7 +57,7 @@ public class Engine_Task_Caim_By_TaskIdTest109 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskClaim + invalidTaskId)
+				.post(CredentialsUtils.ENGINE+ Endpoints.middleEngineTaskClaim + invalidTaskId)
 				.then()
 				.statusCode(404);
 	}
@@ -67,7 +67,7 @@ public class Engine_Task_Caim_By_TaskIdTest109 {
 
 		given()
 				.contentType(ContentType.JSON).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskClaim +taskId)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskClaim +taskId)
 				.then()
 				.statusCode(401);
 	}

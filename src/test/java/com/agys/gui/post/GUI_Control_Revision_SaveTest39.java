@@ -54,7 +54,7 @@ public class GUI_Control_Revision_SaveTest39 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(guiControlRevisionSave)).when()
-						.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIControlRevisionSave).then()
+						.post(CredentialsUtils.GUI + Endpoints.middleURLGUIControlRevisionSave).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -93,7 +93,7 @@ public class GUI_Control_Revision_SaveTest39 {
 	public void postGUIControlRevisionSaveNoAuthentication() throws FileNotFoundException, JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(guiControlRevisionSave)).when()
-				.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIControlRevisionSave)
+				.post(CredentialsUtils.GUI + Endpoints.middleURLGUIControlRevisionSave)
 		.then().assertThat().statusCode(401);
 		log.info("GUI_Control_Revision_Save" + CredentialsUtils.getProperty("baseURLGUI")
 		+ Endpoints.middleURLGUIControlRevisionSave);

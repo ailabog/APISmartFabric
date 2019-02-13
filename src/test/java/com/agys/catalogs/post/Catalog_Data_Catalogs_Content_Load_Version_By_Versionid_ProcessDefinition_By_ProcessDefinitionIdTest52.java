@@ -46,7 +46,7 @@ public class Catalog_Data_Catalogs_Content_Load_Version_By_Versionid_ProcessDefi
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentVersion)).when()
-						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataCatalogsContentLoadVersion1 + versionId +
+						.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataCatalogsContentLoadVersion1 + versionId +
 								Endpoints.middleURLDataCatalogsContentLoadVersion2 + processDefinitionId)
 						.then()
 						.statusCode(201);
@@ -73,7 +73,7 @@ public class Catalog_Data_Catalogs_Content_Load_Version_By_Versionid_ProcessDefi
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataCatalogsContentLoadVersion1 + versionId +
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataCatalogsContentLoadVersion1 + versionId +
 						Endpoints.middleURLDataCatalogsContentLoadVersion2 + processDefinitionId)
 				.then()
 				.statusCode(401);

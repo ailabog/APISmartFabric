@@ -43,7 +43,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionId_ProcessInstance
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionProcessInstancesActive)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+						.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 								+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 						.then()
 						.statusCode(201);
@@ -78,7 +78,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionId_ProcessInstance
 						build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionProcessInstancesActive1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 						+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 				.then()
 				.statusCode(400);
@@ -95,7 +95,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionId_ProcessInstance
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionProcessInstancesActive2)).
 		when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 						+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 				.then()
 				.statusCode(404);
@@ -106,7 +106,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionId_ProcessInstance
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionProcessInstancesActive)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 						+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 				.then()
 				.statusCode(401);

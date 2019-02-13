@@ -68,10 +68,10 @@ public class Engine_Dashboard_My_AppsTest77 {
 						+ "\"type\":\"" + type  + "\", \n"
 						+ "\"versionid\":\"" + versionid  + "\" }")
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineDashboardMyApps)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardMyApps);
 	}
 
@@ -97,10 +97,10 @@ public class Engine_Dashboard_My_AppsTest77 {
 						+ "\"type\":\"" + type  + "\", \n"
 						+ "\"versionid\":\"" + versionid  + "\" }")
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineDashboardMyApps)
 				.then().assertThat().statusCode(201);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardMyApps);
 	}
 
@@ -124,10 +124,10 @@ public class Engine_Dashboard_My_AppsTest77 {
 						+ "\"ownerId\":\"" + ownerId  + "\", \n"
 						+ "\"type\":\"" + type  + "\" }")
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineDashboardMyApps)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardMyApps);
 	}
 }

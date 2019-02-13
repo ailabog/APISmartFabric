@@ -40,7 +40,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid + "\", \n"
 						+ "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(200);
 	}
@@ -52,7 +52,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + invalidProcessUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid
 						+ "\", \n" + "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 
@@ -65,7 +65,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + invalidTemplateUuid
 						+ "\", \n" + "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 
@@ -78,7 +78,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid + "\", \n"
 						+ "\"versionId\":\"" + invalidVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 
@@ -91,7 +91,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + invalidProcessUuid + "\",\n" + "\"templateUuid\":\"" + invalidTemplateUuid
 						+ "\", \n" + "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 	}
@@ -103,7 +103,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + invalidProcessUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid
 						+ "\", \n" + "\"versionId\":\"" + invalidVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 	}
@@ -115,7 +115,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + invalidTemplateUuid
 						+ "\", \n" + "\"versionId\":\"" + invalidVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 	}
@@ -128,7 +128,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + nullProcessUuid + "\",\n" + "\"templateUuid\":\"" + nullTemplateUuid
 						+ "\", \n" + "\"versionId\":\"" + nullVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 	}
@@ -140,7 +140,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + nullProcessUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid + "\", \n"
 						+ "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(400);
 
@@ -153,7 +153,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + nullTemplateUuid + "\", \n"
 						+ "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(400);
 
@@ -166,7 +166,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid + "\", \n"
 						+ "\"versionId\":\"" + nullVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(400);
 
@@ -179,7 +179,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + nullProcessUuid + "\",\n" + "\"templateUuid\":\"" + nullTemplateUuid
 						+ "\", \n" + "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(400);
 	}
@@ -191,7 +191,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + nullProcessUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid + "\", \n"
 						+ "\"versionId\":\"" + nullVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(400);
 	}
@@ -203,7 +203,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + nullTemplateUuid + "\", \n"
 						+ "\"versionId\":\"" + nullVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(404);
 	}
@@ -216,7 +216,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + nullProcessUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid
 						+ "\", \n" + "\"versionId\":\"" + nullVersionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(400);
 	}
@@ -227,7 +227,7 @@ public class Documents_Templates_exportSimpleTest48 {
 				.body("{\"processUid\":\"" + processUuid + "\",\n" + "\"templateUuid\":\"" + templateUuid + "\", \n"
 						+ "\"versionId\":\"" + versionId + "\" }")
 				.when()
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesExportSimple)
 				.then().statusCode(401);
 	}

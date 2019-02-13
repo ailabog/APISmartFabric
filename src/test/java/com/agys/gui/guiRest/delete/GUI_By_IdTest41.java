@@ -27,7 +27,7 @@ public class GUI_By_IdTest41 {
 	public void deleteGUIByInvalidId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUI + invalidId)
 				.then().statusCode(404);
 	}
@@ -36,7 +36,7 @@ public class GUI_By_IdTest41 {
 	public void deleteGUIById() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.GUI
 						+  Endpoints.middleURLGUI +id)
 				.then().statusCode(200);
 			
@@ -46,7 +46,7 @@ public class GUI_By_IdTest41 {
 	public void deleteGUIByNULLId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURLGUI")
+				.delete(CredentialsUtils.GUI
 						+  Endpoints.middleURLGUI +nullId)
 				.then().statusCode(404);
 			
@@ -56,7 +56,7 @@ public class GUI_By_IdTest41 {
 	public void deleteGUIByIddNoAuthentication() {
 		given().
 		when().contentType(ContentType.JSON)
-		.delete(CredentialsUtils.getProperty("baseURLGUI")
+		.delete(CredentialsUtils.GUI
 				+  Endpoints.middleURLGUI
 				+id)
 				.then().statusCode(401);

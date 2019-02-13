@@ -42,7 +42,7 @@ public class Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogDataQueryProcessDefinition) + processInstanceId).when()
-						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataQueryProcessDefinition + processInstanceId)
+						.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataQueryProcessDefinition + processInstanceId)
 						.then()
 						.statusCode(201);
 
@@ -64,7 +64,7 @@ public class Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogDataQueryProcessDefinition)+  processInstanceId).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataQueryProcessDefinition + processInstanceId)
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataQueryProcessDefinition + processInstanceId)
 				.then()
 				.statusCode(401);
 	}

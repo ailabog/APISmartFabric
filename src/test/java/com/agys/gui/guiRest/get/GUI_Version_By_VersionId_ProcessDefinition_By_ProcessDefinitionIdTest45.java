@@ -35,12 +35,12 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	@Test
 	public void getGUIVersionByVersionIdProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIVersionProcessDefinition + versionId
 						+ Endpoints.middleURLGUIVersionProcessDefinition1 + processDefinitionId)
 				.then().assertThat().statusCode(200);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
-				+ CredentialsUtils.getProperty("baseURLGUI")
+				+ CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIVersionProcessDefinition + versionId
 				+ Endpoints.middleURLGUIVersionProcessDefinition1 + processDefinitionId);
 	}
@@ -48,13 +48,13 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	@Test
 	public void getGUIVersionByNULLVersionIdProcessDefinitionByNULLProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIVersionProcessDefinition + nullVersionId
 						+ Endpoints.middleURLGUIVersionProcessDefinition1
 						+ nullprocessDefinitionId)
 				.then().assertThat().statusCode(400);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
-				+ CredentialsUtils.getProperty("baseURLGUI")
+				+ CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIVersionProcessDefinition + nullVersionId
 				+ Endpoints.middleURLGUIVersionProcessDefinition1
 				+ nullprocessDefinitionId);
@@ -64,13 +64,13 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	public void getGUIVersionByInvalidVersionIdProcessDefinitionByInvalidProcessDefinitionId()
 			throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIVersionProcessDefinition + invalidversionId
 						+ Endpoints.middleURLGUIVersionProcessDefinition1
 						+ invalidProcessDefinition)
 				.then().assertThat().statusCode(404);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
-				+ CredentialsUtils.getProperty("baseURLGUI")
+				+ CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIVersionProcessDefinition + invalidversionId
 				+ Endpoints.middleURLGUIVersionProcessDefinition1
 				+ invalidProcessDefinition);
@@ -79,26 +79,26 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	@Test
 	public void getGUIUsedProcessByProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI") +
+				.get(CredentialsUtils.GUI +
 						Endpoints.middleURLGUIVersionProcessDefinition + versionId
 						+ Endpoints.middleURLGUIVersionProcessDefinition1 + processDefinitionId)
 				.then().assertThat().statusCode(401);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
-				+ CredentialsUtils.getProperty("baseURLGUI")
-				+ 	Endpoints.middleURLGUIVersionProcessDefinition + versionId
+				+ CredentialsUtils.GUI
+				+ Endpoints.middleURLGUIVersionProcessDefinition + versionId
 				+ Endpoints.middleURLGUIVersionProcessDefinition1 + processDefinitionId);
 	}
 
 	@Test
 	public void getGUIVersionByInvalidVersionIdProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIVersionProcessDefinition + invalidversionId
 						+ Endpoints.middleURLGUIVersionProcessDefinition1
 						+ invalidProcessDefinition)
 				.then().assertThat().statusCode(404);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
-				+ CredentialsUtils.getProperty("baseURLGUI")
+				+ CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIVersionProcessDefinition + invalidversionId
 				+ Endpoints.middleURLGUIVersionProcessDefinition1
 				+ invalidProcessDefinition);
@@ -107,12 +107,12 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	@Test
 	public void getGUIVersionByVersionIdProcessDefinitionByInvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIVersionProcessDefinition + invalidversionId
 						+ Endpoints.middleURLGUIVersionProcessDefinition1 + processDefinitionId)
 				.then().assertThat().statusCode(404);
 		log.info("GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionId"
-				+ CredentialsUtils.getProperty("baseURLGUI")
+				+ CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIVersionProcessDefinition + invalidversionId
 				+ Endpoints.middleURLGUIVersionProcessDefinition1 + processDefinitionId);
 	}

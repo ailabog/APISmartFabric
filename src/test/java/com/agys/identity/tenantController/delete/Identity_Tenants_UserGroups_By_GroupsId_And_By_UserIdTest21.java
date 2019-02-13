@@ -29,7 +29,7 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 	public void deleteGroupIdInvalid() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUserGroups +GROUP.GROUP_INVALID.getId() + "/" + USER.USER_INVALID.getId())
 				.then().statusCode(404);
 	}
@@ -38,7 +38,7 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 	public void deleteGroupIdValid() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUserGroups +GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
 				.then().statusCode(200);
 			
@@ -48,7 +48,7 @@ public class Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21 {
 	public void deleteGroupIdValidNoAuthentication() {
 		given().
 		when().contentType(ContentType.JSON)
-		.delete(CredentialsUtils.getProperty("baseURL")
+		.delete(CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUserGroups
 				+GROUP.GROUP_OK1.getId() + "/" + USER.USER_OK1.getId())
 				.then().statusCode(401);

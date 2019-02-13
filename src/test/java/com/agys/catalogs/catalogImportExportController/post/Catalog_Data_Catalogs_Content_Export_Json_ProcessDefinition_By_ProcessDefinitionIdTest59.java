@@ -41,7 +41,7 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 
 		ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentExportJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 						Endpoints.middleURLCatalogsExportJson + processDefinitionId)
 				.then()
 				.statusCode(201);
@@ -66,7 +66,7 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentExportJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 						Endpoints.middleURLCatalogsExportJson + invalidProcessDefinitionId)
 				.then()
 				.statusCode(404);
@@ -77,7 +77,7 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentExportJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 						Endpoints.middleURLCatalogsExportJson + processDefinitionId)
 				.then()
 				.statusCode(401);

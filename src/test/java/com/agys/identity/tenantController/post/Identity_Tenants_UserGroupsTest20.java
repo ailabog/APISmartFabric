@@ -23,7 +23,7 @@ public class Identity_Tenants_UserGroupsTest20 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).
 				body("[ +, \n" + "{ \"groupId\":\"" + GROUPS.GROUP_OK1.getId() + "}" + "\", \n" + "\"]" ).when()
-				.post(CredentialsUtils.getProperty("baseURL")
+				.post(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUserGroups)
 			.then().statusCode(201);
 		}
@@ -33,7 +33,7 @@ public class Identity_Tenants_UserGroupsTest20 {
 		given().
 				contentType(ContentType.JSON).
 				body("[ +, \n" + "{ \"groupId\":\"" + GROUPS.GROUP_OK2.getId() + "}" + "\", \n" + "\"]" ).when()
-				.post(CredentialsUtils.getProperty("baseURL")
+				.post(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUserGroups)
 			.then().statusCode(401);
 	}

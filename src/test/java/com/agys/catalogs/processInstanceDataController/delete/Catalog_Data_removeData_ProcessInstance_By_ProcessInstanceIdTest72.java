@@ -28,7 +28,7 @@ public class Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72 
 	public void deleteCatalogDataRemoveDataProcessInstanceByProcessInstanceId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.CATALOGS
 						+ Endpoints.middleURLDataRemoveDataProcessInstance + processInstanceId)
 				.then().statusCode(200);
 	}
@@ -37,7 +37,7 @@ public class Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72 
 	public void deleteCatalogDataRemoveDataProcessInstanceByInvalidProcessInstanceId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.CATALOGS
 						+ Endpoints.middleURLDataRemoveDataProcessInstance + invalidProcessInstanceId)
 				.then().statusCode(404);
 			
@@ -47,7 +47,7 @@ public class Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72 
 	public void deleteCatalogDataremoveDataProcessInstanceByProcessInstanceIdNoAuthentication() {
 		given().
 		when().contentType(ContentType.JSON)
-		.delete(CredentialsUtils.getProperty("baseURL")
+		.delete(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataRemoveDataProcessInstance
 				+ processInstanceId)
 				.then().statusCode(401);

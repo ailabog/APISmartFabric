@@ -32,42 +32,42 @@ public class Documents_Templates_By_IdTest47 {
 	public void getDocumentsTemplatesById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_OK1.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_OK1.getId()));
+		log.info("Documents_Templates_By_Id" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_OK1.getId());
 	}
 
 	@Test
 	public void getDocumentsTemplatesByInvalidId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates
+				.get(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplates
 						+ DOCUMENTS.DOCUMENT_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_INVALID.getId()));
+		log.info("Documents_Templates_By_Id" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_INVALID.getId());
 	}
 
 	@Test
 	public void getDocumentsTemplatesByNULLId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments") +
+				.get(CredentialsUtils.DOCUMENTS +
 						Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_NULL.getId())
 				.then().assertThat().statusCode(400);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_NULL.getId()));
+		log.info("Documents_Templates_By_Id" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_NULL.getId());
 	}
 
 	@Test
 	public void getDocumentsTemplatesByIdnNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_OK1.getId())
 				.then().assertThat().statusCode(401);
-		log.info("Documents_Templates_By_Id" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_OK1.getId()));
+		log.info("Documents_Templates_By_Id" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplates + DOCUMENTS.DOCUMENT_OK1.getId());
 	}
 }

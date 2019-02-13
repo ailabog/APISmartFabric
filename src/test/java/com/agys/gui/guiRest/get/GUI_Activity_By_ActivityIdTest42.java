@@ -32,37 +32,37 @@ public class GUI_Activity_By_ActivityIdTest42 {
 	@Test
 	public void getGUIActivityByActivityId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).
-				when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+				when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIActivity + activityId)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.GUI
 				+  Endpoints.middleURLGUIActivity + activityId);
 	}
 
 	@Test
 	public void getGUIActivityByActivityInvalidId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ CredentialsUtils.getProperty("middleURLGUIActivity") + invalidActivityId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.GUI
 				+  Endpoints.middleURLGUIActivity + invalidActivityId);
 	}
 
 	@Test
 	public void getGUIActivityByActivityNULLId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ CredentialsUtils.getProperty("middleURLGUIActivity") + nullActivityId)
 				.then().assertThat().statusCode(400);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.GUI
 				+  Endpoints.middleURLGUIActivity + nullActivityId);
 	}
 
 	@Test
 	public void getGUIActivityByActivityIdNoAuthentication() throws FileNotFoundException {
-		given().when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+  Endpoints.middleURLGUIActivity + activityId).then().assertThat()
 				.statusCode(401);
-		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.getProperty("baseURLGUI") +
+		log.info("GUI_Activity_By_Activity Id" + CredentialsUtils.GUI +
 				Endpoints.middleURLGUIActivity + activityId);
 	}
 }

@@ -33,30 +33,30 @@ public class Catalog_Data_Model_Versions_By_VersionIdTest62 {
 	@Test
 	public void getCatalog_Data_Model_Versions_By_VersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 						+ Endpoints.middleURLDataModelVersions)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelVersions + versionId);
 	}
 
 	@Test
 	public void getCatalog_Data_Model_Versions_By_InvalidVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersions)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersions + invalidVersionId);
 	}
 
 	@Test
 	public void getCatalog_Data_Model_Versions_By_NULLVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersions)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersions + nullVersionId);
 	}
 	
@@ -64,10 +64,10 @@ public class Catalog_Data_Model_Versions_By_VersionIdTest62 {
 	@Test
 	public void Catalog_Data_Model_Versions_By_VersionIdNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersions)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelVersions + versionId);
 	}
 }

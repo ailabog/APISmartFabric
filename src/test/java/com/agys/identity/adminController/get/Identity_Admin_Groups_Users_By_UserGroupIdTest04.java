@@ -35,16 +35,16 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 
 	@Test
 	public void getUserById() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_OK1.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_OK1.getId());
 	}
 
 	@Test
 	public void getUserByIdWithoutAuthentication() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_OK2.getId())
 				.then().assertThat().statusCode(401);
 		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
@@ -53,10 +53,10 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 	
 	@Test
 	public void getUserByNullId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_NULL.getId())
 				.then().assertThat().statusCode(400);
-		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_NULL.getId());
 	}
 	
@@ -66,7 +66,7 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
 						+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Groups_Users_By_UserGroupId"+ CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLAdminGroupsUsers + USERGROUP.USERSGROUPS_INVALID.getId());
 	}
 }

@@ -45,7 +45,7 @@ public class Catalog_Data_LoadData_InternalTest67 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataInternal)).when()
-						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoaddataInternal)
+						.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoaddataInternal)
 						.then()
 						.statusCode(201);
 
@@ -72,7 +72,7 @@ public class Catalog_Data_LoadData_InternalTest67 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataInternal)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoaddataInternal)
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoaddataInternal)
 				.then()
 				.statusCode(401);
 	}

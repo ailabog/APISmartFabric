@@ -27,10 +27,10 @@ public class GUI_Control_ListTest38 {
 	@Test
 	public void getGUIControlList() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIControlList)
 					.then().assertThat().statusCode(200);
-		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Control_List" + CredentialsUtils.GUI
 		+ Endpoints.middleURLGUIControlList);
 	}
 	
@@ -38,10 +38,10 @@ public class GUI_Control_ListTest38 {
 	@Test
 	public void getGUIControlListNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIControlList)
 		.then().assertThat().statusCode(401);
-		log.info("GUI_Control_List" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Control_List" + CredentialsUtils.GUI
 		+ Endpoints.middleURLGUIControlList);
 	}
 }

@@ -34,11 +34,11 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionIdTypeByTypeId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 						+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}
@@ -46,11 +46,11 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 	@Test
 	public void getCatalogDataModelDefinitionVersionByInvalidVersionIdTypeByTypeId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelDefinitionVersionType + invalidVersionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}
@@ -58,11 +58,11 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 	@Test
 	public void getCatalogDataModelDefinitionVersionByNULLVersionIdTypeByTypeId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelDefinitionVersionType + nullVersionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 				.then().assertThat().statusCode(400);
-		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelDefinitionVersionType + nullVersionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}
@@ -71,11 +71,11 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionIdTypeByTypeIdNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelDefinitionVersionType + versionId +
 				Endpoints.middleURLDataModelDefinitionVersionProcessDefinitionType3 + type);
 	}

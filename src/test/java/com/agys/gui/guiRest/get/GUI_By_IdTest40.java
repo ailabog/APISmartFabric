@@ -32,36 +32,36 @@ public class GUI_By_IdTest40 {
 	public void getGUIById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI + id)
+				.get(CredentialsUtils.GUI + Endpoints.middleURLGUI + id)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI
+		log.info("GUI_By_Id" + CredentialsUtils.GUI + Endpoints.middleURLGUI
 				+ id);
 	}
 
 	@Test
 	public void getGUIByInvalidId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUI + invalidId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI
+		log.info("GUI_By_Id" + CredentialsUtils.GUI + Endpoints.middleURLGUI
 				+ invalidId);
 	}
 
 	@Test
 	public void getGUIByNULLId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI + nullId)
+				.get(CredentialsUtils.GUI + Endpoints.middleURLGUI + nullId)
 				.then().assertThat().statusCode(400);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI
+		log.info("GUI_By_Id" + CredentialsUtils.GUI + Endpoints.middleURLGUI
 				+ nullId);
 	}
 
 	@Test
 	public void getGUIByInvalidIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI + id)
+				.get(CredentialsUtils.GUI + Endpoints.middleURLGUI + id)
 				.then().assertThat().statusCode(401);
-		log.info("GUI_By_Id" + CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUI
+		log.info("GUI_By_Id" + CredentialsUtils.GUI + Endpoints.middleURLGUI
 				+ id);
 	}
 }

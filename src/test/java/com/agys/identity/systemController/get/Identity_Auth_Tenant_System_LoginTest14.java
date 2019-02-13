@@ -28,20 +28,20 @@ public class Identity_Auth_Tenant_System_LoginTest14 {
 	public void getTenantsUsersSystem() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersSystem)
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Auth_Tenant_System_Login" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Auth_Tenant_System_Login" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersSystem);
 	}
 
 	@Test
 	public void getUserByIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersSystem)
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Auth_Tenant_System_Login" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Auth_Tenant_System_Login" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersSystem);
 	}
 }

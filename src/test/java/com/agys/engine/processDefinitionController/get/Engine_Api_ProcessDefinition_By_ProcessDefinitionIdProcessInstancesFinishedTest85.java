@@ -32,11 +32,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 	public void getEngineApiProcessDefinitionByProcessDefinitionIdProcessInstancesFinished() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3);
 	}
 
 
@@ -44,11 +44,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 	public void getEngineApiProcessDefinitionByInvalidProcessDefinitionIdProcessInstancesFinished() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3);
 	}
 
 
@@ -56,21 +56,21 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstances
 	public void getEngineApiProcessDefinitionByNULLProcessDefinitionIdProcessInstancesFinished() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3);
 	}
 
 	@Test
 	public void getEngineApiProcessDefinitionByProcessDefinitionIdProcessInstancesFinishedNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinished" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition3);
 	}
 }

@@ -31,40 +31,40 @@ public class GUI_Used_Process_By_ProcessDefinitionIdTest44 {
 	@Test
 	public void getGUIUsedProcessByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIUsedProcess + processDefinitionId)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIUsedProcess + processDefinitionId);
 	}
 
 	@Test
 	public void getGUIUsedProcessByInvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIUsedProcess + invalidprocessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIUsedProcess + invalidprocessDefinitionId);
 	}
 
 	@Test
 	public void getGUIUsedProcessByNULLProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIUsedProcess + nullprocessDefinitionId)
 				.then().assertThat().statusCode(400);
-		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIUsedProcess + nullprocessDefinitionId);
 	}
 
 	@Test
 	public void getGUIUsedProcessByProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLGUI")
+				.get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIUsedProcess + processDefinitionId)
 				.then().assertThat().statusCode(401);
-		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Used_Process_By_ProcessDefinition Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIUsedProcess + processDefinitionId);
 	}
 }

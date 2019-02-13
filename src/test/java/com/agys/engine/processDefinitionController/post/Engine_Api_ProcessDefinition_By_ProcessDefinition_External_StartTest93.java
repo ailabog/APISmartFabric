@@ -45,7 +45,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinition_External_StartTes
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionExternalStart)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+						.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 								+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 						.then()
 						.statusCode(201);
@@ -78,7 +78,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinition_External_StartTes
 				.additionalProp2(additionalProp2).build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionExternalStart1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 						+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 				.then()
 				.statusCode(400);
@@ -92,7 +92,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinition_External_StartTes
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionExternalStart2)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 						+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 				.then()
 				.statusCode(404);
@@ -103,7 +103,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinition_External_StartTes
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionExternalStart)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionExternalStart
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionExternalStart
 						+ processDefinitionId + Endpoints.middleEngineApiProcessDefinitionExternalStart1)
 				.then()
 				.statusCode(401);

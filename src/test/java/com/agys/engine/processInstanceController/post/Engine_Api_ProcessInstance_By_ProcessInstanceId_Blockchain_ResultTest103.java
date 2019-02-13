@@ -38,7 +38,7 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceId_Blockchain_ResultTe
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessInstanceByProcessInstanceIdBlockchainResult)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessInstanceBlockchainResult
+						.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessInstanceBlockchainResult
 								+ processInstanceId +Endpoints.middleEngineApiProcessInstanceBlockchainResult1)
 						.then()
 						.statusCode(201);
@@ -66,7 +66,7 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceId_Blockchain_ResultTe
 				EngineApiProcessInstanceBlockchainResult.builder().build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessInstanceByProcessInstanceIdBlockchainResult1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine")+ Endpoints.middleEngineApiProcessInstanceBlockchainResult
+				.post(CredentialsUtils.ENGINE+ Endpoints.middleEngineApiProcessInstanceBlockchainResult
 						+ processInstanceId +Endpoints.middleEngineApiProcessInstanceBlockchainResult1)
 				.then()
 				.statusCode(400);
@@ -81,7 +81,7 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceId_Blockchain_ResultTe
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessInstanceByProcessInstanceIdBlockchainResult2)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessInstanceBlockchainResult
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessInstanceBlockchainResult
 						+ processInstanceId +Endpoints.middleEngineApiProcessInstanceBlockchainResult1)
 				.then()
 				.statusCode(404);
@@ -92,7 +92,7 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceId_Blockchain_ResultTe
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessInstanceByProcessInstanceIdBlockchainResult)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessInstanceBlockchainResult
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessInstanceBlockchainResult
 						+ processInstanceId + Endpoints.middleEngineApiProcessInstanceBlockchainResult1)
 				.then()
 				.statusCode(401);

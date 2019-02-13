@@ -31,28 +31,28 @@ public class GUI_Control_Id_By_IdTest37 {
 	@Test
 	public void getGUIControlIdById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIControlId + id)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIControlId + id);
 	}
 	
 	@Test
 	public void getGUIControlIdByInvalidId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIControlId + invalidId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.GUI
 		+ Endpoints.middleURLGUIControlId + invalidId);
 	}
 	
 	@Test
 	public void getGUIControlIdByNULLId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIControlId + nullId)
 		.then().assertThat().statusCode(400);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.GUI
 		+ Endpoints.middleURLGUIControlId + nullId);
 	}
 
@@ -61,10 +61,10 @@ public class GUI_Control_Id_By_IdTest37 {
 	@Test
 	public void getGUIControlIdByIdNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIControlId + id)
 		.then().assertThat().statusCode(401);
-		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_Control_Id_By_Id" + CredentialsUtils.GUI
 		+ Endpoints.middleURLGUIControlId + id);
 	}
 }

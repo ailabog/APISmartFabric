@@ -31,10 +31,10 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioningTest102 {
 	public void getEngineApiProcessInstanceByProcessInstanceIdVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessInstanceVersioning + processInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1)
 				.then().assertThat().statusCode(200);
-		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiProcessInstanceVersioning + processInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1);
 	}
 
@@ -42,10 +42,10 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioningTest102 {
 	public void getEngineApiProcessInstanceByInvalidProcessInstanceIdVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessInstanceVersioning + invalidProcessInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiProcessInstanceVersioning + invalidProcessInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1);
 	}
 
@@ -53,10 +53,10 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioningTest102 {
 	public void getEngineApiProcessInstanceByProcessInstanceIdNULLversionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessInstanceVersioning + nullProcessInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiProcessInstanceVersioning + nullProcessInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1);
 	}
 
@@ -65,10 +65,10 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioningTest102 {
 	public void getEngineDashboardAppStatisticsNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessInstanceVersioning + processInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioning" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiProcessInstanceVersioning + processInstanceId  + Endpoints.middleURLEngineApiProcessInstanceVersioning1);
 	}
 }

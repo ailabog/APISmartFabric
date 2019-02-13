@@ -28,18 +28,18 @@ public class Identity_Tenants_GroupsTest15 {
 	public void getTenantsGroups() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups)
+				.get(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsGroups)
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Groups" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Groups" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsGroups);
 	}
 
 	@Test
 	public void getTenantsGroupsNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups)
+				.get(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsGroups)
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Groups" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Groups" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsGroups);
 	}
 }

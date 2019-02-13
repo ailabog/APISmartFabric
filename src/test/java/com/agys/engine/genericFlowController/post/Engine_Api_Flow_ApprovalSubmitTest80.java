@@ -46,7 +46,7 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowApprovalSubmit)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiFlowApprovalSubmit)
+						.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiFlowApprovalSubmit)
 						.then()
 						.statusCode(201);
 
@@ -76,7 +76,7 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 				.comment(comment).build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowApprovalSubmit1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiFlowApprovalSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiFlowApprovalSubmit)
 				.then()
 				.statusCode(400);
 	}
@@ -90,7 +90,7 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowApprovalSubmitWrong)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiFlowApprovalSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiFlowApprovalSubmit)
 				.then()
 				.statusCode(404);
 	}
@@ -100,7 +100,7 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowApprovalSubmit)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiFlowApprovalSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiFlowApprovalSubmit)
 				.then()
 				.statusCode(401);
 	}

@@ -48,7 +48,7 @@ public class Engine_Task_Filter_CreateTest110 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskFilterCreate)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskFilterCreate)
+						.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskFilterCreate)
 						.then()
 						.statusCode(201);
 
@@ -84,7 +84,7 @@ public class Engine_Task_Filter_CreateTest110 {
 						.name(name).ownerId(ownerId).application(application).dueIn(dueIn).priorities(priorities).taskName(taskName).build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskFilterCreate1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskFilterCreate)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskFilterCreate)
 				.then()
 				.statusCode(400);
 	}
@@ -100,7 +100,7 @@ public class Engine_Task_Filter_CreateTest110 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskFilterCreate2)).
 		when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskFilterCreate)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskFilterCreate)
 				.then()
 				.statusCode(404);
 	}
@@ -110,7 +110,7 @@ public class Engine_Task_Filter_CreateTest110 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskFilterCreate)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskFilterCreate)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskFilterCreate)
 				.then()
 				.statusCode(401);
 	}

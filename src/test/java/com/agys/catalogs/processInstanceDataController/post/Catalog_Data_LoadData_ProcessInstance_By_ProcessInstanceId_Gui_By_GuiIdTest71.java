@@ -42,7 +42,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_Gui_By_G
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping) + processInstanceId).when()
-						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessInstanceGUI + processInstanceId +
+						.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessInstanceGUI + processInstanceId +
 								Endpoints.middleURLDataLoadDataProcessInstanceGUI1 + guiId)
 						.then()
 						.statusCode(201);
@@ -64,7 +64,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_Gui_By_G
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping)+  processInstanceId).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs")  + Endpoints.middleURLDataLoadDataProcessInstanceGUI + processInstanceId +
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessInstanceGUI + processInstanceId +
 						Endpoints.middleURLDataLoadDataProcessInstanceGUI1 + guiId)
 				.then()
 				.statusCode(401);

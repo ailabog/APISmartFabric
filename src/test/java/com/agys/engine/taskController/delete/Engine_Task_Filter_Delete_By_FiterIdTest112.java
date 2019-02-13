@@ -28,7 +28,7 @@ public class Engine_Task_Filter_Delete_By_FiterIdTest112 {
 	public void deleteEngineTaskFilterDeleteByFilterId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilterDelete + filterId)
 				.then().statusCode(404);
 	}
@@ -37,7 +37,7 @@ public class Engine_Task_Filter_Delete_By_FiterIdTest112 {
 	public void deleteEngineTaskFilterDeleteByInvalidFilterId() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.delete(CredentialsUtils.getProperty("baseURL")
+				.delete(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilterDelete + invalidFilterId)
 				.then().statusCode(200);
 			
@@ -47,7 +47,7 @@ public class Engine_Task_Filter_Delete_By_FiterIdTest112 {
 	public void deleteEngineTaskFilterDeleteByFilterIdNoAuthentication() {
 		given().
 		when().contentType(ContentType.JSON)
-		.delete(CredentialsUtils.getProperty("baseURL")
+		.delete(CredentialsUtils.ENGINE
 				+ Endpoints.middleEngineTaskFilterDelete + filterId)
 				.then().statusCode(401);
 	}

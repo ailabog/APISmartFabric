@@ -42,7 +42,7 @@ public class Identity_Tenants_GroupsTest16 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsGroups).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -67,7 +67,7 @@ public class Identity_Tenants_GroupsTest16 {
 	public void postWrongTenantsGroups() throws JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsGroups).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsGroups).then()
 				.statusCode(401);
 	}
 }

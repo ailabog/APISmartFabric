@@ -29,21 +29,21 @@ public class Identity_Tenants_Users_Profile_NotificationTest32 {
 	public void getTenantsUsersProfileNotification() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersProfileNotification)
 				.then().assertThat().statusCode(200);
 
-		log.info("Identity_Tenants_Users_Profile_NotificationTest32" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Profile_NotificationTest32" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersProfileNotification);
 	}
 
 	@Test
 	public void getTenantsUsersProfileNotificationNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersProfileNotification)
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Users_Profile_NotificationTest32" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Profile_NotificationTest32" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersProfileNotification);
 	}
 }

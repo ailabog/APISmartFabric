@@ -30,20 +30,20 @@ public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 	public void getTenantsUsersManagerByManagerId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersManager + managerId)
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersManager + managerId);
 	}
 
 	@Test
 	public void getTenantsUsersManagerByManagerIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersManager + managerId)
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersManager + managerId);
 	}
 
@@ -51,10 +51,10 @@ public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 	public void getTenantsUsersManagerByNotManagerManagerId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersManager + notManagerId)
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Manager_By_ManagerId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersManager + notManagerId);
 	}
 }

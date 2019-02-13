@@ -44,7 +44,7 @@ public class Engine_Api_Flow_GuiSubmitTest81 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowGuiSubmit)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiGuiSubmit)
+						.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiGuiSubmit)
 						.then()
 						.statusCode(201);
 
@@ -74,7 +74,7 @@ public class Engine_Api_Flow_GuiSubmitTest81 {
 				.comment(comment).build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowGuiSubmit1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiGuiSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiGuiSubmit)
 				.then()
 				.statusCode(400);
 	}
@@ -88,7 +88,7 @@ public class Engine_Api_Flow_GuiSubmitTest81 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowGuiSubmitWrong)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiGuiSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiGuiSubmit)
 				.then()
 				.statusCode(404);
 	}
@@ -102,7 +102,7 @@ public class Engine_Api_Flow_GuiSubmitTest81 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowGuiSubmitWrong)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiGuiSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiGuiSubmit)
 				.then()
 				.statusCode(404);
 	}
@@ -112,7 +112,7 @@ public class Engine_Api_Flow_GuiSubmitTest81 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiFlowGuiSubmit)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleURLEngineApiGuiSubmit)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleURLEngineApiGuiSubmit)
 				.then()
 				.statusCode(401);
 	}

@@ -44,7 +44,7 @@ public class Documents_Templates_ExportSimpleTest49 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
+				.post(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -68,7 +68,7 @@ public class Documents_Templates_ExportSimpleTest49 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
+				.post(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(401);
 	}
 
@@ -79,7 +79,7 @@ public class Documents_Templates_ExportSimpleTest49 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(docExportJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
+				.post(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplatesExportSimple).then()
 				.statusCode(404);
 	}
 }

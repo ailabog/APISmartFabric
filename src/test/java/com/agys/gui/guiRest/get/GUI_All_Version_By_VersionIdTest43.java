@@ -32,28 +32,28 @@ public class GUI_All_Version_By_VersionIdTest43 {
 	@Test
 	public void getGUIAllVersionByVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).
-				when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+				when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 						+ Endpoints.middleURLGUIAllVersion + versionId)
 				.then().assertThat().statusCode(200);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIAllVersion + versionId);
 	}
 	
 	@Test
 	public void getGUIAllVersionByInvalidVersionId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIAllVersion + invalidVersionId)
 				.then().assertThat().statusCode(404);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.GUI
 		+ CredentialsUtils.getProperty("middleURLGUIAllVersion") + invalidVersionId);
 	}
 	
 	@Test
 	public void getGUIAllVersionByNULLVersionId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIAllVersion + nullVersionId)
 		.then().assertThat().statusCode(400);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.GUI
 		+ Endpoints.middleURLGUIAllVersion + nullVersionId);
 	}
 
@@ -61,10 +61,10 @@ public class GUI_All_Version_By_VersionIdTest43 {
 	@Test
 	public void getGUIAllVersionByVersionIdNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLGUI")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.GUI
 				+Endpoints.middleURLGUIAllVersion + versionId)
 		.then().assertThat().statusCode(401);
-		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.getProperty("baseURLGUI")
+		log.info("GUI_All_Version_By_Version Id" + CredentialsUtils.GUI
 				+ Endpoints.middleURLGUIAllVersion + versionId);
 	}
 }

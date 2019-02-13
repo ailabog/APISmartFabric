@@ -38,11 +38,11 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	public void getEngineApiAppFilesByFileUUIDByType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage));
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage);
 	}
 
 
@@ -50,11 +50,11 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	public void getEngineApiAppFilesByFileUUIDByDifferentType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeProcessdiag)
 				.then().assertThat().statusCode(200);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeProcessdiag));
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeProcessdiag);
 	}
 
 
@@ -62,32 +62,32 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	public void getEngineApiAppFilesByFileInvalidUUIDByType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + typeImage)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + typeImage));
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiAppFiles + invalidFileUUID + typeImage);
 	}
 
 	@Test
 	public void getEngineApiAppFilesByFileNullUUIDByType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + typeImage)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + typeImage));
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + typeImage);
 	}
 
 	@Test
 	public void getEngineApiAppFilesByFileUUIDByInvalidType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + invalidType)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + invalidType));
 	}
 
@@ -95,10 +95,10 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	public void getEngineApiAppFilesByFileUUIDByNullType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + fileUUID + nullType)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + nullType));
 	}
 
@@ -117,21 +117,21 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	public void getEngineApiAppFilesByFileNullUUIDByNullType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + nullType)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + nullType));
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.ENGINE)
+				+ Endpoints.middleURLEngineApiAppFiles + nullFileUUID + nullType);
 	}
 
 	@Test
 	public void getgetEngineApiAppFilesByFileUUIDByTypedNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_App_Files_By_FileUUID_By_Type" + (CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiAppFiles + fileUUID + typeImage));
 	}
 }

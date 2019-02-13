@@ -21,7 +21,7 @@ public class Identity_Tenants_UsersTenantsTest33 {
 
     @Test
     public void postTenantsGroupsUsers() {
-        String path = CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsersTenants;
+        String path = CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsUsersTenants;
         System.out.println("URL: " + path);
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(USER.USER_OK6.getId()).when()
@@ -33,7 +33,7 @@ public class Identity_Tenants_UsersTenantsTest33 {
     public void postWrongTenantsGroupsUsers() {
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body("{\"code\":\"" + USER.USER_OK2.getId() + "\" ]").when()
-                .post(CredentialsUtils.getProperty("baseURL")
+                .post(CredentialsUtils.IDENTITY
                         + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(404);
   }
@@ -41,7 +41,7 @@ public class Identity_Tenants_UsersTenantsTest33 {
     @Test
     public void postWrongTenantsGroupsUsersNoAuthentication() {
         given().contentType(ContentType.JSON).body("{\"code\":\"" + USER.USER_OK3.getId() + "\" ]").when().post(
-                CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsersTenants)
+                CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(401);
     }
 }

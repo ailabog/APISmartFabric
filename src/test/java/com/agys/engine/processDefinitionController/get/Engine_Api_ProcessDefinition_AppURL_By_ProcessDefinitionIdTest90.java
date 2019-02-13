@@ -31,11 +31,11 @@ public class Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionIdTest90 {
 	public void getEngineApiProcessDefinitionAppURLByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + processDefinitionId)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + processDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + processDefinitionId);
 	}
 
 
@@ -43,11 +43,11 @@ public class Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionIdTest90 {
 	public void getEngineApiProcessDefinitionAppURLByInvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + invalidProcessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + invalidProcessDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + invalidProcessDefinitionId);
 	}
 
 
@@ -55,21 +55,21 @@ public class Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionIdTest90 {
 	public void getEngineApiProcessDefinitionAppURLByNULLProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + nullProcessDefinitionId)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + nullProcessDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + nullProcessDefinitionId);
 	}
 
 	@Test
 	public void getEngineApiProcessDefinitionAppURLByProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + processDefinitionId)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + processDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_AppURL_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinitionAppUrl + processDefinitionId);
 	}
 }

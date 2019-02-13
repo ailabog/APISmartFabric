@@ -43,7 +43,7 @@ public class Identity_Auth_TenantUserLoginTest13 {
 
 		ValidatableResponse vr =
 				given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLLogin).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLLogin).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -71,7 +71,7 @@ public class Identity_Auth_TenantUserLoginTest13 {
 				.userEmail(userEmail).build();
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLLogin).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLLogin).then()
 				.statusCode(404);
 	}
 }

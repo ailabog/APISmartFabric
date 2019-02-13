@@ -28,10 +28,10 @@ public class Catalog_Data_Model_CoreEntitiesTest60 {
 	@Test
 	public void getGUIControlList() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 						+ Endpoints.middleURLDataModelCoreEntities)
 					.then().assertThat().statusCode(200);
-		log.info(" Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info(" Catalog_Data_Model_CoreEntities" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelCoreEntities);
 	}
 	
@@ -39,10 +39,10 @@ public class Catalog_Data_Model_CoreEntitiesTest60 {
 	@Test
 	public void getGUIControlListNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelCoreEntities)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_CoreEntities" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelCoreEntities);
 	}
 }

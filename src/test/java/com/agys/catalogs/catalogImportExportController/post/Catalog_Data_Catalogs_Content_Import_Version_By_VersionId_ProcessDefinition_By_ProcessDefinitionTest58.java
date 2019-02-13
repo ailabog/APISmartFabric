@@ -50,7 +50,7 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 
 		ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentImportVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 						Endpoints.middleURLCatalogsContentImportVersion + versionId +
 						Endpoints.middleURLDataCatalogsContentSaveVersion2 +
 						processDefinitionId)
@@ -80,7 +80,7 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentImportVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 								Endpoints.middleURLCatalogsContentImportVersion + invalidVersionId +
 								Endpoints.middleURLDataCatalogsContentSaveVersion2 +
 						processDefinitionId)
@@ -93,7 +93,7 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 
 	given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentImportVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 								Endpoints.middleURLCatalogsContentImportVersion + versionId +
 								Endpoints.middleURLDataCatalogsContentSaveVersion2 +
 						invalidPocessDefinitionId)
@@ -107,7 +107,7 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 
 	given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentImportVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 								Endpoints.middleURLCatalogsContentImportVersion + invalidVersionId +
 								Endpoints.middleURLDataCatalogsContentSaveVersion2 +
 						invalidPocessDefinitionId)
@@ -120,7 +120,7 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogContentImportVersion)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.post(CredentialsUtils.CATALOGS +
 								Endpoints.middleURLCatalogsContentImportVersion + versionId +
 								Endpoints.middleURLDataCatalogsContentSaveVersion2 +
 						processDefinitionId)

@@ -46,7 +46,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsUsersJson)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroupsUsers).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -72,7 +72,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroupsUsers).then()
 				.statusCode(404);
 	}
 
@@ -81,7 +81,7 @@ public class Identity_Admin_Groups_UsersTest03 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroupsUsers).then()
 				.statusCode(401);
 	}
 }

@@ -30,38 +30,38 @@ public class Identity_Admin_Tenants_By_TenantIdTest06 {
 
 	@Test
 	public void getUserById() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminTenants + TENANT.TENANT_OK1.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminTenants + TENANT.TENANT_OK1.getId());
 	}
 
 	@Test
 	public void getUserByInvalidId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminTenants + TENANT.TENANT_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLAdminTenants + TENANT.TENANT_INVALID.getId());
 	}
 	
 	@Test
 	public void getUserByNullId() throws FileNotFoundException {
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminTenants + TENANT.TENANT_NULL.getId())
 				.then().assertThat().statusCode(400);
-		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLAdminTenants + TENANT.TENANT_NULL.getId());
 	}
 	
 	@Test
 	public void getUserByIdNoAuthentication() throws FileNotFoundException {
 		given()
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLAdminTenants + TENANT.TENANT_OK2.getId())
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Admin_Tenants_By_TenantId" + CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLAdminTenants + TENANT.TENANT_OK2.getId());
 	}
 }

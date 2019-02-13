@@ -31,10 +31,10 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 	public void getEngineApiLiveViewTaskDetailsByActivityByActivityId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId));
 	}
 
@@ -43,11 +43,11 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 	public void getEngineApiLiveViewTaskDetailsByActivityByInvalidActivityId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + invalidActivityId)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + invalidActivityId));
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + invalidActivityId);
 	}
 
 
@@ -55,21 +55,21 @@ public class Engine_Api_LiveView_Task_Details_ByActivity_ByActivityIdTest92 {
 	public void getEngineApiLiveViewTaskDetailsByActivityByNULLActivityId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + nullActivityId)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + nullActivityId));
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + nullActivityId);
 	}
 
 	@Test
 	public void getEngineApiLiveViewTaskDetailsByActivityByActivityIdNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Api_LiveView_Task_Details_ByActivity_ByActivityId" + (CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineApiLiveViewTaskDetails + activityId));
 	}
 }

@@ -32,10 +32,10 @@ public class Engine_Dashboard_Task_StatisticsTest78 {
 	public void getEngineDashboardAppStatisticsYesTeam() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineDashboardTaskStatistics + isTeamYes)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Dashboard_Task_Statistics" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Dashboard_Task_Statistics" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardTaskStatistics + isTeamYes);
 	}
 
@@ -43,10 +43,10 @@ public class Engine_Dashboard_Task_StatisticsTest78 {
 	public void getEngineDashboardAppStatisticsNoTeam() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineDashboardTaskStatistics + isTeamNo)
 				.then().assertThat().statusCode(200);
-		log.info("Engine_Dashboard_Task_Statistics" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Dashboard_Task_Statistics" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardTaskStatistics + isTeamNo);
 	}
 
@@ -54,10 +54,10 @@ public class Engine_Dashboard_Task_StatisticsTest78 {
 	public void getEngineDashboardAppStatisticsNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardTaskStatistics)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Dashboard_Task_Statistics" + CredentialsUtils.getProperty("baseURLEngine")
+		log.info("Engine_Dashboard_Task_Statistics" + CredentialsUtils.ENGINE
 				+ Endpoints.middleURLEngineDashboardTaskStatistics);
 	}
 }

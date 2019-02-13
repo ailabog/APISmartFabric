@@ -43,7 +43,7 @@ public class Identity_Admin_GroupsTest01 {
         ValidatableResponse vr =
                given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(201);
 
         String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -73,7 +73,7 @@ public class Identity_Admin_GroupsTest01 {
 
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLAdminGroupsUsers).then()
+                .post(CredentialsUtils.IDENTITY +  Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(409);
     }
 
@@ -83,7 +83,7 @@ public class Identity_Admin_GroupsTest01 {
 
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLAdminGroupsUsers).then()
+                .post(CredentialsUtils.IDENTITY +  Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(400);
     }
 
@@ -93,7 +93,7 @@ public class Identity_Admin_GroupsTest01 {
 
         given()
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminGroupsUsers).then()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroupsUsers).then()
                 .statusCode(401);
     }
 }

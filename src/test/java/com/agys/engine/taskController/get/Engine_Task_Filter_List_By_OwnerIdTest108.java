@@ -34,11 +34,11 @@ public class Engine_Task_Filter_List_By_OwnerIdTest108 {
 	public void getEngineTaskFilterListByOwnerId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilterList + ownerId)
 					.then().assertThat().statusCode(200);
-		log.info("Engine Task Filter List By Owner Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilterList + ownerId));
+		log.info("Engine Task Filter List By Owner Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilterList + ownerId);
 	}
 
 
@@ -46,11 +46,11 @@ public class Engine_Task_Filter_List_By_OwnerIdTest108 {
 	public void getEngineTaskFilterListByInvalidOwnerId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilterList + invalidOwnerId)
 				.then().assertThat().statusCode(404);
-		log.info("Engine Task Filter List By Owner Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilterList + invalidOwnerId));
+		log.info("Engine Task Filter List By Owner Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilterList + invalidOwnerId);
 	}
 
 
@@ -58,21 +58,21 @@ public class Engine_Task_Filter_List_By_OwnerIdTest108 {
 	public void getEngineTaskFilterListByNULLOwnerId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilterList + nullOwnerId)
 				.then().assertThat().statusCode(400);
-		log.info("Engine Task Filter List By Owner Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilterList + nullOwnerId));
+		log.info("Engine Task Filter List By Owner Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilterList + nullOwnerId);
 	}
 
 	@Test
 	public void getEngineTaskFilterListByOwnerIdNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilterList + ownerId)
 				.then().assertThat().statusCode(401);
-		log.info("Engine Task Filter List By Owner Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilterList + ownerId));
+		log.info("Engine Task Filter List By Owner Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilterList + ownerId);
 	}
 }

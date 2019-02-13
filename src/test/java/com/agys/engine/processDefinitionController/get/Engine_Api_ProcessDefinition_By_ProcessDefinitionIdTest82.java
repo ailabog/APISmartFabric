@@ -34,11 +34,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdTest82 {
 	public void getEngineApiProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId);
 	}
 
 
@@ -46,11 +46,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdTest82 {
 	public void getEngineApiProcessDefinitionByInvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId);
 	}
 
 
@@ -58,11 +58,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdTest82 {
 	public void getEngineApiProcessDefinitionByNullProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId);
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdTest82 {
 				.get(CredentialsUtils.getProperty("baseURLEngine")
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId);
 	}
 }

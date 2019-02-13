@@ -28,10 +28,10 @@ public class Identity_Tenants_Users_ProfileTest31 {
 	@Test
 	public void getTenantsUsersProfile() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersProfile)
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Profile" + CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLTenantsUsersProfile);
 	}
 
@@ -39,10 +39,10 @@ public class Identity_Tenants_Users_ProfileTest31 {
 	@Test
 	public void getTenantsUsersProfileNoAuthentication() throws FileNotFoundException {
 		given()
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersProfile)
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Users_Profile" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Profile" + CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLTenantsUsersProfile);
 	}
 }

@@ -40,7 +40,7 @@ public class Engine_Api_Process_Definition_InsertTest95 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionInsert)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionInsert	)
+						.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionInsert	)
 						.then()
 						.statusCode(201);
 
@@ -69,7 +69,7 @@ public class Engine_Api_Process_Definition_InsertTest95 {
 				EngineApiProcessDefinitionInsert.builder().processDefinitionModel(processDefinitionModel).build();
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionInsert1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine")+ Endpoints. middleEngineApiProcessDefinitionInsert)
+				.post(CredentialsUtils.ENGINE + Endpoints. middleEngineApiProcessDefinitionInsert)
 				.then()
 				.statusCode(400);
 	}
@@ -84,7 +84,7 @@ public class Engine_Api_Process_Definition_InsertTest95 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionInsert2)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionInsert)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionInsert)
 				.then()
 				.statusCode(404);
 	}
@@ -94,7 +94,7 @@ public class Engine_Api_Process_Definition_InsertTest95 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineApiProcessDefinitionInsert)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineApiProcessDefinitionInsert)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineApiProcessDefinitionInsert)
 				.then()
 				.statusCode(401);
 	}

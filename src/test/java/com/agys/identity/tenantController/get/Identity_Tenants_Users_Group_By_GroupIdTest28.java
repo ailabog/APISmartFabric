@@ -30,20 +30,20 @@ public class Identity_Tenants_Users_Group_By_GroupIdTest28 {
 	public void getTenantsUsersGroupByGroupId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK4.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK4.getId());
 	}
 
 	@Test
 	public void getTenantsUsersGroupByGroupIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK5.getId())
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Users_Group_By_GroupId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsUsersGroups + GROUP.GROUP_OK5.getId());
 	}
 }

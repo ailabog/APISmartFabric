@@ -43,7 +43,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingI
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping)+  processInstanceId).when()
-						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
+						.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
 								Endpoints.middleURLDataLoadDataProcessInstanceMapping1)
 						.then()
 						.statusCode(201);
@@ -61,7 +61,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingI
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping) + processInstanceId).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
 						Endpoints.middleURLDataLoadDataProcessInstanceMapping1)
 				.then()
 				.statusCode(201);
@@ -72,7 +72,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingI
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstanceMapping)+  processInstanceId).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessInstanceMapping + processInstanceId +
 						Endpoints.middleURLDataLoadDataProcessInstanceMapping1)
 				.then()
 				.statusCode(401);

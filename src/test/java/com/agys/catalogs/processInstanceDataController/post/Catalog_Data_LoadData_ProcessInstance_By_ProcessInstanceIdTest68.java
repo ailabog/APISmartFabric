@@ -41,7 +41,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceIdTest68 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstance) + processInstanceId).when()
-						.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessDefinition)
+						.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessDefinition)
 						.then()
 						.statusCode(201);
 
@@ -63,7 +63,7 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceIdTest68 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(catalogloadDataProcessInstance)+ processInstanceId).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataLoadDataProcessDefinition)
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataLoadDataProcessDefinition)
 				.then()
 				.statusCode(401);
 	}

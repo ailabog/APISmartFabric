@@ -56,7 +56,7 @@ public class Identity_Admin_UsersTest09 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminUsersJson)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLUser).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLUser).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -102,7 +102,7 @@ public class Identity_Admin_UsersTest09 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 					.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminUsersJson)).when()
-					.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLUser).then()
+					.post(CredentialsUtils.IDENTITY + Endpoints.middleURLUser).then()
 					.statusCode(404);
 	}
 
@@ -110,7 +110,7 @@ public class Identity_Admin_UsersTest09 {
 	public void posAdminUserWithoutAuthentication() throws JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLUser).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLUser).then()
 				.statusCode(401);
 	}
 }

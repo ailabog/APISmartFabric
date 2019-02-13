@@ -51,7 +51,7 @@ public class Engine_Task_ListTest111 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskList)).when()
-						.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskList)
+						.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskList)
 						.then()
 						.statusCode(201);
 
@@ -85,7 +85,7 @@ public class Engine_Task_ListTest111 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskList1)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskList)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskList)
 				.then()
 				.statusCode(400);
 	}
@@ -101,7 +101,7 @@ public class Engine_Task_ListTest111 {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskList2)).
 		when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskList)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskList)
 				.then()
 				.statusCode(404);
 	}
@@ -111,7 +111,7 @@ public class Engine_Task_ListTest111 {
 
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(engineTaskList)).when()
-				.post(CredentialsUtils.getProperty("baseURLEngine") + Endpoints.middleEngineTaskList)
+				.post(CredentialsUtils.ENGINE + Endpoints.middleEngineTaskList)
 				.then()
 				.statusCode(401);
 	}

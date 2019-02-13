@@ -31,11 +31,11 @@ public class Engine_Task_Filter_By_FilterIdTest107 {
 	public void getEngineTaskFilterByFilterId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilter + filterId)
 					.then().assertThat().statusCode(200);
-		log.info("Engine Task Filter By Filter Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilter + filterId));
+		log.info("Engine Task Filter By Filter Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilter + filterId);
 	}
 
 
@@ -43,11 +43,11 @@ public class Engine_Task_Filter_By_FilterIdTest107 {
 	public void getEngineTaskFilterByInvalidFilterId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilter + invalidFilterId)
 				.then().assertThat().statusCode(404);
-		log.info("Engine Task Filter By Filter Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilter + invalidFilterId));
+		log.info("Engine Task Filter By Filter Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilter + invalidFilterId);
 	}
 
 
@@ -55,21 +55,21 @@ public class Engine_Task_Filter_By_FilterIdTest107 {
 	public void getEngineTaskFilterByNULLFilterId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilter + nullFilterId)
 				.then().assertThat().statusCode(400);
-		log.info("Engine Task Filter By Filter Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilter + nullFilterId));
+		log.info("Engine Task Filter By Filter Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilter + nullFilterId);
 	}
 
 	@Test
 	public void getEngineTaskFilterByFilterIdNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleEngineTaskFilter + filterId)
 				.then().assertThat().statusCode(401);
-		log.info("Engine Task Filter By Filter Id" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleEngineTaskFilter + filterId));
+		log.info("Engine Task Filter By Filter Id" + CredentialsUtils.ENGINE
+				+ Endpoints.middleEngineTaskFilter + filterId);
 	}
 }

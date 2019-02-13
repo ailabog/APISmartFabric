@@ -56,7 +56,7 @@ public class Documents_TemplatesTest46 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).
 						contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
-						.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
+						.post(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplates).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -94,7 +94,7 @@ public class Documents_TemplatesTest46 {
 
 		given().
 				contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
-				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
+				.post(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplates).then()
 				.statusCode(401);
 }
 
@@ -103,7 +103,7 @@ public class Documents_TemplatesTest46 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).
 				contentType(ContentType.JSON).body(mapper.writeValueAsString(docsTemplates)).when()
-				.post(CredentialsUtils.getProperty("baseURLDocuments") + Endpoints.middleURLDocumentsTemplates).then()
+				.post(CredentialsUtils.DOCUMENTS + Endpoints.middleURLDocumentsTemplates).then()
 				.statusCode(404);
 	}
 }

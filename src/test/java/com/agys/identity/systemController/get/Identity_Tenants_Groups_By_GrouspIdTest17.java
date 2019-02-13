@@ -28,40 +28,40 @@ public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 	@Test
 	public void getTenantsGroupsByGroupId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_OK1.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_OK1.getId());
 	}
 
 	@Test
 	public void getTenantsGroupsByInvalidGroupId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_INVALID.getId());
 	}
 
 	@Test
 	public void getTenantsGroupsByNullGroupId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURL")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_NULL.getId())
 				.then().assertThat().statusCode(400);
-		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_NULL.getId());
 	}
 
 	@Test
 	public void getTenantsGroupsByGroupIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURL")
+				.get(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_OK2.getId())
 				.then().assertThat().statusCode(401);
-		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.getProperty("baseURL")
+		log.info("Identity_Tenants_Groups_By_GrouspId" + CredentialsUtils.IDENTITY
 				+ Endpoints.middleURLTenantsGroups + GROUP.GROUP_OK2.getId());
 	}
 }

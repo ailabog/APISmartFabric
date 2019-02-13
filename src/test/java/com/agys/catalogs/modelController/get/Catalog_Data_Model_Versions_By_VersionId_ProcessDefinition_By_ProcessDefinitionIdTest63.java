@@ -34,11 +34,11 @@ public class Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_Proce
 @Test
 	public void getCatalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + versionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelVersionByVersionId + versionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId);
 	}
@@ -46,11 +46,11 @@ public class Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_Proce
 	@Test
 	public void Catalog_Data_Model_Versions_By_InvalidVersionId_ProcessDefinition_By_ProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + invalidVersionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + invalidVersionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId);
 	}
@@ -58,11 +58,11 @@ public class Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_Proce
 	@Test
 	public void Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_InvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + versionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + invalidProcessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.CATALOGS
 				+ CredentialsUtils.getProperty("middleURLDataModelVersionByVersionId") + versionId +
 				CredentialsUtils.getProperty("middleURLDataCatalogsDefinitionVersion2") + invalidProcessDefinitionId);
 	}
@@ -70,11 +70,11 @@ public class Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_Proce
 	@Test
 	public void Catalog_Data_Model_Versions_By_InvalidVersionId_ProcessDefinition_By_InvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + invalidVersionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + invalidProcessDefinitionId)
 				.then().assertThat().statusCode(404);
-		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + invalidVersionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + invalidProcessDefinitionId);
 	}
@@ -83,11 +83,11 @@ public class Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_Proce
 	@Test
 	public void Catalog_Data_Model_Versions_By_VersionIdNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + versionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelVersionByVersionId + versionId +
 				Endpoints.middleURLDataCatalogsDefinitionVersion2 + processDefinitionId);
 	}

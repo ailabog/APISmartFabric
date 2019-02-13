@@ -53,7 +53,7 @@ public class Idenity_Tenants_UsersTest24 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLTenantsUsers).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsUsers).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -82,7 +82,7 @@ public class Idenity_Tenants_UsersTest24 {
 
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLTenantsUsers +3).then()
+				.post(CredentialsUtils.IDENTITY +  Endpoints.middleURLTenantsUsers +3).then()
 				.statusCode(201);
 	}
 
@@ -90,7 +90,7 @@ public class Idenity_Tenants_UsersTest24 {
 	public void postIdenityTenantsUsersNoAuthentication() throws JsonProcessingException {
 			given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") +  Endpoints.middleURLTenantsUsers).then()
+				.post(CredentialsUtils.IDENTITY +  Endpoints.middleURLTenantsUsers).then()
 				.statusCode(201);
 	}
 }

@@ -30,10 +30,10 @@ public class Catalog_Data_Model_PrimitiveTypesTest61 {
 	@Test
 	public void getCatalog_Data_Model_PrimitiveTypes() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs") +
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS +
 				Endpoints.middleURLDataModelPrimitiveTypes)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_PrimitiveTypes" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_PrimitiveTypes" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelPrimitiveTypes);
 	}
 	
@@ -41,10 +41,10 @@ public class Catalog_Data_Model_PrimitiveTypesTest61 {
 	@Test
 	public void getCatalog_Data_Model_PrimitiveTypesNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelPrimitiveTypes)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_PrimitiveTypes" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_PrimitiveTypes" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelPrimitiveTypes);
 	}
 }

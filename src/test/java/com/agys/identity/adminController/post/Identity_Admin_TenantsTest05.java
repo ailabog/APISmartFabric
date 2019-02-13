@@ -44,7 +44,7 @@ public class Identity_Admin_TenantsTest05 {
 
         ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(JsonHelper.OBJECT_MAPPER.writeValueAsString(Factory.adminTenantsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminTenants).then()
                 .statusCode(201);
 
         String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -75,7 +75,7 @@ public class Identity_Admin_TenantsTest05 {
 
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminTenants).then()
                 .statusCode(404);
     }
 
@@ -93,7 +93,7 @@ public class Identity_Admin_TenantsTest05 {
 
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminTenants).then()
                 .statusCode(404);
     }
 
@@ -110,7 +110,7 @@ public class Identity_Admin_TenantsTest05 {
                         build();
         given()
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsJson)).when()
-                .post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenants).then()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminTenants).then()
                 .statusCode(401);
      }
 }

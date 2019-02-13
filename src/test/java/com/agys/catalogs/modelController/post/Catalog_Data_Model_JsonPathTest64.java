@@ -46,7 +46,7 @@ DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(js
 
 		ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelJsonPathBuilder)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelJsonPath).then()
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataModelJsonPath).then()
 				.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -70,7 +70,7 @@ DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(js
 	public void posCatalog_Data_Model_JsonPathNoAuthentication() throws JsonProcessingException {
 			given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelJsonPathBuilder)).when()
-				.post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelJsonPath).then()
+				.post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataModelJsonPath).then()
 				.statusCode(401);
 	}
 }

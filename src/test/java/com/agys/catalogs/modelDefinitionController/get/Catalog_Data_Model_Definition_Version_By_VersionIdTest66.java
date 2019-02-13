@@ -30,10 +30,10 @@ public class Catalog_Data_Model_Definition_Version_By_VersionIdTest66 {
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+				.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 						+ Endpoints.middleURLDataModelCoreEntities + versionId)
 					.then().assertThat().statusCode(200);
-		log.info("Catalog_Data_Model_Definition_Version_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelDefinitionVersion);
 	}
 	
@@ -41,10 +41,10 @@ public class Catalog_Data_Model_Definition_Version_By_VersionIdTest66 {
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionIdNoAuthentication() throws FileNotFoundException {
 		given()	
-		.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")
+		.when().contentType(ContentType.JSON).get(CredentialsUtils.CATALOGS
 				+ Endpoints.middleURLDataModelCoreEntities)
 		.then().assertThat().statusCode(401);
-		log.info("Catalog_Data_Model_Definition_Version_By_VersionId" + CredentialsUtils.getProperty("baseURLCatalogs")
+		log.info("Catalog_Data_Model_Definition_Version_By_VersionId" + CredentialsUtils.CATALOGS
 		+ Endpoints.middleURLDataModelDefinitionVersion+ versionId);
 	}
 }

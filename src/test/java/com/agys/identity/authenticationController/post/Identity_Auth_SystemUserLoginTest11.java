@@ -44,7 +44,7 @@ public class Identity_Auth_SystemUserLoginTest11 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJsonj)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLSystem).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLSystem).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -72,7 +72,7 @@ public class Identity_Auth_SystemUserLoginTest11 {
 				.userEmail(userEmail).userPassword(userPassword).build();
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(systemJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLSystem).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLSystem).then()
 				.statusCode(404);
 	}
 }

@@ -33,11 +33,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStartTest86 {
 	public void getEngineApiProcessDefinitionByProcessDefinitionIdStart() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4)
 					.then().assertThat().statusCode(200);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4);
 	}
 
 
@@ -45,11 +45,11 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStartTest86 {
 	public void getEngineApiProcessDefinitionByInvalidProcessDefinitionIdStart() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4)
 				.then().assertThat().statusCode(404);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + invalidProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4);
 	}
 
 
@@ -57,21 +57,21 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStartTest86 {
 	public void getEngineApiProcessDefinitionByNULLProcessDefinitionIdStart() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4)
 				.then().assertThat().statusCode(400);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + nullProcessDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4);
 	}
 
 	@Test
 	public void getEngineApiProcessDefinitionByProcessDefinitionIdStartNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLEngine")
+				.get(CredentialsUtils.ENGINE
 						+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4)
 				.then().assertThat().statusCode(401);
-		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + (CredentialsUtils.getProperty("baseURLEngine")
-				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4));
+		log.info("Engine_Api_ProcessDefinition_By_ProcessDefinitionIdStart" + CredentialsUtils.ENGINE
+				+ Endpoints.middleURLEngineApiProcessDefinition + processDefinitionId +  Endpoints.middleURLEngineApiProcessDefinition4);
 	}
 }

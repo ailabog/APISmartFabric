@@ -25,7 +25,7 @@ public class Identity_Tenants_Groups_UsersTest19 {
 	public void postTenantsGroupsUsers() {
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
-						.post(CredentialsUtils.getProperty("baseURL")
+						.post(CredentialsUtils.IDENTITY
 								+ Endpoints.middleURLTennatsGroupsUsers)
 						.then().statusCode(201);
 
@@ -35,7 +35,7 @@ public class Identity_Tenants_Groups_UsersTest19 {
 	public void postWrongTenantsGroupsUsers() {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
-				.post(CredentialsUtils.getProperty("baseURL")
+				.post(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTennatsGroupsUsers)
 				.then().statusCode(404);
 	}
@@ -44,7 +44,7 @@ public class Identity_Tenants_Groups_UsersTest19 {
 	public void postWrongTenantsGroupsUsersNoAuthentication() {
 		given().
 				contentType(ContentType.JSON).body("[ \"usersIds\":\"" + userList + "\" ]").when()
-				.post(CredentialsUtils.getProperty("baseURL")
+				.post(CredentialsUtils.IDENTITY
 						+ Endpoints.middleURLTennatsGroupsUsers)
 				.then().statusCode(401);
 	}

@@ -32,43 +32,43 @@ public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 
 	public void getDocumentsProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK1.getId())
 				.then().assertThat().statusCode(200);
-		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK1.getId()));
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK1.getId());
 	}
 
 	@Test
 	public void getDocumentsProcessDefinitionByInvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition
 						+ PROCESS_DEFINITION.PROCESS_DEFINITION_INVALID.getId())
 				.then().assertThat().statusCode(404);
-		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_INVALID.getId()));
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_INVALID.getId());
 	}
 
 	@Test
 	public void getDocumentsProcessDefinitionByNULLProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId())
 				.then().assertThat().statusCode(400);
-		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId()));
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_NULL.getId());
 	}
 
 	@Test
 	public void getDocumentsProcessDefinitionByProcessDefinitionIdNoAuthentication() throws FileNotFoundException {
 		given().when().contentType(ContentType.JSON)
-				.get(CredentialsUtils.getProperty("baseURLDocuments")
+				.get(CredentialsUtils.DOCUMENTS
 						+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK4.getId())
 				.then().assertThat().statusCode(401);
-		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + (CredentialsUtils.getProperty("baseURLDocuments")
-				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK4.getId()));
+		log.info("Documents_Templates_ProcessDefinition_By_ProcessDefinitionId" + CredentialsUtils.DOCUMENTS
+				+ Endpoints.middleURLDocumentsTemplatesProcessDefinition + PROCESS_DEFINITION.PROCESS_DEFINITION_OK4.getId());
 	}
 }

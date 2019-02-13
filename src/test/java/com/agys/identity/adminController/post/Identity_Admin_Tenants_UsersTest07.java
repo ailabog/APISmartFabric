@@ -43,7 +43,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsUsersJson)).when()
-						.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenantsUsers).then()
+						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminTenantsUsers).then()
 						.statusCode(201);
 
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -71,7 +71,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 	public void postAdminTenantUserWrong() throws JsonProcessingException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") + Endpoints.middleURLAdminTenantsUsers +1).then()
+				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminTenantsUsers +1).then()
 				.statusCode(404);
 	}
 
@@ -79,7 +79,7 @@ public class Identity_Admin_Tenants_UsersTest07 {
 	public void postAdminTenantUserWithoutAuthentication() throws JsonProcessingException {
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(adminTenantsUsersJson)).when()
-				.post(CredentialsUtils.getProperty("baseURL") +Endpoints.middleURLAdminTenantsUsers).then()
+				.post(CredentialsUtils.IDENTITY +Endpoints.middleURLAdminTenantsUsers).then()
 				.statusCode(401);
 	}
 }

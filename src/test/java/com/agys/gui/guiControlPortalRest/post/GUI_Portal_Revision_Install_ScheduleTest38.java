@@ -44,7 +44,7 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 		ValidatableResponse vr =
 				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
-						.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIPortalRevisionInstallList).then()
+						.post(CredentialsUtils.GUI + Endpoints.middleURLGUIPortalRevisionInstallList).then()
 						.statusCode(201);
 		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
 
@@ -74,7 +74,7 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 						build();
 
 		given().contentType(ContentType.JSON).body(mapper.writeValueAsString(portalRevisionInstallJson)).when()
-				.post(CredentialsUtils.getProperty("baseURLGUI") + Endpoints.middleURLGUIPortalRevisionInstallList).then()
+				.post(CredentialsUtils.GUI + Endpoints.middleURLGUIPortalRevisionInstallList).then()
 				.statusCode(401);
 	}
 }

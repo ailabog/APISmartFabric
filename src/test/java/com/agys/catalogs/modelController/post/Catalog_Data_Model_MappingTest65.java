@@ -90,7 +90,7 @@ public class Catalog_Data_Model_MappingTest65 {
 
         ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelMapping)).when()
-                .post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelMapping).then()
+                .post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataModelMapping).then()
                 .statusCode(201);
 
         String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
@@ -114,7 +114,7 @@ public class Catalog_Data_Model_MappingTest65 {
     public void posCatalog_Data_Model_JsonPathNoAuthentication() throws JsonProcessingException {
          given()
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(dataModelMapping)).when()
-                .post(CredentialsUtils.getProperty("baseURLCatalogs") + Endpoints.middleURLDataModelMapping).then()
+                .post(CredentialsUtils.CATALOGS + Endpoints.middleURLDataModelMapping).then()
                 .statusCode(401);
    }
 }
