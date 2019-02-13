@@ -354,4 +354,12 @@ public class Factory {
             .taskName("Name")
             .taskStatus("In progress")
             .build();
+
+
+ public static final EngineVariablesInternal engineApiVariablesInternalClass  = EngineVariablesInternal.builder()
+         .includeAttachmentData("true")
+         .includeCatalogData("true")
+         .processInstanceId("21eca05d-7581-4f22-86e7-a6d7a403ab30")
+         .variables("a")
+         .build();
 }

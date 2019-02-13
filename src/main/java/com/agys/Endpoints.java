@@ -104,6 +104,10 @@ public class Endpoints {
     public static final String middleEngineTaskFilterCreate="/engine/task/filter/create";
     public static final String middleEngineTaskList="/engine/task/list";
     public static final String middleEngineTaskFilterDelete="/engine/task/filter/delete/";
+    public static final String middleEngineApiVariables="/engine/api/variables";
+    public static final String middleEngineApiVariablesInternal= "/engine/api/variables/internal";
+
+
 
 
 
