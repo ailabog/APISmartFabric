@@ -18,10 +18,10 @@ public class CredentialsUtils {
 	private static final Properties properties = loadProperties();
 
 	public static final String IDENTITY = System.getProperty("baseUrl") + ":" + System.getProperty("identityPort");
-	public static final String GUI = System.getProperty("baseURLGUI") + ":" + System.getProperty("guiPort");
-	public static final String DOCUMENTS = System.getProperty("baseURLDocuments") + ":" + System.getProperty("documentsPort");
-	public static final String CATALOGS = System.getProperty("baseURLCatalogs") + ":" + System.getProperty("catalogsPort");
-	public static final String ENGINE = System.getProperty("baseURLEngine") + ":" + System.getProperty("enginePort");
+	public static final String GUI = System.getProperty("baseUrl") + ":" + System.getProperty("guiPort");
+	public static final String DOCUMENTS = System.getProperty("baseUrl") + ":" + System.getProperty("documentsPort");
+	public static final String CATALOGS = System.getProperty("baseUrl") + ":" + System.getProperty("catalogsPort");
+	public static final String ENGINE = System.getProperty("baseUrl") + ":" + System.getProperty("enginePort");
 
 
 
