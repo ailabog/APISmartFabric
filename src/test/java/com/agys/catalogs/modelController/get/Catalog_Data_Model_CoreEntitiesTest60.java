@@ -25,15 +25,6 @@ import static com.jayway.restassured.RestAssured.given;
 @Slf4j
 public class Catalog_Data_Model_CoreEntitiesTest60 {
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-	
-
 	@Test
 	public void getGUIControlList() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

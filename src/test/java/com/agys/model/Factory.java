@@ -328,4 +328,30 @@ public class Factory {
     public static final EngineApiProcessInstanceBlockchainResult engineApiProcessInstanceBlockchainResultClass  = EngineApiProcessInstanceBlockchainResult.builder()
             .processInstanceId("730fff63-6ffe-42ba-b645-aa97b978be6f")
             .build();
+
+    public static final EngineTaskFilterCreate engineTaskFilterCreateClass  = EngineTaskFilterCreate.builder()
+            .id("e4fc3642-dba2-41aa-bf1a-56bd5ebc4b9d")
+            .isDefault("true")
+            .name("Task13.02.2019")
+            .ownerId("3e420496-344b-4702-a11d-72e024774bac")
+            .application("My Apps")
+            .dueIn("2")
+            .priorities("1")
+            .taskName("Task13022019")
+            .taskStatus("Completed")
+            .build();
+
+    public static final EngineTaskList engineTaskListClass  = EngineTaskList.builder()
+            .activeTasks("e4fc3642-dba2-41aa-bf1a-56bd5ebc4b9d")
+            .isTeam("true")
+            .page("Task13.02.2019")
+            .searchTerm("3e420496-344b-4702-a11d-72e024774bac")
+            .size("My Apps")
+            .sortDirection("2")
+            .sortField("1")
+            .dueIn("Task13022019")
+            .priorities("Completed")
+            .taskName("Name")
+            .taskStatus("In progress")
+            .build();
 }

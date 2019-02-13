@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="catalogDataLoadDataInternal" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="catalogDataLoadDataInternal" >
         <classes>
             <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_InternalTest67" />

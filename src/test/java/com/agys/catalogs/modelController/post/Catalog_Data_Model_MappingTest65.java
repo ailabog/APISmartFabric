@@ -70,7 +70,7 @@ public class Catalog_Data_Model_MappingTest65 {
     final String name100="name 500";
     final String type100="type 5";
     final String pathlist="346";
-    private Environments environment;
+
 
     DataModelMapping dataModelMapping = DataModelMapping.builder().blockchainOnly(blockchainOnly)
             .genericModelTimestamp(genericModelTimestamp).description(description).
@@ -85,15 +85,7 @@ public class Catalog_Data_Model_MappingTest65 {
                     name5(name5).type5(type5).id100(id100).isBCReady5(isBCReady5).name100(name100).type100(type100).pathlist(pathlist).
                     build();
 
-    @Parameters({"environment"})
-    @BeforeTest
-    public void setuUp(String environment) {
-        this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-    }
-
-
-
-    @Test
+  @Test
     public void postCatalog_Data_Model_JsonPath() throws JsonProcessingException {
 
         ValidatableResponse vr = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

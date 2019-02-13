@@ -43,14 +43,6 @@ public class Identity_Admin_UsersTest09 {
 	private String tokenExpiry="2019-01-31 10:32:02";
 	private String username="###@@@^^^";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
-
 	AdminUsers adminUsersJson = AdminUsers.builder().code(code)
 			.department(department).email(email).firstName(firstName).gender(gender).
 					id(id).language(language).lastName(lastName).password(password).

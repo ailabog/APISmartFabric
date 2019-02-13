@@ -43,14 +43,6 @@ public class Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefini
 					nameDescription(nameDescription).removed(removed).
 					build();
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-	
 	@Test
 	public void postCatalogDataCatalogsContentLoadVersion() throws JsonProcessingException {
 

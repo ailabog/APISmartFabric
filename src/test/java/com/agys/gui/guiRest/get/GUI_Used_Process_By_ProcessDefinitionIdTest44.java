@@ -28,14 +28,6 @@ public class GUI_Used_Process_By_ProcessDefinitionIdTest44 {
 	private String nullprocessDefinitionId = "null";
 	private String invalidprocessDefinitionId = "123456";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-
 	@Test
 	public void getGUIUsedProcessByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE).when().contentType(ContentType.JSON)

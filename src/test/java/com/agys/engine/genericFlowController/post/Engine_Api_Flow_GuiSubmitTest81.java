@@ -34,15 +34,6 @@ public class Engine_Api_Flow_GuiSubmitTest81 {
 	private String wrongTaskId="08c2d3e5-5092-419a-bb37-f81d4df9ec95";
 	private String wrongActionId="08c555d3e5-sd55fdfg-788dr-bb37-d55ytry";
 
-    private Environments environment;
-
-    @Parameters({"environment"})
-    @BeforeTest
-    public void setuUp(String environment) {
-        this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-    }
-
-
 	EngineApiFlowGuiSubmit engineApiFlowGuiSubmit = EngineApiFlowGuiSubmit.builder().actionId(actionId)
 			.comment(comment).taskId(taskId).
 		    build();

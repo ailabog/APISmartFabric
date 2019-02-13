@@ -29,15 +29,6 @@ public class Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79 {
     private String invalidActivityId="fhfgh-10be-r5ytr-5220-frtytrfyrt";
 	private String nullActivity="null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}
-
-	
 	@Test
 	public void getEngineApiFlowActivityByActivityIdActions() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

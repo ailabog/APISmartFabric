@@ -23,13 +23,6 @@ import java.io.FileNotFoundException;
 @Slf4j
 public class Identity_Tenants_Users_Profile_NotificationTest32 {
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	
 	@Test

@@ -36,14 +36,6 @@ public class Identity_Admin_GroupsTest01 {
     final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
     final String type = "SYSTEM";
 
-    private Environments environment;
-
-    @Parameters({"environment"})
-    @BeforeTest
-    public void setuUp(String environment) {
-        this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-    }
-
     @Test
     public void postAdminGroup() throws JsonProcessingException {
         AdminGroups adminGroupsJson = AdminGroups.builder().code(code).id(id).name(name).tenantId(tenantId).type(type).build();

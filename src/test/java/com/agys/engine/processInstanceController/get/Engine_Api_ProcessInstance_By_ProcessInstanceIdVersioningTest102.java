@@ -27,14 +27,6 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceIdVersioningTest102 {
 	private String invalidProcessInstanceId="dsfgdsfd-dfgfdfg-dfgdfg-fgdfg-dfgfdgf";
 	private String nullProcessInstanceId="null";
 
-	private Environments environment;
-
-	/*@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {54
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}*/
-
 	@Test
 	public void getEngineApiProcessInstanceByProcessInstanceIdVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

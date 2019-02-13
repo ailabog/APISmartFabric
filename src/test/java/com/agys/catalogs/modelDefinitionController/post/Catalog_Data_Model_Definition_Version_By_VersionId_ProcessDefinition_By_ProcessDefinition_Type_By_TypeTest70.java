@@ -43,13 +43,6 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 
 	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
-
 	DataModelDefinitionVersion catalogModelDefinitionVersion = DataModelDefinitionVersion.builder().diagram(diagram)
 			.fieldsId(fieldsId).fieldsBCReady(fieldsBCReady).
 					fieldsEmbeded(fieldsEmbeded).fieldsIndexable(fieldsIndexable).fieldsList(fieldsList).

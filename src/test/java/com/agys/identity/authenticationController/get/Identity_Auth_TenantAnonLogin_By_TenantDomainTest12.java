@@ -27,13 +27,6 @@ public class Identity_Auth_TenantAnonLogin_By_TenantDomainTest12 {
 	
 
 	private TenantDomainEnum TENANT_DOMAIN;
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 
 	@Test

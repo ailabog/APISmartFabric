@@ -25,13 +25,6 @@ import java.io.FileNotFoundException;
 public class Identity_Tenants_Users_By_UserIdTest25 {
 
 	private UserIdsEnum USERS;
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void getTenantsUsersByUserId() throws FileNotFoundException {

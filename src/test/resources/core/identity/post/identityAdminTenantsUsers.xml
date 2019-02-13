@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="identityAdminTenantsUser" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="identityAdminTenantsUser" >
         <classes>
             <class name="com.agys.identity.adminController.post.Identity_Admin_Tenants_UsersTest07" />

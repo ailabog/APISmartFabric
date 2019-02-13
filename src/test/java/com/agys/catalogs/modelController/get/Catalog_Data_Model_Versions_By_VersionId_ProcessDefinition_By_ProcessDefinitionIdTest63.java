@@ -30,16 +30,8 @@ public class Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_Proce
 	private String invalidProcessDefinitionId="1f8a0sdfs9-a639-sdfsdfsdf-9921-64189sdefsda9b";
 	private String invalidVersionId="1f8a0de9-a639-5435wsedfdsf-sdfdsfds34543-64189e3575a9b";
 
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-	
-
-	@Test
+@Test
 	public void getCatalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.getProperty("baseURLCatalogs")

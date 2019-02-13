@@ -29,17 +29,6 @@ public class Engine_Api_ProcessInstance_By_ProcessInstanceId_Blockchain_ResultTe
 	private String processInstanceId="730fff63-6ffe-42ba-b645-aa97b978be6f";
 	private String invalidProcessInstanceId="dsfgdsfd-dfgfdfg-dfgdfg-fgdfg-dfgfdgf";
 
-
-
-	private Environments environment;
-
-	/*@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}*/
-
-
 	EngineApiProcessInstanceBlockchainResult engineApiProcessInstanceByProcessInstanceIdBlockchainResult =
 			EngineApiProcessInstanceBlockchainResult.builder().processInstanceId(processInstanceId).build();
 

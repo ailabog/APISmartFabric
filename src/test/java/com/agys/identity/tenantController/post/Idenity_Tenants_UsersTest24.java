@@ -39,13 +39,6 @@ public class Idenity_Tenants_UsersTest24 {
 	final String title = "Admin";
 	final String token = "365456";
 	final String tokenExpiry = "2019-01-11T13:31:19.825Z";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	TenantsUsers tenantUsersJson = TenantsUsers.builder().code(code)
 			.email(email).firstName(firstName).

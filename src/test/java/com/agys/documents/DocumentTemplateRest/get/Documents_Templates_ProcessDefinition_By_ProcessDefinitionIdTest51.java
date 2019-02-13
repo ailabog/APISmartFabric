@@ -27,14 +27,7 @@ import static com.jayway.restassured.RestAssured.given;
 public class Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51 {
 
 	private ProcessDefinitionEnum PROCESS_DEFINITION;
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
-	}
-	
 	@Test
 	public void getDocumentsProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

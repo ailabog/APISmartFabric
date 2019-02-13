@@ -32,14 +32,6 @@ public class Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70 {
 
 	private String string = "true";
 	private String processInstanceId ="4525f6a0-f5a3-4120-9c20-933260bf37a1";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
 
 	CatalogDataQueryProcessDefinition catalogDataQueryProcessDefinition = CatalogDataQueryProcessDefinition.builder().string(string)
 	.build();

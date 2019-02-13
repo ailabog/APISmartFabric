@@ -32,15 +32,7 @@ public class Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_Proc
   	private String invalidProcessDefinitionId="50fcgh2cf1-bc2b-4d4e-8dfhgfh1a-567658ugjghj";
 	DataCatalogsContentExportJson catalogContentExportJson = DataCatalogsContentExportJson.builder().catalogs(catalogs)
 			.processDefinitionId(processDefinitionId).build();
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
-	
 	@Test
 	public void postCatalogDataCatalogsContentExportJsonProcessDefinitionByProcessDefinitionId() throws JsonProcessingException {
 

@@ -21,13 +21,6 @@ import java.io.FileNotFoundException;
 public class GETUserByIdTest {
 
 	private UserIdsEnum USERS;
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void getUserById() throws FileNotFoundException {

@@ -25,13 +25,6 @@ import static com.jayway.restassured.RestAssured.given;
 public class Identity_Tenants_Groups_By_GrouspIdTest17 {
 
 	private GroupIdsEnum GROUP;
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void getTenantsGroupsByGroupId() throws FileNotFoundException {

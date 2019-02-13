@@ -27,15 +27,6 @@ public class Catalog_Data_Model_Definition_Version_By_VersionIdTest66 {
 
 	public static final String versionId ="7f38a4f9-94d5-4f96-a545-4c43f5c2b097";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-	
-
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

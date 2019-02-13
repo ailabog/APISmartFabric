@@ -45,13 +45,6 @@ public class Documents_TemplatesTest46 {
 	private String versionId = "d7eaf674-d4dd-42bd-bbb4-a9eb2951926f";
 	private String w = "0";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
-	}
 	DocumentsTemplates docsTemplates = DocumentsTemplates.builder().description(description)
 			.h(h).id(id).isActive(isActive).
 					isAdvanced(isAdvanced).iteration(iteration).name(name).

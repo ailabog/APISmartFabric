@@ -29,14 +29,6 @@ public class Catalog_Data_Model_Versions_By_VersionIdTest62 {
 	private String invalidVersionId="sfsd34654-sdf34654-w35t4356-sdgfdg";
 	private String nullVersionId="null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-	
 
 	@Test
 	public void getCatalog_Data_Model_Versions_By_VersionId() throws FileNotFoundException {

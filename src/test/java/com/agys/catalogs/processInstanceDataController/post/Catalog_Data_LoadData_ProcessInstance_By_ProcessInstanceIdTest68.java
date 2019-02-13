@@ -31,13 +31,6 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceIdTest68 {
 	private String catalogData = "2345678";
 	private String embeddedData="true";
 	private String processInstanceId ="730f2a54-b71b-30f3-2bce-1e0e8b0e6f52";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
 
 	CatalogDataLoadDataProcessInstance catalogloadDataProcessInstance = CatalogDataLoadDataProcessInstance.builder().catalogData(catalogData)
 			.embeddedData(embeddedData).build();

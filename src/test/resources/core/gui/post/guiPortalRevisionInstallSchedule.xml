@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="guiPortalRevisionInstallSchedule" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="guiPortalRevisionInstallSchedule" >
         <classes>
             <class name="com.agys.gui.guiControlPortalRest.post.GUI_Portal_Revision_Install_ScheduleTest38" />

@@ -98,6 +98,17 @@ public class Endpoints {
     public static final String middleURLEngineApiProcessInstanceVersioning1="/versioning";
     public static final String middleEngineApiProcessInstanceBlockchainResult="/engine/api/processInstance/";
     public static final String middleEngineApiProcessInstanceBlockchainResult1= "/blockchain/result";
+    public static final String middleEngineTaskFilter="/engine/task/filter/by/";
+    public static final String middleEngineTaskFilterList="/engine/task/filter/list/by/";
+    public static final String middleEngineTaskClaim="/engine/task/claim/by/";
+    public static final String middleEngineTaskFilterCreate="/engine/task/filter/create";
+    public static final String middleEngineTaskList="/engine/task/list";
+    public static final String middleEngineTaskFilterDelete="/engine/task/filter/delete/";
+
+
+
+
+
 
 
 

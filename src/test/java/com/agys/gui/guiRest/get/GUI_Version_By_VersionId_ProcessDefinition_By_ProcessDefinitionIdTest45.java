@@ -31,14 +31,6 @@ public class GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTe
 	private String nullVersionId = "null";
 	private String nullprocessDefinitionId = "null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-	
 
 	@Test
 	public void getGUIVersionByVersionIdProcessDefinitionByProcessDefinitionId() throws FileNotFoundException {

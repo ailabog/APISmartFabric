@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="identityTenantsUserGroups." verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="identityTenantsUserGroups." >
         <classes>
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_UserGroupsTest20" />

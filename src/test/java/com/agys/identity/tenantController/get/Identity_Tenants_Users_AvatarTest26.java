@@ -24,15 +24,6 @@ import java.io.FileNotFoundException;
 @Slf4j
 public class Identity_Tenants_Users_AvatarTest26 {
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
-
-
 	@Test
 	public void getTenantsUsersAvatars() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

@@ -25,14 +25,7 @@ import static com.jayway.restassured.RestAssured.given;
 @Slf4j
 public class Catalog_Data_Model_PrimitiveTypesTest61 {
 
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-	
 
 	@Test
 	public void getCatalog_Data_Model_PrimitiveTypes() throws FileNotFoundException {

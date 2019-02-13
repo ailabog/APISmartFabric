@@ -28,14 +28,6 @@ public class Engine_Dashboard_App_StatisticsTest76 {
 	private String isTeamYes="true";
 	private String isTeamNo="false";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}
-
 	@Test
 	public void getEngineDashboardAppStatisticsYesTeam() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

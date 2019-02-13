@@ -31,13 +31,6 @@ public class Documents_Templates_exportSimpleTest48 {
 	private static final String nullTemplateUuid = "null";
 	private static final String invalidVersionId = "50856756f1-bc2b-4drtfyrty4e-8drtyry1a-gfhjghj576574e8177";
 	private static final String nullVersionId = "null";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
-	}
 
 
 	@Test

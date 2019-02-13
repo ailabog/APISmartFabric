@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="guiUsedProcessByProcessDefinitionId" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="guiUsedProcessByProcessDefinitionId" >
         <classes>
             <class name="com.agys.gui.guiRest.get.GUI_Used_Process_By_ProcessDefinitionIdTest44" />

@@ -37,13 +37,6 @@ public class Identity_Admin_Tenants_UsersTest07 {
 			.status(status).tenantId(tenantId).userId(userId).
 					build();
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 	@Test
 	public void postAdminTenantUser() throws JsonProcessingException {
 

@@ -28,14 +28,6 @@ public class GUI_Activity_By_ActivityIdTest42 {
 	private String invalidActivityId = "34564565464645";
 	private String nullActivityId = "null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-
 
 	@Test
 	public void getGUIActivityByActivityId() throws FileNotFoundException {

@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="guiActivityByActivityId" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="guiActivityByActivityId" >
         <classes>
             <class name="com.agys.gui.guiRest.get.GUI_Activity_By_ActivityIdTest42" />

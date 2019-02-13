@@ -29,15 +29,7 @@ public class Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefini
 	private ProcessDefinitionEnum PROCESS_DEFINITION;
 	private String versionId="235443534566";
 	private String versionIdOK="508b2cf1-bc2b-4d4e-8d1a-d5f85c4e8177";
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
-	
 	@Test
 	public void getDataCatalogsDefinitionVersionByVersionIdProcessDefinitionIdByInvalidProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

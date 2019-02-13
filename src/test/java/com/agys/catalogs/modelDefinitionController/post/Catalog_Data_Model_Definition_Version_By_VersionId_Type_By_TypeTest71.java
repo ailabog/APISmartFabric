@@ -41,15 +41,6 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest
 	private String type="type1";
 	public static final String versionId ="508b2cf1-bc2b-4d4e-8d1a-d5f85c4e8177";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
-
 
 	DataModelDefinitionVersion catalogModelDefinitionVersion = DataModelDefinitionVersion.builder().diagram(diagram)
 			.fieldsId(fieldsId).fieldsBCReady(fieldsBCReady).

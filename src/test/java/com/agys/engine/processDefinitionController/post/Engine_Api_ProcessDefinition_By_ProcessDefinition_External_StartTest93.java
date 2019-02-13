@@ -34,15 +34,6 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinition_External_StartTes
 	private String processDefinitionId="730fff63-6ffe-42ba-b645-aa97b978be6f";
 
 
-	private Environments environment;
-
-	/*@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}*/
-
-
 	EngineApiProcessDefinitionExternalStart engineApiProcessDefinitionExternalStart =
 			EngineApiProcessDefinitionExternalStart.builder().additionalProp1(additionalProp1)
 			.additionalProp2(additionalProp2).additionalProp3(additionalProp3).

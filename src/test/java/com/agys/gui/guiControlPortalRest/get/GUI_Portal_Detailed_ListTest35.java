@@ -23,13 +23,7 @@ import java.io.FileNotFoundException;
 @Slf4j
 
 public class GUI_Portal_Detailed_ListTest35 {
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void getGUIPortalDetailedList() throws FileNotFoundException {

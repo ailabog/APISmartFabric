@@ -23,14 +23,6 @@ import static com.jayway.restassured.RestAssured.given;
  */
 @Slf4j
 public class Identity_Auth_Tenant_System_LoginTest14 {
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
-
 
 	@Test
 	public void getTenantsUsersSystem() throws FileNotFoundException {

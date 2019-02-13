@@ -30,13 +30,6 @@ public class Identity_Tenants_GroupsTest16 {
 	final String name = "John";
 	final String tenantId = "27b8de05-a57c-4983-b07b-d0ef011a9f7c";
 	final String type = "TYPE";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	TenantsGroups tenantGroupsJson = TenantsGroups.builder().code(code)
 			.id(id).name(name).

@@ -32,13 +32,6 @@ public class Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingI
 	private String correctTypes = "true";
 	private String mapping="465465";
 	private String processInstanceId ="4525f6a0-f5a3-4120-9c20-933260bf37a1";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
 
 
 	CatalogDataLoadDataProcessInstanceMapping catalogloadDataProcessInstanceMapping = CatalogDataLoadDataProcessInstanceMapping.builder().correctTypes(correctTypes)

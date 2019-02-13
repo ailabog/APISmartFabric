@@ -30,14 +30,6 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTe
 	public static final String nullVersionId ="null";
 	public static final String type ="type";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
 
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionIdTypeByTypeId() throws FileNotFoundException {

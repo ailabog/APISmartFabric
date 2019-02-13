@@ -45,15 +45,6 @@ public class Engine_Dashboard_My_AppsTest77 {
 	private String type="type";
 	private String versionid="508b2cf1-bc2b-4d4e-8d1a-d5f85c4e8177";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}
-
-
 
 	@Test
 	public void getEngineDashboardMyApps() throws FileNotFoundException {

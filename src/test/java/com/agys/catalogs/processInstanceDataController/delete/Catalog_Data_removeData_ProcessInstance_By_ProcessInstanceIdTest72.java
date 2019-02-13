@@ -23,13 +23,6 @@ public class Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72 
 
 	private String processInstanceId ="1b8f76c3-cd0a-7698-93cd-1ce69b9006e6";
 	private String invalidProcessInstanceId ="dfds3454-f5a3-3456-9c20-dfgfd";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void deleteCatalogDataRemoveDataProcessInstanceByProcessInstanceId() {

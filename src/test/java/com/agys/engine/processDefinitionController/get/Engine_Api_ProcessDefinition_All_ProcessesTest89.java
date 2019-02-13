@@ -23,15 +23,6 @@ import static com.jayway.restassured.RestAssured.given;
 @Slf4j
 public class Engine_Api_ProcessDefinition_All_ProcessesTest89 {
 
-	private Environments environment;
-
- //   @Parameters({"environment"})
-  //  @BeforeTest
- //   public void setuUp(String environment) {
-     //   this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-  //  }
-
-	
 	@Test
 	public void getEngineApiProcessDefinitionAllProcesses() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

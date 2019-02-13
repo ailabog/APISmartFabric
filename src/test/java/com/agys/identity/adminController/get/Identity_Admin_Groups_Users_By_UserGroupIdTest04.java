@@ -32,13 +32,6 @@ public class Identity_Admin_Groups_Users_By_UserGroupIdTest04 {
 	final String id = "46546546";
 	final String isManager = "true";
 	final String userId = "ab280eec-762c-4f5c-a599-1c949db477b0";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void getUserById() throws FileNotFoundException {

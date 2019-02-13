@@ -34,13 +34,6 @@ public class Catalog_Data_Model_JsonPathTest64 {
 	final String path = "//users/downloads/something";
 	final String type = "type";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
 
 DataModelJsonPath dataModelJsonPathBuilder = DataModelJsonPath.builder().json(json)
 			.path(path).type(type).build();

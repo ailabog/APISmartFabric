@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="guiControlIdById" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="guiControlIdById" >
         <classes>
             <class name="com.agys.gui.get.GUI_Control_Id_By_IdTest37" />

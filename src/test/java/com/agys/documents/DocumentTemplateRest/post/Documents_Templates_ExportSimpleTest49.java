@@ -34,13 +34,6 @@ public class Documents_Templates_ExportSimpleTest49 {
 
 	public String html = "<!DOCTYPE html> <html> <head> <style id=\"page-size\">@page { size: A4 }</style></head> <body class=\"A4\" size=\"A4\" > <p>some text&nbsp;${CurrentTime}</p> </body> </html>";
 	public String invalidHtml = "sedfsdfdsFSd75934534";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void postDocumentsTemplatesExportSimple() throws JsonProcessingException {

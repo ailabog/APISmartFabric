@@ -35,12 +35,6 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 
 	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}
-
 
 	EngineApiFlowApprovalSubmit engineApiFlowApprovalSubmit = EngineApiFlowApprovalSubmit.builder().actionCode(actionCode)
 			.comment(comment).taskId(taskId).

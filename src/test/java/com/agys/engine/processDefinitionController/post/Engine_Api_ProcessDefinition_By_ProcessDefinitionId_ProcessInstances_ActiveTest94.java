@@ -32,16 +32,6 @@ public class Engine_Api_ProcessDefinition_By_ProcessDefinitionId_ProcessInstance
 	private String processDefinitionId="730fff63-6ffe-42ba-b645-aa97b978be6f";
 	private String activityIds="3c3fb853-10be-0b99-5220-c7658ec06146";
 
-
-	private Environments environment;
-
-	/*@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}*/
-
-
 	EngineApiProcessDefinitionProcessInstancesActive engineApiProcessDefinitionProcessInstancesActive =
 			EngineApiProcessDefinitionProcessInstancesActive.builder().activityIds(activityIds).additionalProp1(additionalProp1)
 			.additionalProp2(additionalProp2).additionalProp3(additionalProp3).

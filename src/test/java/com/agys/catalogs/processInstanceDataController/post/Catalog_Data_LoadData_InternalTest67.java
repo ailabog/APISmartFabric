@@ -34,13 +34,6 @@ public class Catalog_Data_LoadData_InternalTest67 {
 	private String processInstanceId ="a36d58ac-be8f-4256-8b3c-90e1bc920c3d";
     private String versionId="a36d58ac-be8f-4256-8b3c-90e1bc920c3d";
 	private String processDefinitionId="a36d58ac-be8f-4256-8b3c-90e1bc920c3d";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
 
 	CatalogDataLoadDataInternal catalogloadDataInternal = CatalogDataLoadDataInternal.builder().includeAttachmentData(includeAttachmentData)
 			.includeCatalogData(includeCatalogData).processDefinitionId(processDefinitionId).

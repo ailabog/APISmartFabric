@@ -17,14 +17,6 @@ import java.util.*;
 
 @Slf4j
 public class Identity_Tenants_Groups_UsersTest19 {
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
-
 
 	private List<UserIdsEnum> userList = Arrays.asList(UserIdsEnum.USER_OK1, UserIdsEnum.USER_OK2, UserIdsEnum.USER_OK3,
 			UserIdsEnum.USER_OK4, UserIdsEnum.USER_OK5);

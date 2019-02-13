@@ -37,13 +37,6 @@ public class Identity_Admin_Groups_UsersTest03 {
 	final String isManager = "true";
 	final String userId = "d6259540-7004-40ac-b926-d972c4389dec";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
     AdminGroupsUsers adminGroupsUsersJson = AdminGroupsUsers.builder().groupId(groupId)
             .id(id).isManager(isManager).userId(userId).build();
 

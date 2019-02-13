@@ -31,14 +31,6 @@ import static org.testng.Assert.assertEquals;
 public class Identity_Auth_SystemUserLoginTest11 {
 
 	private ObjectMapper mapper = new ObjectMapper();
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
-
 
 	@Test
 	public void postSystemLogin() throws JsonProcessingException {

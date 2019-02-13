@@ -28,14 +28,6 @@ import java.io.IOException;
 public class Identity_Admin_TenantsTest05 {
 
     private ObjectMapper mapper = new ObjectMapper();
-    private Environments environment;
-
-    @Parameters({"environment"})
-    @BeforeTest
-    public void setuUp(String environment) {
-        this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-    }
-
 
     @Test
     public void postAdminTenants() throws IOException {

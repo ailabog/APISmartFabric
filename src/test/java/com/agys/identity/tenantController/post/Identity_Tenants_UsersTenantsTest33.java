@@ -17,13 +17,7 @@ import static com.jayway.restassured.RestAssured.given;
 public class Identity_Tenants_UsersTenantsTest33 {
 
     private UserIdsEnum USER;
-    private Environments environment;
 
-    @Parameters({"environment"})
-    @BeforeTest
-    public void setuUp(String environment) {
-        this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-    }
 
     @Test
     public void postTenantsGroupsUsers() {

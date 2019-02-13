@@ -40,15 +40,6 @@ public class Catalog_Data_Catalogs_Content_Load_Version_By_Versionid_ProcessDefi
 			.options(options).all_languages(all_languages).
 					ascending(ascending).sort_by(sort_by).
 					type(type).build();
-
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
 	@Test
 	public void postCatalogDataCatalogsContentLoadVersion() throws JsonProcessingException {
 

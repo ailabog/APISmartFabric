@@ -27,15 +27,6 @@ public class Engine_Api_ProcessDefinition_Details_By_ProcessDefinitionIdTest91 {
 	private String invalidProcessDefinitionId="3c3567853-10be-ghj-6765757-56765";
    	private String nullProcessDefinitionId="null";
 
-    private Environments environment;
-
- //   @Parameters({"environment"})
-  //  @BeforeTest
- //   public void setuUp(String environment) {
-     //   this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-  //  }
-
-	
 	@Test
 	public void getEngineApiProcessDefinitionAppURLByProcessDefinitionId() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

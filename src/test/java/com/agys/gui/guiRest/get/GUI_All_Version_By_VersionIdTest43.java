@@ -28,13 +28,6 @@ public class GUI_All_Version_By_VersionIdTest43 {
 	private String versionId  ="e0216c9a-6f81-4d12-93f2-8b5f9bd2c2a6";
 	private String invalidVersionId = "0";
 	private  String nullVersionId ="null";
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
 
 	@Test
 	public void getGUIAllVersionByVersionId() throws FileNotFoundException {

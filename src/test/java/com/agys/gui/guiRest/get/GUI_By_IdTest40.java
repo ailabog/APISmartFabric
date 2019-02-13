@@ -28,14 +28,6 @@ public class GUI_By_IdTest40 {
 	private String invalidId = "34564645";
 	private String nullId = "null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-
 	@Test
 	public void getGUIById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

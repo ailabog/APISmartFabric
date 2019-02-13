@@ -24,15 +24,6 @@ import java.io.FileNotFoundException;
 @Slf4j
 public class GUI_Control_ListTest38 {
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-	
-
 	@Test
 	public void getGUIControlList() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

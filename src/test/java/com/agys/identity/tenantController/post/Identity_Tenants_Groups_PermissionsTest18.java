@@ -34,13 +34,7 @@ public class Identity_Tenants_Groups_PermissionsTest18 {
 	final String permission = "";
 	final String permissionType = "DOCUMENT_TEMPLATE";
 	final String targetId = "TYPE";
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
 	TenantsGroupsPermission tenantGroupsPermissionJson = TenantsGroupsPermission.builder().groupId(groupId)
 			.id(id).permission(permission).
 					permissionType(permissionType).targetId(targetId).

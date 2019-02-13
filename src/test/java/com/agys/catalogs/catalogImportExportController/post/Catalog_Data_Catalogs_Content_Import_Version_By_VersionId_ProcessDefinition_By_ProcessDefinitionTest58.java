@@ -39,14 +39,6 @@ public class Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDe
 					catalogs(catalogs).processDefinitionId(processDefinitionId).
 					versionId(versionId).build();
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.CATALOGS : Environments.valueOf(environment);
-	}
-
 	@Test
 	public void postCatalogDataCatalogsContentImportVersionByVersionIdProcessDefinitionByProcessDefinitionId() throws JsonProcessingException {
 

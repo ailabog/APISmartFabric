@@ -33,15 +33,7 @@ public class GUI_Portal_Revision_Install_ScheduleTest38 {
 	private String instanceId="7234wefjwes-82364382y45wefl-2634832";
 	private String toBeInstalledGUIControlRevisionId="swjfsdjfweruew-8347nfkdsn-sakfjsd-84375";
 
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-
-	
 	@Test
 	public void postGUIPortalRevisionInstallSchedule() throws JsonProcessingException {
 		PortalRevisionInstall portalRevisionInstallJson = PortalRevisionInstall.builder().active(active)

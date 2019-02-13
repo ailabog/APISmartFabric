@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="documentsTemplatesProcessDefinitionByProcessDefinitionId" verbose="1" >
-    <parameter name="environment" value="${environment}" />
+
     <test name="documentsTemplatesProcessDefinitionByProcessDefinitionId" >
         <classes>
             <class name="com.agys.documents.documentTemplateRest.get.Documents_Templates_ProcessDefinition_By_ProcessDefinitionIdTest51" />

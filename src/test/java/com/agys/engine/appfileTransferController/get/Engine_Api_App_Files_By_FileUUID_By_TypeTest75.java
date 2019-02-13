@@ -34,15 +34,6 @@ public class Engine_Api_App_Files_By_FileUUID_By_TypeTest75 {
 	private String nullFileUUID="null";
 	private String nullType="null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.ENGINE : Environments.valueOf(environment);
-	}
-
-	
 	@Test
 	public void getEngineApiAppFilesByFileUUIDByType() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

@@ -28,16 +28,6 @@ public class GUI_Control_Id_By_IdTest37 {
 	private String invalidId ="35346546";
 	private String nullId ="null";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-	
-
-
 	@Test
 	public void getGUIControlIdById() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)

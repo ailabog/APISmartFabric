@@ -21,14 +21,6 @@ import java.io.FileNotFoundException;
  */
 @Slf4j
 public class Identity_Tenants_Users_Email_By_EmailTest27 {
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.IDENTITY : Environments.valueOf(environment);
-	}
-
 
 	@Test
 	public void getTenantsUsersEmailByEmail() throws FileNotFoundException {

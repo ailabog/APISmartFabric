@@ -44,14 +44,6 @@ public class GUI_Control_Revision_SaveTest39 {
 	private String guiControlRevisionId="34645";
 	private String revision ="10";
 
-	private Environments environment;
-
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.GUI : Environments.valueOf(environment);
-	}
-
 	GuiControlRevisionSave guiControlRevisionSave = GuiControlRevisionSave.builder().code(code)
 			.config(config).fileName(fileName).
 					fileType(fileType).fileUUID(fileUUID).guiControlId(guiControlId).guiControlRevisionId(guiControlRevisionId).revision(revision).
