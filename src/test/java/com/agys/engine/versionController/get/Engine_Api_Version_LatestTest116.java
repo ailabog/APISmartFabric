@@ -23,7 +23,7 @@ import static com.jayway.restassured.RestAssured.given;
 public class Engine_Api_Version_LatestTest116 {
 
 	@Test
-	public void getEngineApiVersionByVersionId() throws FileNotFoundException {
+	public void getEngineApiVersionLatest() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.ENGINE
@@ -35,7 +35,7 @@ public class Engine_Api_Version_LatestTest116 {
 
 
 	@Test
-	public void getEngineApiVersionByVersionIdNoAuthentication() throws FileNotFoundException {
+	public void getEngineApiVersionLatestNoAuthentication() throws FileNotFoundException {
 		given()
 				.when().contentType(ContentType.JSON)
 				.get(CredentialsUtils.ENGINE
