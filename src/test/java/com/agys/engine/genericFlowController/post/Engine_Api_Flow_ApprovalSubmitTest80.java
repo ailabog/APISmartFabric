@@ -33,8 +33,6 @@ public class Engine_Api_Flow_ApprovalSubmitTest80 {
 	private String taskId="08c2d3e5-5092-419a-bb37-f81d4df9ec95";
 	private String wrongTaskId="08c2d3e5-sdfdfg-46gdr-bb37-d45ytry";
 
-	private Environments environment;
-
 
 	EngineApiFlowApprovalSubmit engineApiFlowApprovalSubmit = EngineApiFlowApprovalSubmit.builder().actionCode(actionCode)
 			.comment(comment).taskId(taskId).

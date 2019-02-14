@@ -37,13 +37,7 @@ public class Documents_Templates_GenerateTest50 {
 	private static final String savePath = "";
 	private static final String invalidProcessInstanceId = "";
 
-	private Environments environment;
 
-	@Parameters({"environment"})
-	@BeforeTest
-	public void setuUp(String environment) {
-		this.environment = environment == null ? Environments.DOCUMENTS : Environments.valueOf(environment);
-	}
 	DocumentsGenerate docGenerateJson = DocumentsGenerate.builder().processInstanceId(processInstanceId)
 			.documentTemplateId(documentTemplateId).fileName(fileName).
 					savePath(savePath).build();

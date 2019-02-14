@@ -33,7 +33,7 @@ public class Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinitio
 	public static final String nullVersionId ="null";
 	public static final String nullPocessDefinitionId ="null";
 	public static final String type="type";
-	private Environments environment;
+
 
 	@Test
 	public void getCatalogDataModelDefinitionVersionByVersionIdProcessDefinitionByProcessDefinitionTypeByTypeId() throws FileNotFoundException {

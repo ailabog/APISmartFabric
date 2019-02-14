@@ -23,9 +23,6 @@ import static org.testng.Assert.assertEquals;
 @Slf4j
 public class Engine_Task_Caim_By_TaskIdTest109 {
 
-
-
-	private Environments environment;
 	private String taskId="08c2d3e5-5092-419a-bb37-f81d4df9ec95";
 	private String invalidTaskId="5654654-6546-419a-6546-f81d4df9ec95";
 

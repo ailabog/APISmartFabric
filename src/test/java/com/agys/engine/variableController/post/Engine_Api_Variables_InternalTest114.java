@@ -33,7 +33,6 @@ public class Engine_Api_Variables_InternalTest114 {
 	private String variables="a";
 
 
-
 	EngineVariablesInternal engineApiVariablesInternal = EngineVariablesInternal.builder().includeAttachmentData(includeAttachmentData)
 			.includeCatalogData(includeCatalogData).processInstanceId(processInstanceId).variables(variables).
 		    build();
