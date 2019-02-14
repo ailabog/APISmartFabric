@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="engineApiFlowActivityByActivityIdActions" verbose="1" >
+     <test name="engineApiFlowActivityByActivityIdActions" >
+        <classes>
+            <class name="com.agys.engine.genericFlowController.get.Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79" />
+        </classes>
+    </test>
+</suite>

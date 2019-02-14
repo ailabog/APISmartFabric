@@ -23,7 +23,7 @@ import java.io.FileNotFoundException;
 @Slf4j
 public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 
-	private String managerId = "c452e483-2f30-4cff-9429-bec318becfa3";
+	private String managerId = "dc959990-42ba-4072-b056-c6eeb877b03a";
 	private String notManagerId = "2c39c58f-b4a5-40a9-9826-9dce8b57a2fa";
 
 	@Test
