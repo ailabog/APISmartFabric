@@ -69,7 +69,7 @@ public class Endpoints {
         public static final String middleURLTenantsUsersSystem = "/identity/tenants/users/system";
         public static final String middleURLTenantsGroups = "/identity/tenants/groups/";
         public static final String middlerURLTenantsGroupsPermissions = "/identity/tenants/groups/permissions";
-        public static final String middleURLTennatsGroupsUsers = "/identity/tenants/groups/user";
+        public static final String middleURLTennatsGroupsUsers = "/identity/tenants/groups/users";
         public static final String middleURLTenantsUserGroups = "/identity/tenants/user-groups/";
         public static final String middleURLTenantsUsers = "/identity/tenants/users/";
         public static final String middleURLTenantsUsersAvatars = "/identity/tenants/users/avatars";
