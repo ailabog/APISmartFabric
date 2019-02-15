@@ -23,8 +23,9 @@ import java.io.FileNotFoundException;
 @Slf4j
 public class Identity_Tenants_Users_Manager_By_ManagerIdTest30 {
 
+	//private String managerId = "dc959990-42ba-4072-b056-c6eeb877b03a";
 	private String managerId = "dc959990-42ba-4072-b056-c6eeb877b03a";
-	private String notManagerId = "2c39c58f-b4a5-40a9-9826-9dce8b57a2fa";
+	private String notManagerId = "533ab97d-c5dc-4a17-8990-afd9c15ec210";
 
 	@Test
 	public void getTenantsUsersManagerByManagerId() throws FileNotFoundException {

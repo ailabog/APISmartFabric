@@ -18,6 +18,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
@@ -31,25 +34,25 @@ public class Identity_Admin_GroupsTest01 {
     private ObjectMapper mapper = new ObjectMapper();
 
     final String code = "43587784646";
-    final String id = "4654677546";
+    final String id = "00000000-0000-0000-0000-000000000001";
     final String name = "Popescu1";
     final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
     final String type = "SYSTEM";
 
     @Test
     public void postAdminGroup() throws JsonProcessingException {
-        AdminGroups adminGroupsJson = AdminGroups.builder().code(code).id(id).name(name).tenantId(tenantId).type(type).build();
+        List<AdminGroups> adminGroupsJsons = Arrays.asList(AdminGroups.builder().code(code).id(id).name(name)/*.tenantId(tenantId).type(type)*/.build());
 
         ValidatableResponse vr =
                given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-                .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJson)).when()
-                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroupsUsers).then()
+                .contentType(ContentType.JSON).body(mapper.writeValueAsString(adminGroupsJsons)).when()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middleURLAdminGroups).then()
                 .statusCode(201);
 
         String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
 
         String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-                .contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.adminGroupsUsers)).when()
+                .contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.adminGroups)).when()
                 .get(location)
                 .then()
                 .contentType(ContentType.JSON).extract().response().asString();

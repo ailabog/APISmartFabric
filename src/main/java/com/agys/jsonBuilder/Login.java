@@ -11,6 +11,7 @@ import lombok.Setter;
 @Builder
 public class Login {
 	private String tenantId;
+	private String tenantDomain;
 	private String userEmail;
 	private String userPassword;
 }

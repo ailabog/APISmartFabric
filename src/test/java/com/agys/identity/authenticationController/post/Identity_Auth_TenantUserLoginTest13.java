@@ -2,13 +2,10 @@ package com.agys.identity.authenticationController.post;
 
 import com.agys.Constants;
 import com.agys.Endpoints;
-import com.agys.enums.Environments;
 import com.agys.model.Factory;
 import com.agys.utils.JsonHelper;
 import com.jayway.restassured.internal.ValidatableResponseImpl;
 import com.jayway.restassured.response.ValidatableResponse;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.agys.jsonBuilder.Login;
 import com.agys.utils.CredentialsUtils;
@@ -35,31 +32,17 @@ public class Identity_Auth_TenantUserLoginTest13 {
 	@Test
 	public void postLogin() throws JsonProcessingException {
 		final String tenantId = "d634b20d-128e-4a57-97cf-7b7b01aeb901";
-		final String userEmail = "test_user@agys.ch";
+		final String tenantDomain = "default";
+		final String userEmail = "testuser@fabric.ch";
 		final String userPassword = "passw0rd";
 
-		Login loginJson = Login.builder().tenantId(tenantId)
+		Login loginJson = Login.builder().tenantDomain(tenantDomain)
 				.userEmail(userEmail).userPassword(userPassword).build();
 
-		ValidatableResponse vr =
-				given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
+					given().contentType(ContentType.JSON).body(mapper.writeValueAsString(loginJson)).when()
 						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLLogin).then()
-						.statusCode(201);
+						.statusCode(200);
 
-		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
-
-		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.login)).when()
-				.get(location)
-				.then()
-				.contentType(ContentType.JSON).extract().response().asString();
-
-		Login systemLogin = JsonHelper.readValue(response, Login.class);
-		assertEquals(Factory.login.getTenantId(), systemLogin.getTenantId(), "Tenant Ids equals");
-		assertEquals(Factory.login.getUserEmail(), systemLogin.getUserEmail(), "User emails are equals");
-
-		Factory.login.setTenantId(systemLogin.getTenantId());
-		Factory.login.setUserEmail(systemLogin.getUserEmail());
 	}
 
 	@Test
