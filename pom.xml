@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>APISmartFabricRegressionProject</groupId>
-	<artifactId>smart-fabric</artifactId>
+	<artifactId>qa-api-smart-fabric</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>API Smart Fabric</name>
 	<description>API Smart Fabric Automation Project</description>
