@@ -28,8 +28,8 @@ public class Identity_Tenants_Users_AvatarTest26 {
 	public void getTenantsUsersAvatars() throws FileNotFoundException {
 		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
 				.when().contentType(ContentType.JSON).get(CredentialsUtils.IDENTITY
-						+ Endpoints.middleURLTenantsUsersAvatars)
-				.then().assertThat().statusCode(404);
+						+ Endpoints.middleURLTenantsUsersAvatars+"/10x30")
+				.then().assertThat().statusCode(200);
 		log.info("Identity_Tenants_Users_Avatar" + CredentialsUtils.IDENTITY
 		+ Endpoints.middleURLTenantsUsersAvatars);
 	}
