@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="guiAll" verbose="1" >
+
+    <test name="guiAll" >
+        <classes>
+            <class name="com.agys.gui.guiRest.get.GUI_Activity_By_ActivityIdTest42" />
+            <class name="com.agys.gui.guiRest.get.GUI_All_Version_By_VersionIdTest43" />
+            <class name="com.agys.gui.guiRest.get.GUI_By_IdTest40" />
+            <class name="com.agys.gui.get.GUI_Control_Id_By_IdTest37" />
+            <class name="com.agys.gui.guiRest.get.GUI_Activity_By_ActivityIdTest42" />
+            <class name="com.agys.gui.guiControlPortalRest.get.GUI_Portal_Detailed_ListTest35" />
+            <class name="com.agys.gui.guiRest.get.GUI_Used_Process_By_ProcessDefinitionIdTest44" />
+            <class name="com.agys.gui.guiRest.get.GUI_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest45" />
+            <class name="com.agys.gui.post.GUI_Control_Revision_SaveTest39" />
+            <class name="com.agys.gui.guiControlPortalRest.post.GUI_Portal_Revision_Install_ScheduleTest38" />
+
+        </classes>
+    </test>
+</suite>
