@@ -3,7 +3,7 @@
 <suite name="engineDashboardTaskStatistics" verbose="1" >
      <test name="engineDashboardTaskStatistics" >
         <classes>
-            <class name="com.agys.engine.dashboardController.get.Engine_Dashboard_Task_StatisticsTest78" />
+            <class name="com.agys.engine.dashboardController.get.Engine_Dashboard_Task_StatisticsTest" />
         </classes>
     </test>
 </suite>

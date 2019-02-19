@@ -4,7 +4,7 @@
 
     <test name="identityAuthTenantUserLogin" >
         <classes>
-            <class name="com.agys.identity.authenticationController.post.Identity_Auth_TenantUserLoginTest13" />
+            <class name="com.agys.identity.authenticationController.post.Identity_Auth_TenantUserLoginTest" />
         </classes>
     </test>
 </suite>

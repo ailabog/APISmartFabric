@@ -4,7 +4,7 @@
 
     <test name="catalogDataModelDefinitionVersionByVersionIdTypeByType." >
         <classes>
-            <class name="com.agys.catalogs.modelDefinitionController.post.Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest71" />
+            <class name="com.agys.catalogs.modelDefinitionController.post.Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest" />
         </classes>
     </test>
 </suite>

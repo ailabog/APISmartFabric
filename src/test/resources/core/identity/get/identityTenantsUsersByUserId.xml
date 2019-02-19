@@ -4,7 +4,7 @@
 
     <test name="identityAdminGroupsByGroupId" >
         <classes>
-            <class name="com.agys.identity.adminController.get.Identity_Admin_Groups_ByGroupIdTest02" />
+            <class name="com.agys.identity.adminController.get.Identity_Admin_Groups_ByGroupIdTest" />
         </classes>
     </test>
 </suite>

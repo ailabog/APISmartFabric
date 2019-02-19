@@ -4,7 +4,7 @@
 
     <test name="identityTenantsUserGroupsByIds" >
         <classes>
-            <class name="com.agys.identity.tenantController.get.Identity_Tenants_UserGroups_By_IdsTest22" />
+            <class name="com.agys.identity.tenantController.get.Identity_Tenants_UserGroups_By_IdsTest" />
         </classes>
     </test>
 </suite>

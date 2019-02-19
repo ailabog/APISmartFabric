@@ -3,7 +3,7 @@
 <suite name="engineApiFlowActivityByActivityIdActions" verbose="1" >
      <test name="engineApiFlowActivityByActivityIdActions" >
         <classes>
-            <class name="com.agys.engine.genericFlowController.get.Engine_Api_Flow_Activity_By_ActivityId_ActionsTest79" />
+            <class name="com.agys.engine.genericFlowController.get.Engine_Api_Flow_Activity_By_ActivityId_ActionsTest" />
         </classes>
     </test>
 </suite>

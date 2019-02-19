@@ -4,7 +4,7 @@
 
     <test name="catalogDataQueryProcessDefinitionByProcessDefinition" >
         <classes>
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest" />
         </classes>
     </test>
 </suite>

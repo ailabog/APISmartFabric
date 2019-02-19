@@ -4,7 +4,7 @@
 
     <test name="guiControlIdById" >
         <classes>
-            <class name="com.agys.gui.get.GUI_Control_Id_By_IdTest37" />
+            <class name="com.agys.gui.get.GUI_Control_Id_By_IdTest" />
         </classes>
     </test>
 </suite>

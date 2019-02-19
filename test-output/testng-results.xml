@@ -6,8 +6,8 @@
     <groups>
     </groups>
     <test name="Default test" duration-ms="1834" started-at="2019-01-22T13:31:04Z" finished-at="2019-01-22T13:31:05Z">
-      <class name="com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21">
-        <test-method status="FAIL" signature="deleteGroupIdInvalid()[pri:0, instance:com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21@5e3a8624]" name="deleteGroupIdInvalid" duration-ms="1533" started-at="2019-01-22T13:31:04Z" finished-at="2019-01-22T13:31:05Z">
+      <class name="com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest">
+        <test-method status="FAIL" signature="deleteGroupIdInvalid()[pri:0, instance:com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest@5e3a8624]" name="deleteGroupIdInvalid" duration-ms="1533" started-at="2019-01-22T13:31:04Z" finished-at="2019-01-22T13:31:05Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -50,7 +50,7 @@ at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCal
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.deleteGroupIdInvalid(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:29)
+at com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest.deleteGroupIdInvalid(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:29)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -82,11 +82,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteGroupIdInvalid -->
-        <test-method status="PASS" signature="deleteGroupIdValid()[pri:0, instance:com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21@5e3a8624]" name="deleteGroupIdValid" duration-ms="209" started-at="2019-01-22T13:31:05Z" finished-at="2019-01-22T13:31:05Z">
+        <test-method status="PASS" signature="deleteGroupIdValid()[pri:0, instance:com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest@5e3a8624]" name="deleteGroupIdValid" duration-ms="209" started-at="2019-01-22T13:31:05Z" finished-at="2019-01-22T13:31:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteGroupIdValid -->
-        <test-method status="FAIL" signature="deleteGroupIdValidNoAuthentication()[pri:0, instance:com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21@5e3a8624]" name="deleteGroupIdValidNoAuthentication" duration-ms="66" started-at="2019-01-22T13:31:05Z" finished-at="2019-01-22T13:31:05Z">
+        <test-method status="FAIL" signature="deleteGroupIdValidNoAuthentication()[pri:0, instance:com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest@5e3a8624]" name="deleteGroupIdValidNoAuthentication" duration-ms="66" started-at="2019-01-22T13:31:05Z" finished-at="2019-01-22T13:31:05Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -119,7 +119,7 @@ at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(Response
 at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-at com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.deleteGroupIdValidNoAuthentication(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:50)
+at com.agys.identity.tenantController.delete.Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest.deleteGroupIdValidNoAuthentication(Identity_Tenants_UserGroups_By_GroupsId_And_By_UserIdTest21.java:50)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

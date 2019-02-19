@@ -3,7 +3,7 @@
 <suite name="engineApiProcessDefinitionByProcessDefinitionIdDiagram" verbose="1" >
      <test name="engineApiProcessDefinitionByProcessDefinitionIdDiagram" >
         <classes>
-            <class name="com.agys.engine.processDefinitionController.get.Engine_Api_ProcessDefinition_By_ProcessDefinitionIdDiagramTest84" />
+            <class name="com.agys.engine.processDefinitionController.get.Engine_Api_ProcessDefinition_By_ProcessDefinitionIdDiagramTest" />
         </classes>
     </test>
 </suite>

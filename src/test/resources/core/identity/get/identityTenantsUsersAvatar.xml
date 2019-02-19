@@ -4,7 +4,7 @@
 
     <test name="identityTenantsUsersAvatar" >
         <classes>
-            <class name="com.agys.identity.tenantController.get.Identity_Tenants_Users_AvatarTest26" />
+            <class name="com.agys.identity.tenantController.get.Identity_Tenants_Users_AvatarTest" />
         </classes>
     </test>
 </suite>

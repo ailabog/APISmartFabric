@@ -4,7 +4,7 @@
 
     <test name="documentsTemplatesGenerate" >
         <classes>
-            <class name="com.agys.documents.documentTemplateRest.post.Documents_Templates_GenerateTest50" />
+            <class name="com.agys.documents.documentTemplateRest.post.Documents_Templates_GenerateTest" />
         </classes>
     </test>
 </suite>

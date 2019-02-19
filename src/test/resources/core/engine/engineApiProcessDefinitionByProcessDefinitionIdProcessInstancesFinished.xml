@@ -3,7 +3,7 @@
 <suite name="engineApiProcessDefinitionByProcessDefinitionIdProcessInstancesFinished.xml" verbose="1" >
      <test name="engineApiProcessDefinitionByProcessDefinitionIdProcessInstancesFinished.xml" >
         <classes>
-            <class name="com.agys.engine.processDefinitionController.get.Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinishedTest85" />
+            <class name="com.agys.engine.processDefinitionController.get.Engine_Api_ProcessDefinition_By_ProcessDefinitionIdProcessInstancesFinishedTest" />
         </classes>
     </test>
 </suite>

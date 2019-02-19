@@ -3,7 +3,7 @@
 <suite name="engineApiProcessDefinitionInsert" verbose="1" >
      <test name="engineApiProcessDefinitionInsert" >
         <classes>
-            <class name="com.agys.engine.processDefinitionController.post.Engine_Api_Process_Definition_InsertTest95" />
+            <class name="com.agys.engine.processDefinitionController.post.Engine_Api_Process_Definition_InsertTest" />
         </classes>
     </test>
 </suite>

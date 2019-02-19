@@ -4,7 +4,7 @@
 
     <test name="documentsTemplates" >
         <classes>
-            <class name="com.agys.catalogs.catalogImportExportController.post.Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_ProcessDefinitionIdTest59" />
+            <class name="com.agys.catalogs.catalogImportExportController.post.Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_ProcessDefinitionIdTest" />
         </classes>
     </test>
 </suite>

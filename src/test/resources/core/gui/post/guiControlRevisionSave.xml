@@ -4,7 +4,7 @@
 
     <test name="guiControlRevisionSave" >
         <classes>
-            <class name="com.agys.gui.post.GUI_Control_Revision_SaveTest39" />
+            <class name="com.agys.gui.post.GUI_Control_Revision_SaveTest" />
         </classes>
     </test>
 </suite>

@@ -4,7 +4,7 @@
 
     <test name="catalogDataModelVerdsionByVersionIdProcessDefinitionByProcessDefinitionId" >
         <classes>
-            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest63" />
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest" />
         </classes>
     </test>
 </suite>

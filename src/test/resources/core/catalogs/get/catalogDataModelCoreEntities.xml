@@ -4,7 +4,7 @@
 
     <test name="catalogDataModelCoreEntities" >
         <classes>
-            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_CoreEntitiesTest60" />
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_CoreEntitiesTest" />
         </classes>
     </test>
 </suite>

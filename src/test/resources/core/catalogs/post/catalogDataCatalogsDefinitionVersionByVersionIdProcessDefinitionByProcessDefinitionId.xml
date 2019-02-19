@@ -4,7 +4,7 @@
 
     <test name="catalogDataCatalogsDefinitionVersionByVersionIdProcessDefinitionByProcessDefinitionId" >
         <classes>
-            <class name="com.agys.catalogs.post.Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest55" />
+            <class name="com.agys.catalogs.post.Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest" />
         </classes>
     </test>
 </suite>

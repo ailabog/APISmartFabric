@@ -4,7 +4,7 @@
 
     <test name="catalogDataLoadDataInternal" >
         <classes>
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_InternalTest67" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_InternalTest" />
         </classes>
     </test>
 </suite>

@@ -4,7 +4,7 @@
 
     <test name="catalogDataLoadDataProcessInstanceByProcessInstanceIdGuiByGuiId" >
         <classes>
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_Gui_By_GuiIdTest71" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_Gui_By_GuiIdTest" />
         </classes>
     </test>
 </suite>

@@ -4,7 +4,7 @@
 
     <test name="documentsTemplatesExportSimple" >
         <classes>
-            <class name="com.agys.documents.documentTemplateRest.post.Documents_Templates_ExportSimpleTest49" />
+            <class name="com.agys.documents.documentTemplateRest.post.Documents_Templates_ExportSimpleTest" />
         </classes>
     </test>
 </suite>

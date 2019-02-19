@@ -3,7 +3,7 @@
 <suite name="engineApiFlowApprovalSubmit" verbose="1" >
      <test name="engineApiFlowApprovalSubmit" >
         <classes>
-            <class name="com.agys.engine.genericFlowController.post.Engine_Api_Flow_ApprovalSubmitTest80" />
+            <class name="com.agys.engine.genericFlowController.post.Engine_Api_Flow_ApprovalSubmitTest" />
         </classes>
     </test>
 </suite>

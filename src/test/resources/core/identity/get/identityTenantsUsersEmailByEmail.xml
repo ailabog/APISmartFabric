@@ -4,7 +4,7 @@
 
     <test name="identityTenantsUsersEmailByEmail." >
         <classes>
-            <class name="com.agys.identity.tenantController.get.Identity_Tenants_Users_Email_By_EmailTest27" />
+            <class name="com.agys.identity.tenantController.get.Identity_Tenants_Users_Email_By_EmailTest" />
         </classes>
     </test>
 </suite>

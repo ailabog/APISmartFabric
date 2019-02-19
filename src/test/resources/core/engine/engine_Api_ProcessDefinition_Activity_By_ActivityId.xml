@@ -3,7 +3,7 @@
 <suite name="engineApiProcessDefinitionActivityByActivityId" verbose="1" >
      <test name="engineApiProcessDefinitionActivityByActivityId" >
         <classes>
-            <class name="com.agys.engine.processDefinitionController.get.Engine_Api_ProcessDefinition_Activity_By_ActivityIdTest88" />
+            <class name="com.agys.engine.processDefinitionController.get.Engine_Api_ProcessDefinition_Activity_By_ActivityIdTest" />
         </classes>
     </test>
 </suite>

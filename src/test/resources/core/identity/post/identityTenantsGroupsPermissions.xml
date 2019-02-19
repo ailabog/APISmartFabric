@@ -4,7 +4,7 @@
 
     <test name="identityTenantsGroupsPermissions" >
         <classes>
-            <class name="com.agys.identity.tenantController.post.Identity_Tenants_Groups_PermissionsTest18" />
+            <class name="com.agys.identity.tenantController.post.Identity_Tenants_Groups_PermissionsTest" />
         </classes>
     </test>
 </suite>

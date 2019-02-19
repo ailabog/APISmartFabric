@@ -4,7 +4,7 @@
 
     <test name="identityAdminTenantsUser" >
         <classes>
-            <class name="com.agys.identity.adminController.post.Identity_Admin_Tenants_UsersTest07" />
+            <class name="com.agys.identity.adminController.post.Identity_Admin_Tenants_UsersTest" />
         </classes>
     </test>
 </suite>

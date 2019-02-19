@@ -4,7 +4,7 @@
 
     <test name="identityAuthTenantLoginByTenantDomain" >
         <classes>
-            <class name="com.agys.identity.authenticationController.get.Identity_Auth_TenantAnonLogin_By_TenantDomainTest12" />
+            <class name="com.agys.identity.authenticationController.get.Identity_Auth_TenantAnonLogin_By_TenantDomainTest" />
         </classes>
     </test>
 </suite>

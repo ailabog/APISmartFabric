@@ -3,7 +3,7 @@
 <suite name="engineApiAppFilesByFileUUIDByTyp" verbose="1" >
      <test name="engineApiAppFilesByFileUUIDByTyp" >
         <classes>
-            <class name="com.agys.engine.appfileTransferController.get.Engine_Api_App_Files_By_FileUUID_By_TypeTest75" />
+            <class name="com.agys.engine.appfileTransferController.get.Engine_Api_App_Files_By_FileUUID_By_TypeTest" />
         </classes>
     </test>
 </suite>

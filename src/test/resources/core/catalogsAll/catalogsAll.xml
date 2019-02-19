@@ -4,31 +4,31 @@
 
     <test name="catalogsAll" >
         <classes>
-            <class name="com.agys.catalogs.processInstanceDataController.delete.Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest72" />
+            <class name="com.agys.catalogs.processInstanceDataController.delete.Catalog_Data_removeData_ProcessInstance_By_ProcessInstanceIdTest" />
             <class name="com.agys.catalogs.catalogDefinitionController.get.Catalog_Data_Catalogs_Definition_Version_By_VersionId_ProcessDefinitionId_By_ProcessDefinitionIdTest54" />
-            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_CoreEntitiesTest60" />
-            <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionIdTest66" />
-            <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionIdTest67" />
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_CoreEntitiesTest" />
+            <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionIdTest" />
+            <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinitionIdTest" />
             <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_processDefinition_Type_By_TypeIdTest68" />
-            <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTest69" />
-            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_PrimitiveTypesTest61" />
-            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest63" />
-            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_Versions_By_VersionIdTest62" />
-            <class name="com.agys.catalogs.catalogImportExportController.post.Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_ProcessDefinitionIdTest59" />
+            <class name="com.agys.catalogs.modelDefinitionController.get.Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeIdTest" />
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_PrimitiveTypesTest" />
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_Versions_By_VersionId_ProcessDefinition_By_ProcessDefinitionIdTest" />
+            <class name="com.agys.catalogs.modelController.get.Catalog_Data_Model_Versions_By_VersionIdTest" />
+            <class name="com.agys.catalogs.catalogImportExportController.post.Catalog_Data_Catalogs_Content_Export_Json_ProcessDefinition_By_ProcessDefinitionIdTest" />
             <class name="com.agys.catalogs.catalogImportExportController.post.Catalog_Data_Catalogs_Content_Export_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionTest57" />
             <class name="com.agys.catalogs.catalogImportExportController.post.Catalog_Data_Catalogs_Content_Import_Version_By_VersionId_ProcessDefinition_By_ProcessDefinitionTest58" />
             <class name="com.agys.catalogs.post.Catalog_Data_Catalogs_Content_Load_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest52" />
             <class name="com.agys.catalogs.post.Catalog_Data_Catalogs_Content_Save_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest53" />
-            <class name="com.agys.catalogs.post.Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest55" />
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_InternalTest67" />
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceIdTest68" />
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_Gui_By_GuiIdTest71" />
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingIdTest69" />
+            <class name="com.agys.catalogs.post.Catalog_Data_Catalogs_Definition_Version_By_Versionid_ProcessDefinition_By_ProcessDefinitionIdTest" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_InternalTest" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceIdTest" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_Gui_By_GuiIdTest" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_LoadData_ProcessInstance_By_ProcessInstanceId_MappingIdTest" />
             <class name="com.agys.catalogs.modelDefinitionController.post.Catalog_Data_Model_Definition_Version_By_VersionId_ProcessDefinition_By_ProcessDefinition_Type_By_TypeTest70" />
-            <class name="com.agys.catalogs.modelDefinitionController.post.Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest71" />
-            <class name="com.agys.catalogs.modelController.post.Catalog_Data_Model_JsonPathTest64" />
-            <class name="com.agys.catalogs.modelController.post.Catalog_Data_Model_MappingTest65" />
-            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest70" />
+            <class name="com.agys.catalogs.modelDefinitionController.post.Catalog_Data_Model_Definition_Version_By_VersionId_Type_By_TypeTest" />
+            <class name="com.agys.catalogs.modelController.post.Catalog_Data_Model_JsonPathTest" />
+            <class name="com.agys.catalogs.modelController.post.Catalog_Data_Model_MappingTest" />
+            <class name="com.agys.catalogs.processInstanceDataController.post.Catalog_Data_Query_ProcessDefinition_By_ProcessDefinitionIdTest" />
 
         </classes>
     </test>
