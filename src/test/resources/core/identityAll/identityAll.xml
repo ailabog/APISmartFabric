@@ -31,8 +31,7 @@
             <class name="com.agys.identity.adminController.post.Identity_Admin_UsersTest" />
             <class name="com.agys.identity.authenticationController.post.Identity_Auth_TenantUserLoginTest" />
             <class name="com.agys.identity.authenticationController.post.Identity_Auth_SystemUserLoginTest" />
-            <class name="com.agys.identity.tenantController.post.Identity_Tenants_GroupsTest" />
-            <class name="com.agys.identity.tenantController.post.Identity_Tenants_Groups_PermissionsTest" />
+             <class name="com.agys.identity.tenantController.post.Identity_Tenants_Groups_PermissionsTest" />
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_Groups_UsersTest" />
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_UserGroupsTest" />
             <class name="com.agys.identity.tenantController.post.Idenity_Tenants_UsersTest" />

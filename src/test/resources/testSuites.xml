@@ -206,8 +206,6 @@
 
     <class name="com.agys.identity.tenantController.get.Identity_Auth_Tenant_System_LoginTest"/>
 
-    <class name="com.agys.identity.tenantController.get.Identity_Tenants_GroupsTest"/>
-
     <class name="com.agys.identity.tenantController.get.Identity_Tenants_Groups_By_GrouspIdTest"/>
 
     <class name="com.agys.identity.tenantController.get.Identity_Tenants_UserGroups_By_IdsTest"/>

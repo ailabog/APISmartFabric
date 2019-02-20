@@ -65,6 +65,7 @@ public class Identity_Tenants_GroupsTest {
 
 	@Test
 	public void postWrongTenantsGroups() throws JsonProcessingException {
+		System.out.println(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsGroups);
 		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsJson)).when()
 				.post(CredentialsUtils.IDENTITY + Endpoints.middleURLTenantsGroups).then()
