@@ -111,6 +111,10 @@ public class Endpoints {
         public static final String middleURLDataModelJsonPath = "/data/model/jsonpath";
         public static final String middleURLIdentityPermissionsGroupPermissions="/identity/permissions/group-permissions/";
         public static final String middleURLIdentityPermissionsUserPermissions="/identity/permissions/user-permissions/";
+        public static final String middleURLIdentityPublicResetPassword="/identity/public/resetPassword/";
+        public static final String middleURLIdentityPublicSetPassword="/identity/public/setPassword";
+
+
 
 
 

@@ -1,6 +1,7 @@
 package com.agys.model;
 
 import com.agys.jsonBuilder.*;
+import com.agys.utils.JsonHelper;
 
 import java.util.UUID;
 
@@ -378,4 +379,18 @@ public class Factory {
          .permissionType("type")
          .targetId("345345-325435-235345")
          .build();
+
+ public static final PublicResetPassword publicResetPasswordClass  = PublicResetPassword.builder()
+         .userEmail("test@fabric.ch")
+         .build();
+
+
+ public static final PublicSetPassword publicSetPasswordClass  = PublicSetPassword.builder()
+         .password("pass0rd")
+         .repeatPassword("pass0rd")
+         .token("35345-23534543-25434")
+         .build();
+
+
+
 }
