@@ -37,6 +37,10 @@
             <class name="com.agys.identity.tenantController.post.Idenity_Tenants_UsersTest" />
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_Users_ListTest" />
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_UsersTenantsTest" />
+            <class name="com.agys.identity.permissionController.post.Identity_Permisisons_GroupPermisisonsTest" />
+            <class name="com.agys.identity.permissionController.post.Identity_Permisisons_UserPermisisonsTest" />
+            <class name="com.agys.identity.permissionController.get.Identity_Permissions_GroupPermissions_By_ProcessDefinitionIdTest" />
+            <class name="com.agys.identity.permissionController.get.Identity_Permissions_UserPermissions_By_ProcessDefinitionIdTest" />
         </classes>
     </test>
 </suite>
