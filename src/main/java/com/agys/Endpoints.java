@@ -109,6 +109,11 @@ public class Endpoints {
         public static final String middleURLDataModelVersions = "/data/model/versions/";
         public static final String middleURLDataModelVersionByVersionId = "/data/model/versions/";
         public static final String middleURLDataModelJsonPath = "/data/model/jsonpath";
+        public static final String middleURLIdentityPermissionsGroupPermissions="/identity/permissions/group-permissions/";
+        public static final String middleURLIdentityPermissionsUserPermissions="/identity/permissions/user-permissions/";
+
+
+
 
 
 

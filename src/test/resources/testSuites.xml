@@ -180,7 +180,7 @@
 
     <class name="com.agys.identity.adminController.get.Identity_Admin_Tenants_Users_ByUserTenantIdTest"/>
 
-    <class name="com.agys.identity.adminController.get.Identity_Admin_Users_ByUserIdTest10"/>
+    <class name="com.agys.identity.adminController.get.Identity_Admin_Users_ByUserIdTest"/>
 
     <class name="com.agys.identity.adminController.post.Identity_Admin_GroupsTest"/>
 

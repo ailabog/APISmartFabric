@@ -4,7 +4,7 @@
 
     <test name="identityAdminUsersByUserId" >
         <classes>
-            <class name="com.agys.identity.adminController.get.Identity_Admin_Users_ByUserIdTest10" />
+            <class name="com.agys.identity.adminController.get.Identity_Admin_Users_ByUserIdTest" />
         </classes>
     </test>
 </suite>

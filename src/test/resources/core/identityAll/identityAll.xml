@@ -9,7 +9,7 @@
             <class name="com.agys.identity.adminController.get.Identity_Admin_Groups_Users_By_UserGroupIdTest" />
             <class name="com.agys.identity.adminController.get.Identity_Admin_Tenants_By_TenantIdTest" />
             <class name="com.agys.identity.adminController.get.Identity_Admin_Tenants_Users_ByUserTenantIdTest" />
-            <class name="com.agys.identity.adminController.get.Identity_Admin_Users_ByUserIdTest10" />
+            <class name="com.agys.identity.adminController.get.Identity_Admin_Users_ByUserIdTest" />
             <class name="com.agys.identity.authenticationController.get.Identity_Auth_TenantAnonLogin_By_TenantDomainTest" />
             <class name="com.agys.identity.systemController.get.Identity_Auth_Tenant_System_LoginTest" />
             <class name="com.agys.identity.tenantController.get.Identity_Tenants_GroupsTest" />

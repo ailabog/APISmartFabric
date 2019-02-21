@@ -34,7 +34,7 @@ public class Factory {
            .build();
 
     public static final DataModelJsonPath dataModelJsonPath  = DataModelJsonPath.builder()
-            .json("{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.ch (test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
+            .json("{ \"tenantId\": \"d634b20d-128e-4a57-97cf-7b7b01aeb901\", \"tenantDomain\": \"DTSW\", \"userId\": \"2c39c58f-b4a5-40a9-9826-9dce8b57a2fa\", \"userEmail\": \"test_user@agys.chï¿½(test_user@agys.ch)\", \"language\": null, \"userFirstName\": null, \"userLastName\": null, \"permissions\": [] }")
             .path("//users/downloads/something")
             .type("type")
             .build();
@@ -361,5 +361,21 @@ public class Factory {
          .includeCatalogData("true")
          .processInstanceId("21eca05d-7581-4f22-86e7-a6d7a403ab30")
          .variables("a")
+         .build();
+
+ public static final PermissionsGroupPermissions permissionsGroupPermissionsClass  = PermissionsGroupPermissions.builder()
+         .groupId("e3f72af2-cc56-4353-abaf-54af2ba47936")
+         .id("ee8e633a-f482-411f-96a5-e3ea154ed504")
+         .permission("Admin")
+         .permissionType("type")
+         .targetId("345345-325435-235345")
+         .build();
+
+
+ public static final PermissionsUserPermissions permissionsUserPermissionsClass  = PermissionsUserPermissions.builder()
+         .userId("00000000-0000-0000-0000-000000000001")
+         .permission("Admin")
+         .permissionType("type")
+         .targetId("345345-325435-235345")
          .build();
 }

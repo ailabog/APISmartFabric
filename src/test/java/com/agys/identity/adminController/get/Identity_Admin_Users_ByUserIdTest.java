@@ -23,7 +23,7 @@ import java.io.FileNotFoundException;
  *
  */
 @Slf4j
-public class Identity_Admin_Users_ByUserIdTest10 {
+public class Identity_Admin_Users_ByUserIdTest {
 
 	private UserIdsEnum USER;
 
