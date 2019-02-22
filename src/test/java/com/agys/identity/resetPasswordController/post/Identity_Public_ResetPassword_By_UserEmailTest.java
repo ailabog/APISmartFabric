@@ -26,7 +26,7 @@ public class Identity_Public_ResetPassword_By_UserEmailTest {
 
 	private ObjectMapper mapper = new ObjectMapper();
 
-	final String userEmail = "test@fabric.ch";
+	final String userEmail = "test_user@agys.ch";
 	final String invalidUserEmail = "test_user@fabric.com";
 
 
@@ -36,7 +36,7 @@ public class Identity_Public_ResetPassword_By_UserEmailTest {
 	public void postIdentityPublicResetPasswordByUserEmail() throws JsonProcessingException {
 
 		ValidatableResponse vr =
-				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				given()
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(publicResetPassword)).when()
 						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLIdentityPublicResetPassword).then()
 						.statusCode(201);
@@ -61,17 +61,11 @@ public class Identity_Public_ResetPassword_By_UserEmailTest {
 
 		PublicResetPassword publicResetPassword1 = PublicResetPassword.builder().invalidUserEmail(invalidUserEmail).build();
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(publicResetPassword1)).when()
 				.post(CredentialsUtils.IDENTITY +  Endpoints.middleURLIdentityPublicResetPassword).then()
 				.statusCode(404);
 	}
 
-	@Test
-	public void postIdentityPublicResetPasswordByUserEmailNoAuthentication() throws JsonProcessingException {
-			given()
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(publicResetPassword)).when()
-				.post(CredentialsUtils.IDENTITY +  Endpoints.middleURLIdentityPublicResetPassword).then()
-				.statusCode(401);
-	}
+
 }

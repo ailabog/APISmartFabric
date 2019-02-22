@@ -43,6 +43,12 @@
             <class name="com.agys.identity.permissionController.get.Identity_Permissions_UserPermissions_By_ProcessDefinitionIdTest" />
             <class name="com.agys.identity.resetPasswordController.post.Identity_Public_ResetPassword_By_UserEmailTest" />
             <class name="com.agys.identity.resetPasswordController.post.Identity_Public_SetPassswordTest" />
+            <class name="com.agys.identity.tenantController.post.Idenity_Tenants_CheckPassword_By_User_EmailTest" />
+            <class name="com.agys.identity.tenantController.post.Identity_Tenants_Group_ByIdsTest" />
+            <class name="com.agys.identity.tenantController.post.Identity_Tenants_Group_CodesTest" />
+
+
+
         </classes>
     </test>
 </suite>

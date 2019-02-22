@@ -113,6 +113,15 @@ public class Endpoints {
         public static final String middleURLIdentityPermissionsUserPermissions="/identity/permissions/user-permissions/";
         public static final String middleURLIdentityPublicResetPassword="/identity/public/resetPassword/";
         public static final String middleURLIdentityPublicSetPassword="/identity/public/setPassword";
+        public static final String middleURLIdentityTenantsCheckPassword="/identity/tenants/checkPassword/";
+        public static final String middleURLIdentityTenantsGroupAdminUI="/identity/tenants/group/admin-ui";
+        public static final String middleURLIdentityTenantsGroups= "/identity/tenants/groups/by/ids";
+        public static final String middleURLIdentityTenantsGroupsCodes="/identity/tenants/groups/codes";
+
+
+
+
+
 
 
 

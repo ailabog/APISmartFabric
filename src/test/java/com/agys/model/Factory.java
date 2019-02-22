@@ -391,6 +391,21 @@ public class Factory {
          .token("35345-23534543-25434")
          .build();
 
-
+ public static final TenantsGroup tenantsGroupClass  = TenantsGroup.builder()
+         .code("e3f72af2-cc56-4353-abaf-54af2ba47936")
+         .id("ee8e633a-f482-411f-96a5-e3ea154ed504")
+         .name("Admin")
+         .tenanatId("4575-567567-567567")
+         .type("type")
+         .groupId("00000000-0000-0000-0000-000000000001")
+         .groupsPermisId("235345-23534534")
+         .permission("w")
+         .permissionType("type")
+         .targetId("235345-345345345-34534543")
+         .groupIdUserGroup("e1bf7e32-6846-473c-88df-0b59b4dd5870")
+         .idUserGroup("e1bf7e32-6846-473c-88df-0b59b4dd5870")
+         .isManager("true")
+         .userId("00000000-0000-0000-0000-000000000001")
+         .build();
 
 }

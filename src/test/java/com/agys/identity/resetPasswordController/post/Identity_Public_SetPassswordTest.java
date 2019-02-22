@@ -37,7 +37,7 @@ public class Identity_Public_SetPassswordTest {
 	public void postIdentityPublicResetPasswordByUserEmail() throws JsonProcessingException {
 
 		ValidatableResponse vr =
-				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+				given()
 						.contentType(ContentType.JSON).body(mapper.writeValueAsString(publicSetPassword)).when()
 						.post(CredentialsUtils.IDENTITY + Endpoints.middleURLIdentityPublicSetPassword).then()
 						.statusCode(201);
@@ -63,17 +63,10 @@ public class Identity_Public_SetPassswordTest {
 		PublicSetPassword publicSetPassword1 = PublicSetPassword.builder().invalidPassword(invalidPassword).repeatPassword(repeatPassword).
 				token(token).build();
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+		given()
 				.contentType(ContentType.JSON).body(mapper.writeValueAsString(publicSetPassword1)).when()
 				.post(CredentialsUtils.IDENTITY +  Endpoints.middleURLIdentityPublicSetPassword).then()
 				.statusCode(404);
 	}
 
-	@Test
-	public void postIdentityPublicResetPasswordByUserEmailNoAuthentication() throws JsonProcessingException {
-			given()
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(publicSetPassword)).when()
-				.post(CredentialsUtils.IDENTITY +  Endpoints.middleURLIdentityPublicSetPassword).then()
-				.statusCode(401);
-	}
 }
