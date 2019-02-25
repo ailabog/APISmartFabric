@@ -21,39 +21,39 @@ import static org.testng.Assert.assertEquals;
 @Slf4j
 public class Identity_Tenants_Group_ByIdsTest {
 
-	private ObjectMapper mapper = new ObjectMapper();
+    private ObjectMapper mapper = new ObjectMapper();
 
-	final String groupId = "00000000-0000-0000-0000-000000000001";
+    final String groupId = "00000000-0000-0000-0000-000000000001";
 
 
-	@Test
-	public void postIdentityTenantsGroupByIds() throws JsonProcessingException {
+    @Test
+    public void postIdentityTenantsGroupByIds() throws JsonProcessingException {
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON)
-				.body("[ +, \n" + "{ \"groupId\":\"" + groupId +  "\"]" )
-				.when().post(CredentialsUtils.IDENTITY
-				+ Endpoints.middleURLIdentityTenantsGroups)
-				.then().assertThat().statusCode(201);
-	}
+        given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+                .contentType(ContentType.JSON)
+                .body("{ \"groupId\":\"" + groupId + "\"}")
+                .when().post(CredentialsUtils.IDENTITY
+                + Endpoints.middleURLIdentityTenantsGroups)
+                .then().assertThat().statusCode(201);
+    }
 
-	@Test
-	public void postWrongIdentityTenantsGroupByIds() throws JsonProcessingException {
+    @Test
+    public void postWrongIdentityTenantsGroupByIds() throws JsonProcessingException {
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON)
-				.when().post(CredentialsUtils.IDENTITY
-				+ Endpoints.middleURLIdentityTenantsGroups)
-				.then().assertThat().statusCode(404);
-	}
+        given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+                .contentType(ContentType.JSON)
+                .when().post(CredentialsUtils.IDENTITY
+                + Endpoints.middleURLIdentityTenantsGroups)
+                .then().assertThat().statusCode(404);
+    }
 
-	@Test
-	public void postWrongIdentityTenantsGroupByIdsNoAutehentication() throws JsonProcessingException {
-		given()
-				.contentType(ContentType.JSON)
-				.body("[ +, \n" + "{ \"groupId\":\"" + groupId +  "\"]" )
-				.when().post(CredentialsUtils.IDENTITY
-				+ Endpoints.middleURLIdentityTenantsGroups)
-				.then().assertThat().statusCode(401);
-	}
+    @Test
+    public void postWrongIdentityTenantsGroupByIdsNoAutehentication() throws JsonProcessingException {
+        given()
+                .contentType(ContentType.JSON)
+                .body("{ \"groupId\":\"" + groupId + "\"}")
+                .when().post(CredentialsUtils.IDENTITY
+                + Endpoints.middleURLIdentityTenantsGroups)
+                .then().assertThat().statusCode(401);
+    }
 }

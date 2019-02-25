@@ -26,61 +26,61 @@ import static org.testng.Assert.assertEquals;
 @Slf4j
 public class Identity_Tenants_Groups_PermissionsTest {
 
-	private ObjectMapper mapper = new ObjectMapper();
-	
+    private ObjectMapper mapper = new ObjectMapper();
 
-	final String groupId = "da26c865-4ef0-4e33-87fe-54fdec501ec5";
-	final String id = "45656786784";
-	final String permission = "";
-	final String permissionType = "DOCUMENT_TEMPLATE";
-	final String targetId = "TYPE";
 
-	TenantsGroupsPermission tenantGroupsPermissionJson = TenantsGroupsPermission.builder().groupId(groupId)
-			.id(id).permission(permission).
-					permissionType(permissionType).targetId(targetId).
-					build();
+    final String groupId = "da26c865-4ef0-4e33-87fe-54fdec501ec5";
+    final String id = "45656786784";
+    final String permission = "";
+    final String permissionType = "DOCUMENT_TEMPLATE";
+    final String targetId = "TYPE";
 
-	@Test
-	public void postTenantsGroupsPermissions() throws JsonProcessingException {
+    TenantsGroupsPermission tenantGroupsPermissionJson = TenantsGroupsPermission.builder().groupId(groupId)
+            .id(id).permission(permission).
+                    permissionType(permissionType).targetId(targetId).
+                    build();
 
-		ValidatableResponse vr =
-				given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-						.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
-						.post(CredentialsUtils.IDENTITY + Endpoints.middlerURLTenantsGroupsPermissions).then()
-						.statusCode(201);
+    @Test
+    public void postTenantsGroupsPermissions() throws JsonProcessingException {
 
-		String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
+        ValidatableResponse vr =
+                given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+                        .contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
+                        .post(CredentialsUtils.IDENTITY + Endpoints.middlerURLTenantsGroupsPermissions).then()
+                        .statusCode(201);
 
-		String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.tenantsGroupsPermission)).when()
-				.get(location)
-				.then()
-				.contentType(ContentType.JSON).extract().response().asString();
+        String location = ((ValidatableResponseImpl) vr).originalResponse().header("Location");
 
-		TenantsGroupsPermission tenantsGroupsPermissionClass = JsonHelper.readValue(response, TenantsGroupsPermission.class);
-		assertEquals(Factory.tenantsGroupsPermission.getGroupId(), tenantsGroupsPermissionClass.getGroupId(), "Group Ids are equals");
-		assertEquals(Factory.tenantsGroupsPermission.getId(), tenantsGroupsPermissionClass.getId(), "Ids are equals");
-		assertEquals(Factory.tenantsGroupsPermission.getPermission(), tenantsGroupsPermissionClass.getPermission(), "Permissions are equals");
+        String response = given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+                .contentType(ContentType.JSON).body(mapper.writeValueAsString(Factory.tenantsGroupsPermission)).when()
+                .get(location)
+                .then()
+                .contentType(ContentType.JSON).extract().response().asString();
 
-		Factory.tenantsGroupsPermission.setGroupId(tenantsGroupsPermissionClass.getGroupId());
-		Factory.tenantsGroupsPermission.setId(tenantsGroupsPermissionClass.getId());
-		Factory.tenantsGroupsPermission.setPermission(tenantsGroupsPermissionClass.getPermission());
-	}
+        TenantsGroupsPermission tenantsGroupsPermissionClass = JsonHelper.readValue(response, TenantsGroupsPermission.class);
+        assertEquals(Factory.tenantsGroupsPermission.getGroupId(), tenantsGroupsPermissionClass.getGroupId(), "Group Ids are equals");
+        assertEquals(Factory.tenantsGroupsPermission.getId(), tenantsGroupsPermissionClass.getId(), "Ids are equals");
+        assertEquals(Factory.tenantsGroupsPermission.getPermission(), tenantsGroupsPermissionClass.getPermission(), "Permissions are equals");
 
-	@Test
-	public void postWrongTenantsGroupsPermissions() throws JsonProcessingException {
+        Factory.tenantsGroupsPermission.setGroupId(tenantsGroupsPermissionClass.getGroupId());
+        Factory.tenantsGroupsPermission.setId(tenantsGroupsPermissionClass.getId());
+        Factory.tenantsGroupsPermission.setPermission(tenantsGroupsPermissionClass.getPermission());
+    }
 
-		given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
-				.post(CredentialsUtils.IDENTITY + Endpoints.middlerURLTenantsGroupsPermissions +5).then()
-				.statusCode(404);
-	}
-	
-	@Test
-	public void postTenantsGroupsPermissionsNoAuthentication() throws JsonProcessingException {
-		given()
-				.contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
-				.post(CredentialsUtils.IDENTITY + Endpoints.middlerURLTenantsGroupsPermissions).then()
-				.statusCode(401);
-   }
+    @Test
+    public void postWrongTenantsGroupsPermissions() throws JsonProcessingException {
+
+        given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
+                .contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middlerURLTenantsGroupsPermissions + 5).then()
+                .statusCode(404);
+    }
+
+    @Test
+    public void postTenantsGroupsPermissionsNoAuthentication() throws JsonProcessingException {
+        given()
+                .contentType(ContentType.JSON).body(mapper.writeValueAsString(tenantGroupsPermissionJson)).when()
+                .post(CredentialsUtils.IDENTITY + Endpoints.middlerURLTenantsGroupsPermissions).then()
+                .statusCode(401);
+    }
 }

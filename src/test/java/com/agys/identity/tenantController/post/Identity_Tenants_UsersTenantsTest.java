@@ -10,6 +10,7 @@ import com.agys.enums.UserIdsEnum;
 import com.agys.utils.CredentialsUtils;
 import com.jayway.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
+
 import static com.agys.Constants.PRINCIPAL_HEADER_NAME;
 import static com.jayway.restassured.RestAssured.given;
 
@@ -36,7 +37,7 @@ public class Identity_Tenants_UsersTenantsTest {
                 .post(CredentialsUtils.IDENTITY
                         + Endpoints.middleURLTenantsUsersTenants)
                 .then().statusCode(404);
-  }
+    }
 
     @Test
     public void postWrongTenantsGroupsUsersNoAuthentication() {

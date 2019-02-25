@@ -46,6 +46,15 @@
             <class name="com.agys.identity.tenantController.post.Idenity_Tenants_CheckPassword_By_User_EmailTest" />
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_Group_ByIdsTest" />
             <class name="com.agys.identity.tenantController.post.Identity_Tenants_Group_CodesTest" />
+            <class name="com.agys.identity.tenantController.post.Idenity_Tenants_Users_AvatarsTest" />
+            <class name="com.agys.identity.tenantController.post.Idenity_Tenants_Users_Profile_NotificationTest" />
+            <class name="com.agys.identity.tenantController.post.Idenity_Tenants_Users_ProfilesTest" />
+            <class name="com.agys.identity.tenantController.post.Identity_Tenants_Users_AdminUITest" />
+
+
+
+
+
 
 
 

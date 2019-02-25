@@ -30,7 +30,7 @@ public class Identity_Tenants_Groups_UsersTest {
         given().header(PRINCIPAL_HEADER_NAME, Constants.PRINCIPAL_HEADER_VALUE)
                 .contentType(ContentType.JSON).body(mapper.writeValueAsString(Arrays.asList(UserIdsEnum.USER_OK1.getId()))).when()
                 .post(CredentialsUtils.IDENTITY + Endpoints.middleURLTennatsGroupsUsers)
-                .then().statusCode(200);
+                .then().statusCode(201);
     }
 
     @Test
